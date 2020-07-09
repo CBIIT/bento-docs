@@ -10,7 +10,7 @@ relative_permalinks: true
 title:            Bento-docs
 tagline:          'Documentation for Bento-tools'
 description:      'Documentation for Bento-tools: to setup bento data commons'
-url:              https://CBIIT.github.io/bento-tools.io
+url:              http://CBIIT.github.io/bento-tools.io
 baseurl:          /
 
 author:
