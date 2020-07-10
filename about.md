@@ -3,20 +3,45 @@ layout: default
 title: About
 ---
 
-# About
+# What is Bento?
+A single paragaph on the objectives of the Bento project. Simple, jargon-free description.
 
-## Intro
-Add and commit markdown files to this repo, then push to github to see your changes. The server auto-regenerates your site when a file is pushed.
+## Overview
+What can Bento do for you.
+An high-level architecture diagram.
+Assumptions.
 
-Jekyll requires blog post files to be named according to the following format:
+## In-depth Guides
 
-`Title.md`
+### Installing Bento
+#### 1. Install on your local machine
+##### 1.1 Introduction
+##### 1.2 Pre-requisites
+##### 1.3 Installation process
+##### 1.4 Test your installation
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+#### 2. Install on the Amazon Web Services cloud platform 
+##### 2.1 Introduction
+##### 2.2 Pre-requisites
+##### 2.3 Installation process
+##### 2.4 Test your installation
 
-## Code Snippets
-Jekyll also offers powerful support for code snippets:
+#### 3. Install on the Google Cloud Platform
+##### 3.1 Introduction
+##### 3.2 Pre-requisites
+##### 3.3 Installation process
+##### 2.4 Test your installation
 
-```
+### 4. Loading Files and Data
 
-```
+### 5. Configuring the Bento UI
+
+## API References
+
+## Glossary
+
+## FAQs
+
+## Meet the Team
+
+## License
