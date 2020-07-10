@@ -4,12 +4,9 @@ title: About
 ---
 
 # About
-<p class="message">
-Hey there! This page describes ...
-</p>
 
 ## Intro
-Add and commit markdown files to this repo, then push to github to see your changes.  The webserver auto-regenerates your site when a file is pushed.
+Add and commit markdown files to this repo, then push to github to see your changes. The server auto-regenerates your site when a file is pushed.
 
 Jekyll requires blog post files to be named according to the following format:
 
@@ -21,11 +18,5 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 Jekyll also offers powerful support for code snippets:
 
 ```
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+
 ```
