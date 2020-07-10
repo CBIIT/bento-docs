@@ -9,11 +9,13 @@ Documentation for Bento-tools
 
 ## Table of Contents
 
-[About Bento-tools](https://cbiit.github.io/bento-docs/about-bento-tools)
+* [About Bento-tools](https://cbiit.github.io/bento-docs/about-bento-tools)
+* [Outline](https://cbiit.github.io/bento-docs/outline)
+* [Template](https://cbiit.github.io/bento-docs/template)
+* [Example](https://cbiit.github.io/bento-docs/example)
 
-[Outline](https://cbiit.github.io/bento-docs/outline)
 
-[Template](https://cbiit.github.io/bento-docs/template)
+Download [template.md](https://github.com/CBIIT/bento-docs/blob/master/template.md)
 
 
 ## Caveat Emptor
