@@ -7,6 +7,15 @@ title: Home
 
 Documentation for Bento-tools
 
-## Subsection
+## Table of Contents
 
+[About Bento-tools](https://cbiit.github.io/bento-docs/about-bento-tools)
+
+[Outline](https://cbiit.github.io/bento-docs/outline)
+
+[Template](https://cbiit.github.io/bento-docs/template)
+
+
+## Caveat Emptor
 More content.
+

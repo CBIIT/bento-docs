@@ -1,9 +1,9 @@
 ---
 layout: default
-title: About
+title: About Bento-tools
 ---
 
-# About
+# About Bento-tools
 
 ## Intro
 Add and commit markdown files to this repo, then push to github to see your changes. The server auto-regenerates your site when a file is pushed.
