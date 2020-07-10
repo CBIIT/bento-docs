@@ -1,9 +1,9 @@
 ---
 layout: default
 title: About
-permalink: /about/
 ---
 
+# About
 <p class="message">
 Hey there! This page describes ...
 </p>
