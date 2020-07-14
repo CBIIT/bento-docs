@@ -16,7 +16,6 @@ Documentation for Bento-tools
 * [Template](https://cbiit.github.io/bento-docs/template)
 
 
-Download [template.md](https://github.com/CBIIT/bento-docs/blob/master/template.md)
 <a id="raw-url" href="https://github.com/CBIIT/bento-docs/blob/master/template.md">Download 'template.md'</a>
 
 ## Caveat Emptor
