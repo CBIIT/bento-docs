@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Template
+title: Example Markdown
 ---
 
-# Title
+# Example of Git-flavored Markdown Syntax
 
 This is the template for bento-tools documentation
 

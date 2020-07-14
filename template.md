@@ -3,7 +3,7 @@ layout: default
 title: Template
 ---
 
-# Title
+# Template Title
 
 This is the template for bento-tools documentation
 
