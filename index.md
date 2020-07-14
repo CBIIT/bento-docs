@@ -9,16 +9,16 @@ title: Home
 Documentation for Bento-tools
 
 ## Table of Contents
-
+* [Home](https://cbiit.github.io/bento-docs/)
 * [About Bento-tools](https://cbiit.github.io/bento-docs/about-bento-tools)
 * [Outline](https://cbiit.github.io/bento-docs/outline)
+* [Example Markdown](https://cbiit.github.io/bento-docs/example)
 * [Template](https://cbiit.github.io/bento-docs/template)
-* [Example](https://cbiit.github.io/bento-docs/example)
 
 
-Download [template.md](https://github.com/CBIIT/bento-docs/blob/master/template.md)
-
+Download: <a id="raw-url" href="https://github.com/CBIIT/bento-docs/blob/master/template.md">template.md</a>
 
 ## Caveat Emptor
-More content.
+Search not working at moment
+
 
