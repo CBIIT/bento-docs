@@ -1,7 +1,7 @@
 ---
 layout: default
 nav_order: 1
-title: Home
+title: Welcome
 ---
 
 # Welcome to Bento-tools documentation
@@ -9,7 +9,7 @@ title: Home
 Documentation for Bento-tools
 
 ## Table of Contents
-* [Home](https://cbiit.github.io/bento-docs/)
+* [Welcome](https://cbiit.github.io/bento-docs/)
 * [About Bento-tools](https://cbiit.github.io/bento-docs/about-bento-tools)
 * [Outline](https://cbiit.github.io/bento-docs/outline)
 * [Example Markdown](https://cbiit.github.io/bento-docs/example)
