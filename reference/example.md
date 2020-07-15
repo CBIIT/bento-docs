@@ -26,6 +26,42 @@ will produce
 
 ---
 
+
+## Text Formatting
+**Bold Text** is done using `**Bold Text**`  
+*Italic Text* is done using `*Italic Text*`
+
+---
+
+## Hyperlinks
+- GFMD will automatically detect URL and convert them to links like this http://www.futureworkz.com
+- To specify a link on a text, do this:
+
+```
+This is [an example](http://example.com/ "Title") inline link.
+[This link](http://example.net/) has no title attribute.
+```
+
+---
+
+## Creating list
+
+Adding a `-` will change it into a list:
+
+```
+- Item 1
+- Item 2
+- Item 3
+```
+
+will produce
+
+- Item 1
+- Item 2
+- Item 3
+
+---
+
 ## Horizontal Rules
 
 Horizontal rule is created using `---` on a line by itself.
@@ -92,19 +128,10 @@ This is some code: `echo something`
 
 ---
 
-## Text Formatting
-**Bold Text** is done using `**Bold Text**`  
-*Italic Text* is done using `*Italic Text*`
-
----
-
-## Hyperlinks
-- GFMD will automatically detect URL and convert them to links like this http://www.futureworkz.com
-- To specify a link on a text, do this:
+## Adding Image
 
 ```
-This is [an example](http://example.com/ "Title") inline link.
-[This link](http://example.net/) has no title attribute.
+![Branching Concepts](http://git-scm.com/figures/18333fig0319-tn.png "Branching Map")
 ```
 
 ---
@@ -114,23 +141,6 @@ You can escape using \\ eg. \\\`
 
 ---
 
-## Creating list
-
-Adding a `-` will change it into a list:
-
-```
-- Item 1
-- Item 2
-- Item 3
-```
-
-will produce
-
-- Item 1
-- Item 2
-- Item 3
-
----
 
 ## Quoting
 
@@ -190,8 +200,4 @@ will produce
   <dd>We've changed the product so that it's much easier to use!</dd>
 </dl>
 
-## Adding Image
 
-```
-![Branching Concepts](http://git-scm.com/figures/18333fig0319-tn.png "Branching Map")
-```
