@@ -12,7 +12,7 @@ Things to note: Documentation for Bento-tools
 
 
 * Download: <a id="raw-url" href="https://github.com/CBIIT/bento-docs/blob/master/reference/template.md" download="template.md">template.md</a>
-* Download: <a href="https://raw.githubusercontent.com/CBIIT/bento-docs/master/reference/template.md" download="template.md">template.md</a>
+* Download: <a id="raw-url" href="https://raw.githubusercontent.com/CBIIT/bento-docs/master/reference/template.md">template.md</a>
 
 ## Caveat Emptor
 Search not working at moment
