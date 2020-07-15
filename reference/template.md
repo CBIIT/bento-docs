@@ -44,7 +44,7 @@ title: Template
 
 
 ## Markdown
-Please use github-flavored markdown in this document.
+Please use [github-flavored markdown](https://github.github.com/gfm/) in this document.
 
 ### Example Sections
 An examples of markdown syntax is included [here](/bento-docs/example)
@@ -60,6 +60,4 @@ function fancyAlert(arg) {
 }
 ```
 
-## Appendix
-Note, after the markdown file is pushed to the repo, it can take 10 to 15 minutes for the changes to appear
 
