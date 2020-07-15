@@ -1,10 +1,12 @@
 ---
 layout: default
 nav_order: 2
-title: About Bento-tools
+title: Overview
 ---
 
-# About Bento-tools
+# Overview
+
+What can Bento do for you. A high-level architecture diagram. Assumptions.
 
 ## Intro
 Add and commit markdown files to this repo, then push to github to see your changes. The server auto-regenerates your site when a file is pushed.

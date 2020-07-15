@@ -1,12 +1,11 @@
 ---
 layout: default
-nav_order: 5
-title: Template
+nav_order: 1
+title: Installing Bento on Your Local Machine 
 ---
 
-# Template Title
+# Installing Bento on Your Local Machine
 
-This is the template for bento-tools documentation
 
 ## Introduction
 Documentation will be saved in git, and presented using `github pages` using Jekyll. This requires that files be saved in markdown format. They will be automatically convered into html.  Furthermore, they can easily be converted into pdfs or other formats.
