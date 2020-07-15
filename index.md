@@ -8,9 +8,9 @@ title: Welcome
 
 Things to note: Documentation for Bento-tools
 
-* [Template and Documentation Instructions](https://cbiit.github.io/bento-docs/template)
+* [Template and Documentation Instructions](https://cbiit.github.io/bento-docs/reference/template)
 
-Download: <a id="raw-url" href="https://github.com/CBIIT/bento-docs/blob/master/template.md">template.md</a>
+Download: <a id="raw-url" href="https://github.com/CBIIT/bento-docs/blob/master/reference/template.md">template.md</a>
 
 ## Caveat Emptor
 Search not working at moment
