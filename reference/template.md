@@ -47,7 +47,7 @@ title: Template
 Please use [github-flavored markdown](https://github.github.com/gfm/) in this document.
 
 ### Example Sections
-An examples of markdown syntax is included [here](/bento-docs/example)
+An examples of markdown syntax is included [here](/bento-docs/reference/example)
 
 
 #### Code Blocks
