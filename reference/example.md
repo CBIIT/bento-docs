@@ -4,165 +4,194 @@ nav_order: 2
 title: Example Markdown
 ---
 
-# Example of Git-flavored Markdown Syntax
+Github Flavored Markdown (GFMD) is based on [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) with some overwriting as described at [Github Flavored Markdown](http://github.github.com/github-flavored-markdown/)
 
-This is the template for bento-tools documentation
+## Text Writing
+It is easy to write in GFMD. Just write simply like text and use the below simple "tagging" to mark the text and you are good to go!  
 
-## Introduction
-Documentation will be saved in git, and presented using `github pages` using Jekyll. This requires that files be saved in markdown format. They will be automatically convered into html.  Furthermore, they can easily be converted into pdfs or other formats.
+To specify a paragraph, leave 2 spaces at the end of the line
 
-Currently, we are staging documentation in rep
+## Headings
 
-
-## Template Instructions Instructions
-
-1. Format documentation using github-flavored markdown. For instructions on markdown syntax, please refer to
-    * [Github Guides: Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-    * [Markdown: Syntax](https://daringfireball.net/projects/markdown/syntax)
-2. Do not use more than four levels of headers
-3. Only use 1 top level `#` header, keep it at the top of the markdown
-4. `Front Matter`: 
-5. For images: put all images relative to `/asset` path
-    * Example:
-6. Please provide a summary of the documentation at the top of the page
-
-
-## Markdown
-Please use github-flavored markdown in this document.
-
-### Example Sections
-Examples of markdown syntax
-
-
-#### Code Blocks
-For code blocks with syntax highlighting, 
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
+```
+# Sample H1
+## Sample H2
+### Sample H3
 ```
 
-#### Horizontal breaks:
-___
+will produce
+# Sample H1
+## Sample H2
+### Sample H3
 
 ---
 
-#### Emphasis
+## Horizontal Rules
 
-**This is bold text**
+Horizontal rule is created using `---` on a line by itself.
 
-__This is bold text__
+---
 
-*This is italic text*
+## Coding - Block
 
-_This is italic text_
+<pre>
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
 
-~~Strikethrough~~
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
 
+# Create a new object
+g = Greeter.new("world")
 
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-#### Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-#### Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
-
+# Output "Hello World!"
+g.salute
 ```
-Sample text here...
+</pre>
+ 
+will produce  
+
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
 ```
 
-Syntax highlighting
+Note: You can specify the different syntax highlighting based on the coding language eg. ruby, sh (for shell), php, etc  
+Note: You must leave a blank line before the `\`\`\``
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
+## Coding - In-line
+You can produce inline-code by using only one \` to enclose the code:
 
-console.log(foo(5));
+```
+This is some code: `echo something`
 ```
 
-#### Tables
+will produce  
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+This is some code: `echo something`
 
-Right aligned columns
+---
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+## Text Formatting
+**Bold Text** is done using `**Bold Text**`  
+*Italic Text* is done using `*Italic Text*`
 
+---
 
-#### Links
+## Hyperlinks
+- GFMD will automatically detect URL and convert them to links like this http://www.futureworkz.com
+- To specify a link on a text, do this:
 
-[link text](http://dev.nodeca.com)
+```
+This is [an example](http://example.com/ "Title") inline link.
+[This link](http://example.net/) has no title attribute.
+```
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+---
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+## Escape sequence
+You can escape using \\ eg. \\\`
 
+---
 
-#### Images
+## Creating list
 
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+Adding a `-` will change it into a list:
 
-Like links, Images also have a footnote style syntax
+```
+- Item 1
+- Item 2
+- Item 3
+```
 
-![Alt text][id]
+will produce
 
-With a reference later in the document defining the URL location:
+- Item 1
+- Item 2
+- Item 3
 
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+---
 
+## Quoting
 
+You can create a quote using `>`:
+
+```
+> This is a quote
+```
+
+will produce
+
+> This is a quote
+
+## Table and Definition list
+
+These two can only be created via HTML:
+
+````html
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Rank</th>
+  </tr>
+  <tr>
+    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
+  </tr>
+  <tr>
+    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
+  </tr>
+</table>
+
+<dl>
+  <dt>Lower cost</dt>
+  <dd>The new version of this product costs significantly less than the previous one!</dd>
+  <dt>Easier to use</dt>
+  <dd>We've changed the product so that it's much easier to use!</dd>
+</dl>
+```
+
+will produce
+
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Rank</th>
+  </tr>
+  <tr>
+    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
+  </tr>
+  <tr>
+    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
+  </tr>
+</table>
+
+<dl>
+  <dt>Lower cost</dt>
+  <dd>The new version of this product costs significantly less than the previous one!</dd>
+  <dt>Easier to use</dt>
+  <dd>We've changed the product so that it's much easier to use!</dd>
+</dl>
+
+## Adding Image
+
+```
+![Branching Concepts](http://git-scm.com/figures/18333fig0319-tn.png "Branching Map")
+```
