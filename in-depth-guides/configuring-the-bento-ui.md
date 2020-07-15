@@ -1,10 +1,10 @@
 ---
 layout: default
-nav_order: 3
-title: Template
+nav_order: 4
+title: Configuring the Bento UI
 ---
 
-# Template Title
+# Configuring the Bento UI 
 
 This is the template for bento-tools documentation
 
