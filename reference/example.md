@@ -31,6 +31,7 @@ will produce
 **Bold Text** is done using `**Bold Text**`  
 *Italic Text* is done using `*Italic Text*`
 _Underlined Text_ is done using `_Underlined Text_`
+
 ---
 
 ## Hyperlinks
