@@ -31,9 +31,11 @@ will produce
 
 **Bold Text** is done using `**Bold Text**`  
 
+**Bold Text** is also done using `__Bold Text__`  
+
 *Italic Text* is done using `*Italic Text*`
 
-_Underlined Text_ is done using `_Underlined Text_`
+_Italic Text_ is done using `_Italic Text_`
 
 ---
 
