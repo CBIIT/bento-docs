@@ -16,13 +16,11 @@ To specify a paragraph, leave 2 spaces at the end of the line
 ## Headings
 
 ```
-# Sample H1
 ## Sample H2
 ### Sample H3
 ```
 
 will produce
-# Sample H1
 ## Sample H2
 ### Sample H3
 
