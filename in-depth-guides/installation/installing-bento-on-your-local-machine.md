@@ -86,7 +86,7 @@ NEO4J_PASS=<value>  the password to set for Neo4j
 
 Note that the location of the FRONTEND_SOURCE_FOLDER and BackEND_SOURCE_FOLDER is important. The bento-local scripts will only have access to files located within the root of your bento-local checkout.
 
-## Run the Bento-local Environment
+### Run the Bento-local Environment
 
 The docker-compose files for bento-local have been written to make use of Buildkit and the Docker CLI. The commands used for docker-compose should set these options as active by passing environment variables as:
 
