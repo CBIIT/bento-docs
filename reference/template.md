@@ -23,10 +23,18 @@ Download this template here: [template.md](https://github.com/CBIIT/bento-docs/b
 2. Do not use more than four levels of headers. (Do not use more than four octothorpe `####`)
 3. Only use 1 top level `#` header, keep it at the top of the markdown
 4. `Front Matter`: 
-    * The "Front Matter" is the first four lines of this file
+    * The "Front Matter" is the first five lines of this file
     * It describes how and where the page will be displayed on the docs website
     * Leave layout as default (i.e. `layout: default`)
     * Only change the "title" value (e.g. `title: My Title`)
+    * `nav_order` describes the ordering of the page in the sidebar; this can be ajusted later
+```
+---
+layout: default
+nav_order: 4
+title: Template
+---
+```
 5. For images: put all images relative to `/assets` path, and we will put images in the `/assets/` folder
     * Example: the link to the image displayes `(assets/stormtroopocat.jpg)` via ```![Stormtrooper octocat](assets/stormtroopocat.jpg)``` ![Stormtrooper octocat](assets/stormtroopocat.jpg)
 6. Please provide a summary of the documentation at the top of the page
