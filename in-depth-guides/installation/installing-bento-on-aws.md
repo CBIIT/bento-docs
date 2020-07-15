@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 3
+nav_order: 2
 title: Installing Bento on AWS
 ---
 
