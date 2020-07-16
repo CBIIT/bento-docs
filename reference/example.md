@@ -35,7 +35,7 @@ will produce
 
 *Italic Text* is done using `*Italic Text*`
 
-_Italic Text_ is done using `_Italic Text_`
+_Italic Text_ is also done using `_Italic Text_`
 
 ---
 
