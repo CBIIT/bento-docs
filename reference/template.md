@@ -36,7 +36,7 @@ title: Template
 ---
 ```
 5. For images: put all images relative to `/assets` path, and we will put images in the `/assets/` folder
-    * Example: the link to the image displayes `(assets/stormtroopocat.jpg)` via ```![Stormtrooper octocat](assets/stormtroopocat.jpg)``` ![Stormtrooper octocat](assets/stormtroopocat.jpg)
+    * Example: the link to the image displayes `(assets/stormtroopocat.jpg)` via ```![Stormtrooper octocat](assets/stormtroopocat.jpg)``` ![Stormtrooper octocat](../assets/stormtroopocat.jpg)
 6. Please provide a summary of the documentation at the top of the page
 7. File Format:
     * all configuration files should end in `.md`
