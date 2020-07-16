@@ -6,20 +6,27 @@ title: Overview
 
 # Overview
 
-What can Bento do for you. A high-level architecture diagram. Assumptions.
+Bento is a custom framework to be built to support NCI’s Data Commons projects, including Integrated Canine Data Commons (ICDC), and Clinical Trial Data Commons (CTDC).
 
-## Intro
-Add and commit markdown files to this repo, then push to github to see your changes. The server auto-regenerates your site when a file is pushed.
+## Introduction
 
-Jekyll requires blog post files to be named according to the following format:
+## Bento Architecture
 
-`Title.md`
+## Bento Tech Stack and Infrastructure
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Components
 
-## Code Snippets
-Jekyll also offers powerful support for code snippets:
+Description about guides to install and configure Bento
 
-```
+### API
 
-```
+### Neo4J
+
+### UI
+Description of the web interface/front end.
+
+## Bento Data Model 
+Discussion about the development and usage of the data model
+
+### Data Loader
+

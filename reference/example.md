@@ -4,165 +4,179 @@ nav_order: 2
 title: Example Markdown
 ---
 
-# Example of Git-flavored Markdown Syntax
+# Example Markdown
 
-This is the template for bento-tools documentation
+Github Flavored Markdown (GFMD) is based on [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax).
+ * Described at [Github Flavored Markdown](http://github.github.com/github-flavored-markdown/)
+ * Basic syntax examples: https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+ * Table Examples: https://docs.github.com/en/github/writing-on-github/organizing-information-with-tables
 
-## Introduction
-Documentation will be saved in git, and presented using `github pages` using Jekyll. This requires that files be saved in markdown format. They will be automatically convered into html.  Furthermore, they can easily be converted into pdfs or other formats.
+## Text Writing
+It is easy to write in GFMD. Just write simply like text and use the below simple "tagging" to mark the text and you are good to go!  
 
-Currently, we are staging documentation in rep
+To specify a paragraph, leave 2 spaces at the end of the line
 
+## Headings
+To create a heading, add one to six # symbols before your heading text. The number of # you use will determine the size of the heading. (Please don't use more than four)
 
-## Template Instructions Instructions
-
-1. Format documentation using github-flavored markdown. For instructions on markdown syntax, please refer to
-    * [Github Guides: Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-    * [Markdown: Syntax](https://daringfireball.net/projects/markdown/syntax)
-2. Do not use more than four levels of headers
-3. Only use 1 top level `#` header, keep it at the top of the markdown
-4. `Front Matter`: 
-5. For images: put all images relative to `/asset` path
-    * Example:
-6. Please provide a summary of the documentation at the top of the page
-
-
-## Markdown
-Please use github-flavored markdown in this document.
-
-### Example Sections
-Examples of markdown syntax
-
-
-#### Code Blocks
-For code blocks with syntax highlighting, 
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
+```
+## Sample H2
+### Sample H3
 ```
 
-#### Horizontal breaks:
-___
+will produce
+## Sample H2
+### Sample H3
 
 ---
 
-#### Emphasis
 
-**This is bold text**
+## Text Formatting
 
-__This is bold text__
+**Bold Text** is done using `**Bold Text**`  
 
-*This is italic text*
+**Bold Text** is also done using `__Bold Text__`  
 
-_This is italic text_
+*Italic Text* is done using `*Italic Text*`
 
-~~Strikethrough~~
+_Italic Text_ is also done using `_Italic Text_`
 
+---
 
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-#### Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-#### Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
+## Hyperlinks
+- GFMD will automatically detect URL and convert them to links like this http://www.futureworkz.com
+- To specify a link on a text, do this:
 
 ```
-Sample text here...
+This is [an example](http://example.com/ "Title") inline link.
+[This link](http://example.net/) has no title attribute.
 ```
 
-Syntax highlighting
+---
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
+## Creating list
 
-console.log(foo(5));
+Adding a `-` will change it into a list:
+
+```
+- Item 1
+- Item 2
+- Item 3
 ```
 
-#### Tables
+will produce
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+- Item 1
+- Item 2
+- Item 3
 
-Right aligned columns
+---
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+## Horizontal Rules
+
+Horizontal rule is created using `---` on a line by itself.
+
+---
+
+## Coding - Block
+
+<pre>
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
+```
+</pre>
+ 
+will produce  
+
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
+```
+
+Note: You can specify the different syntax highlighting based on the coding language eg. ruby, sh (for shell), php, etc  
+Note: You must leave a blank line before the `\`\`\``
+
+## Coding - In-line
+You can produce inline-code by using only one \` to enclose the code:
+
+```
+This is some code: `echo something`
+```
+
+will produce  
+
+This is some code: `echo something`
+
+---
+
+## Adding Image
+
+```
+![Branching Concepts](http://git-scm.com/figures/18333fig0319-tn.png "Branching Map")
+```
+
+---
+
+## Escape sequence
+You can escape using \\ eg. \\\`
+
+---
 
 
-#### Links
+## Quoting
 
-[link text](http://dev.nodeca.com)
+You can create a quote using `>`:
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+```
+> This is a quote
+```
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+will produce
 
+> This is a quote
 
-#### Images
+## Tables
+You can create tables with pipes | and hyphens -. Hyphens are used to create each column's header, while pipes separate each column. You must include a blank line before your table in order for it to correctly render.
 
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+```
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+```
+will produce
 
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
