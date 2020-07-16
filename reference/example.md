@@ -17,6 +17,7 @@ It is easy to write in GFMD. Just write simply like text and use the below simpl
 To specify a paragraph, leave 2 spaces at the end of the line
 
 ## Headings
+To create a heading, add one to six # symbols before your heading text. The number of # you use will determine the size of the heading. (Please don't use more than four)
 
 ```
 ## Sample H2
@@ -162,4 +163,20 @@ You can create a quote using `>`:
 will produce
 
 > This is a quote
+
+## Tables
+You can create tables with pipes | and hyphens -. Hyphens are used to create each column's header, while pipes separate each column. You must include a blank line before your table in order for it to correctly render.
+
+```
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+```
+will produce
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
