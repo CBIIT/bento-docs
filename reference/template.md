@@ -13,7 +13,7 @@ Documentation will be saved in git, and presented using `github pages` using Jek
 
 Currently, we are staging documentation in repo `https://github.com/CBIIT/bento-docs`.
 
-Download this template here: [template.md](https://github.com/CBIIT/bento-docs/blob/master/template.md)
+Download this template here: [template.md](https://raw.githubusercontent.com/CBIIT/bento-docs/master/reference/template.md)
 
 ## Template Instructions Instructions
 
