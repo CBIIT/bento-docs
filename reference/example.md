@@ -6,7 +6,10 @@ title: Example Markdown
 
 # Example Markdown
 
-Github Flavored Markdown (GFMD) is based on [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) with some overwriting as described at [Github Flavored Markdown](http://github.github.com/github-flavored-markdown/)
+Github Flavored Markdown (GFMD) is based on [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax).
+ * Described at [Github Flavored Markdown](http://github.github.com/github-flavored-markdown/)
+ * Basic syntax examples: https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+ * Table Examples: https://docs.github.com/en/github/writing-on-github/organizing-information-with-tables
 
 ## Text Writing
 It is easy to write in GFMD. Just write simply like text and use the below simple "tagging" to mark the text and you are good to go!  
