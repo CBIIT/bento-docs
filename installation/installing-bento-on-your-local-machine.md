@@ -8,6 +8,15 @@ title: Installing Bento on Your Local Machine
 
 ## Introduction
 The Bento-Local environment is designed to run directly within Docker on a user’s workstation. This allows users to create and deploy their local copy of Bento with minimal changes to their local environment and allows a configuration that can be used with different workstation operating systems. 
+
+The scripts for this project are separated into folders for its three different modes:
+* Build Mode:  this will create production ready Docker containers for the frontend and backend bento projects. This mode requires users to have local copies of the bento-frontend and bento-backend repositories. Note that when using build mode there are no changes made to the source code made during the build process, any changes or configurations made to the user's local copy of the source code will be reflected in the build.
+* Dev Mode:  this will create Docker containers for the frontend and backend bento projects suitable for local development. Note that in this mode configuration changes will be made during the build process to set configurations to local resources and the frontend website will reflect live changes made in the user's local copy of the source code.
+* Demo Mode: this will load pre-configured bento Docker containers pulled from Docker Hub.
+
+The bento-local environment should be launched from within the folder of the desired run mode and all local copies of source code and configuration files should reside within that folder as well.
+
+
 Bento-local consists of 3 components hosted within Docker containers and a separate Dataloader container that will be shut down after running the dataloader scripts. Depending on configuration options the build can take several minutes. When the build is complete the Bento components will be configured as follows:
 
 
@@ -28,37 +37,22 @@ Bento-local consists of 3 components hosted within Docker containers and a separ
 
 **Dataloader:**
 
-* Note: The Dataloader container will load a locally stored data set into the graph database hosted
-within the Neo4j container. This container will not continue running after data has been
-loaded.
+* The Dataloader container will load a locally stored data set into the graph database hosted within the Neo4j container. This component requires local copies of the bento-backend and bento-model repositories as well as a local copy of the data to be loaded. This container will not continue running after data has been loaded.
 
 ## Installing Docker
-To install Docker choose from the following options: Windows/Mac or Linux
+To install Docker choose from the following options:
 
-**Install Docker Desktop for Windows/Mac:**
+**Install Docker Desktop:**
 
 Docker Desktop is an application for MacOS and Windows machines for the building and sharing of containerized applications and microservices. It can be downloaded from: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
 Once Docker Desktop has been installed docker commands can be run from Powershell or terminal windows.
 
-**Install Docker on Linux:**
+**Install Docker Engine:**
 
-On Linux the following commands can be used to install required Docker components. 
-NOTE: all Linux commands in this document were tested on CentOS 7 and may require changes if used on other Linux distributions
+Instructions for installing Docker Engine can be found at: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-First, install docker:
-
-```bash
-curl -fsSL https://get.docker.com/ | sh
-```
-
-Then, install docker-compose:
-
-```bash
-curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-chmod +x /usr/local/bin/docker-compose
-```
+If choosing this option docker-compose will need to be installed separately. Instructions for installing docker-compose can be found at: [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 
 ## Installing Bento
@@ -80,11 +74,13 @@ FRONTEND_SOURCE_FOLDER=<value>  set to your local copy of the frontend code
 NOTE: this folder MUST be located within the bento-local folder
 BACKEND_SOURCE_FOLDER=<value>  set to your local copy of the backend code
 NOTE: this folder MUST be located within the bento-local folder
+BENTO_DATA_MODEL=<value>  set to your local copy of the bento data model. used only by the bento-dataloader
+NOTE: this folder MUST be located within the bento-local folder
 NEO4J_USER=<value>  the user name to set for Neo4j
 NEO4J_PASS=<value>  the password to set for Neo4j
 ```
 
-Note that the location of the FRONTEND_SOURCE_FOLDER and BackEND_SOURCE_FOLDER is important. The bento-local scripts will only have access to files located within the root of your bento-local checkout.
+Note that the location of the FRONTEND_SOURCE_FOLDER, BACKEND_SOURCE_FOLDER, and BENTO_DATA_MODEL is important. The bento-local scripts will only have access to files located within the root of your bento-local checkout.
 
 ### Run the Bento-local Environment
 
@@ -115,15 +111,11 @@ To rebuild an individual container (NOTE: The available containers for this comm
 
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d --no-deps --build <service_name>
 
-To build and run the dataloader container:
-
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f dataloader.yml up --build bento-dataloader
-
 To stop a container:
 
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose down <service_name>
 
-To stop all bento-local containers:
+To stop all running bento-local containers:
 
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose down
 
@@ -139,3 +131,14 @@ To attach a shell to a running container:
 
 	docker exec -it <container name> /bin/bash   (use /bin/ash for frontend and backend containers as they are based on alpine)
 
+
+### Commands for running the Bento-local dataloader:
+Note that the dataloader requires the following local resources:
+* A local copy of the bento-backend source code. This will be used to supply schema files. The location of this folder must be within the root folder of the version of bento-local you are using and its location is set by the BACKEND_SOURCE_FOLDER variable in .env.
+* A local copy of the bento-model source code. This will be used to supply data model files. The location of this folder must be within the root folder of the version of bento-local you are using and its location is set by the BENTO_DATA_MODEL variable in .env.
+* A local copy of the data you intend to load. This data must be configured to match the Bento data model and schema and located in a folder named "data" within the bento-local project (ex. "bento-local/dev_mode/data").
+* A properly configured copy of the dataloader configuration file located at dataloader/bento-local.yml. This file should not require any changes from the version in Github and will use the neo4j credentials and folder locations defined in the .env file.
+
+To start the bento-dataloader container and load data:
+
+	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f dataloader.yml up --build bento-dataloader
