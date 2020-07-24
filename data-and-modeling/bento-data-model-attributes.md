@@ -1,111 +1,24 @@
 ---
 layout: default
-nav_order: 2
+nav_order: 3
 title: Bento TailoRx Model Attributes
 ---
 
 # Bento TailoRx Model Attributes
 
-## Conventions - Descriptions for each attribute
-The Bento Core Data Model supports the Bento software framework that has been developed to stand up data sharing platforms for clinical trials and research programs. Modern clinical trials and research programs generate large volumes of complex biomedical data types. To address this complexity the Bento Core Data model uses a graph structure to model a clinical trial workflow.  Key trial entities are modelled as node types, while the association between nodes are explicitly modelled as relationship types. 
-The Bento Core Data Model has been extended to fit the TAILORx clinical data set. The extended model, also called the BENTO_TAILORx data model, comprises of 20 node types and 37 relationship types that are listed in the section BENTO_TAILORx Node Types and Table 1, respectively. Both nodes and relationships store data attributes in the form of properties. These data attributes are listed in the section BENTO_TAILORx Attribute Types. The BENTO_TAILORx graph data model has been implemented in Neo4J, a commercial graph database platform.
 
-## BENTO_TAILORx Node Types
-1.	Institution: An established society, corporation, foundation or other organization founded and united for a specific purpose, e.g. for health-related research; also used to refer to a building or buildings occupied or used by such organization.
-
-2.	Program: A broad framework of goals to be achieved.
-
-3.	Project: Any specifically defined piece of work that is undertaken or attempted to meet a single requirement.
-
-4.	Study: A detailed examination, analysis, or critical inspection of a subject designed to discover facts about it.
-
-5.	Study Subject: A matter or an individual that is observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.
-
-6.	Cross Reference Database: A data repository that cross-references a study subject.
-
-7.	Sample: Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Sample can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products. The preferred name of this node type in the NCI Metathesaurus is "Biospecimen".
-
-8.	Fraction: A part, a fragment of a whole.
-
-9.	Analyte: The sample or material being subjected to analysis.
-
-10.	Aliquot: Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.
-
-11.	Laboratory Procedure: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
-
-12.	Report: A short textual account; having provided a short account.
-
-13.	File: A set of related records (either written or electronic) kept together.
-
-14.	Demographic Data: Aspects of individuals or groups of individuals in a study, including basic descriptive information like age and sex.
-
-15.	Exposure: The act of subjecting someone or something to an influencing experience.
-
-16.	Family Medical History: A record of a patient's background regarding health and disease events of blood relatives. A patient's family medical history may be important in diagnosing existing conditions.
-
-17.	Therapeutic Procedure: An action or administration of therapeutic agents to produce an effect that is intended to alter or stop a pathologic process.
-
-18.	Diagnosis: The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.
-
-19.	Follow-up: The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.
-
-20.	Stratification Factor: Selected pre-treatment factor(s) by which patients are segregated to assure equal balance of these factors before randomization to the intervention arms of a clinical protocol.
-
-
-
-Relationship	Source	Destination	Multiplicity
-of_institution	program	institution	many_to_many
-of_program	project	program	many_to_many
-of_program	study	program	many_to_many
-of_program	study_subject	program	many_to_many
-of_program	laboratory_procedure	program	many_to_many
-cross_referenced_at	study_subject	cross_reference_database	many_to_many
-of_project	study_subject	project	many_to_many
-of_study	study_subject	study	many_to_many
-of_study_subject	sample	study_subject	many_to_one
-of_sample	fraction	sample	many_to_one
-of_fraction	analyte	fraction	many_to_one
-of_analyte	aliquot	analyte	many_to_one
-of_sample	analyte	sample	many_to_one
-processed_by	aliquot	laboratory_procedure	many_to_many
-processed_by	analyte	laboratory_procedure	many_to_many
-processed_by	fraction	laboratory_procedure	many_to_many
-processed_by	sample	laboratory_procedure	many_to_many
-of_sample	report	sample	one_to_one
-of_fraction	report	fraction	one_to_one
-of_analyte	report	analyte	one_to_one
-of_aliquot	report	aliquot	one_to_one
-of_laboratory_procedure	report	laboratory_procedure	one_to_one
-of_study_subject	demographic_data	study_subject	one_to_one
-of_study_subject	exposure	study_subject	one_to_one
-of_study_subject	family_medical_history	study_subject	one_to_one
-of_study_subject	file	study_subject	many_to_one
-of_sample	file	sample	many_to_one
-of_laboratory_procedure	file	laboratory_procedure	many_to_one
-of_study	file	study	many_to_one
-of_project	file	project	many_to_one
-of_program	file	program	many_to_one
-of_diagnosis	file	diagnosis	many_to_one
-of_diagnosis	therapeutic_procedure	diagnosis	many_to_one
-of_diagnosis	follow_up	diagnosis	many_to_one
-of_study_subject	diagnosis	study_subject	many_to_one
-of_study_subject	stratification_factor	study_subject	one_to_one
-of_study_subject	follow_up	study_subject	many_to_one
-
-Table 1. Relationships among BENTO_TAILORx node types. Listed are relationships that connect node types in the BENTO_TAILORx conceptual data model, the source and destination nodes for each relationship, and the multiplicity of each relationship.
-
-Document Conventions
+## Document Conventions
 Descriptors for each attribute:
-a.	Attribute Name: name of the attribute
-b.	Definition: a concise description of the attribute. Attribute definitions have been developed by the BENTO_TAILORx data team and are specific to the BENTO_TAILORx data model.
-c.	Attribute Of Node/Relationship: the parent node or relationship type of attribute.
-d.	Required: a true/false label that indicates if attribute is a required field for data submitters.
-e.	Type: the data type of the attribute (string, integer, number, boolean).
-f.	Constraints: rules enforced on attribute values.
-g.	Enumeration: If applicable, the list of possible values for the attribute.
+a. **Attribute Name**: name of the attribute
+b. **Definition**: a concise description of the attribute. Attribute definitions have been developed by the BENTO_TAILORx data team and are specific to the BENTO_TAILORx data model.
+c. **Attribute Of Node/Relationship**: the parent node or relationship type of attribute.
+d. **Required**: a true/false label that indicates if attribute is a required field for data submitters.
+e. **Type**: the data type of the attribute (string, integer, number, boolean).
+f. **Constraints**: rules enforced on attribute values.
+g. **Enumeration**: If applicable, the list of possible values for the attribute.
 
 
-BENTO_TAILORx Model Attributes:
+## Attributes
 
 Attribute Name: institution_id
 Description: A unique id assigned by the data commons to the institution.
