@@ -17,7 +17,7 @@ The scripts for this project are separated into folders for its three different 
 The bento-local environment should be launched from within the folder of the desired run mode and all local copies of source code and configuration files should reside within that folder as well.
 
 
-Bento-local consists of 3 components hosted within Docker containers and a separate Dataloader container that will be shut down after running the dataloader scripts. Depending on configuration options the build can take several minutes. When the build is complete the Bento components will be configured as follows:
+Bento-local consists of three components hosted within Docker containers and a separate Dataloader container that will be shut down after running the dataloader scripts. Depending on configuration options the build can take several minutes. When the build is complete the Bento components will be configured as follows:
 
 
 **Front End:**
@@ -65,6 +65,16 @@ The bento-local scripts can be found in Github at: [https://github.com/CBIIT/ben
 
 You can pull these onto your local workstation using any git client you have installed.
 
+### Get the Bento Source code:
+
+The bento-local scripts require local checkouts of the bento-frontend and bento-backend repositories. These should be cloned into folders within the root of the project you are building - for dev_mode this should be located at bento-local/dev_mode/bento-frontend and bento-local/dev_mode/bento-backend. Note that the name of the folder you clone the repo to can change, but the repo MUST be within the root of the project.
+The Bento repositories are located at:
+
+* bento-frontend: https://github.com/CBIIT/bento-frontend.git
+* bento-backend: https://github.com/CBIIT/bento-backend.git
+
+You can pull these onto your local workstation using any git client you have installed. Note that the bento-local build will use the actual code you have pulled locally when it builds - if you require features from a specific branch you must clone that branch specifically. For a vanilla install of Bento the master branch will be sufficient.
+
 ### Configure Environment settings for your local instance
 
 The bento-local scripts require defining a `.env` file alongside the bento-local `docker-compose.yml`. This file will be pulled as part of the Git repo and should be updated with the following settings:
@@ -76,7 +86,7 @@ BACKEND_SOURCE_FOLDER=<value>  set to your local copy of the backend code
 NOTE: this folder MUST be located within the bento-local folder
 BENTO_DATA_MODEL=<value>  set to your local copy of the bento data model. used only by the bento-dataloader
 NOTE: this folder MUST be located within the bento-local folder
-NEO4J_USER=<value>  the user name to set for Neo4j
+NEO4J_USER=neo4j  the user name to set for Neo4j - this should remain as the default value of "neo4j" for local neo4j containers
 NEO4J_PASS=<value>  the password to set for Neo4j
 ```
 
@@ -84,41 +94,34 @@ Note that the location of the FRONTEND_SOURCE_FOLDER, BACKEND_SOURCE_FOLDER, and
 
 ### Run the Bento-local Environment
 
+***docker-compose environment variables:***
+
 The docker-compose files for bento-local have been written to make use of Buildkit and the Docker CLI. The commands used for docker-compose should set these options as active by passing environment variables as:
 
-***Windows (powershell):***
+* Windows: ```$Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1;```
 
-```
-$Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose <command>
-```
+* Linux/Mac: ```COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1```
 
-***Linux/Mac:***
-
-```
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose <command>
-```
-
-
-For the purposes of this document the Linux/Mac version of this command will be used.
+For the commands listed in this document these variables will be shown as "<env_vars>", when running docker-compose commands replace this string with the correct version of the environment variables for your system .
 
 ### Commands for running Bento-local services:
 
 To build and load bento infrastructure (from the root of the Bento-local project):
 
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d
+	<env_vars> docker-compose up -d
 
 To rebuild an individual container (NOTE: The available containers for this command are: bento-backend, bento-frontend, neo4j):
 
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d --no-deps --build <service_name>
-
-To stop a container:
-
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose down <service_name>
-
+	<env_vars> docker-compose up -d --no-deps --build <service_name>
+	
 To stop all running bento-local containers:
 
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose down
+	<env_vars> docker-compose down
 
+To stop a single running container:
+
+	<env_vars> docker-compose down <service_name>
+	
 To clean docker objects for all stopped containers (this command can be used to return to a clean system and start over with new configurations):
 
 	docker system prune -a
@@ -141,4 +144,4 @@ Note that the dataloader requires the following local resources:
 
 To start the bento-dataloader container and load data:
 
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f dataloader.yml up --build bento-dataloader
+	<env_vars> docker-compose -f dataloader.yml up --build bento-dataloader
