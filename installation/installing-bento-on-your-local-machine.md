@@ -14,7 +14,7 @@ The scripts for Bento-Local are separated into folders for its three different m
 * Dev Mode:  this will create Docker containers for the frontend and backend bento projects suitable for local development. Note that in this mode configuration changes will be made during the build process to set configurations to local resources and the frontend website will reflect live changes made in the user's local copy of the source code.
 * Demo Mode: this will load pre-configured bento Docker containers pulled from Docker Hub.
 
-The bento-local environment you build will be specific to the folder of the mode you choose. All local copies of source code and configuration files used for your environment must reside within the root of this folder. For example, if you are building in Dev Mode your source code folder would be located at "bento-local/dev_mode/<source folder>".
+The bento-local environment you build will be specific to the folder of the mode you choose. All local copies of source code and configuration files used for your environment must reside within the root of this folder. For example, if you are building in Dev Mode your source code folder would be located at "bento-local/dev_mode/[source folder]".
 
 
 Bento-local consists of three components hosted within Docker containers and a separate Dataloader container that will run the Bento dataloader scripts. Depending on configuration options the build can take several minutes. When the build is complete the Bento components will be configured as follows:
