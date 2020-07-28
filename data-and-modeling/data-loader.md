@@ -3,6 +3,7 @@ layout: default
 nav_order: 1
 title: Data Loader
 ---
+
 # Data Loader
 This is the user documentation for the Data Loader module contained in the ICDC-Dataloader utility.
 
@@ -11,24 +12,29 @@ This is the user documentation for the Data Loader module contained in the ICDC-
 The Data Loader module is a versatile Python application used to load data into a Neo4j database. The application is capable of loading data from either a system directory or from an Amazon Web Services (AWS) S3 Bucket
 
 The Data Loader can be found in this Github Repository: [ICDC-Dataloader](https://github.com/CBIIT/icdc-dataloader)
+
 ## Pre-requisites
 * Python 3.6 or newer
 * An initialized and running Neo4j database
 * If loading from an AWS S3 bucket, AWS Command Line Interface (CLI)
+
 ## Dependencies
 Run ```pip3 install -r requirements.txt``` to install dependencies. Or run ```pip install -r requirements.txt``` if you are using virtualenv. The dependencies included in ````requirements.txt```` are listed below:
 * pyyaml
 * neo4j - version 1.7.6
 * boto3
 * requests
+
 ## Inputs
 * Neo4j endpoint and credentials
 * YAML formatted schema file and properties files
 * A Data Loader configuration file
 * If loading from an AWS S3 bucket, the S3 folder and bucket name
 * The dataset directory or a local temporary folder if loading from an AWS S3 bucket
+
 ## Outputs
 The Data Loader module loads data into the specified Neo4j database but does not produce any outputs.
+
 ## Command Line Arguments
 * **Neo4j URI**
     * Address of the target Neo4j endpoint
@@ -115,11 +121,14 @@ The Data Loader module loads data into the specified Neo4j database but does not
     * Command : ````--dataset <dir>````
     * Not required if specified in the configuration file
     * Default Value : ````N/A````
+
 ## Usage Example
+
 Below is an example command to run the Model Converter:
 ````
 python3 loader.py -p secret -s tests/data/icdc-model.yml -s tests/data/icdc-model-props.yml config/config.yml --prop-file config/props-icdc.yml -–dataset /data/Dataset-20191119
 ````
+
 ### Example Inputs
 * **Neo4j Password**
     * ````secret````
