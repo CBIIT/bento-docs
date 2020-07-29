@@ -59,13 +59,13 @@ If choosing this option docker-compose will need to be installed separately. Ins
 
 After installing Docker perform the following tasks from the command line to finish setting up Bento:
 
-### Get the Bento-local scripts:
+### Get the Bento-local scripts
 
 The bento-local scripts can be found in Github at: [https://github.com/CBIIT/bento-local](https://github.com/CBIIT/bento-local) NOTE: these scripts are available on the master branch
 
 You can pull these onto your local workstation using any git client you have installed.
 
-### Get the Bento Source code:
+### Get the Bento Source code
 
 The bento-local scripts require local checkouts of the bento-frontend and bento-backend repositories. These should be cloned into folders within the root of the project you are building - for dev_mode this should be located at bento-local/dev_mode/bento-frontend and bento-local/dev_mode/bento-backend. Note that the name of the folder you clone the repo to can change, but the repo MUST be within the root of the project.
 The Bento repositories are located at:
@@ -112,7 +112,7 @@ The docker-compose files for bento-local have been written to make use of Buildk
 
 Many of the commands listed in this document will need to be appended to this variable declaration. Choose the correct command for the system you are running on.
 
-### Commands for running Bento-local services:
+### Commands for running Bento-local services
 * NOTE: all commands must be run from within the root of the folder corresponding to the build mode you are using. For dev mode this would be "bento-local/dev_mode"
 
 To build the bento-local infrastructure and start all containers:
@@ -135,6 +135,11 @@ To stop a single running container:
 	* Windows:    $Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose down <service_name>
 	* Linux/Mac:  COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose down <service_name>
 	
+To attach a shell to a running container:
+
+	docker exec -it <container name> /bin/bash   (use /bin/ash for frontend and backend containers as they are based on alpine)
+
+* The following commands can be used to remove the Docker cache and to return your system to a clean state. When running these commands only unused objects will be removed - if you want to fully remove all cached objects you will need to stop all running Docker containers by running "docker-compose down"
 To clean docker objects for all stopped containers (this command can be used to return to a clean system and start over with new configurations):
 
 	docker system prune -a
@@ -142,10 +147,6 @@ To clean docker objects for all stopped containers (this command can be used to 
 To clean all docker volumes (NOTE: this will remove any data loaded into Neo4j):
 
 	docker system prune --volumes
-
-To attach a shell to a running container:
-
-	docker exec -it <container name> /bin/bash   (use /bin/ash for frontend and backend containers as they are based on alpine)
 
 
 ### Commands for running the Bento-local dataloader:
