@@ -1,3 +1,9 @@
+---
+layout: default
+nav_order: 2
+title: How to Configure the Stats Bar for the "Dashboard " workflow
+---
+
 # How to Configure the Stats Bar for the "Dashboard " workflow
 
 Instructions to configure the Stats Bar on the dashboard page (right above the widgets)
