@@ -65,17 +65,18 @@ The bento-local scripts can be found in Github at: [https://github.com/CBIIT/ben
 
 You can pull these onto your local workstation using any git client you have installed.
 
-### Get the Bento Source code
+### Initialize your bento-local project
 
-The bento-local scripts require local checkouts of the bento-frontend and bento-backend repositories. These should be cloned into folders within the root of the project you are building - for dev_mode this should be located at bento-local/dev_mode/bento-frontend and bento-local/dev_mode/bento-backend. Note that the name of the folder you clone the repo to can change, but the repo MUST be within the root of the project.
-The Bento repositories are located at:
+The bento-local scripts require local copies of bento source code and data. Initializing your bento-local project will require the following additional folders to be created:
 
-* bento-frontend: https://github.com/CBIIT/bento-frontend.git
-* bento-backend: https://github.com/CBIIT/bento-backend.git
+* bento-frontend: cloned from https://github.com/CBIIT/bento-frontend.git
+* bento-backend: cloned from https://github.com/CBIIT/bento-backend.git
+* bento-model: cloned from https://github.com/CBIIT/bento-model.git
+* data: this can be a copy of the included demo_data folder or another dataset configured to work with Bento
 
-You can pull these onto your local workstation using any git client you have installed. When the source code is cloned it will be saved in two new folders created within your Bento-Local project, "bento-backend" and "bento-frontend".
+Bento-Local includes initialization scripts that will set up these folders for your desired project. The scripts include defined default values for the required code folders and the option to include demo data if desired. Details for these scripts can be found in the README fiel in bento-local/initialization. Note that for modes other than "dev_mode" building bento-local will require updates to configuration files.
 
-Note that the bento-local build will use the actual code you have cloned locally when it builds - if you require features from a specific branch you must clone that branch specifically. For a vanilla install of Bento the master branch from the bento-frontend and bento-backend repositories will be sufficient.
+Note that the bento-local build will use the actual code you have cloned locally when it builds - if you require features from a specific branch you must clone that branch specifically using git or by updating the defaults used in the initializion script. For a vanilla install of Bento the default branches will be sufficient.
 
 ### Configure Environment settings for your local instance
 
