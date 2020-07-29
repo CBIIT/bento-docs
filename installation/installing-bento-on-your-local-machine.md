@@ -73,11 +73,13 @@ The Bento repositories are located at:
 * bento-frontend: https://github.com/CBIIT/bento-frontend.git
 * bento-backend: https://github.com/CBIIT/bento-backend.git
 
-You can pull these onto your local workstation using any git client you have installed. Note that the bento-local build will use the actual code you have pulled locally when it builds - if you require features from a specific branch you must clone that branch specifically. For a vanilla install of Bento the master branch will be sufficient.
+You can pull these onto your local workstation using any git client you have installed. When the source code is cloned it will be saved in two new folders created within your Bento-Local project, "bento-backend" and "bento-frontend".
+
+Note that the bento-local build will use the actual code you have cloned locally when it builds - if you require features from a specific branch you must clone that branch specifically. For a vanilla install of Bento the master branch from the bento-frontend and bento-backend repositories will be sufficient.
 
 ### Configure Environment settings for your local instance
 
-The bento-local scripts require defining a `.env` file alongside the bento-local `docker-compose.yml`. This file will be pulled as part of the Git repo and should be updated with the following settings:
+The bento-local scripts require a `.env` file to be present alongside the bento-local `docker-compose.yml`. This file will be created with default values when cloning the Bento-Local Git repository. It should be possible to use default settings in the .env file to fully build the Bento-Local environment, however these can be changed if the folder names of your local copies of the source code have changed or if you want to set a different Neo4j password (Note that the username for Neo4j should remain as "neo4j"). The default values for this file are:
 
 ```
 FRONTEND_SOURCE_FOLDER=bento-frontend
