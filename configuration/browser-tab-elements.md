@@ -1,40 +1,26 @@
 ---
 layout: default
-nav_order: 10
-title: Landing Page Hero Image
+nav_order: 9
+title: Browser Tab Elements
 ---
 
-# Landing Page Hero Image
-The landing page for Bento will typically have a large image or graphic, that we refer to as a "Hero Image" (origin being that the image showed a physician being a hero helping a patient). This document describes how to configure the image used for the Hero Image on the landing page.
+# Browser Tab Elements
 
-## Prerequisites
-- Git repo `bento-frontend` is checked out in a directory, represented here as `$(src)`.
-- The Landing Page Hero Image file is stored in an open-access repository like Github.
+## Favicon
+The favicon (short for favorite icon) or the icon that appears in the brower tab can be easily configured 
 
-## Edit configuration file
- 1. Open the file `$(src)/bento-frontend/blob/master/src/bento/landingData.js`.
- 2. Under `landingPageData` specify the path to the Landing Page Hero Image in the field `landingPageHero.img`.
- 3. Under `landingPageData` specify the ALT tag for the Landing Page Hero Image in the field `landingPageHero.alt`.
- 4. For example:
+### Option A: Using a web-based location:
 
-```javascript
-export const landingPageData = {
-...
-	landingPagehero: {
-    alt: '<Your Alt Tag>',
-    img: '<Path to Your specified Landing Page Hero Image File>',
-  },
-...
-};
-```
+ 1. Edit `$(src)/bento-frontend/public/index.html` with the editor of your choice
+ 2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{url of the file}"/>`
 
-### Notes
-In the current version of Bento, the position of the Hero Image cannot be specified in this version of Bento.
+### Option B: Using a local-based location (within the repo):
+ 1. The location is specified the the git repo is in the file:  `$(src)/bento-frontend/public/`
+ 2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="/{file_name}"/>`
 
-### Suggested Best Practices
-- ALT tags should be short (maximum limit =125 characters).
-- You may add multiple, comma-separated key words in the ALT tag.
-- Suggested specifications for landingPageHero image:
-  1. Dimensions: 1200x500 pixels
-  2. Resolution: >= 72 ppi
-  3. Image Format: PNG
+## Title (Tab text)
+The HTML Title element (`<title> `) defines the document's title that is shown in a browser's title bar or a page's tab.
+The Title, or tab text, can be specified as follows:
+
+ 1. Edit `$(src)/bento-frontend/public/index.html` with the editor of your choice
+ 2. Replace line  `<title>Bento</title>` With `<title>{ title you want}</title>`

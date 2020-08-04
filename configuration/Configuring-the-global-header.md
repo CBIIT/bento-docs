@@ -1,11 +1,12 @@
 ---
 layout: default
 nav_order: 3
-title: Configuring the Global Header
+title: Global Header
 ---
 
-# Configuring the Global Header
+# Global Header
 
+The Global header appears across all pages within the Bento commons application.
 
 ## Prerequisites
 

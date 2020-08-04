@@ -1,10 +1,11 @@
 ---
 layout: default
 nav_order: 4
-title: Configuring the Global Navigation Bar
+title: Global Navigation Bar
 ---
 
-# Configuring the Global Navigation Bar
+# Global Navigation Bar
+The Global navigation bar is the UX element that appears under the Global Header, and has links such 'Home', 'Programs', 'Cases', and 'About'.
 
 ## Prerequisites
 1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
