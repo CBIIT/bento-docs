@@ -1,7 +1,7 @@
 ---
 layout: default
-nav_order: 2
-title: Bento Framework on GCP
+nav_order: 1
+title: Bento Framework on AWS
 ---
 
 # Deploying Bento on GCP Cloud Run
@@ -143,7 +143,7 @@ will have two files, one is your private key and the other is the public key wit
     * gcp_region = gcp region to use for this deployment
     * gcp_project = name of the gcp project created earlier
     * stack_name = can be anything
-    * service_account_id = name of the service account created earlier
+    * service_account\_id = name of the service account created earlier
    
 * Run **terraform init** 
 
@@ -177,5 +177,12 @@ frontend_url = https://bento-cloudrun-frontend-rxpxr4ih3q-uk.a.run.app
 service_id = bento-sa@bento-cloudrun.iam.gserviceaccount.com
 ```
 	 
-	 
+* Navigate to **frontend_url** in your browser.
+
+* Run **terraform destroy** to destroy the resources provisioned.
+
+```
+terraform destroy -var-file=vars.tfvars -auto-approve
+```
+
 	
