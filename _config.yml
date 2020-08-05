@@ -1,6 +1,5 @@
 #theme: jekyll-theme-dinky
-remote_theme: rundocs/jekyll-rtd-theme
-#remote_theme: carlosperate/jekyll-theme-rtd
+remote_theme: carlosperate/jekyll-theme-rtd
 
 # Theme settings
 repo_url: 'https://github.com/CBIIT/bento-docs'
@@ -10,6 +9,3 @@ sticky_navigation: true
 prev_next_buttons_location: both
 search_enabled: true
 hljs_style: github-gist
-
-scss:
-  .wy-nav-side{color:#226baa}
