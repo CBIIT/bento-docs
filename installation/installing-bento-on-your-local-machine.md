@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 1
+nav_order: 3
 title: Installing Bento on Your Local Machine 
 ---
 
