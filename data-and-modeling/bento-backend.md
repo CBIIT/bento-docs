@@ -1,15 +1,30 @@
+---
+layout: default
+nav_order: 6
+title: Bento Backend Framework Configuration Guide
+---
+
 # Bento Backend Framework Configuration Guide
 This is the user documentation for the Bento Backend.
 
+
+
 ## Introduction
+
 The Bento Backend Framework is a server-side backend written in Java to be used with Bento based applications. The Bento Backend is meant to be used in conjunction with the Bento Frontend Framework and a Neo4j database running the GraphQL plugin.
 
 The Bento Backend can be found in this Github Repository: [Bento Backend](https://github.com/CBIIT/bento-backend)
+
+
 ## Pre-requisites
+
 *   Java 11 or newer installed on the server hosting the Bento Backend
 *   The Neo4j database containing the Bento data has been initialized and is running
 
+
+
 ## Configuration
+
 The following file will need to be edited to configure the Bento Backend Code to work within a Bento based application:
 
 **````src/main/resources/application.properties````**
@@ -21,9 +36,12 @@ The following file will need to be edited to configure the Bento Backend Code to
 5.  ````Line 9```` - this value is an all lowercase Boolean value to determine if GraphQL queries will be enabled for the application.
 6.  ````Line 10```` - this value is an all lowercase Boolean value to determine if GraphQL mutations will be enabled for the application.
 
+
+
 ## Basic Access Authentication
+
 The basic access authentication value used in the ````application.properties```` file is of the form ````Basic <base64 encoding of username:password>````. To generate this value generate the base64 encoding of the username and password as shown below and append that to the String “Basic “.
-    a
+    
 ### Example
 
 *   Username:````neo4j````
