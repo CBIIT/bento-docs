@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 3
+nav_order: 5
 title: Relationships among Bento TailoRx node types
 ---
 

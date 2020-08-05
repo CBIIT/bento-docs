@@ -1,6 +1,6 @@
 ---
 layout: default
-nav\_order: 4
+nav_order: 6
 title: Bento TailoRx Model Attributes
 ---
 
