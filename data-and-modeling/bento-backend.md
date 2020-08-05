@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 6
+nav_order: 3
 title: Bento Backend Framework Configuration Guide
 ---
 
