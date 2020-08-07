@@ -10,6 +10,7 @@ title: Installing Bento on Your Local Machine
 The Bento-Local environment is designed to run directly within Docker on a user’s workstation. This allows users to create and deploy their local copy of Bento with minimal changes to their local environment and allows a configuration that can be used with different workstation operating systems. 
 
 The Bento-Local project supports the following build modes:
+* Demo:  this build mode will pull pre-configured frontend and backend Bento Docker containers to your local system and create a Neo4j database seeded with demo data. This mode is designed to allow users to quickly create a local installation of Bento for demonstration purposes.
 * Build:  this build mode will create production ready frontend and backend Bento Docker containers. This mode requires users to have local copies of the bento-frontend and bento-backend repositories configured as needed for the build. Note that when using build mode there are no changes made to the source code made during the build process, any changes or configurations made to the user's local copy of the source code will be reflected in the build.
 * Dev:  this build mode will create Bento Docker containers suitable for local development. Note that in this mode configuration changes will be made during the build process to use Bento-Local resources and the frontend website will reflect any changes made in the user's local copy of the source code live. The frontend container in this mode will run on port 8085 and will require including this port in the  URL.
 
@@ -20,7 +21,7 @@ Bento-local consists of three components hosted within Docker containers and a s
 
 **Front End:**
 
-* Local URL (build mode):	http://localhost/
+* Local URL:	http://localhost/
 * Local URL (dev mode):	http://localhost:8085/
 * The Frontend container will make requests to the backend over port 8080. This container is built using a local checkout of the bento-frontend repository.
 
@@ -69,7 +70,7 @@ You can pull these onto your local workstation using any git client you have ins
 
 ### Initialize your bento-local project
 
-Bento-Local includes initialization scripts that will prepare your local checkout for building. These scripts will checkout all of the required Bento source code and include demo data to use if desired. After running the initialization script your Bento-Local project will be ready to be built.
+Bento-Local includes initialization scripts that will prepare your local environment to build. Note that for all build types other than "demo" it is required to initialize the bento-local environment. The initialization scripts will checkout all of the required Bento source code and include demo data to use if desired. After running the initialization script return to the root of your Bento-Local environment and you will be ready to build your project.
 
 Initialization scripts are avilable for Mac/Linux or Windows (either powershell or command line) platforms within the initialization folder. To initialize your local environment please choose and run one of the available scripts from the initialization folder.
 
@@ -147,6 +148,9 @@ To build the bento-local infrastructure and start all containers:
 
 	* Windows:    $Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose up -d
 	* Linux/Mac:  COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d
+	
+**NOTE: When using Docker Desktop you will need to allow your local source folders to be shared with the docker containers. Docker Desktop should prompt for permission to share these folders when the containers are started.
+
 
 To rebuild an individual container (NOTE: The available containers for this command are: bento-backend, bento-frontend, neo4j):
 
@@ -193,8 +197,10 @@ To clean all docker volumes (NOTE: this will remove any data loaded into Neo4j):
 	docker system prune --volumes
 
 
-### Commands for running the Bento-local dataloader:
-Note that the dataloader requires the following local resources:
+### Running the Bento-local dataloader:
+The Bento Dataloader allows a user to load locally stored data into the Bento database in Neo4j. If you are using the Bento demo data your data folder will be populated when your Bento-Local project is initialized. If you have a different data set to load you can replace the demo data and use the dataloader with that data set.
+
+Note that the dataloader requires the following local resources, note that all of these are created by the bento-local initialization script:
 * A local copy of the bento-backend source code. This will be used to supply schema files. The location of this folder must be within the root folder of the version of bento-local you are using and its location is set by the BACKEND_SOURCE_FOLDER variable in the .env file. This can be obtained by running the initialization script.
 * A local copy of the bento-model source code. This will be used to supply data model files. The location of this folder must be within the root folder of the version of bento-local you are using and its location is set by the BENTO_DATA_MODEL variable in the .env file. The Bento data model can be found at:  https://github.com/CBIIT/bento-model.git.  This can be obtained by running the initialization script.
 * A local copy of the data you intend to load. This data must be configured to match the Bento data model and schema and located in a folder named "data" within the bento-local project (ex. "bento-local/dev_mode/data").  A set of demo data can be obtained by running the initialization script.
