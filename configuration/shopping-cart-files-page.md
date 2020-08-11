@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 14
+sort: 14
 title: Shopping Cart Files Page
 ---
 

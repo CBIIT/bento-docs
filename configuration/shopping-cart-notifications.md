@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 16
+sort: 16
 title: Shopping Cart Notifications
 ---
 
