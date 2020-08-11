@@ -13,6 +13,9 @@ addons:
   
 readme_index:
   with_frontmatter: true  
+  
+sass:
+  style: compressed
 
 ## Theme settings for carlosperate/jekyll-theme-rtd
 #repo_url: 'https://github.com/CBIIT/bento-docs'
