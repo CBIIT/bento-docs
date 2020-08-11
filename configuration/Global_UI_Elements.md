@@ -7,8 +7,8 @@ title: Global UI Elements
 
 Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. 
 ![Global UI Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_elements.png?raw=true)
+**Global User Interface Elements**. Displayed are the global elements that are displayed on all pages of a Bento-based data sharing platform. These are: the web browser tab, the global header, global footer, the navigation bar and the stats bar. The stats bar is semi-global in scope as it is displayed in only a subset of the application's pages.
 <br>Configuring global UI elements allows a custodian to insert custom text and images; in this version a custodian cannot specify UI element position, text font and text size.
-
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ Stats Bar            |`$(src)/bento-frontend/src/bento/stats.js`
 
 
 ## Web Browser Tab
-Single sentence introduction to web browser tab.
+Web browser tabs allow you to have multiple web pages open at the same time. An application-specific icon and text will allow an end user to keep track of the tab running a Bento application.
 
 ### Configuring the Favicon
 The favorite icon (or favicon) that appears in the web browser tab can be configured in two ways:
@@ -48,7 +48,7 @@ The Title, or tab text, can be specified as follows:
  2. Replace line  `<title>Bento</title>` with `<title>{ title you want}</title>`
 
 ## Global Header
-The Global header appears across all pages within the Bento commons application.
+The Global header appears at the top of all Bento-based applications. It displays a platform-specific logo and image.
 
 ### Configuring the Global Header Logo
 
@@ -79,8 +79,9 @@ To specify an alt tag for the header image:
 set field `globalHeaderImage` with a prestored image url
 
 ## Global Footer
-Single sentence description of the Global Footer.
-![Global Footer Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_footer.png)
+The Global Footer appears at the bottom of every page in a Bento-based application. The Global Footer may be used to display an organization logo and additional links, that may be helpful for the end user, such as documentation, support email and social media platforms.
+![Global Footer Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_footer.png?raw=true)
+**The Global Footer.** Displayed are the elements of the Global Footer. 
 
 ### Configuring the Organization Logo 
 I would like to specify the path to a file storing the organization's logo, as an image, that will be displayed on the left hand side of the footer. See example attached image: footer_text1.
@@ -172,8 +173,7 @@ The Global Navigation bar (Nav bar) is serves as an entry point to other sites w
      * link: '/purpose'
 
 ## "Stats" Bar
-Single sentence description of the Stats Bar.
-
+The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a bird's eye view of the depth, breadth and diversity of the curated data. 
 ### Configure the Stats Bar
 
 1. Edit `$(src)/bento-frontend/src/bento/stats.js` with the editor of your choice
