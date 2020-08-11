@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 6
+nav_order: 12
 title: Configuring the System Dashboard
 ---
 
