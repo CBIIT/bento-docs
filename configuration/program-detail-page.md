@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 12
+nav_order: 7
 title: Program Detail Page
 ---
 
