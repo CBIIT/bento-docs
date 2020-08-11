@@ -10,6 +10,8 @@ addons_branch: true
 
 addons:
   - github
+  - plugins
+
   
 readme_index:
   with_frontmatter: true  
