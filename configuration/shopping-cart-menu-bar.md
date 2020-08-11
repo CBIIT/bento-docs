@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 15
+sort: 15
 title: Configuring the Shopping Cart Menu Bar
 ---
 

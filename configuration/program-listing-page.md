@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 6
+sort: 6
 title: Program Listing Page
 ---
 
