@@ -25,6 +25,23 @@ All scripts related to this documentation can be found here: [Bento Custodian](h
 
 ## Installations
 
+### Clone Bento Framework
+
+* Note the steps below assumed you have **git** already installed
+* Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a temporary
+    directory **/tmp**
+    
+```
+bento@custodian:~$ cd /tmp
+bento@custodian:/tmp$ git clone https://github.com/CBIIT/bento-custodian
+```
+
+* Change directory to terraform **cd bento-custodian/terraform/aws**
+
+```
+bento@custodian:/tmp$ cd bento-custodian/terraform/aws
+```
+
 ### Generate ssh key
 This step assumes you have a linux shell terminal or Mac OS terminal.
 
@@ -70,22 +87,8 @@ will have two files, one is your private key and the other is the public key wit
 
 * Follow the instruction on the official [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) site to install terraform on your local workstation using platform instruction applicable to you.
 
-### Deploy Bento Framework
 
-* Note the steps below assumed you have **git** already installed
-* Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a temporary
-    directory **/tmp**
-    
-```
-bento@custodian:~$ cd /tmp
-bento@custodian:/tmp$ git clone https://github.com/CBIIT/bento-custodian
-```
-
-* Change directory to terraform **cd bento-custodian/terraform/aws**
-
-```
-bento@custodian:/tmp$ cd bento-custodian/terraform/aws
-```
+### Populate vars.tfvars file
 
 *  Using your favorite text editor open and edit **vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **variables.tf** file for full descriptions of each the variables listed in thevars.tfvars file. 
 *  At minimum, you will need to provide appropriate value for the following;
