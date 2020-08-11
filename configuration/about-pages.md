@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 20
+sort: 17
 title: About Pages
 ---
 
