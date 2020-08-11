@@ -7,14 +7,15 @@ title: Global UI Elements
 # Global UI Elements
 
 Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. 
+![Global UI Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_elements.png)
 <br>Configuring global UI elements allows a custodian to insert custom text and images; in this version a custodian cannot specify UI element position, text font and text size.
 
-insert image link here.
+
 ### Prerequisites
 
 1. The files that specify the configuration parameters of the Bento UI are store in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Here is mapping of Global UI element to it's configuration file:
+2. Here is mapping of each Global UI element to it's configuration file:
 
 Global UI Element    | Configuration File
 ---------------------|------------------------------------------------------
@@ -80,6 +81,7 @@ set field `globalHeaderImage` with a prestored image url
 
 ## Global Footer
 Single sentence description of the Global Footer.
+![Global Footer Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_footer.png)
 
 ### Configuring the Organization Logo 
 I would like to specify the path to a file storing the organization's logo, as an image, that will be displayed on the left hand side of the footer. See example attached image: footer_text1.
