@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 14
+sort: 13
 title: Shopping Cart Cases Page
 ---
 

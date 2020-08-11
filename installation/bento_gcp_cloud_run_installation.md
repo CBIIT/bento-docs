@@ -1,7 +1,7 @@
 ---
 layout: default
 nav_order: 1
-title: Bento Framework on AWS
+title: Bento Framework on GCP Cloud Run
 ---
 
 # Deploying Bento on GCP Cloud Run

@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 5
+sort: 10
 title: Configuring Faceted Search
 ---
 

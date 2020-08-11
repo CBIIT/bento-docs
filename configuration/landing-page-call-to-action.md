@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 12
+sort: 3
 title: Landing Page Call to Action
 ---
 

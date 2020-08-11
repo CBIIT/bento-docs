@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 17
+sort: 4
 title: Landing Page Stats Bar
 ---
 

@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 7
+sort: 11
 title: Configuring the Dashboard Visualizations
 ---
 

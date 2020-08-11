@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 11
+sort: 5
 title: Landing Page Tiles
 ---
 

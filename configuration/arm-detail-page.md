@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 13
+sort: 8
 title: Arm Detail Page
 ---
 

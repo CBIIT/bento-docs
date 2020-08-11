@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 10
+sort: 2
 title: Landing Page Hero Image
 ---
 

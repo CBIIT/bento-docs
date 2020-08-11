@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 1
+sort: 9
 title: Case Detail Page
 ---
 
