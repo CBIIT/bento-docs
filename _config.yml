@@ -1,5 +1,5 @@
-#theme: jekyll-theme-dinky
-#remote_theme: carlosperate/jekyll-theme-rtd
+title: Bento Documentation
+description: Documentation for Bento
 remote_theme: rundocs/jekyll-rtd-theme
 
 copyright:
