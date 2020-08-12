@@ -4,7 +4,8 @@ title: Landing Page
 ---
 
 # Landing Page
-The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird's eye view of what an end user can accomplish at your data sharing platform. A Bento Landing Page is divided into the following configurable sections: (a) Landing Page Hero Image (b) a "Call To Action" feature (c) Landing Page Tiles and (d) Landing Page "Stats" Bar. 
+The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird's eye view of what an end user can accomplish at your data sharing platform. 
+<br>A Bento Landing Page is divided into the following configurable sections: (a) Landing Page Hero Image (b) a "Call To Action" feature (c) Landing Page Tiles and (d) Landing Page "Stats" Bar. 
 ![Landing Page Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/landing_page_elements.png?raw=true)
 **Landing Page Elements**. Displayed are the configurable elements on a Bento Landing Page. These are: Landing Page Hero Image, Call To Action, Landing Page Tiles, Landing Page Stats Bar. The Call To Action feature consists of a title, a descriptive section and a text button. Each of the four Landing Page Tiles consist of an image, a title, a descriptive section and a text button. 
 
@@ -50,7 +51,7 @@ The Landing Page Stats Bar provides the end user with a high level view of the v
 ### Configuring the Landing Page Stats Bar
 1. Open the file `$(src)/bento-frontend/blob/master/src/bento/landingData.js`.
 2. Under `landingPageData` specify the display label for the statistic in the field `landingPageStatsBar[i]['statTitle']`.
-   * Note: Bento allows a maximum of **5** statistics items. If you add more than 5 menu items, only the top 5 will be displayed without any warning or error message.
+   * Note: Bento allows a maximum of **5** statistics. If you add more than 5 statistics, only the top 5 will be displayed without any warning or error message.
 3. Under `landingPageData` specify the GraphQL API query type, that returns the desired statistic, in the field `landingPageStatsBar[i]['statAPI']`.
 4. Add the GraphQL API query type to `landingPageQuery`. 
 
