@@ -19,9 +19,10 @@ AWS is a Pay As You Go provider, as result the use of this instruction may resul
 All scripts related to this documentation can be found here: [Bento Custodian](https://github.com/CBIIT/bento-custodian)
 
 ## Pre-requisites
-* git
-* Terraform
 
+* Terraform
+* AWS CLI
+* git
 
 ## Installations
 
@@ -83,6 +84,12 @@ will have two files, one is your private key and the other is the public key wit
 *  Verify that the key pair you imported appears in the list of key pairs.
 
 
+### Setup AWS CLI
+
+* Follow the instruction on official Amazon Web site to install AWS CLI and set up credential on your local machine using platform instruction applicable to you.
+* AWS CLI [installation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+* [Configure](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) AWS Credential 
+
 ### Setup Terraform
 
 * Follow the instruction on the official [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) site to install terraform on your local workstation using platform instruction applicable to you.
@@ -92,11 +99,10 @@ will have two files, one is your private key and the other is the public key wit
 
 *  Using your favorite text editor open and edit **vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **variables.tf** file for full descriptions of each the variables listed in thevars.tfvars file. 
 *  At minimum, you will need to provide appropriate value for the following;
-	*  access_key  - your aws credential access key
-	*  secret_key  - your aws credential secret key
+	* 	profile - name of the aws crendential profile
 	*	domain_name - your domain name
-	*	ssh_key_name - this is the name of the ssh public key imported to AWS
-	*	ssh_public_key_filename - this is the filename of the ssh public key. **Note** it must end with **.pub**. Keep the file location default to the current working directory
+	*	ssh_key\_name - this is the name of the ssh public key imported to AWS
+	*	ssh\_public_key\_filename - this is the filename of the ssh public key. **Note** it must end with **.pub**. Keep the file location default to the current working directory
 
 
 * Run **terraform init** 
@@ -137,3 +143,4 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 ```
 bento@custodian:~$ terraform destroy -var-file=vars.tfvars -auto-approve
 ```
+
