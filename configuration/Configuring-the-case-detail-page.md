@@ -1,5 +1,5 @@
 ---
-sort: 9
+sort: 6
 title: Case Detail Page
 ---
 

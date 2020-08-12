@@ -1,5 +1,5 @@
 ---
-sort: 12
+sort: 7
 title: Configuring the System Dashboard
 ---
 
