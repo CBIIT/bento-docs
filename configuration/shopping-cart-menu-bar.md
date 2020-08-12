@@ -1,5 +1,5 @@
 ---
-sort: 15
+sort: 12
 title: Configuring the Shopping Cart Menu Bar
 ---
 

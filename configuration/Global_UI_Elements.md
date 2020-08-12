@@ -12,7 +12,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Bento UI are store in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Bento UI are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Here is mapping of each Global UI element to it's configuration file:
 
@@ -69,7 +69,7 @@ To configure the Header Logo link (the URL to be associated with the Header Logo
 
 1. Edit `$(src)/bento-frontend/src/bento/headerData.js` with the editor of your choice
 
-2. set field `globalHeaderLogoAltText` with the text need to display when image is not availble.
+2. Set field `globalHeaderLogoAltText` with the text need to display when image is not availble.
 
 ### Configuring the Alt Tag for the Global Header Image
 
