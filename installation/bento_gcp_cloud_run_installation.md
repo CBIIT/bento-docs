@@ -110,6 +110,8 @@ bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --membe
 bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/storage.admin
 bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/container.admin
 bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/run.admin
+bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/compute.networkUser
+bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/viewer
 
 ```
 
