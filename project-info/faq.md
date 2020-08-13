@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 3
+sort: 2
 title: FAQ
 ---
 

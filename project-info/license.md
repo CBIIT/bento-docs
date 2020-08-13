@@ -1,9 +1,7 @@
 ---
-layout: default
-nav_order: 5
+sort: 3
 title: License
 ---
 
 # License 
 
-yada yada
