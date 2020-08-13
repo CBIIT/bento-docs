@@ -4,10 +4,9 @@ title: Landing Page
 ---
 
 # Landing Page
-The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird's eye view of what an end user can accomplish at your data sharing platform. 
-<br>A Bento Landing Page is divided into the following configurable sections: (a) Landing Page Hero Image (b) a "Call To Action" feature (c) Landing Page Tiles and (d) Landing Page "Stats" Bar. 
+The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird's eye view of what an end user can accomplish at your data sharing platform. A Bento Landing Page has several configurable components. See below for details.
 ![Landing Page Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/landing_page_elements.png?raw=true)
-**Landing Page Elements**. Displayed are the configurable elements on a Bento Landing Page. These are: Landing Page Hero Image, Call To Action, Landing Page Tiles, Landing Page Stats Bar. The Call To Action feature consists of a title, a descriptive section and a text button. Each of the four Landing Page Tiles consist of an image, a title, a descriptive section and a text button. 
+**Landing Page Elements**. Displayed are the configurable components of a Bento Landing Page. These are: Landing Page Hero Image, Call To Action, Landing Page Tiles, Landing Page Stats Bar. The Call To Action feature consists of a title, a descriptive section and a text button. Each of the four Landing Page Tiles consist of an image, a title, a descriptive section and a text button. 
 
 ### Prerequisites
 

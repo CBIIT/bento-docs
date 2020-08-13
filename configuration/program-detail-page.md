@@ -4,8 +4,9 @@ title: Program Detail Page
 ---
 
 # Program Detail Page
-
-Instructions to Configure and test Program Detail page
+The Program Detail Page displays detailed, program-level information for each of the programs that has submitted data to your data sharing platform. A Bento Program Detail Page has several configurable components. See below for details. 
+![Program Detail Page Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/program-detail-page.png?raw=true)
+**Program Detail Page Elements.** Displayed are the configurable components of a Bento Program Detail Page: Program Detail Page Title, Program Detail Page Subtitle, Program Detail Page Icon, Breadcrumb, Data Labels, Data Fields, Table Title, Table Column Header, Table Column Content, Program Level Widget, Program Level Aggregate Count, Program Level File Count and Embedded External and Internal Links.
 
 ## Page Title Configuration
 
@@ -61,7 +62,7 @@ Bread Crumb is displayed under the sub title
 3. Edit the value for label 'alt' under 'externalLinkIcon
  
 
-## Left Pannel configuration
+## Left panel configuration
 
 ### Configurable data elements (attributes)
 
@@ -100,23 +101,23 @@ Custodian shall have the ability to add hyperlinks to table contents.
 4. External links to label shall be opened in a new tab
  
 
-## Right Pannel configuration
+## Right panel configuration
 
-### Configure Widjet
+### Configure widget
 
 1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for key 'field' under 'rightpannel'->'widjet'.
-3. Edit the value for key 'label' under 'rightpannel'->'widjet'.
-4. Edit the value for key 'display' under 'rightpannel'->'widjet'. (This can be either 'true' or 'false'. Setting this value to 'false' shall hide this widjet section eniterly.)
+2. Edit the value for key 'field' under 'rightpanel'->'widget'.
+3. Edit the value for key 'label' under 'rightpanel'->'widget'.
+4. Edit the value for key 'display' under 'rightpanel'->'widget'. (This can be either 'true' or 'false'. Setting this value to 'false' shall hide this widget section eniterly.)
 
 ### Configure Number of files
 
 1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for key 'field' under 'rightpannel'->'files'.
-3. Edit the value for key 'label' under 'rightpannel'->'files'.
-4. Edit the value for key 'fileIconSrc' under 'rightpannel'->'files' to display an icon.
-5. Edit the value for key 'fileIconAlt' under 'rightpannel'->'files'.
-6. Edit the value for key 'display' under 'rightpannel'->'files'. (This can be either 'true' or 'false'. Setting this value to 'false' shall hide this files section eniterly.)
+2. Edit the value for key 'field' under 'rightpanel'->'files'.
+3. Edit the value for key 'label' under 'rightpanel'->'files'.
+4. Edit the value for key 'fileIconSrc' under 'rightpanel'->'files' to display an icon.
+5. Edit the value for key 'fileIconAlt' under 'rightpanel'->'files'.
+6. Edit the value for key 'display' under 'rightpanel'->'files'. (This can be either 'true' or 'false'. Setting this value to 'false' shall hide this files section eniterly.)
  
 
 ## Table configuration
