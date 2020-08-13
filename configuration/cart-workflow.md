@@ -93,12 +93,13 @@ export const myCasesPageData = {
   ...  
   wizardIconSrc: 'https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/MyWizardIcon.svg',
   wizardIconAlt: 'Go To Step 2',
-};```
-
+};
+```
 
 
 ## Configuring Files Page in Cart Workflow
 
+![Cart Workflow - Files Page](../assets/cart-workflow-files.png)
 
 ### Files Page: Table Title
 To configure the table title on the page (right above the table)
