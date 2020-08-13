@@ -39,7 +39,7 @@ The Program Listing Page lists the programs that store data in your data sharing
 2. Edit the value for label 'field' under key 'table'
 3. Note: Limit set at maximum 10 table headers/columns
 
-## Configuring Default Sort Order
+### Configuring Default Sort Order
 1. Open the configuration file located at bento-frontend/src/bento/programData.js
 2. To specify which table column should be sorted by default - Edit the value for label 'defaultSortField' under 'table'.
 3. Note: This should be one of 'field' in table->'column'
