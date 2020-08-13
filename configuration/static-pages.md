@@ -8,6 +8,8 @@ title: Static Pages
 ## Introduction
 There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the "About" link on the Navigation Bar.
 
+![About on Navigation Bar](../assets/static-pages-bento.png)
+
 ## Prerequisites
 1. Fork the GitHub repo https://github.com/CBIIT/bento-frontend (representing your GitHub username as YOUR-USERNAME)
 2. Create a local clone of your fork into a local directory, represented here as $(src).
