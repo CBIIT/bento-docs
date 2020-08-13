@@ -5,8 +5,11 @@ title: Case Detail Page
 
 # Case Detail Page
 
+## Introduction
 The case detail page lists the set of cases in the Bento Commons.
 
+
+## Instructions
 If no link is available from dashboard yet, case detail page can be reached on URL [http://localhost:3000/#/case/:case_id  ](http://localhost:3000/#/case/:case_id)
 
 For example: http://localhost:3000/#/case/BENTO-CASE-1887

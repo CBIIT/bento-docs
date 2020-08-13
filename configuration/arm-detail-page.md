@@ -5,7 +5,7 @@ title: Arm Detail Page
 
 # Arm  Detail Page
 
-Instructions to Configure the Arm Detail page
+# Instructions to Configure the Arm Detail page
 
 All configurations can be specified in file: src/bento/armDetailData.js
 
