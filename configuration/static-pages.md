@@ -1,11 +1,12 @@
 ---
-sort: 17
-title: About Pages
+sort: 14
+title: Static Pages
 ---
 
-# About Pages
+# Static Pages
 
 ## Introduction
+There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the "About" link on the Navigation Bar.
 
 ## Prerequisites
 1. Fork the GitHub repo https://github.com/CBIIT/bento-frontend (representing your GitHub username as YOUR-USERNAME)
@@ -21,7 +22,7 @@ title: About Pages
 
 3. Now edit `$(src)/bento-frontend/src/content/prod/aboutPagesContent.yaml`, and the system will show the changes
 
-### To Create A New About Page with new Route
+### To Create A New Static Page with new Route
 1. Edit `$(src)/bento/aboutPagesRoutes.js` add a new path
 
 2. Add a new copy of yaml property to  with page name matching above path
@@ -30,7 +31,7 @@ title: About Pages
 ### Edit configuration file
 1. There is a maximum of 6 pages that can appear under "About". If no informational pages are configured to be displayed, the "About" menu option will be hidden.
 
-2. To add contents to about 'About' menu, see "Global Navigation Bar" instructions.
+2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](configuration/global-ui-elements.html#global-navigation-bar)
 
 3. To edit the title for each page in the 'About' menu: 
    * edit file: `$(src)/aboutPagesContent.yaml` 
