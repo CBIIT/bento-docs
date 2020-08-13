@@ -8,7 +8,7 @@ title: Global UI Elements
 Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. 
 ![Global UI Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_elements.png?raw=true)
 **Global User Interface Elements**. Displayed are the global elements that are displayed on all pages of a Bento-based data sharing platform. These are: the web browser tab, the global header, global footer, the navigation bar and the stats bar. The stats bar is semi-global in scope as it is displayed in only a subset of the application's pages.
-<br>Configuring global UI elements allows a custodian to insert custom text and images; in this version a custodian cannot specify UI element position, text font and text size.
+
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ The favorite icon (or favicon) that appears in the web browser tab can be config
  Option A: Using a web-based location:
 
  1. Edit `$(src)/bento-frontend/public/index.html` with the editor of your choice
- 2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{url of the file}"/>`
+ 2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{URL of the file}"/>`
 
  Option B: Using a local-based location (within the repo):
  1. The location is specified the the git repo is in the file:  `$(src)/bento-frontend/public/`
@@ -56,14 +56,14 @@ To configure an image to be used as the  Header Logo:
 
 1. Edit `$(src)/bento-frontend/src/bento/headerData.js` with the editor of your choice
 
-2. set field `globalHeaderLogo` with the stored image
+2. Set field `globalHeaderLogo` with the stored image.
 
 ### Configuring the Global Header Logo Link
-To configure the Header Logo link (the URL to be associated with the Header Logo):
+The Global Header Logo can have an embedded link. 
 
 1. Edit `$(src)/bento-frontend/src/bento/headerData.js` with the editor of your choice
 
-2. set field `globalHeaderLogoLink` with the desired url
+2. Set field `globalHeaderLogoLink` with the desired URL.
 
 ### Configuring the Global Header Image
 
@@ -76,7 +76,7 @@ To configure the Header Logo link (the URL to be associated with the Header Logo
 To specify an alt tag for the header image:
 
 1. Edit `$(src)/bento-frontend/src/bento/headerData.js` with the editor of your choice
-set field `globalHeaderImage` with a prestored image url
+set field `globalHeaderImage` with a prestored image URL.
 
 ## Global Footer
 The Global Footer appears at the bottom of every page in a Bento-based application. The Global Footer may be used to display an organization logo and additional links, that may be helpful for the end user, such as documentation, support email and social media platforms.
@@ -86,7 +86,7 @@ The Global Footer appears at the bottom of every page in a Bento-based applicati
 ### Configuring the Organization Logo 
 I would like to specify the path to a file storing the organization's logo, as an image, that will be displayed on the left hand side of the footer. See example attached image: footer_text1.
 Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice 
-Change the `footerStaticText` to point internal or external Image url
+Change the `footerStaticText` to point internal or external Image URL
 
 ### Configuring Static Footer Text
 I would like to specify a short text content that will be placed in the bottom center of footer.
@@ -121,19 +121,20 @@ Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice 
 For a footer subsection links of type “email link”, I would like to specify the email address to which the email should be sent.
 Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice  Change `link` in the object of `item` any of `link_sections` you will see the link is updated.
 
-###Configuring the Footer Subsection Icon 
+### Configuring the Footer Subsection Icon 
 For footer subsection links of type “social media link” I would like to specify the path to a file, on the server, that stores an icon image for said social media platform.
 Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice  Change /Add `icon` pointing to the image in the object of `item` any of `link_sections` you will see the icon displayed on the footer subsection.
 
 ### Configuring the number of Footer Anchor Links
-I would like to specify the number of footer anchor links to be displayed bottom center of the footer (maximum = 4). See example image: footer_links.
+I would like to specify the number of footer anchor links to be displayed bottom center of the footer (maximum = 4). 
 Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
-Change Add few more objects in `nci_links` you will see the error
+Add your anchor links `nci_links`.
+Note: if you specify more than 4 links, the system will display the first four any warning or error message.
 
 ### Configuring the Footer Anchor Link Text
 I would like to specify the link text for each footer anchor link.
 Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
-Change `text`  of any object `nci_links` you will the text changed
+Specify the text in the `text` field of a `nci_links` object.
 
 ### Configuring the Footer Anchor Link URL
 I would like to specify the URL for each footer anchor link.
@@ -173,7 +174,7 @@ The Global Navigation bar (Nav bar) is serves as an entry point to other sites w
      * link: '/purpose'
 
 ## "Stats" Bar
-The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a bird's eye view of the depth, breadth and diversity of the curated data. 
+The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. 
 ### Configure the Stats Bar
 
 1. Edit `$(src)/bento-frontend/src/bento/stats.js` with the editor of your choice
