@@ -4,7 +4,7 @@ title: Program Listing Page
 ---
 
 # Program Listing Page
-The Program Listing Page lists the programs that store data in your data sharing platform.
+The Program Listing Page lists the programs that store data in your data sharing platform. A Bento Program Listing Page has several configurable components. See below for details.
 ![Program Listing Page Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/program-listing-page.png?raw=true)
 **Program Listing Page**. Displayed are the configurable elements of a Bento Program Listing Page. These are: Table Title, Table Icon, Table Column Headers, Table Content, embedded Internal and External URLs and External Link Icon.
 
