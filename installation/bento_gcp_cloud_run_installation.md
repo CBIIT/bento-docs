@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 1
+sort: 2
 title: Bento Framework on GCP Cloud Run
 ---
 
