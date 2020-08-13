@@ -156,6 +156,8 @@ To build the bento-local infrastructure and start all containers:
 	* Windows:    $Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose up -d
 	* Linux/Mac:  COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d
 	
+Once all Bento-Local containers are running Bento can be accessed from a browser at the frontend URL listed in the [Overview](#overview)
+	
 **NOTE: When using Docker Desktop you will need to allow your local source folders to be shared with the docker containers. Docker Desktop should prompt for permission to share these folders when the containers are started.
 
 
