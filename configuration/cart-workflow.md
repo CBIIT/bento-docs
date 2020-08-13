@@ -6,7 +6,9 @@ title: Cart Workflow
 # Cart Workflow
 
 ## Introduction
-The cart workflow is a mechanism for users to generate a manifest for working with file
+The cart workflow is a mechanism for users to generate a manifest for working with case files.
+
+![Cart Workflow - Cases Page](../assets/cart-workflow-cases.png)
 
 ## Prerequisites
 1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
