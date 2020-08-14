@@ -19,8 +19,6 @@ readme_index:
 sass:
   style: compressed
 
-markdown: kramdown
-
 ## Theme settings for carlosperate/jekyll-theme-rtd
 #repo_url: 'https://github.com/CBIIT/bento-docs'
 #edit_on_github: true
