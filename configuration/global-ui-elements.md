@@ -221,7 +221,7 @@ export default [
 ```
 
 ## "Stats" Bar
-The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. 
+The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. **If you add more than 6 statistics, only the top 6 will be displayed without any warning or error message**.
 
 ### Configure the Stats Bar
 1. Edit `$(src)/bento-frontend/src/bento/stats.js` with the editor of your choice
