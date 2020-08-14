@@ -21,8 +21,6 @@ For example: http://localhost:3000/#/case/BENTO-CASE-1887
 
 All custodian configurations are in file `src/bento/caseDetailData.js`.
 
-<p>&nbsp;</p>
-
 ![Case Detail Page](../assets/case-detail-page.png)
 
 ### Header area configuration:
