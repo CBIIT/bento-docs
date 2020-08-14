@@ -8,13 +8,17 @@ title: Static Pages
 ## Introduction
 There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the "About" link on the Navigation Bar. In the example below, the static pages are "Bento", "Resources", and "GraphQL".
 
-![About on Navigation Bar](../assets/static-pages-bento.png)
+<p>&nbsp;</p>
 
 ## Prerequisites
 1. Fork the GitHub repo https://github.com/CBIIT/bento-frontend (representing your GitHub username as YOUR-USERNAME)
 2. Create a local clone of your fork into a local directory, represented here as $(src).
 
+<p>&nbsp;</p>
+
 ## Instructions
+
+![About on Navigation Bar](../assets/static-pages-bento.png)
 
 ### Make and Test the local environment changes changes 
 
