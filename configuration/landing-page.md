@@ -115,6 +115,7 @@ export const landingPageQuery = gql`{
   }
 ```
 
+
 ## Suggested Best Practice
 - Suggested dimensions for Landing Page Hero image: 1200x500 pixels
 - Suggested dimensions for  Tile 1, Tile 2 and Tile 3 images: 293x349 pixels
