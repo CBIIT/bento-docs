@@ -35,11 +35,9 @@ Description of the web interface/front end.
 
 ## Bento Data Model 
 The Bento Core Data Model is a graphical data model that has been designed to address the data storage needs of clinical trials and research programs; it can be adapted to most data generation workflows. Graphical data models organize data in the form of a graph. The Bento Core Data Model models key components of a data generation workflow as nodes, and the relationships among them as edges. Both nodes and edges can store data in the form of properties.
-It is based on the Aggregated Data Model developed by the [Center for Cancer Data Harmonization](https://datascience.cancer.gov/data-commons/center-cancer-data-harmonization-ccdh.). The Aggregated Data Model synthesizes core concepts from three data sharing platforms- the [Genomic Data Commons](https://gdc.cancer.gov/); the [Proteomic Data Commons](https://proteomic.datacommons.cancer.gov/pdc/) and the [Integrated Canine Data Commmons](https://caninecommons-dev.cancer.gov/).
+It is based on the Aggregated Data Model developed by the [Center for Cancer Data Harmonization](https://datascience.cancer.gov/data-commons/center-cancer-data-harmonization-ccdh). The Aggregated Data Model synthesizes core concepts from three data sharing platforms- the [Genomic Data Commons](https://gdc.cancer.gov/); the [Proteomic Data Commons](https://proteomic.datacommons.cancer.gov/pdc/) and the [Integrated Canine Data Commmons](https://caninecommons-dev.cancer.gov/).
 This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sharing platform, where users can navigate from a selected clinical trial or program to a set of files of their choice. 
 <br>Being schema-less, graphical data models can be easily extended, to include additional node and relationship types, without breaking the existing model. This feature allows you to expand the Bento Core Data Model to suit the evolving needs of your data sharing platform.
 <br>You can access the Bento Core Data Model [here](https://github.com/CBIIT/bento-model.git). We have extended the core data model to build the reference implementation; the extended BENTO_TAILORx data model can be found [here](https://github.com/CBIIT/BENTO-TAILORx-model).
 
-
-### Data Loader
 
