@@ -11,8 +11,8 @@ There are a number of static pages that are available for the Bento framework. T
 <p>&nbsp;</p>
 
 ## Prerequisites
-1. Fork the GitHub repo https://github.com/CBIIT/bento-frontend (representing your GitHub username as YOUR-USERNAME)
-2. Create a local clone of your fork into a local directory, represented here as $(src).
+1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
+2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
 
 <p>&nbsp;</p>
 
