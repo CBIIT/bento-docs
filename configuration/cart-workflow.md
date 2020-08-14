@@ -95,7 +95,8 @@ export const myCasesPageData = {
   wizardIconAlt: 'Go To Step 2',
 };
 ```
-
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 ## Configuring Files Page in Cart Workflow
 
