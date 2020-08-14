@@ -182,6 +182,8 @@ export const myFilesPageData = {
 };
 ```
 
+<pre></pre>
+<pre></pre>
 
 ## Configuring the Cart Menu Bar for the Cart Workflow
 
@@ -224,11 +226,13 @@ export const navBarCartData = {
 ```
 
 
+<pre></pre>
+<pre></pre>
+
 ## Notifications for Cart Workflow 
 
-### Prerequisites
-1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
-2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
+
+![Cart Workflow - Notifications](../assets/cart-workflow-notifications.png)
 
 ### Notification text/messages when adding cases to Cart
 
