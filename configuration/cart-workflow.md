@@ -10,9 +10,13 @@ The cart workflow is a mechanism for users to generate a manifest for working wi
 
 ![Cart Workflow - Cases Page](../assets/cart-workflow-cases.png)
 
+<p>&nbsp;</p>
+
 ## Prerequisites
 1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
 2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
+
+<p>&nbsp;</p>
 
 ## Configuring the Cases page in the Cart Workflow 
 
@@ -186,7 +190,7 @@ export const myFilesPageData = {
 <pre></pre>
 <pre></pre>
 
-## Configuring the Cart Menu Bar for the Cart Workflow
+## Configuring the Menu Bar for the Cart Workflow
 
 ![Cart Workflow - Menu Bar](../assets/cart-workflow-menu-bar.png)
 
@@ -230,7 +234,7 @@ export const navBarCartData = {
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## Notifications for Cart Workflow 
+## Configuring Notifications for Cart Workflow 
 
 
 ![Cart Workflow - Notifications](../assets/cart-notification-add.png)
