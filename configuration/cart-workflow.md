@@ -8,8 +8,6 @@ title: Cart Workflow
 ## Introduction
 The cart workflow is a mechanism for users to generate a manifest for working with case files.
 
-![Cart Workflow - Cases Page](../assets/cart-workflow-cases.png)
-
 <p>&nbsp;</p>
 
 ## Prerequisites
@@ -19,6 +17,9 @@ The cart workflow is a mechanism for users to generate a manifest for working wi
 <p>&nbsp;</p>
 
 ## Configuring the Cases page in the Cart Workflow 
+
+![Cart Workflow - Cases Page](../assets/cart-workflow-cases.png)
+
 
 ### Cases Page: Table Title
 To configure the table title on the page (right above the table)
@@ -99,7 +100,6 @@ export const myCasesPageData = {
   wizardIconAlt: 'Go To Step 2',
 };
 ```
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Configuring Files Page in Cart Workflow
@@ -187,8 +187,8 @@ export const myFilesPageData = {
 };
 ```
 
-<pre></pre>
-<pre></pre>
+<p>&nbsp;</p>
+
 
 ## Configuring the Menu Bar for the Cart Workflow
 
@@ -232,7 +232,7 @@ export const navBarCartData = {
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+
 
 ## Configuring Notifications for Cart Workflow 
 
