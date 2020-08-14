@@ -185,10 +185,7 @@ export const myFilesPageData = {
 
 ## Configuring the Cart Menu Bar for the Cart Workflow
 
-### Prerequisites
-1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
-2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
-
+![Cart Workflow - Menu Bar](../assets/cart-workflow-menu-bar.png)
 
 ### Menu Bar Text
 To configure the link that appears on the menu bar:
