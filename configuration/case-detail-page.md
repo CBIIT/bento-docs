@@ -8,6 +8,11 @@ title: Case Detail Page
 ## Introduction
 The case detail page lists the set of cases in the Bento Commons.
 
+## Prerequisites
+1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
+2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
+
+<p>&nbsp;</p>
 
 ## Instructions
 If no link is available from dashboard yet, case detail page can be reached on URL [http://localhost:3000/#/case/:case_id  ](http://localhost:3000/#/case/:case_id)
@@ -16,11 +21,15 @@ For example: http://localhost:3000/#/case/BENTO-CASE-1887
 
 All custodian configurations are in file `src/bento/caseDetailData.js`.
 
-## Header area configuration:
+<p>&nbsp;</p>
+
+![Case Detail Page](../assets/case-detail-page.png)
+
+### Header area configuration:
 
 * "**Case ID Display**" value: can be configured in constant `caseHeader.label`
 
-## Subsection configuration:
+### Subsection configuration:
 
 * "**Subsection format and content**" subsections can be configured for left panel and right panel in array constants "leftPanelSubsections" and "rightPanelSubsections"
 * Each **subsection** is represented by a JavaScript object, subsection display order is same as object order in the array.
@@ -33,7 +42,7 @@ All custodian configurations are in file `src/bento/caseDetailData.js`.
 * "**Link on Value**" can be set in property "linkUrl"
 * URL can be static or contain dynamic value in the dataField, **space** holder "{}" in URLs will be replaced by actual value in the dataField
 
-## File table configuration:
+### File table configuration:
 
 * "**Associated Files Table**" can be configured in object tableConfig
 * "**Table Title**" can be set in property "title"
