@@ -22,14 +22,6 @@ The Landing Page Hero Image is a visual representation of the mission of your da
  2. Under `landingPageData` specify the path to the Landing Page Hero Image in the field `landingPageHero.img`.
  3. Under `landingPageData` specify the ALT tag for the Landing Page Hero Image in the field `landingPageHero.alt`.
 
-### Suggested Best Practice
-- ALT tags should be short (maximum limit =125 characters).
-- You may add multiple, comma-separated key words in the ALT tag.
-- Suggested specifications for the Landing Page Hero image:
-  1. Dimensions: 1200x500 pixels
-  2. Resolution: >= 72 ppi
-  3. Image Format: PNG
-
 ## Call To Action 
 The Call To Action feature provides a concise summary of the all that an end user can accomplish at your data sharing platform.
 
@@ -40,17 +32,21 @@ The Call To Action feature provides a concise summary of the all that an end use
 4. Under `landingPageData` specify the “Call to Action” button label in the field `callToActionButtonText`.
 5. Under `landingPageData` specify the “Call to Action” button link in the field `callToActionButtonLink`.
 
-### Suggested Best Practice
-- The “Call To Action” title should be limited to a maximum of 60 characters.
-- The “Call to Action” description should be limited to a maximum of 150 characters.
-
 ## Landing Page Stats Bar
 The Landing Page Stats Bar provides the end user with a high level view of the volume and diversity of your stored data, by providing the counts of up to five major data entity types.
 
 ### Configuring the Landing Page Stats Bar
 1. Open the file `$(src)/bento-frontend/blob/master/src/bento/landingData.js`.
 2. Under `landingPageData` specify the display label for the statistic in the field `landingPageStatsBar[i]['statTitle']`.
-   * Note: Bento allows a maximum of **5** statistics. If you add more than 5 statistics, only the top 5 will be displayed without any warning or error message.
+   * Note: Bento allows a maximum of **5** statistics. If you add more than 5 statistics, **only the top 5 will be displayed without any warning or error message**.
 3. Under `landingPageData` specify the GraphQL API query type, that returns the desired statistic, in the field `landingPageStatsBar[i]['statAPI']`.
 4. Add the GraphQL API query type to `landingPageQuery`. 
 
+## Suggested Best Practice
+- Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.
+- Suggested specifications for the Landing Page Hero image:
+  1. Dimensions: 1200x500 pixels
+  2. Resolution: >= 72 ppi
+  3. Image Format: PNG
+- The “Call To Action” title should be limited to a maximum of 60 characters.
+- The “Call to Action” description should be limited to a maximum of 150 characters.
