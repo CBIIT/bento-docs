@@ -97,6 +97,7 @@ The Landing Page Stats Bar provides the end user with a high level view of the v
 	* Set the field `statAPI` to the GraphQL API query that returns your statistics of interest.
 	* Add the GraphQL query to `landingPageQuery`.
 3. Example:
+
 ``` javascript
 export const landingPageData = {
 ...
@@ -110,7 +111,7 @@ export const landingPageData = {
   }
 
 export const landingPageQuery = gql`{
-  <Your query>
+  '<Your query>'
   ...
   }
 ```
