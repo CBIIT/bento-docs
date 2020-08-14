@@ -93,7 +93,6 @@ export default {
 ```
 
 ### Configuring Static Footer Text
-I would like to specify a short text content that will be placed in the bottom center of footer.
 1. Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice.
 2. Set the field `footerStaticText` to the text of your choice.
 3. Example:
@@ -150,70 +149,106 @@ export default {
 ```
 
 ### Configuring the number of Footer Anchor Links
-I would like to specify the number of footer anchor links to be displayed bottom center of the footer (maximum = 4). 
-Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
-Add your anchor links `nci_links`.
-Note: if you specify more than 4 links, the system will display the first four any warning or error message.
-
-### Configuring the Footer Anchor Link Text
-I would like to specify the link text for each footer anchor link.
-Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
-Specify the text in the `text` field of a `nci_links` object.
-
-### Configuring the Footer Anchor Link URL
-I would like to specify the URL for each footer anchor link.
-Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
-Change `link`  of any object `nci_links` you will the link is updated.
+Footer Anchor Links allows you to optionally embed additional organizational URLs.
+Bento allows you embed 4 footer anchor links. If you specify more than 4 links, **Bento will display the first four any warning or error message**. 
+1. Edit `$(src)/bento-frontend/src/bento/footer.js` with the editor of your choice
+2. Add your anchor links `nci_links`.
+  * Set the `text` field to the text to be displayed.
+  * Set the `link` field to the desired URL.
+3. Example: 
+```javascript
+export default {
+...
+  nci_links: [
+    {
+      text: '<Link Display Text>',
+      link: '<Embedded URL>',
+    },
+    ...
+  ],
+};
+```
 
 ## Global Navigation Bar
-The Global Navigation bar (Nav bar) is serves as an entry point to other sites within the application. 
+The Global Navigation bar (Nav bar) is serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If you add more than 4 menu items, only the top 4 will be displayed without any warning or error message.
 
 ### Configuring the Global Navigation Bar
 
-1. Specifiying the number of menu items: I would like to specify the number of menu items in the Nav bar (maximum = 4)
-    * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice
-    * Note: Bento allows a maximum of **4** menu items. If you add more than 4 menu items, only the top 4 will be displayed without any warning or error message.
-
-2. Menu item ordering: I would like to specify the left to the right ordering of the menu items.
-    * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice
-    * The top-down order of objects will display left to right in the UI.
-
-3. Menu item type: I would like to specify the type of menu item. Menu Items can be one of two types: (a) link (b) drop-down.
-   * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice
-   * set field `type` link or `dropdown` to get different types of navigation buttons
-
-4. Menu item label: I would like to specify the label to be displayed for each menu item. Example labels: “Home”, “About”, “Programs”.
-   * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice
-   * set field `label` of respective object to change the labels
-
-5. Menu item link: I would like to specify a URL for each menu item of the type "link".
-   * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice
-   * set field `link` of respective object to change the links for each button
-
-6. Menu item drop-down: I would like to specify the list of sub-menu items for each menu item of the type "drop-down"
-   * Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice.
-   * set field `type` to dropdown
-   * create a field dropDonwLinks and add objects with these fields
-     * labelText: 'purpose',
-     * link: '/purpose'
+1. Edit `$(src)/bento-frontend/src/bento/navigationBarData.js` with the editor of your choice. The top-down order of menu items will display left to right in the UI.
+2. Specify a menu item as a object.
+  * Set the field `labelText` to the text to be displayed.
+  * Set the field `type` to 'link' (see below for configuring drop-down menu items). 
+  * Set the field `link` to the desired external or internal link.
+3. Example of adding a Menu Item of type 'Link':
+```javascript
+export default [
+  {
+    labelText: 'home',
+    type: 'link',
+    link: '/home',
+  },
+  ...
+  ]
+```
+5. Bento allows the Nav Bar to display drop-down menu items. To specify drop-down menu items:
+  * Set the field `labelText` to the text to be displayed.
+  * Set the field `type` to 'dropdown'.
+  * Each drop-down item can be specified in the dropDownLinks object. In the dropDownLinks object, for each drop-down item: (a) set the field `labelText` to the text to be displayed (b) set the field `link` to the desired external or internal link.
+6. Example of adding a Menu Item of type 'Drop-down':
+```javascript
+export default [
+  ...
+  {
+    labelText: '<Label for drop-down Menu>',
+    type: 'dropdown',
+    dropDonwLinks: [
+      {
+        labelText: '<Label for first drop-down item>',
+        link: '<link for first drop-down item>',
+      },
+      {
+        labelText: '<Label for second drop-down item>',
+        link: '<link for second drop-down item>',
+      },
+      {
+        labelText: '<Label for third drop-down item>',
+        link: '<link for third drop-down item>',
+      },
+    ],
+  },
+  ...
+  ]
+```
 
 ## "Stats" Bar
-The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. 
+The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. 
+
 ### Configure the Stats Bar
-
 1. Edit `$(src)/bento-frontend/src/bento/stats.js` with the editor of your choice
-
-2. Under `stats`,
-
-3. set the field `statTitle` to have the desired title for the stat.
-
-4. set the field `datatable_field` to have the respective in the dashboard query (As the stat should be responsive).
-
-5. set the field `type` to have one of the values [field, array, or object] how its returned in the dashboard query.
-
-6. set the field `statAPI` to have its respective field to get initial value from stats query
-
-7. Under `globalStatsQuery` add the respective GraphQL query field to get the initial value.
+2. For each object in statsData:
+  * Set the field `statTitle` to the display label for the statistic.
+  * Set the field `datatable_field` to have the respective in the dashboard query.
+  * Set the field `type` to have one of the values [field, array, or object] how its returned in the dashboard query.
+  * Set the field `statAPI` to have its respective field to get initial value from stats query
+  * Under `globalStatsQuery` add the respective GraphQL query field to get the initial value.
+3. Example:
+```javascript
+export const statsData = [
+  // A maximum of 6 stats are allowed
+  {
+    statTitle: '<Stat Label',
+    datatable_field: 'program',
+    type: 'field',
+    statAPI: 'numberOfPrograms',
+  },
+  ...
+  ]
+export const globalStatsQuery = gql`{
+  numberOfPrograms
+  ...
+  }
+  `;
+```
 
 ## Suggested Best Practice
 - Suggested dimensions for the favicon: W X H pixels
