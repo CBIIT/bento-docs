@@ -226,13 +226,13 @@ export const navBarCartData = {
 ```
 
 
-<pre></pre>
-<pre></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 ## Notifications for Cart Workflow 
 
 
-![Cart Workflow - Notifications](../assets/cart-workflow-notifications.png)
+![Cart Workflow - Notifications](../assets/cart-notification-add.png)
 
 ### Notification text/messages when adding cases to Cart
 
