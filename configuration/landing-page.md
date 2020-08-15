@@ -104,7 +104,7 @@ export const landingPageData = {
   landingPageStatsBar: [
     {
       statTitle: '<Your Statistic Label',
-      statAPI: '<Your query>',
+      statAPI: '<Your GraphQL API query>',
     },
     ...
     ]
@@ -118,10 +118,10 @@ export const landingPageQuery = gql`{
 
 
 ## Suggested Best Practice
-- Suggested dimensions for Landing Page Hero image: 1200x500 pixels
-- Suggested dimensions for  Tile 1, Tile 2 and Tile 3 images: 293x349 pixels
-- Suggested dimensions for Tile 4 image: 600x 436 pixels
-- Suggested image resolution >= 72 ppi and image format: PNG
+- Dimensions of Landing Page Hero image: 1200x500 pixels
+- Dimensions of  Tile 1, Tile 2 and Tile 3 images: 293x349 pixels
+- Dimensions of Tile 4 image: 600x 436 pixels
+- Image resolution >= 72 ppi and image format: PNG
 - The “Call To Action” title should be limited to a maximum of 60 characters.
 - The “Call to Action” description should be limited to a maximum of 150 characters.
 - The Tile title should be limited to a maximum of 60 characters.

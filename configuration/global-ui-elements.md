@@ -239,26 +239,27 @@ The Stats bar displays a set of summary statistics, for a Bento-based applicatio
 export const statsData = [
   // A maximum of 6 stats are allowed
   {
-    statTitle: '<Stat Label',
-    datatable_field: 'program',
-    type: 'field',
-    statAPI: 'numberOfPrograms',
+    statTitle: '<Stat Label>',
+    datatable_field: '<Your Datatable field name',
+    datatable_sub_field:: '<Your Datatable subfield name, if applicable>',
+    type: '<field|array|object>',
+    statAPI: '<Your GraphQL API query>',
   },
   ...
   ]
 export const globalStatsQuery = gql`{
-  numberOfPrograms
+  '<Your GraphQL API query>'
   ...
   }
   `;
 ```
 
 ## Suggested Best Practice
-- Suggested dimensions for the favicon: W X H pixels
+- Dimensions of the favicon: W X H pixels
 - The Web Browser Tab title should have a maximum of X characters.
-- Suggested dimensions for the Global Header Logo: 468x80 pixels
-- Suggested dimensions for the Global Header Image: 1200x60 pixels
-- Suggested dimensions for the Global Footer Logo: 310x80 pixels
-- Suggested dimensions for the Footer Subsection Icon: W X H pixels
+- Dimensions of the Global Header Logo: 468x80 pixels
+- Dimensions of the Global Header Image: 1200x60 pixels
+- Dimensions of the Global Footer Logo: 310x80 pixels
+- Dimensions of the Footer Subsection Icon: W X H pixels
 - All images should have a resolution >= 72 ppi and should be in the PNG format.
 - All Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.
