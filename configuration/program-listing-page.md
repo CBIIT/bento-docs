@@ -82,6 +82,7 @@ You can add up to 10 columns in the Program Listing Table. If you add more than 
 	* Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
 	* Add your GraphQL API query data field to `PROGRAMS_QUERY`.
 3. Example:
+
 ```javascript
 const table = {
   ...
