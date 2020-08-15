@@ -27,6 +27,7 @@ The Landing Page Hero Image is a visual representation of the mission of your da
  	* Set the field `landingPageHero.img` with the URL to the Landing Page Hero image of your choice.
  	* Set the field `landingPageHero.alt` with the alt text to be associated with the Landing Page Hero image.
  3. Example:
+ 
  ``` javascript
 export const landingPageData = {
   ...
