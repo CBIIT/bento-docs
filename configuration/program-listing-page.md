@@ -12,53 +12,116 @@ The Program Listing Page lists the programs that store data in your data sharing
 
 1. The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for all Program Listing Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/programData.js` 
+2. Configuration Parameters for all Program Listing Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
+
+3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
+
+## Icons in the Program Listing Page.
+There are two configurable icons in the Program Listing Page: (a) the Table Icon, that is a visual represenation of the Program Listing Table and (b) the External Link Icon that is a visual representation of an external link.
+
+### Configuring the Icons in the Program Listing Page.
+1. Open `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
+2. Under `icon`:
+	* Set the field `src` to the URL of your Table Icon image file.
+	* Set the fild `alt` to the ALT tag for your Table Icon.
+3. Under `externalLinkIcon`:
+	* Set the field `src` to the URL of your External Link Icon image file.
+	* Set the fild `alt` to the ALT tag for your External Link Icon.
+4. Example: 
+```javascript
+const icon = {
+  src: 'URL for your Table Icon',
+  alt: 'ALT tag for your Table Icon',
+};
+
+const externalLinkIcon = {
+  src: 'URL for your External Link Icon',
+  alt: 'ALT tag for your External Link Icon',
+};
 
 
-### Configuring the Table Title
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for key 'title' under 'table'.
+```
 
-### Configuring the Table icon
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for label 'src' under key 'icon'
-3. Edit the value for label 'alt' under key 'icon'
+## The Program Listing Table
+The table in the Program Listing Page lists the programs that store data in your data sharing platform.
 
-### Configuring the External Link icon
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for label 'src' under key 'externalLinkIcon'
-3. Edit the value for label 'alt' under key 'externalLinkIcon
+### Configuring the Program Listing Table.
+1. Open `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
+2. In `table`:
+	* The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Program Listing Page*.
+	* Set the field `title` to the the title of your table.
+	* Set the field `dataField` to the name of the GraphQL API query being used to return data for the Program Listing Page. *Note: This query should match the GraphQL API query in `PROGRAMS_QUERY`*.
+	* Set the field `defaultSortField` to the name of the query field that will be used to sort the Program Listing Table. Note: this query field should be displayed as one of the columns in the Program Listing Table.
+	* Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
+	* Add your GraphQL API query to `PROGRAMS_QUERY`.
+3. Example:
+```javascript
+...
+const table = {
+  display: true,
+  title: '<Table Title>',
+  dataField: '<GraphQL API query returning data for this page.>',
+  defaultSortField: '<GraphQL API query field used to sort the table.>',
+  defaultSortDirection: '<sort order, asc|desc>',
+ ...
+const PROGRAMS_QUERY = gql`{
+  '<Your GraphQL query>'' {
+  	'<Data fields returned by your GraphQL API query>'
+	... 
+ }
+}
+```
 
-### Configuring the Table column header
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for label 'label' under key 'table'
-3. Note: Limit set at maximum 10 columns
+### Adding columns to the Program Listing Table.
+You can add up to 10 columns in the Program Listing Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
+1. Open `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
+2. Under `table`, add an object to the `columns` list:
+	* Set the field `field` to the GraphQL API query data field that returns the data for the column.
+	* Set the field `label` to the column header name.
+	* Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
+	* Add your GraphQL API query data field to `PROGRAMS_QUERY`.
+3. Example:
+```javascript
+const table = {
+  ...
+  columns: [
+    {
+      field: '<GraphQL API query field returning data for this column>',
+      label: '<Column Header>',
+      link: '<link to be embedded in column value>',
+    },
+    {
+      field: '<GraphQL API query field returning data for this column>',
+      label: 'PubMed ID',
+    },
+    ...
+  ],
 
-### Configuring Table content
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for label 'field' under key 'table'
-3. Note: Limit set at maximum 10 table headers/columns
 
-### Configuring Default Sort Order
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. To specify which table column should be sorted by default - Edit the value for label 'defaultSortField' under 'table'.
-3. Note: This should be one of 'field' in table->'column'
-4. To specify sort direction - Edit the value for label 'defaultSortDirection' under 'table'
-5. Note: This should be either 'asc' for ascending or 'desc' for descending
+};
 
-### Configuring External and Internal hyperlinks
-1. Open the configuration file located at bento-frontend/src/bento/programData.js
-2. Edit the value for label 'link' under key 'table'
+const PROGRAMS_QUERY = gql`{
+  '<Your GraphQL query>'' {
+  	'<Data fields returned by your GraphQL API query>'
+	... 
+ }
+}
+```
 
-#### Internal Links
-
+#### Internal Links in the Program Listing Table.
 1. links starting with '/' are considered as internal links
 2. Internal links shall be opened in the same tab.
 3. Dynamic links can be generated by passing a valid table filed to '{}'. For example, '/program/{program_id}' shall link to 'program/NCT00310180'
 
-#### External Links
+#### External Links in the Program Listing Table.
 1. External links shall start with 'http://' or'https://'
 2. External links shall show-up with 'externalLinkIcon' (see #5 on how to configure an external link icon)
 3. External link shall be opened in a new tab.
 4. Dynamic links can be generated by passing a valid table filed to '{}'. 
    For example, 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}' shall link to 'https://pubmed.ncbi.nlm.nih.gov/29860917/'
+
+## Suggested Best Practice
+1. Dimension of the Table Icon= W X H pixels.
+2. Dimension of the External Link Icon = W X H pixels.
