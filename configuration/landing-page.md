@@ -111,7 +111,7 @@ export const landingPageData = {
   }
 
 export const landingPageQuery = gql`{
-  '<Your query>'
+  '<Your GraphQL API query>'
   ...
   }
 ```
