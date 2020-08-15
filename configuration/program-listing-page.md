@@ -30,6 +30,7 @@ There are two configurable icons in the Program Listing Page: (a) the Table Icon
 	* Set the field `src` to the URL of your External Link Icon image file.
 	* Set the fild `alt` to the ALT tag for your External Link Icon.
 4. Example: 
+
 ```javascript
 const icon = {
   src: 'URL for your Table Icon',
@@ -40,8 +41,6 @@ const externalLinkIcon = {
   src: 'URL for your External Link Icon',
   alt: 'ALT tag for your External Link Icon',
 };
-
-
 ```
 
 ## The Program Listing Table
