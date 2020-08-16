@@ -8,58 +8,100 @@ The Program Detail Page displays detailed, program-level information for each of
 ![Program Detail Page Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/program-detail-page.png?raw=true)
 **Program Detail Page Elements.** Displayed are the configurable components of a Bento Program Detail Page: Program Detail Page Title, Program Detail Page Subtitle, Program Detail Page Icon, Breadcrumb, Data Labels, Data Fields, Table Title, Table Column Header, Table Column Content, Program Level Widget, Program Level Aggregate Count, Program Level File Count and Embedded External and Internal Links.
 
+### Prerequisites
+
+1. The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+
+2. Configuration Parameters for all Program Listing Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
+
+3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
+
 ## Page Title Configuration
+The Page Title section has three components: (a) Page Title (b) Page Subtitle and (c) Breadcrumb.
 
-### Configure Page Title
+### Configuring the Page Title, Page Subtitle and Breadcrumb
 
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for label 'label' under 'pageTitle'.
-3. Edit the value for label 'field' under 'pageTitle'.
-   * For Example - 'Program :' for 'label' and 'program_acronym' for 'field' shall show up on UI as 'Program : TAILORx'
+1. Open `bento-frontend/src/bento/programDetailData.js`
+2. Under `pageTitle`:
+	* Set the field `label` to the Page Title of your choice.
+	* Set the field `field` to the GraphQl API query that returns the Page Title. 
+3. Under pageSubTitle:
+	* Set the field `field` to the GraphQL API query that will return the Page Subtitle.
+4. Under `breadCrumb`:
+	* Set the field `label` to the Breadcrumb text of your choice.
+	* Set the field `link` to the internal link to be embedded in your Breadcrumb.
+5. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
+6. Example:
 
-### Configure Page Sub Title
+```javascript
+...
+const pageTitle = {
+  label: '<Your Page Title>',
+  field: '<GraphQL API query that returns the Page Title>',
+};
 
-Sub Title is displayed under the main title
+const pageSubTitle = {
+  field: '<GraphQL API query that returns the Page Subtitle>',
+};
 
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for label 'field' under 'pageSubTitle'.
-   * For Example - 'program_id' shall show up on UI as 'NCT00310180'
+const breadCrumb = {
+  label: '<Your Breadcrumb display text>',
+  link: '<Your Breadcrumb embedded link>',
+};
+...
+```
+ 
+## Configuring the Aggregate Count
+The Program Level Aggregate Count field allows you to display a Program level count for an key data entity in your data sharing platform.
+1. Open `bento-frontend/src/bento/programDetailData.js`.
+2. Under `aggregateCount`:
+	* Set the field `labelText` to the display text for your aggregate count of your choice.
+	* Set the field `field` to the GraphQL API query that returns your aggregate count.
+	* Set the field 'link'  to the embedded link for the aggregate count. This is usually a link to an internal page that displays additional detail on the aggregate count.
+ 	* Set the field `display` to 'true' if you want to display an aggregate  count, 'false' otherwise.
+3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
+4. Example:
 
-### Configure Bread Crumb
-
-Bread Crumb is displayed under the sub title
-
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for label 'label' under 'breadCrumb'.
-3. Edit the value for label 'link' under 'breadCrumb'
-   * For Example - 'ALL PROGRAMS' for 'label' and '/programs' for 'link' shall show up on UI as link to /programs
+```javascript
+...
+const aggregateCount = {
+  labelText: '<Display label for your Aggregate Count>',
+  field: '<GraphQL API query that returns your Aggregate Count>',
+  link: '<embedded link for you Aggregate Count>',
+  display: '<true|false>',
+};
+...
+```
  
 
-## Aggregated count configuration
+## Configuring the icons in the Program Detail Page
+The Progam Detail Page supports a Program Detail Page Icon, displayed next to the Program Title, and an External Link Icon, that is displayed next to an external link in the page.
 
-### Configure Aggregate count
+1. Open `bento-frontend/src/bento/programDetailData.js`.
+2. Under `icon`:
+	* Set the field 'src' to the URL for the Program Detail Page Icon of your choice.
+	* Set the field 'alt' to the ALT tag for the Program Detail Page Icon.
+3. Under `externalLinkIcon`:
+	* Set the field 'src' to the URL for the External Link Icon of your choice.
+	* Set the field 'alt' to the ALT tag for the External Link Icon.
+4. Example:
 
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for key 'labelText' under 'aggregateCount'.
-3. Edit the value for key 'field' under 'aggregateCount'.
-4. Edit the value for key 'labelTextContinued' under 'aggregateCount'.
-5. Edit the value for key 'link' under 'aggregateCount'.
-6. Edit the value for key 'display' under 'aggregateCount'. (This can be either 'true' or 'false'. Setting this value to 'false' shall hide this section eniterly.)
- 
+```javascript
+...
+const icon = {
+  src: '<URL to your Program Detail Page Icon>',
+  alt: '<ALT tag for your Program Detail Page Icon>',
+};
 
-## Icons configuration
+const externalLinkIcon = {
+  src: '<URL to your External Link Icon>',
+  alt: '<ALT tag for your External Link Icon>',
+};
+...
+```
 
-### Configure page icon
-
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for label 'src' under 'icon'
-3. Edit the value for label 'alt' under 'icon'
-
-### External Link icon
-
-1. Open the configuration file located at bento-frontend/src/bento/programDetailData.js
-2. Edit the value for label 'src' under 'externalLinkIcon'
-3. Edit the value for label 'alt' under 'externalLinkIcon
  
 
 ## Left panel configuration
