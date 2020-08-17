@@ -6,6 +6,8 @@ title: Arm Detail Page
 # Arm  Detail Page
 The arm detail page lists the information for a given arm in a program in the Bento Commons
 
+![Arm Detail Page](../assets/arm-detail-page.png)
+
 ## Prerequisites
 1. Fork the GitHub repo `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`)
 2. Create a local clone of your fork into a local directory, represented here as `$(src)`.
