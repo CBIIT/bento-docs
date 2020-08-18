@@ -56,6 +56,7 @@ The table in the Program Listing Page lists the programs that store data in your
 	* Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
 	* Add your GraphQL API query to `PROGRAMS_QUERY`.
 3. Example:
+
 ```javascript
 ...
 const table = {
@@ -109,6 +110,7 @@ const PROGRAMS_QUERY = gql`{
  }
 }
 ```
+
 
 #### Internal Links in the Program Listing Table.
 1. links starting with '/' are considered as internal links.
