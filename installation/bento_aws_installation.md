@@ -99,7 +99,6 @@ will have two files, one is your private key and the other is the public key wit
 *  Using your favorite text editor open and edit **vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **variables.tf** file for full descriptions of each the variables listed in thevars.tfvars file. 
 *  At minimum, you will need to provide appropriate value for the following;
 	* 	profile - name of the aws crendential profile
-	*	domain_name - your domain name
 	*	ssh_key\_name - this is the name of the ssh public key imported to AWS
 	*	ssh\_public_key\_filename - this is the filename of the ssh public key. **Note** it must end with **.pub**. Keep the file location default to the current working directory
 
