@@ -114,7 +114,10 @@ The left panel can display a maximum of **6** attributes as label:value pairs. I
    * Set the field `field` to the GraphQL API query that returns the data field of your choice. This will be displayed as the value of in a label:value pair.
    * Set the field `label` to a display label of your choice.
 3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
-4. You can add an embedded link to your label or your value, or both. Links can be internal or external. To add a link to your value specify an internal or external link by adding a `link` attribute to your object. To add a link to your label specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to your object. Examples of four types of embedded links are given below. See below for additional notes on adding internal and external links.
+4. You can add an embedded link to your label or your value, or both. Links can be internal or external. 
+   * To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object. 
+   * To add a link to your *label* specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to your object. 
+Examples of four types of embedded links are given below. See below for additional notes on adding internal and external links.
 4. Example:
 
 ```javascript
