@@ -10,7 +10,7 @@ The Program Listing Page lists the programs that store data in your data sharing
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Program Listing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Configuration Parameters for all Program Listing Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
 
@@ -23,7 +23,7 @@ There are two configurable icons in the Program Listing Page: (a) the Table Icon
 
 ### Configuring the Icons in the Program Listing Page.
 1. Open `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
-2. Under `icon`:
+2. Under `programListingIcon`:
 	* Set the field `src` to the URL of your Table Icon image file.
 	* Set the fild `alt` to the ALT tag for your Table Icon.
 3. Under `externalLinkIcon`:
@@ -32,7 +32,7 @@ There are two configurable icons in the Program Listing Page: (a) the Table Icon
 4. Example: 
 
 ```javascript
-const icon = {
+const programListingIcon = {
   src: 'URL for your Table Icon',
   alt: 'ALT tag for your Table Icon',
 };
@@ -51,10 +51,10 @@ The table in the Program Listing Page lists the programs that store data in your
 2. In `table`:
 	* The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Program Listing Page*.
 	* Set the field `title` to the the title of your table.
-	* Set the field `dataField` to the name of the GraphQL API query being used to return data for the Program Listing Page. *Note: This query should match the GraphQL API query in `PROGRAMS_QUERY`*.
+	* Set the field `dataField` to the name of the GraphQL API query being used to return data for the Program Listing Page. *Note: This query should match the GraphQL API query in `GET_PROGRAMS_DATA_QUERY`*.
 	* Set the field `defaultSortField` to the name of the query field that will be used to sort the Program Listing Table. Note: this query field should be displayed as one of the columns in the Program Listing Table.
 	* Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
-	* Add your GraphQL API query to `PROGRAMS_QUERY`.
+	* Add your GraphQL API query to `GET_PROGRAMS_DATA_QUERY`.
 3. Example:
 
 ```javascript
@@ -66,7 +66,7 @@ const table = {
   defaultSortField: '<GraphQL API query field used to sort the table.>',
   defaultSortDirection: '<sort order, asc|desc>',
  ...
-const PROGRAMS_QUERY = gql`{
+const GET_PROGRAMS_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
   	'<Data fields returned by your GraphQL API query>'
 	... 
@@ -77,11 +77,12 @@ const PROGRAMS_QUERY = gql`{
 ### Adding columns to the Program Listing Table.
 You can add up to 10 columns in the Program Listing Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 1. Open `$(src)/bento-frontend/blob/master/src/bento/programData.js`.
-2. Under `table`, add an object to the `columns` list:
-	* Set the field `field` to the GraphQL API query data field that returns the data for the column.
-	* Set the field `label` to the column header name.
-	* Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
-	* Add your GraphQL API query data field to `PROGRAMS_QUERY`.
+2. Under `table`, 
+   * Add an object {dataField:, header: , link: } to `columns`:
+	  * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
+	  * Set the field `header` to the column header name.
+	  * Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
+	* Add your GraphQL API query data field to `GET_PROGRAMS_DATA_QUERY`.
 3. Example:
 
 ```javascript
@@ -89,13 +90,13 @@ const table = {
   ...
   columns: [
     {
-      field: '<GraphQL API query field returning data for this column>',
-      label: '<Column Header>',
+      dataField: '<GraphQL API query field returning data for this column>',
+      header: '<Column Header>',
       link: '<link to be embedded in column value>',
     },
     {
-      field: '<GraphQL API query field returning data for this column>',
-      label: 'PubMed ID',
+      dataField: '<GraphQL API query field returning data for this column>',
+      header: 'PubMed ID',
     },
     ...
   ],
@@ -103,7 +104,7 @@ const table = {
 
 };
 
-const PROGRAMS_QUERY = gql`{
+const GET_PROGRAMS_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
   	'<Data fields returned by your GraphQL API query>'
 	... 

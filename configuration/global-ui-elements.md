@@ -23,10 +23,10 @@ Global UI elements are displayed on every page of a Bento application. These are
 Global UI Element    | Configuration File
 ---------------------|------------------------------------------------------
 Web Browser Tab      |`$(src)/bento-frontend/public/index.html`
-Global Header        |`$(src)/bento-frontend/src/bento/headerData.js`
-Global Footer        |`$(src)/bento-frontend/src/bento/headerData.js`
+Global Header        |`$(src)/bento-frontend/src/bento/globalHeaderData.js`
+Global Footer        |`$(src)/bento-frontend/src/bento/globalFooterData.js`
 Global Navigation Bar|`$(src)/bento-frontend/src/bento/navigationBarData.js`
-Stats Bar            |`$(src)/bento-frontend/src/bento/stats.js`
+Stats Bar            |`$(src)/bento-frontend/src/bento/globalStatsData.js`
 
 
 ## Web Browser Tab
@@ -54,27 +54,27 @@ The Title, or tab text, can be specified as follows:
 The Global header appears at the top of all Bento-based applications. It displays a platform-specific logo and image.
 
 ### Configuring the Global Header Logo
-1. Open `$(src)/bento-frontend/src/bento/headerData.js`.
+1. Open `$(src)/bento-frontend/src/bento/globalHeaderData.js`.
 2. Set field `globalHeaderLogo` with stored image URL.
 3. An optional embedded link can be specified in the field `globalHeaderLogoLink`.
+3. Set field `globalHeaderLogoAltText` to the ALT tags for the Global Header Logo.
 4. Example:
 ```javascript
 export default {
   globalHeaderLogo: '<path to Global Header Logo file>',
   globalHeaderLogoLink: '<URL to be embedded in Global Header Logo>',
+  globalHeaderLogoAltText: '<ALT tags for Global Header Logo.>'
   ...
  }
 ```
 
 ### Configuring the Global Header Image
-1. Open `$(src)/bento-frontend/src/bento/headerData.js`.
+1. Open `$(src)/bento-frontend/src/bento/globalHeaderData.js`.
 2. Set field `globalHeaderImage` with a stored image URL.
-3. Set field `globalHeaderLogoAltText` with the text need to display when image is not available.
-4. Example:
+3. Example:
 ```javascript
 export default {
   ...
-  globalHeaderLogoAltText: '<Alt text for your Global Header Image>',
   globalHeaderImage: '<path to Global Header Image file>',
 };
 ```
@@ -85,7 +85,7 @@ The Global Footer appears at the bottom of every page in a Bento-based applicati
 **The Global Footer.** Displayed are the elements of the Global Footer. 
 
 ### Configuring the Organization Logo 
-1. Open `$(src)/bento-frontend/src/bento/footer.js`. 
+1. Open `$(src)/bento-frontend/src/bento/globalFooterData.js`. 
 2. Set field `footerLogoImage` with stored image URL.
 3. Example:
 ```javascript
@@ -112,7 +112,7 @@ A Footer subsection may be defined as a column of anchor links along with a colu
 <br> Each Footer Subsection has several components: Header, Links, Link Text, Link Types, Link Icons. Given below are instructions on how to configure each of these components.
 
 1. Open `$(src)/bento-frontend/src/bento/footer.js`.
-2. Each Footer Subsection is configured by one element in the `links_section` list.
+2. Each Footer Subsection is configured by one element in the `links_sections` list.
 3. Set the field `title` to the Footer Subsection Title.
 4. Footer subsection links provide an entry point to both internal and external pages. Bento allows a maximum of **4** links per Footer Subsection. Footer subsection links can be specified with the `items` dictionary of a `link_sections` list element.
 If you specify more than 4 links, **Bento will display only the first 4 links without any warning or error message.**
@@ -155,14 +155,14 @@ export default {
 Footer Anchor Links allows you to optionally embed additional organizational URLs.
 Bento allows you embed 4 footer anchor links. If you specify more than 4 links, **Bento will display the first four any warning or error message**. 
 1. Open `$(src)/bento-frontend/src/bento/footer.js`.
-2. Add your anchor links to `nci_links`.
+2. Add your anchor links to `global_footer_links`.
   * Set the `text` field to the text to be displayed.
   * Set the `link` field to the desired URL.
 3. Example: 
 ```javascript
 export default {
 ...
-  nci_links: [
+  global_footer_links: [
     {
       text: '<Link Display Text>',
       link: '<Embedded URL>',
@@ -204,7 +204,7 @@ export default [
   {
     labelText: '<Label for drop-down Menu>',
     type: 'dropdown',
-    dropDonwLinks: [
+    dropDownLinks: [
       {
         labelText: '<Label for first drop-down item>',
         link: '<link for first drop-down item>',
@@ -228,15 +228,15 @@ The Stats bar displays a set of summary statistics, for a Bento-based applicatio
 
 ### Configure the Stats Bar
 1. Open `$(src)/bento-frontend/src/bento/stats.js`.
-2. For each object in statsData:
+2. For each object in `globalStatsData`:
   * Set the field `statTitle` to the display label for the statistic.
   * Set the field `datatable_field` to have the respective in the dashboard query.
   * Set the field `type` to have one of the values [field, array, or object] how its returned in the dashboard query.
   * Set the field `statAPI` to have its respective field to get initial value from stats query
-  * Under `globalStatsQuery` add the respective GraphQL query field to get the initial value.
+  * Under `GET_GLOBAL_STATS_DATA_QUERY` add the respective GraphQL query field to get the initial value.
 3. Example:
 ```javascript
-export const statsData = [
+export const globalStatsData = [
   // A maximum of 6 stats are allowed
   {
     statTitle: '<Stat Label>',
@@ -247,7 +247,7 @@ export const statsData = [
   },
   ...
   ]
-export const globalStatsQuery = gql`{
+export const GET_GLOBAL_STATS_DATA_QUERY = gql`{
   '<Your GraphQL API query>'
   ...
   }
@@ -255,11 +255,11 @@ export const globalStatsQuery = gql`{
 ```
 
 ## Suggested Best Practice
-- Dimensions of the favicon: W X H pixels
+<!-- Dimensions of the favicon: W X H pixels -->
 - The Web Browser Tab title should have a maximum of X characters.
 - Dimensions of the Global Header Logo: 468x80 pixels
 - Dimensions of the Global Header Image: 1200x60 pixels
 - Dimensions of the Global Footer Logo: 310x80 pixels
-- Dimensions of the Footer Subsection Icon: W X H pixels
+<!-- Dimensions of the Footer Subsection Icon: W X H pixels -->
 - All images should have a resolution >= 72 ppi and should be in the PNG format.
 - All Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.

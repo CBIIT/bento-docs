@@ -96,7 +96,7 @@ The Landing Page Stats Bar provides the end user with a high level view of the v
 2. Under `landingPageData` you can add your statistic to landingPageStatsBar.
 	* Set the field `statTitle` to the label to be displayed for your statistic.
 	* Set the field `statAPI` to the GraphQL API query that returns your statistics of interest.
-	* Add the GraphQL query to `landingPageQuery`.
+	* Add the GraphQL query to `GET_LANDING_PAGE_DATA_QUERY`.
 3. Example:
 
 ``` javascript
@@ -111,7 +111,7 @@ export const landingPageData = {
     ]
   }
 
-export const landingPageQuery = gql`{
+export const GET_LANDING_PAGE_DATA_QUERY = gql`{
   '<Your GraphQL API query>'
   ...
   }

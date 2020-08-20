@@ -26,9 +26,9 @@ The Page Title section has three components: (a) Page Title (b) Page Subtitle an
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
 2. Under `pageTitle`:
 	* Set the field `label` to the Page Title of your choice.
-	* Set the field `field` to the GraphQl API query that returns the Page Title. 
+	* Set the field `datafield` to the GraphQl API query that returns the Page Title. 
 3. Under pageSubTitle:
-	* Set the field `field` to the GraphQL API query that will return the Page Subtitle.
+	* Set the field `datafield` to the GraphQL API query that will return the Page Subtitle.
 4. Under `breadCrumb`:
 	* Set the field `label` to the Breadcrumb text of your choice.
 	* Set the field `link` to the internal link to be embedded in your Breadcrumb.
@@ -39,11 +39,11 @@ The Page Title section has three components: (a) Page Title (b) Page Subtitle an
 ...
 const pageTitle = {
   label: '<Your Page Title>',
-  field: '<GraphQL API query that returns the Page Title>',
+  datafield: '<GraphQL API query that returns the Page Title>',
 };
 
 const pageSubTitle = {
-  field: '<GraphQL API query that returns the Page Subtitle>',
+  datafield: '<GraphQL API query that returns the Page Subtitle>',
 };
 
 const breadCrumb = {
@@ -59,21 +59,26 @@ The Program Level Aggregate Count field allows you to display a Program level co
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
 2. Under `aggregateCount`:
 	* Set the field `labelText` to the display text for the aggregate count of your choice.
-	* Set the field `field` to the GraphQL API query that returns your aggregate count.
+	* Set the field `dataField` to the GraphQL API query that returns your aggregate count.
 	* Set the field 'link'  to the embedded link for the aggregate count. This is usually a link to an internal page that displays additional detail on the aggregate count.
  	* Set the field `display` to 'true' if you want to display an aggregate  count, 'false' otherwise.
-3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
+3. Add your GraphQL API queries to `GET_PROGRAM_DETAIL_DATA_QUERY`.
 4. Example:
 
 ```javascript
 ...
 const aggregateCount = {
   labelText: '<Display label for your Aggregate Count>',
-  field: '<GraphQL API query that returns your Aggregate Count>',
+  dataField: '<GraphQL API query that returns your Aggregate Count>',
   link: '<embedded link for you Aggregate Count>',
   display: '<true|false>',
 };
 ...
+  const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
+    ...
+    '<Your GraphQL API query>'
+    ...
+  }
 ```
  
 
@@ -81,7 +86,7 @@ const aggregateCount = {
 The Progam Detail Page supports a Program Detail Page Icon, displayed next to the Program Title, and an External Link Icon, that is displayed next to an external link in the page.
 
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
-2. Under `icon`:
+2. Under `programDetailIcon`:
 	* Set the field 'src' to the URL for the Program Detail Page Icon of your choice.
 	* Set the field 'alt' to the ALT tag for the Program Detail Page Icon.
 3. Under `externalLinkIcon`:
@@ -91,7 +96,7 @@ The Progam Detail Page supports a Program Detail Page Icon, displayed next to th
 
 ```javascript
 ...
-const icon = {
+const programDetailIcon = {
   src: '<URL to your Program Detail Page Icon>',
   alt: '<ALT tag for your Program Detail Page Icon>',
 };
@@ -109,10 +114,10 @@ The Program Detail Page is divided into a Left Hand Panel and a Right Hand Panel
 ### Configuring the Left Hand Panel
 The left panel can display a maximum of **6** attributes as label:value pairs. If you add more than 6 attributes, **Bento will display only the first 6 attributes without a warning or error message**.
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
-2. Under `leftPanelattributes`:
-   * Add an object ({field: ; label: })to the `data` list.
-   * Set the field `field` to the GraphQL API query that returns the data field of your choice. This will be displayed as the value of in a label:value pair.
-   * Set the field `label` to a display label of your choice.
+2. Under `leftPanel`:
+   * Add an object ({dataField: ; label: })to the `attribute` list.
+    * Set the field `dataField` to the GraphQL API query that returns the data field of your choice. This will be displayed as the value of in a label:value pair.
+    * Set the field `label` to a display label of your choice.
 3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
 4. You can add an embedded link to your label or your value, or both. Links can be internal or external. 
    * To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object. 
@@ -122,29 +127,29 @@ Examples of four types of embedded links are given below. See below for addition
 
 ```javascript
 ...
-const leftPanelattributes = {
-  data: [
+const leftPanel = {
+  attribute: [
     {
       //Label:Value pair with an internal link embedded in the Value.
-      field: '<GraphQL API query that returns the data for this label/value pair',
+      dataField: '<GraphQL API query that returns the data for this label/value pair>',
       label: '<Label text for this label/value pair>',
       link : '</programs/{program_id}>',
     },
     {
       //Label:Value pair with an external link embedded in the Value.
-      field: '<GraphQL API query that returns the data for this label/value pair',
+      dataField: '<GraphQL API query that returns the data for this label/value pair>',
       label: '<Label text for this label/value pair>',
       link : '<https://cancer.sanger.ac.uk/cosmic/mutation/overview?id=113681877>',
     },
     {
       //Label:Value pair with an internal link embedded in the Label.
-      field: '<GraphQL API query that returns the data for this label/value pair',
+      dataField: '<GraphQL API query that returns the data for this label/value pair>',
       label: '<Label text for this label/value pair>',
       internalLinkToLabel: '</programs/{program_id}>',
     },
     {
       //Label:Value pair with an external link embedded in the Label.
-      field: '<GraphQL API query that returns the data for this label/value pair',
+      dataField: '<GraphQL API query that returns the data for this label/value pair>',
       label: '<Label text for this label/value pair>',
       externalLinkToLabel: '<https://cancer.sanger.ac.uk/cosmic/mutation/overview?id=113681877>',
     },
@@ -152,7 +157,7 @@ const leftPanelattributes = {
     ]
   }
 ...
-  const PROGRAM_DETAIL_QUERY = gql`{
+  const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
     ...
     '<Your GraphQL API query>'
     ...
@@ -175,19 +180,20 @@ In the current version of Bento, you can (a) add a donut widget that displays th
 
 #### Configuring the Donut widget
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
-2. Under `rightPanelattributes`:
+2. Under `rightPanel`:
   * Under `widget`:
-    * Set the field `field` to the GraphQL API query that returns the counts by value for your data entity.
+    * Set the field `dataField` to the GraphQL API query that returns the counts by value for your data entity.
     * Set the field `label` to a display label for the widget.
     * Set the field `display` to true if you want to display the widget and to `false`, otherwise.
+    * Update `GET_PROGRAM_DETAIL_DATA_QUERY` with yor GraphQL API query.
 3. Example:
 
 ```javascript
 ...
-const rightPanelAttributes = {
+const rightPanel = {
   widget: [
     {
-      field: '<GraphQl API that returns the counts by value for your data entity>',
+      dataField: '<GraphQl API that returns the counts by value for your data entity>',
       label: '<Widget Label>',
       display: 'true|false',
     },
@@ -195,7 +201,7 @@ const rightPanelAttributes = {
   ...
 }
 ...
-const PROGRAM_DETAIL_QUERY = gql`{
+const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
     ...
     '<Your GraphQL API query>'
     ...
@@ -208,12 +214,12 @@ The File count graphic displays the number of Program Level files.
 
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
 2. Under `files`:
-   * Set the field `field` to the GraphQL API query that returns the number of program-level files.
+   * Set the field `dataField` to the GraphQL API query that returns the number of program-level files.
    * Set the field `label` to the display label text for the File Count widget.
    * Set the field `fileIconSrc` to the URL for the File Icon of your choice.
    * Set the field `fileIconAlt` to the ALT tag for the File Icon.
    * Set the field `display` to 'true' if you want to display the File Count widget and to  'false', otherwise.
-   * Update `PROGRAM_DETAIL_QUERY` with the API query that returns file counts.
+   * Update `GET_PROGRAM_DETAIL_DATA_QUERY` with the API query that returns file counts.
 3. Example:
 
 ```javascript
@@ -222,7 +228,7 @@ const rightPanelAttributes = {
   ...
   files: [
     {
-      field: '<GraphQL API returning program level file count>',
+      dataField: '<GraphQL API returning program level file count>',
       label: '<Display label for File Count widget>',
       fileIconSrc: '<URL for File Icon image>',
       fileIconAlt: '<ALT tag for File Icon>',
@@ -231,7 +237,7 @@ const rightPanelAttributes = {
   ],
 };
 ...
-const PROGRAM_DETAIL_QUERY = gql`{
+const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
     ...
     '<Your GraphQL API query>'
     ...
@@ -250,7 +256,7 @@ The Program Detail Page table can be used to display program-level information s
   * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Program Detail Page. *Note: This query should match the GraphQL API query in `PROGRAM_DETAIL_QUERY`*.
   * Set the field `defaultSortField` to the name of the query field that will be used to sort the Program Listing Table. Note: this query field should be displayed as one of the columns in the Program Listing Table.
   * Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
-  * Add your GraphQL API query to `PROGRAM_DETAIL_QUERY`.
+  * Add your GraphQL API query to `GET_PROGRAM_DETAIL_DATA_QUERY`.
 3. Example:
 
 ```javascript
@@ -262,7 +268,7 @@ const table = {
   defaultSortField: '<GraphQL API query field used to sort the table.>',
   defaultSortDirection: '<sort order, asc|desc>',
  ...
-const PROGRAM_DETAIL_QUERY = gql`{
+const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
     '<Data fields returned by your GraphQL API query>'
   ... 
@@ -274,11 +280,11 @@ const PROGRAM_DETAIL_QUERY = gql`{
 You can add up to 10 columns in the Program Detail Page Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
 1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
-2. Under `table`, add an object `{field: , label: , link: ,}` to the `columns` list:
-  * Set the field `field` to the GraphQL API query data field that returns the data for the column.
-  * Set the field `label` to the column header name.
+2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
+  * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
+  * Set the field `header` to the column header name.
   * Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
-  * Add your GraphQL API query data field to `PROGRAM_DETAIL_QUERY`.
+  * Add your GraphQL API query data field to `GET_PROGRAM_DETAIL_QUERY`.
 3. Example:
 
 ```javascript
@@ -286,19 +292,19 @@ const table = {
   ...
   columns: [
     {
-      field: '<GraphQL API query field returning data for this column>',
-      label: '<Column Header>',
+      dataField: '<GraphQL API query field returning data for this column>',
+      header: '<Column Header>',
       link: '<link to be embedded in column value>',
     },
     {
-      field: '<GraphQL API query field returning data for this column>',
-      label: 'PubMed ID',
+      dataField: '<GraphQL API query field returning data for this column>',
+      header: 'PubMed ID',
     },
     ...
   ],
 };
 
-const PROGRAM_DETAIL_QUERY = gql`{
+const GET_PROGRAM_DETAIL_QUERY = gql`{
   '<Your GraphQL query>'' {
     '<Data fields returned by your GraphQL API query>'
   ... 

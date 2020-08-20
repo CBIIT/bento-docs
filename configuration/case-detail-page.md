@@ -36,7 +36,7 @@ All custodian configurations are in file `src/bento/caseDetailData.js`.
 * All Label-value pairs are in array property "properties", one object per pair. Display order is same as object order in the array
   * "**Label text**" can be set in property "label"
   * "**Value**" from which data field to display can be set in property "dataField"
-* "**Link on Labe**l" can be set in property "labelLinkUrl"
+* "**Link on Label**" can be set in property "labelLinkUrl"
 * "**Link on Value**" can be set in property "linkUrl"
 * URL can be static or contain dynamic value in the dataField, **space** holder "{}" in URLs will be replaced by actual value in the dataField
 
