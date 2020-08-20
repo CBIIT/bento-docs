@@ -170,4 +170,6 @@ export const GET_DASHBOARD_TABLE_DATA_QUERY = gql`{
    For example, 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}' shall link to 'https://pubmed.ncbi.nlm.nih.gov/29860917/'.
 
 ## Suggested Best Practice
-<!--1. Dimension of the External Link Icon = W X H pixels. -->
+- Dimension of the External Link Icon = 16 X 16 pixels.
+- Image resolution >= 72 dpi
+- Image format is PNG
