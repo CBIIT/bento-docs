@@ -102,15 +102,7 @@ bento@custodian:$ gcloud services enable vpcaccess.googleapis.com
 * Grant IAM roles to the service account
 
 ```
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/iam.serviceAccountAdmin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/compute.admin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/vpcaccess.admin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/compute.networkUser
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/storage.admin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/container.admin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/run.admin
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/compute.networkUser
-bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/viewer
+bento@custodian:$ gcloud projects add-iam-policy-binding  bento-cloudrun --member serviceAccount:bento-sa@bento-cloudrun.iam.gserviceaccount.com --role roles/owner
 
 ```
 

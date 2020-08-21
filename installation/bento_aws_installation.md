@@ -9,33 +9,33 @@ This is the user documentation on provisioning bento on AWS.
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d)](https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade)
 
 
-##A. Introduction
+## A. Introduction
 The purpose of this guide is to provide instructions on how to provision and deploy Bento Framework on AWS cloud platform. This guide assumes that the Custodian has an operating account with Amazon Web Services
 [Amazon Web Services](https://aws.amazon.com) and all the necessary administrator's IAM role and permissions in order to create cloud resources. 
-###B. Disclaimer
+### B. Disclaimer
 AWS is a Pay As You Go provider, as result the use of this instruction may result in  usage charges. We're in no way responsible for any charges incurred from resources created using this documentation.
 
 All scripts related to this documentation can be found here: [Bento Custodian](https://github.com/CBIIT/bento-custodian)
 
-##C. Pre-requisites
+## C. Pre-requisites
 Please ensure you have the following tools installed and configured before proceeding.
 
-###a) AWS CLI
+### a) AWS CLI
 * Follow the instructions on official Amazon Web site to [install](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) AWS CLI on your local machine using platform instruction applicable to you.
 
-###b) Configure AWS Credentials
+### b) Configure AWS Credentials
 Please ensure you have aws credential configured for your environment [aws credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html). This document does not make provision for access and secret keys due to unintended security reasons. 
 
-###c) Terraform
+### c) Terraform
 * Follow the instructions on the official [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) site to install terraform on your local workstation using platform instruction applicable to you.
 
-###d) Git
+### d) Git
 * Follow the instructions on the official [Git](https://github.com/git-guides/install-git) site to install git on your local workstation.
 
 
-##D. Installations
+## D. Installations
 
-###a) Clone Bento Framework
+### a) Clone Bento Framework
 
 * Note the steps below assumed you have **git** already installed
 * Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a temporary
@@ -52,7 +52,7 @@ bento@custodian:/tmp$ git clone https://github.com/CBIIT/bento-custodian
 bento@custodian:/tmp$ cd bento-custodian/terraform/aws
 ```
 
-###b) Generate ssh key
+### b) Generate ssh key
 This step assumes you have a linux shell terminal or Mac OS terminal.
 
 We need to generate ssh key in order to connect to all the instances we will be creating. 
@@ -84,7 +84,7 @@ will have two files, one is your private key and the other is the public key wit
 * Copy the content of the public key using your favorite **text editor**.
 
     
-###c) Upload ssh key to AWS
+### c) Upload ssh key to AWS
 
 * Open the Amazon EC2 [console](https://console.aws.amazon.com/ec2/) to your AWS account
 * In the navigation pane, choose **Key Pairs**.
@@ -95,7 +95,7 @@ will have two files, one is your private key and the other is the public key wit
 *  Verify that the key pair you imported appears in the list of key pairs.
 
 
-###e) Populate vars.tfvars file
+### e) Populate vars.tfvars file
 
 *  Using your favorite text editor open and edit **/tmp/bento-custodian/terraform/aws/vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **/tmp/bento-custodian/terraform/aws/variables.tf** file for full descriptions of each the variables listed in the vars.tfvars file. 
 *  At minimum, you will need to provide appropriate value for the following;
