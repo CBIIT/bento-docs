@@ -20,22 +20,22 @@ All scripts related to this documentation can be found here: [Bento Custodian](h
 ## C. Pre-requisites
 Please ensure you have the following tools installed and configured before proceeding.
 
-### a) AWS CLI
+#### a) AWS CLI
 * Follow the instructions on official Amazon Web site to [install](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) AWS CLI on your local machine using platform instruction applicable to you.
 
-### b) Configure AWS Credentials
+#### b) Configure AWS Credentials
 Please ensure you have aws credential configured for your environment [aws credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html). This document does not make provision for access and secret keys due to unintended security reasons. 
 
-### c) Terraform
+#### c) Terraform
 * Follow the instructions on the official [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) site to install terraform on your local workstation using platform instruction applicable to you.
 
-### d) Git
+#### d) Git
 * Follow the instructions on the official [Git](https://github.com/git-guides/install-git) site to install git on your local workstation.
 
 
 ## D. Installations
 
-### a) Clone Bento Framework
+#### a) Clone Bento Framework
 
 * Note the steps below assumed you have **git** already installed
 * Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a temporary
@@ -52,7 +52,7 @@ bento@custodian:/tmp$ git clone https://github.com/CBIIT/bento-custodian
 bento@custodian:/tmp$ cd bento-custodian/terraform/aws
 ```
 
-### b) Generate ssh key
+#### b) Generate ssh key
 This step assumes you have a linux shell terminal or Mac OS terminal.
 
 We need to generate ssh key in order to connect to all the instances we will be creating. 
@@ -84,7 +84,7 @@ will have two files, one is your private key and the other is the public key wit
 * Copy the content of the public key using your favorite **text editor**.
 
     
-### c) Upload ssh key to AWS
+#### c) Upload ssh key to AWS
 
 * Open the Amazon EC2 [console](https://console.aws.amazon.com/ec2/) to your AWS account
 * In the navigation pane, choose **Key Pairs**.
@@ -95,7 +95,7 @@ will have two files, one is your private key and the other is the public key wit
 *  Verify that the key pair you imported appears in the list of key pairs.
 
 
-### e) Populate vars.tfvars file
+#### e) Populate vars.tfvars file
 
 *  Using your favorite text editor open and edit **/tmp/bento-custodian/terraform/aws/vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **/tmp/bento-custodian/terraform/aws/variables.tf** file for full descriptions of each the variables listed in the vars.tfvars file. 
 *  At minimum, you will need to provide appropriate value for the following;
