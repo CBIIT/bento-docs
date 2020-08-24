@@ -171,5 +171,4 @@ export const GET_DASHBOARD_TABLE_DATA_QUERY = gql`{
 
 ## Suggested Best Practice
 - Dimension of the External Link Icon = 16 X 16 pixels.
-- Image resolution >= 72 dpi
-- Image format is PNG
+- All images should have a resolution >= 72 ppi and should be in the PNG format.

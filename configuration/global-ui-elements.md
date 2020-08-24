@@ -255,11 +255,11 @@ export const GET_GLOBAL_STATS_DATA_QUERY = gql`{
 ```
 
 ## Suggested Best Practice
-<!-- Dimensions of the favicon: W X H pixels -->
-- The Web Browser Tab title should have a maximum of X characters.
+- Dimensions of the favicon: 32 X 32 pixels
+- The Web Browser Tab title should have a maximum of 33 characters
 - Dimensions of the Global Header Logo: 468x80 pixels
 - Dimensions of the Global Header Image: 1200x60 pixels
 - Dimensions of the Global Footer Logo: 310x80 pixels
-<!-- Dimensions of the Footer Subsection Icon: W X H pixels -->
+- Dimensions of the Footer Subsection Icon: 20 X 20 pixels
 - All images should have a resolution >= 72 ppi and should be in the PNG format.
 - All Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.
