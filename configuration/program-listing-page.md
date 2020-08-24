@@ -126,5 +126,6 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
    For example, 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}' shall link to 'https://pubmed.ncbi.nlm.nih.gov/29860917/'.
 
 ## Suggested Best Practice
-1. Dimension of the Table Icon= W X H pixels.
-2. Dimension of the External Link Icon = W X H pixels.
+- Dimension of the Program Listing Icon= 100 X 100 pixels.
+- Dimension of the External Link Icon = 16 X 16 pixels.
+- All images should have a resolution >= 72 ppi and should be in the PNG format.
