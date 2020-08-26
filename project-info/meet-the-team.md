@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 1 
 title: Meet the Team
 ---
 
