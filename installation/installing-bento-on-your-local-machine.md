@@ -1,5 +1,5 @@
 ---
-sort: 3
+sort: 1
 title: Installing Bento on Your Local Machine 
 ---
 

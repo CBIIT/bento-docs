@@ -7,7 +7,7 @@ title: Global UI Elements
 
 Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. See below for details.
 ![Global UI Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/global_elements.png?raw=true)
-**Global User Interface Elements**. Displayed are the global elements that are displayed on all pages of a Bento-based data sharing platform. These are: the web browser tab, the global header, global footer, the navigation bar and the stats bar. The stats bar is semi-global in scope as it is displayed in only a subset of the application's pages.
+**Global User Interface Elements**. Displayed are the global elements that are displayed on all pages of a Bento-based data sharing platform. These are: the web browser tab, the global header, global footer, the navigation bar and the stats bar. The Stats Bar is semi-global in scope as it is displayed in only a subset of the application's pages.
 
 
 ### Prerequisites
@@ -30,7 +30,7 @@ Stats Bar            |`$(src)/bento-frontend/src/bento/globalStatsData.js`
 
 
 ## Web Browser Tab
-Web browser tabs allow you to have multiple web pages open at the same time. An application-specific icon and text will allow an end user to keep track of the tab running a Bento application.
+Web browser tabs allow you to have multiple web pages open at the same time. An application-specific icon and text allows an end user to keep track of the tab running a Bento application.
 
 ### Configuring the Favicon
 The favorite icon (or favicon) that appears in the web browser tab can be configured in two ways:
@@ -173,7 +173,7 @@ export default {
 ```
 
 ## Global Navigation Bar
-The Global Navigation bar (Nav bar) is serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If you add more than 4 menu items, only the top 4 will be displayed without any warning or error message.
+The Global Navigation bar (Nav bar) serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If you add more than 4 menu items, only the top 4 will be displayed without any warning or error message.
 
 ### Configuring the Global Navigation Bar
 
