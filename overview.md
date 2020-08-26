@@ -20,8 +20,6 @@ Bento is an open-source software framework for data sharing platforms that allow
 
 ## Bento Architecture
 
-# Bento - Architecture Documentation
-
 **System Architecture**
 
 The System Architecture is described in terms of 2 different ecosystem components. These 2 eco systems are
