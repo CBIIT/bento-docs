@@ -17,8 +17,19 @@ AWS is a Pay As You Go provider, as result the use of this instruction may resul
 
 All scripts related to this documentation can be found here: [Bento Custodian](https://github.com/CBIIT/bento-custodian)
 
-## C. Pre-requisites
-Please ensure you have the following tools installed and configured before proceeding.
+## C. Architecture
+The code in this demo will create the following resources via Terraform:
+
+* A new VPC and subnets
+* Application loadbalancer
+* Bastion Host
+* ECS cluster with one EC2 node
+* Neo4j Database in private subnet
+
+![Architecture](resources/bento-cloud/bentoawsarchitecture.png)
+
+## D. Pre-requisites
+Ensure you have the following tools installed and configured before proceeding. All instructions provided here assumes you have unix-like environment
 
 #### a) AWS CLI
 * Follow the instructions on official Amazon Web site to [install](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) AWS CLI on your local machine using platform instruction applicable to you.
@@ -32,78 +43,34 @@ Please ensure you have aws credential configured for your environment [aws crede
 #### d) Git
 * Follow the instructions on the official [Git](https://github.com/git-guides/install-git) site to install git on your local workstation.
 
+### e) Ansible
+* Use the instructions provided [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) to install **ansible** on your workstation
 
-## D. Installations
+
+## E. Installations
 
 #### a) Clone Bento Framework
 
-* Note the steps below assumed you have **git** already installed
-* Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a temporary
-    directory **/tmp**
+* Clone  [Bento Framework](https://github.com/CBIIT/bento-custodian) to a working directory. In this guide, I will be using  **/tmp** as my working directory
     
 ```
-bento@custodian:~$ cd /tmp
-bento@custodian:/tmp$ git clone https://github.com/CBIIT/bento-custodian
+bento@custodian: cd /tmp && git clone https://github.com/CBIIT/bento-custodian
 ```
 
 * Change directory to the scripts location **bento-custodian/terraform/aws**
 
 ```
-bento@custodian:/tmp$ cd bento-custodian/terraform/aws
+bento@custodian: cd bento-custodian/terraform/aws
 ```
 
-#### b) Generate ssh key
-This step assumes you have a linux shell terminal or Mac OS terminal.
+#### b) Populate vars.tfvars file
 
-We need to generate ssh key in order to connect to all the instances we will be creating. 
-
-* Ensure you're in the root directory of the scripts ie **/tmp/bento-custodian/terraform/aws**
-
-*  Enter **ssh-keygen -t rsa -f FILENAME** at the prompt as shown below
-
-```
-bento@custodian:~$ ssh-keygen -t rsa -f bento-ssh-key
-```
-
-* Hit the **Enter** key for the question **Enter passphrase (empty for no
-    passphrase)** to skip password. 
-* Hit the **Enter**  key again for the confirmation **Enter same passphrase
-    again**
-    
-```
-Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in bento-ssh-key.
-Your public key has been saved in bento-ssh-key.pub.
-```
-
-* Your ssh key will be generated and stored at the current working directory. Note you
-will have two files, one is your private key and the other is the public key with **.pub** extension
-
-* Copy the content of the public key using your favorite **text editor**.
-
-    
-#### c) Upload ssh key to AWS
-
-* Open the Amazon EC2 [console](https://console.aws.amazon.com/ec2/) to your AWS account
-* In the navigation pane, choose **Key Pairs**.
-* Choose **Import key pair** under action menu
-* For **Name**, enter a descriptive name for the key pair.
-*  Either choose **Browse** to navigate to and select your public key or paste the contents of your public key into the **Public key contents** field.
-*  Choose **Import key pair**.
-*  Verify that the key pair you imported appears in the list of key pairs.
-
-
-#### e) Populate vars.tfvars file
-
-*  Using your favorite text editor open and edit **/tmp/bento-custodian/terraform/aws/vars.tfvars** file. This is a variable file that will be used as input to the terraform. Please refer to **/tmp/bento-custodian/terraform/aws/variables.tf** file for full descriptions of each the variables listed in the vars.tfvars file. 
-*  At minimum, you will need to provide appropriate value for the following;
-	* 	profile - name of the aws crendential profile you set above
+*  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars** file. This is a variable file that will be used as input to the terraform. 
+*  Please refer to **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/variables.tf** file for full descriptions of each the variables listed in the vars.tfvars file. 
+*  At minimum, you will need to provide appropriate values for the following;
+	* 	profile - This is the name of the aws crendential profile you set above in step D.a
 	*  region - This is the aws region you wish to provision your resources.
-	*	ssh_key\_name - this is the name of the ssh public key imported to AWS in step D.c
-	*	ssh\_public_key\_filename - this is the filename of the ssh public key generated in step D.b. **Note** it must end with **.pub**. Keep the file location default to the current working directory that's **/tmp/bento-custodian/terraform/aws**
-
+	
 
 * Run **terraform init** 
 
@@ -111,20 +78,19 @@ will have two files, one is your private key and the other is the public key wit
 bento@custodian:~$ terraform init
 ```
 
-*  Run **terraform plan** to see what resources will be created.
+*  Run **terraform plan**. This command gives you insight into all the resources that will be created. Review the output and if satisfy continue to the next step
 
 ```
 bento@custodian:~$ terraform plan -var-file=vars.tfvars
 ```
 
-* Review the output of the above command. It will show all the resources to be created.
-* Run **terraform apply** to provision your Bento environment
+* Run **terraform apply** to provision your infrastructure for the bento framework
 
 ```
 bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
 ```
 
-* At this point if there are no errors your custodian will be provisioned. Navigate **custodian_url**  listed at the end of the terraform output. Note it will take about 10 minutes for the application to completely deployed.
+* At this point, if there are no errors your infrastructure will be provisioned. Note it will take about 10 minutes for the application to completely deployed.
 
 
 ```
@@ -138,9 +104,93 @@ custodian_api_endpoint = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com/
 custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 ```
 
+### c) Monitor Deployment Progress
+
+* Open [SSM](https://us-west-1.console.aws.amazon.com/systems-manager/home)
+* Click [State Manager](https://us-west-1.console.aws.amazon.com/systems-manager/state-manager) in the left pane of the navigation
+* You will see the current status of the deployment. If everything goes well the **status** should change from **Pending** to **Success** as shown below.
+
+![Pending](resources/bento-cloud/bentopending.png)
+![Pending](resources/bento-cloud/bentosuccess.png)
+
+### d Verify Deployment
+When the deployment is completed, navigate to the **custodian\_url\** to verify that the application is loaded successfully.
+
+* Home page
+![Home](resources/bento-cloud/bentoindexpage.png)
+* Cases Page
+![Cases](resources/bento-cloud/bentocasespage.png)
+* Program Page
+![Cases](resources/bento-cloud/bentoprogrampage.png)
+
+
+### d) Teardown
+To destroy resouces created in this demo;
+
 * Run **terraform destroy** to destroy the resources provisioned.
 
 ```
 bento@custodian:~$ terraform destroy -var-file=vars.tfvars -auto-approve
 ```
 
+## F. Application Updates
+Many times, there are needs to customize Bento Framework based on your unique needs or some requirements, to make updates to the existing resources, it is recommended to fork both frontend and backend repositories used in this demo - that is [backend](https://github.com/CBIIT/bento-demo-backend) and [frontend](https://github.com/CBIIT/bento-demo-frontend). Follow below steps to apply any changes made to either backend or frontend codes.
+
+### a) Edit  vars.tfvars file
+*  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars** file.
+*  Replace the values of backend_repo and frontend_repo with the new url of your forked repositories as shown below; 
+![git repositories](resources/bento-cloud/gitrepositories.png)
+
+
+### b) Apply changes to terraform state
+
+* Run **terraform apply**
+
+```
+bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
+```
+
+### c) Apply Changes using Ansible
+* From the current working location change directory to **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible**
+
+```
+bento@custodian:~$ cd ansible
+```
+
+* Run **ansible-playbook update-custodian.yml** to deploy changes committed to git repository. Note, if you wish to apply updates using git tags, edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible/vars.yaml** file by supplying appopriate tag values to:
+	* frontend_tag - git tag for forked frontend repository
+	* backend_tag - git tag for forked backend repository
+* It is also recommended to change docker tag (**image_tag**) in between changes.
+
+```
+bento@custodian:~$ ansible-playbook update-custodian.yml
+```
+
+
+## G. Application Updates
+
+### a) Edit  vars.tfvars file
+*  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars** file.
+*  Replace the values of data_repo with the new url of your forked data-model repository.
+
+### b) Apply changes to terraform state
+
+* Run **terraform apply**
+
+```
+bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
+```
+### c) Apply Changes using Ansible
+* From the current working location change directory to **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible**
+
+```
+bento@custodian:~$ cd ansible
+```
+
+* Run **ansible-playbook update-db.yml** to load data to neo4j database from changes committed to data model repository. Note, if you wish to apply updates using git tags, edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible/vars.yaml** file by supplying appopriate tag value to:
+	* data_tag - git tag for forked data model repository
+* You may optionally change the values of **model_file_name**, **dataset** and **properties_file_name** if those files have modified and the files renamed from default.
+
+```
+bento@custodian:~$ ansible-playbook update-db.yml
+```
