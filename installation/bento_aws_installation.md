@@ -124,7 +124,7 @@ When the deployment is completed, navigate to the **custodian\_url\** to verify 
 ![Cases](resources/bento-cloud/bentoprogrampage.png)
 
 
-### d) Teardown
+### e) Teardown
 To destroy resouces created in this demo;
 
 * Run **terraform destroy** to destroy the resources provisioned.
@@ -167,7 +167,7 @@ bento@custodian:~$ ansible-playbook update-custodian.yml
 ```
 
 
-## G. Application Updates
+## G. Data Model Updates
 
 ### a) Edit  vars.tfvars file
 *  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars** file.
