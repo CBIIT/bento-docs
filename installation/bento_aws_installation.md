@@ -189,7 +189,8 @@ bento@custodian:~$ cd ansible
 
 * Run **ansible-playbook update-db.yml** to load data to neo4j database from changes committed to data model repository. Note, if you wish to apply updates using git tags, edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible/vars.yaml** file by supplying appopriate tag value to:
 	* data_tag - git tag for forked data model repository
-* You may optionally change the values of **model_file_name**, **dataset** and **properties_file_name** if those files have modified and the files renamed from default.
+* You may optionally change the values of **model_file_name**, **dataset** and **properties_file_name** if those files have been modified and the files renamed from default.
+* Details notes are given in **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible/vars.yaml** as to what each parameter represents
 
 ```
 bento@custodian:~$ ansible-playbook update-db.yml
