@@ -41,7 +41,7 @@ The favorite icon (or favicon) that appears in the web browser tab can be config
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{URL of the file}"/>`
 
  Option B: Using a local file in your repo:
- 1. The location is specified the the git repo is in the file:  `$(src)/bento-frontend/public/`
+ 1. The location is specified in the git repo and is in the file:  `$(src)/bento-frontend/public/`
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="/{file_name}"/>`
 
 ### Configuring the Tab Title
