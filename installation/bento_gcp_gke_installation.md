@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 5
 title: Bento Framework on GCP Kubernetes
 ---
 
