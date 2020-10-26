@@ -28,7 +28,7 @@ Before you proceed any further please ensure the instructions in this section ar
 
 6. Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See here for instructions on creating an AWS account.
 
-7. Configure AWS CLI credentials. See here for instructions on configuring AWS CLI
+7. Configure AWS CLI credentials. See [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) for instructions on configuring AWS CLI.
 
 
 ## Fork the Bento Repos
@@ -145,7 +145,7 @@ The initialization script will query you `use demo data [default=yes]:`. Type `y
     ```
 Downloading all the image layers and creating the Docker containers takes about 5 minutes. 
 
-6. To test open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
+6. To test, open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
 
 ![Home](resources/bento-cloud/bentoindexpage.png)
 
