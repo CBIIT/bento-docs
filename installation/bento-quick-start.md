@@ -146,6 +146,7 @@ The initialization script will query you `use demo data [default=yes]:`. Type `y
 Downloading all the image layers and creating the Docker containers takes about 5 minutes. 
 
 6. To test open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
+
 ![Home](assets/bento-landing-page.png)
 
 
