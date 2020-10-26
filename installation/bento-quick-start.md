@@ -147,7 +147,7 @@ Downloading all the image layers and creating the Docker containers takes about 
 
 6. To test open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
 
-![Home](assets/bento-landing-page.png)
+![Home](../assets/bento-landing-page.png)
 
 
 
