@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 1
+sort: 1
 title: Bento Quick Start
 ---
 
@@ -43,9 +43,9 @@ The Bento code-base is divided into three main components: (a) the front end (b)
 Fork each of these to create your own remote repos. Instructions on forking a GitHub repo are [here](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
 
 For this tutorial we shall assume that you have named your repos:
-     `https://github.com/CBIIT/bento-demo-frontend.git`
-     `https://github.com/CBIIT/bento-demo-backend.git`
-     `https://github.com/CBIIT/bento-demo-model.git` 
+<br>`https://github.com/CBIIT/bento-demo-frontend.git`
+<br>`https://github.com/CBIIT/bento-demo-backend.git`
+<br>`https://github.com/CBIIT/bento-demo-model.git` 
 
 
 ## Set up the Bento Local Environment on your machine.
@@ -69,7 +69,6 @@ For this tutorial we shall consider `$src` to be the folder in which you will st
     cd bento-local/
 
     ls -lh
-
     ```
 The list of files in your  `bento-local` folder should look like this:
 
@@ -130,12 +129,10 @@ BUILD_MODE=dev
 	*  `initialization/windows` for Windows users. 
 
 This sub-folder stores the initialization script(s) for the relevant operating system. For Mac and Linux users, make the script executable and the run it:
-
-    ```
+```
     chmod a+x init.sh
-
     ./init.sh
-    ```
+```
 
 This script clones the code from your three repos: front-end, back-end, data model in the `bento-local`folder and also creates a `data` folder in `bento-local`.
 The initialization script will query you `use demo data [default=yes]:`. Type `yes` to include demo data in the `data` folder.
@@ -149,7 +146,7 @@ The initialization script will query you `use demo data [default=yes]:`. Type `y
 Downloading all the image layers and creating the Docker containers takes about 5 minutes. 
 
 6. To test open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
-![Home](/Users/purkayasthaa/Desktop/ExpandDataCommons/Bento/data_processing/20200804_bento-documentation/docs/bento-docs/assets/bento-landing-page.png)
+![Home](assets/bento-landing-page.png)
 
 
 
