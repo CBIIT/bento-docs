@@ -169,7 +169,7 @@ git clone https://github.com/CBIIT/bento-custodian
 
 
 3. Open the `vars.tfvars` file with an editor of your choice. The path of this file is: `src/bento-custodian/terraform/aws/vars.tfvars`. 
-<br>See `$src/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
+<br> See `$src/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
 
 4. Update the following variables in `vars.tfvars`:
     * `profile`: The name of your profile as it is set in the `.aws/credential` file.
@@ -178,7 +178,7 @@ git clone https://github.com/CBIIT/bento-custodian
     * `frontend_repo`: Your Front End Repo URL (in this case, `https://github.com/CBIIT/bento-demo-frontend.git`)
     * `data_repo`: Your Front End Repo URL (in this case, `https://github.com/CBIIT/bento-demo-model.git`)
     * `dataset`: Name of the S3 bucket loaded with Bento data.
-<br>See below for an example `vars.tfvars` file:
+    <br>See below for an example `vars.tfvars` file:
 
 ```
 #define any tags appropriate to your environment
