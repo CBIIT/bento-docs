@@ -160,6 +160,7 @@ docker exec -ti custodian bash
 [root@5062d391c705 /]# 
 
 ```
+
 3. Configure AWS CLI credentials within the `custodian-workstation` container by running `aws configure`. See below and [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) for instructions on configuring AWS CLI.
 ```console  
 [root@5062d391c705 /]# aws configure
