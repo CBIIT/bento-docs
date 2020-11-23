@@ -10,30 +10,7 @@ title: Bento Quick Start
 Bento follows the principal of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform. 
 <br>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS. 
 
-## Prerequisites
-Before you proceed any further please ensure the instructions in this section are completed.
-
-1. Install Git: Bento uses GitHub to commit, store and share its code base. Instructions to install Git, on your local machine, are found [here](https://github.com/git-guides/install-git). 
-
-2. Install Docker: All code in Bento is containerized. You will need to install the following Docker components on your local machine: (a) Docker Desktop (b) Docker Engine and (c) Docker Compose.
-    * Instructions to install Docker Desktop are [here](https://www.docker.com/products/docker-desktop).
-    * Instructions to install Docker Engine are [here](https://docs.docker.com/engine/install/).
-    * Instructions to install Docker Compose are [here](https://docs.docker.com/compose/install/).
-
-3. Install AWS Command Line Interface (AWS CLI). Instructions to install AWS CLI are [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
-
-4. Install Terraform; instructions to install are [here](https://learn.hashicorp.com/tutorials/terraform/install-cli).
-
-5. Install Ansible; instructions to install are [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
-
-6. Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See here for instructions on creating an AWS account.
-
-7. Configure AWS CLI credentials. See [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) for instructions on configuring AWS CLI.
-
-8. If you want to load your data set on Bento then please ensure that (a) it is Bento data model compliant and (b) you have a Neo4J dump of you data set.
-
-
-## Fork the Bento Repos
+## Fork the Bento Repositories
 The Bento code-base is divided into three main components: (a) the front end (b) the back end and (c) the database. The code-base for all three are stored on GitHub. Here are the repos to fork:
 
 1.  Front End Repo: [https://github.com/CBIIT/bento-frontend.git](https://github.com/CBIIT/bento-frontend.git)
@@ -52,6 +29,19 @@ For this tutorial we shall assume that you have named your repos:
 
 ## Set up the Bento Local Environment on your machine.
 The ‘Bento Local’ environment is designed to run within Docker, on a user's local machine, and can be set up within all types of operating systems- Windows, Mac and Unix flavors. This allows users to create and deploy their local copy of Bento, with minimal changes to their local environment.
+
+### Prerequisites
+To install the 'Bento Local' environment you will need to:
+
+1. Install Git: Bento uses GitHub to commit, store and share its code base. Instructions to install Git, on your local machine, are found [here](https://github.com/git-guides/install-git). 
+
+2. Install Docker: All code in Bento is containerized. You will need to install the following Docker components on your local machine: (a) Docker Desktop (b) Docker Engine and (c) Docker Compose.
+    * Instructions to install Docker Desktop are [here](https://www.docker.com/products/docker-desktop).
+    * Instructions to install Docker Engine are [here](https://docs.docker.com/engine/install/).
+    * Instructions to install Docker Compose are [here](https://docs.docker.com/compose/install/).
+    
+3. (If you want to upload your own data) Ensure that your data is (a) it is Bento data model compliant and (b) you have a Neo4J dump of you data set.
+
 The code-base to create the local environment is available at:  `https://github.com/CBIIT/bento-local`.
 For this tutorial we shall consider `$src` to be the folder in which you will store all your local code for Bento.
 
@@ -154,8 +144,31 @@ Downloading all the image layers and creating the Docker containers takes about 
 ![Home](resources/bento-cloud/bentoindexpage.png)
 
 
-## Set up the Bento on AWS.
+## Set up Bento on AWS.
 At this point in the tutorial you will have successfully set up the Bento local environment. In this section, we will walk you through the process of installing Bento on AWS.
+
+### Prerequisites
+To install the Bento in AWS you will need to:
+
+1. Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See [here] (https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for instructions on creating an AWS account.
+
+2. Download and run the `custodian-workstation` docker image. This image is loaded with the software packages: Terraform, Ansible and AWS CLI, that you will need to deploy your platform on AWS. 
+ 
+```console 
+docker run -d --name custodian cbiitssrepo/custodian-workstation
+docker exec -ti custodian bash
+[root@5062d391c705 /]# 
+
+```
+3. Configure AWS CLI credentials within the `custodian-workstation` container by running `aws configure`. See below and [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) for instructions on configuring AWS CLI.
+```console  
+[root@5062d391c705 /]# aws configure
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: 
+Default output format [None]:
+```
+
 
 1. Clone the Bento Custodian Repo in your `$src` folder. 
 
@@ -169,7 +182,7 @@ git clone https://github.com/CBIIT/bento-custodian
 
 
 3. Open the `vars.tfvars` file with an editor of your choice. The path of this file is: `src/bento-custodian/terraform/aws/vars.tfvars`. 
-<br>See `$src/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
+<br> See `$src/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
 
 4. Update the following variables in `vars.tfvars`:
     * `profile`: The name of your profile as it is set in the `.aws/credential` file.
@@ -177,8 +190,9 @@ git clone https://github.com/CBIIT/bento-custodian
     * `backend_repo`: Your Back End Repo URL (in this case, `https://github.com/CBIIT/bento-demo-backend.git`)
     * `frontend_repo`: Your Front End Repo URL (in this case, `https://github.com/CBIIT/bento-demo-frontend.git`)
     * `data_repo`: Your Front End Repo URL (in this case, `https://github.com/CBIIT/bento-demo-model.git`)
-    * `dataset`: Name of the S3 bucket loaded with Bento data.
-<br>See below for an example `vars.tfvars` file:
+    * `s3_bucket`: Name of the globally unique S3 bucket loaded with Bento data.
+    * `s3_folder`: Name of the folder in the S3 bucket loaded with Bento data.
+    <br>See below for an example `vars.tfvars` file:
 
 ```
 #define any tags appropriate to your environment
@@ -206,7 +220,8 @@ frontend_repo = <Front End Repo URL>
 data_repo = <Data Model Repo URL>
 
 #specify dataset to be used
-dataset = <S3 Bucket Name>
+s3_bucket = <S3 Bucket Name>
+s3_folder = <S3 Folder Name>
 ...
 ```
 
