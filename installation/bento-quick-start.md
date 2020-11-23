@@ -60,7 +60,7 @@ For this tutorial we shall consider `$src` to be the folder in which you will st
     ```
     cd bento-local/
 
-    ls -lh
+    ls -al
     ```
 The list of files in your  `bento-local` folder should look like this:
 
@@ -150,7 +150,7 @@ At this point in the tutorial you will have successfully set up the Bento local 
 ### Prerequisites
 To install the Bento in AWS you will need to:
 
-1. Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See [here] (https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for instructions on creating an AWS account.
+1. Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for instructions on creating an AWS account.
 
 2. Download and run the `custodian-workstation` docker image. This image is loaded with the software packages: Terraform, Ansible and AWS CLI, that you will need to deploy your platform on AWS. 
  
@@ -170,19 +170,19 @@ Default output format [None]:
 ```
 
 
-1. Clone the Bento Custodian Repo in your `$src` folder. 
+1. **Within the `custodian-workstation` container**, clone the Bento Custodian. The folder will be downloaded into the root folder in your container.
 
 ```
 git clone https://github.com/CBIIT/bento-custodian
 ```
 
-2. The `data` sub-folder under `bento-local`, created in the previous section, stores all the data that you have loaded onto your local version of Bento. Load all files in the `data` folder to a S3 bucket. [This](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html) guide gives you the instructions on creating an S3 bucket and loading local files. 
+2. The `data` sub-folder under `bento-local`, created in the previous section, stores all the data that you have loaded onto your local version of Bento. Load files in the `data` folder to a S3 bucket. [This](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html) guide gives you the instructions on creating an S3 bucket and loading local files. 
     * Note 1: AWS will require your S3 bucket name to be globally unique. 
     * Note 2: For advanced users, you may load your own Bento-model compliant data set to the S3 bucket. 
 
 
-3. Open the `vars.tfvars` file with an editor of your choice. The path of this file is: `src/bento-custodian/terraform/aws/vars.tfvars`. 
-<br> See `$src/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
+3. Open the `vars.tfvars` file with an editor of your choice. The path of this file is: `/bento-custodian/terraform/aws/vars.tfvars`. 
+<br> See `/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
 
 4. Update the following variables in `vars.tfvars`:
     * `profile`: The name of your profile as it is set in the `.aws/credential` file.
@@ -225,7 +225,7 @@ s3_folder = <S3 Folder Name>
 ...
 ```
 
-5. Once the `vars.tfvars` file has been updated, run the command `terraform init`, in the folder `$src/bento-custodian/terraform/aws/`. 
+5. Once the `vars.tfvars` file has been updated, run the command `terraform init`, in the folder `/bento-custodian/terraform/aws/`. 
 
 6. Once the previous command has run successfully, run the command `terraform plan -var-file=vars.tfvars` to preview the list of resources that will be created to stand up your Bento application. 
 
