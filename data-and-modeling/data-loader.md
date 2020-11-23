@@ -1,6 +1,5 @@
 ---
-layout: default
-nav_order: 1
+sort: 1
 title: Data Loader
 ---
 # Data Loader
