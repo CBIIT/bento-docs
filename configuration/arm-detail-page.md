@@ -39,7 +39,7 @@ The Arm Detail Page allows you to add key arm attributes as label value pairs wi
 
 ### Configuring the Arm Detail Page Table.
 You can add a table to the Arm Detail Page. *This is optional.*
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/bento-frontend/src/bento/armDetailData.js`.
 2. In `table`:
   * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Arm Detail Page*.
   * Set the field `title` to the the title of your table.
@@ -69,7 +69,7 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 ### Adding columns to the Arm Detail Page Table.
 You can add up to 10 columns in the Arm Detail Page Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/bento-frontend/src/bento/armDetailData.js`.
 2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.

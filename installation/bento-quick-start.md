@@ -7,7 +7,7 @@ title: Bento Quick Start
 # Quick Start Tutorial
 
 ## Introduction
-Bento follows the principal of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform. 
+Bento follows the principle of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform. 
 <br>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS. 
 
 ## Fork the Bento Repositories
@@ -172,7 +172,7 @@ Default output format [None]:
 
 
 
-1. **Within the `custodian-workstation` container**, clone the Bento Custodian. The folder will be downloaded into the root folder in your container.
+1. **Within the `custodian-workstation` container**, clone the Bento Custodian repo. The folder will be downloaded into the root folder in your container.
 
 ```
 git clone https://github.com/CBIIT/bento-custodian
