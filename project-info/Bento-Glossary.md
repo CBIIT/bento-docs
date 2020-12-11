@@ -5,7 +5,7 @@ title: Bento Glossary
 
 
 # Bento Glossary
-**ALB**: Application Load Balancer - used in the Bento infrastructure to provide access to required resources
+**ALB**: Application Load Balancer - used in the Bento infrastructure to provide access to required resources.
 
 **AWS**: Amazon Web Services.
 
