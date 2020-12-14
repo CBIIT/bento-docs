@@ -4,3 +4,10 @@ _site/
 .jekyll-metadata
 .DS_Store
 
+# virtualenv
+venv/
+_venv/
+
+# build
+source/_build
+
