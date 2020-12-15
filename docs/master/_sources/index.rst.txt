@@ -7,7 +7,7 @@
     overview
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :caption: Installation
 
     installation/bento-quick-start
@@ -17,7 +17,7 @@
     installation/bento_gcp_gke_installation
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :caption: Configuration
 
     configuration/global-ui-elements
@@ -31,7 +31,7 @@
     configuration/static-pages
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :caption: Data and Modeling
 
     data-and-modeling/data-loader
