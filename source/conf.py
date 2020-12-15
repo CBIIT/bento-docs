@@ -34,7 +34,6 @@ extensions = [
     'sphinx_rtd_theme',
     'recommonmark'
 ]
-# sphinx_rtd_theme
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -48,12 +47,6 @@ html_sidebars = {
         "versions.html",
     ],
 }
-
-#html_sidebars = {
-#    '**': [
-#        'versions.html',
-#    ],
-#}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -69,20 +62,13 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
 
-#html_theme_options = {
-#    "github_repo": "bento-docs-versioned",
-#    "github_user": "CBIIT",
-#    "github_banner": True,
-#    "github_button": True,
-#    "travis_button": True,
-#    "show_relbar_bottom": True,
-#}
 html_last_updated_fmt = "%c"
 master_doc = "index"
 
 ## sphinx_rtd_theme options
 html_theme_options = {
     'prev_next_buttons_location': 'both',
+    'sticky_navigation': True,
     # Toc options
     'navigation_depth': 3,
 }

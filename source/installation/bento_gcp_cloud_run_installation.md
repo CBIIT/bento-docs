@@ -163,11 +163,11 @@ service_id = bento-sa@bento-cloudrun.iam.gserviceaccount.com
 When the deployment is completed, navigate to the **frontend\_url\** to verify that the application is loaded successfully.
 
 * Home page
-![Home](resources/bento-cloud/bentoindexpage.png)
+![Home](../assets/bento-cloud/bentoindexpage.png)
 * Cases Page
-![Cases](resources/bento-cloud/bentocasespage.png)
+![Cases](../assets/bento-cloud/bentocasespage.png)
 * Program Page
-![Cases](resources/bento-cloud/bentoprogrampage.png)
+![Cases](../assets/bento-cloud/bentoprogrampage.png)
 
 
 ### f) Teardown
