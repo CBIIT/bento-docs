@@ -185,7 +185,7 @@ Many times, there are needs to customize Bento Framework based on your unique ne
 ### a) Edit  vars.tfvars file
 *  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/vars.tfvars** file.
 *  Replace the values of backend_repo and frontend_repo with the new url of your forked repositories as shown below; 
-![git repositories](resources/bento-cloud/gitrepositories.png)
+![git repositories](../assets/bento-cloud/gitrepositories.png)
 
 
 ### b) Apply changes to terraform state

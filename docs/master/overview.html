@@ -225,24 +225,24 @@
 </ul>
 <p><strong>Web and Database Components</strong></p>
 <p>The Bento ecosystems’ Web and Database components consist of two main parts, the Web Application Containers and the Database Server. The Web Application Containers consist of the Web Application which consists in turn of two main frameworks: Java, Graph API framework supporting the back end and the React Framework to power the User Interface as shown below:</p>
-<p><img alt="Web and Database Components" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/web-and-database.jpg?raw=true" /></p>
+<p><img alt="Web and Database Components" src="_images/web-and-database.jpg" /></p>
 <p>The Front End uses the React Framework and sends GraphQL API requests to the backend Java Web Application. The request is then converted to a Cypher Query and a custom protocol over TCP (Bolt) is used to communicate with the Neo4J graph database. The response is converted into JSON and sent out to the requesting Clients. The supporting infrastructure is as shown below:</p>
-<p><img alt="AWS Infrastructure" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/aws-infrastructure.jpg?raw=true" /></p>
+<p><img alt="AWS Infrastructure" src="_images/aws-infrastructure.jpg" /></p>
 <p>The Application/DB infrastructure for Bento hosted on Amazon Web Services (AWS) consists of an Application Load Balancer, 3 EC2 (Elastic Cloud Compute) Virtual Machines per environment (Development, QA, Staging and Production) and 2 Simple Storage Service (S3) buckets. The HTTPs requests from the User’s browser or a GraphQL client get routed to the appropriate ALB which forwards the request to the Application running on Docker Containers hosted on the EC2 instances. The Application in turn sends the request to the Neo4J graph database and upon receipt of the information, sends the response back in JSON format to the Client Application.</p>
 <p>The graph database consists of Nodes and Relationships.The Metadata S3 bucket stores the Node and Relationships’ Metadata prior to being loaded into Neo4J. The File S3 bucket stores raw files (FastQ, Pathology Reports, Images etc.) with their URL paths amongst other attributes (MD5, UUID etc.) being stored as File Node Attributes in Neo4J. The details of the Database Loading and S3 File Loading will be described in a subsequent section. Additionally, information detailing the different environments and the DevOps Pipeline will also be covered in a subsequent section.</p>
 <p><strong>Transformation and Database Loading</strong></p>
 <p>The Transformation and DB ecosystem components are as shown below:</p>
-<p><img alt="Transformation and Database Loading" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/transformation-and-database-loading.jpg?raw=true" /></p>
+<p><img alt="Transformation and Database Loading" src="_images/transformation-and-database-loading.jpg" /></p>
 <p>The goal of the Transformation and Loading steps are to do an ETL (Extract, Transform and Load) on the Comma Separated or Tab Separated Metadata files into the Neo4J Graph Database. The files are first stored on the S3 Metadata bucket with a ‘raw’ prefix and then run through a Transformation process and stored in the same Metadata bucket under a ‘Processed’ prefix using the Kettle/Spoon components of the Pentaho Business Intelligence Platform. The files from the ‘Processed’ prefix folder are then picked up by the Python Script and validated against a Data Model stored in <a class="reference external" href="https://github.com/CBIIT/icdc-model-tool">this</a> GitHub repository as well as business rules against the Neo4J DB. Once validated, the appropriate Nodes and Relationships are created by the Python Script and the ETL is deemed complete. For loading raw files e.g. BAM/FastQ etc., the files are loaded with a Pre-Manifest in a tar/zip format on the S3 Raw Files bucket on a per batch basis. This triggers a notification into the SQS queue and the Python Script which is polling the queue extracts the raw files, validates the Pre-Manifest, creates the appropriate file nodes and relationships in the DB and creates a final Manifest which is then sent to the IndexD service for file indexing which completes the File Ingestion process.</p>
 <p><strong>Bento Infrastructure and Operations</strong></p>
 <p>The Bento infrastructure has the following components as shown below.</p>
-<p><img alt="Bento Infrastructure and Operations" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/infrastructure-and-operations.jpg?raw=true" /></p>
+<p><img alt="Bento Infrastructure and Operations" src="_images/infrastructure-and-operations.jpg" /></p>
 <p>The DevOps process starts with the developer team members checking in the code in the GitHub Repository. There is a Jenkins Server that polls the GitHub repository periodically every 5 minutes. When there is new code deployed on the Master branch of the codebase, it triggers a process where Jenkins pulls the new code from the repository and generates a new Docker Image. The Image is then tagged and uploaded to the container repository. Subsequently, the Jenkins job runs the code with the new container image on the EC2 instances and sends the build status to the appropriate Slack channel.</p>
 <p>On the EC2 instances there are New Relic agents as well as Sumologic Agents running. The NewRelic Agent sends application and instance performance metrics to its Cloud and the Sumologic Agents send the log files for our application to the Sumologic Log aggregation platform. The NewRelic infrastructure is set up to generate alerts on specific events on Slack and Sumologic is used to troubleshoot application issues as they are found.</p>
 <p>We have 4 environments which are the Development, QA, Staging and Production. Currently, the code is deployed in an automated fashion in the development environment and is manually deployed periodically in the rest of the environments.</p>
 <p><strong>Security Approach</strong></p>
 <p>The Security Strategy for Bento comprises of the following components as shown below:</p>
-<p><img alt="Security Approach" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/security-approach.jpg?raw=true" /></p>
+<p><img alt="Security Approach" src="_images/security-approach.jpg" /></p>
 <p>Strategy for Bento security can be thought of in two ways i.e. Static and Dynamic. The Static Security Component focuses on the Code and the Container respectively. The Codacy Monitoring Platform is being utilized for monitoring Code Quality and Code Security. The platform continuously monitors the Github Code Repository and provides real-time feedback on vulnerable code sections or coding practices to along with real time trend metrics. This information is then utilized to address the vulnerabilities identified during the Sprint Cycle. The Twistlock Vulnerability Management tool monitors the Nessus Container Image repository and provides periodic reports which are then utilized to remedy the vulnerabilities identified.</p>
 <p>The Dynamic Security components focuses on the deployed infrastructure and the application. IBM AppScan is utilized to periodically run vulnerability scans on the Bento Web Application. The vulnerabilities identified are then remedied in the current Sprint or added to the Sprint Backlog for future action depending upon the severity. The security of the network and instances utilize AWS recommended best practices. The access to the Web instances is allowed only via the ALB and on specific ports only using AWS Security Groups which act as an instance Firewall. Placing the ALB on a Public Subnet and instances on Private Subnets with a NAT (Network Address Translator) using Route Tables provides network level isolation for the instances keeping the virtual machines secure from malicious traffic while allowing them to get software updates as necessary.</p>
 </div>
@@ -347,7 +347,7 @@
 <div class="section" id="bento-backend-api-architecture-documentation">
 <h2>Bento – Backend &amp; API Architecture Documentation<a class="headerlink" href="#bento-backend-api-architecture-documentation" title="Permalink to this headline">¶</a></h2>
 <p><strong>Backend &amp; API Documentation General Overview</strong></p>
-<p><img alt="Backend and API Documentation General Overview" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-and-api-general.jpg?raw=true" /></p>
+<p><img alt="Backend and API Documentation General Overview" src="_images/backend-and-api-general.jpg" /></p>
 <ul class="simple">
 <li><p>Bento has two layers: Front-end and Back-end. Front-end is written in React.js and back-end follows API design is coded in JAVA.</p></li>
 <li><p>We put two layers together as a Java application.</p></li>
@@ -357,7 +357,7 @@
 <li><p>Back-end provides two types of APIs - GraphQL and REST for purposes.</p></li>
 </ul>
 <p><strong>Backend Architecture</strong></p>
-<p><img alt="Backend Architecture" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-architecture.png?raw=true" /></p>
+<p><img alt="Backend Architecture" src="master/assets/Architecture/backend-architecture.png" /></p>
 <ul class="simple">
 <li><p>Front-end and cloud resource will send the request to the backend.</p></li>
 <li><p>Front-end uses GraphQL endpoint by sending the GraphQL query to the backend through POST method.</p></li>
@@ -378,7 +378,7 @@
 </ul>
 <p><strong>Backend Connection to Neo4j Database</strong></p>
 <p>The diagram below represents backend connection to Neo4j Database:</p>
-<p><img alt="Backend Connection to Neo4j" src="https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-neo4j-connection.jpg?raw=true" /></p>
+<p><img alt="Backend Connection to Neo4j" src="_images/backend-neo4j-connection.jpg" /></p>
 <ul class="simple">
 <li><p>The connection to the database neo4j goes through Neo4j Graphql Endpoint. Neo4j has graphql plugin which will expose endpoint to consume the graphql request.</p></li>
 </ul>
@@ -417,7 +417,7 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 10:39:36 AM.
+        Last updated on Dec 15, 2020, 11:15:47 AM.
       </span>
 
     </p>

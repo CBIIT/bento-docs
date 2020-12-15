@@ -73,7 +73,7 @@ drwxr-xr-x   6 <your user name>  <your group name>    192 Oct 24 08:23 initializ
 
 3. Open the `.env` file using a text editor of your choice. 
     * Set the following variables: `FRONTEND_REPO`, `BACKEND_REPO`, `MODEL_REPO` to the URLS of your forked repos for the front end, back end and data model respectively. 
-    * Set the variable BUILD_MODE to `dev`. Note: see [here](https://cbiit.github.io/bento-docs/installation/installing-bento-on-your-local-machine.html#overview) for a discussion on the three modes for Bento local environment.
+    * Set the variable BUILD_MODE to `dev`. Note: see "Installing Bento on you Local Machine" for a discussion on the three modes for Bento local environment.
     * Save and exit the `.env` file.
 
 
@@ -135,7 +135,7 @@ Downloading all the image layers and creating the Docker containers takes about 
 
 6. To test, open a browser and go to URL: `http://localhost:8085/`. You should see the landing page for Bento: 
 
-![Home](resources/bento-cloud/bentoindexpage.png)
+![Home](../assets/bento-cloud/bentoindexpage.png)
 
 
 ## Set up Bento on AWS.
@@ -250,14 +250,14 @@ It takes about 10 minutes for complete deployment.
 * You will see the current status of the deployment. If everything goes well the **status** should change from **Pending** to **Success** as shown below.
 
 **Deployment Pending**
-![Pending](resources/bento-cloud/bentopending.png)
+![Pending](../assets/bento-cloud/bentopending.png)
 
 **Deployment Successful**
-![Success](resources/bento-cloud/bentosuccess.png)
+![Success](../assets/bento-cloud/bentosuccess.png)
 
 9. Once deployment has been successfully completed navigate to the `custodian_url` (see step 7.) to view the application installed on AWS. The application should look and behave like your local copy of Bento.
 
-![Home](resources/bento-cloud/bentoindexpage.png)
+![Home](../assets/bento-cloud/bentoindexpage.png)
 
 
 

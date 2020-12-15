@@ -25,11 +25,11 @@ The System Architecture is described in terms of 2 different ecosystem component
 
 The Bento ecosystems&#39; Web and Database components consist of two main parts, the Web Application Containers and the Database Server. The Web Application Containers consist of the Web Application which consists in turn of two main frameworks: Java, Graph API framework supporting the back end and the React Framework to power the User Interface as shown below:
 
-![Web and Database Components](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/web-and-database.jpg?raw=true)
+![Web and Database Components](assets/Architecture/web-and-database.jpg)
 
 The Front End uses the React Framework and sends GraphQL API requests to the backend Java Web Application. The request is then converted to a Cypher Query and a custom protocol over TCP (Bolt) is used to communicate with the Neo4J graph database. The response is converted into JSON and sent out to the requesting Clients. The supporting infrastructure is as shown below:
 
-![AWS Infrastructure](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/aws-infrastructure.jpg?raw=true)
+![AWS Infrastructure](assets/Architecture/aws-infrastructure.jpg)
 
 The Application/DB infrastructure for Bento hosted on Amazon Web Services (AWS) consists of an Application Load Balancer, 3 EC2 (Elastic Cloud Compute) Virtual Machines per environment (Development, QA, Staging and Production) and 2 Simple Storage Service (S3) buckets. The HTTPs requests from the User&#39;s browser or a GraphQL client get routed to the appropriate ALB which forwards the request to the Application running on Docker Containers hosted on the EC2 instances. The Application in turn sends the request to the Neo4J graph database and upon receipt of the information, sends the response back in JSON format to the Client Application.
 
@@ -39,7 +39,7 @@ The graph database consists of Nodes and Relationships.The Metadata S3 bucket st
 
 The Transformation and DB ecosystem components are as shown below:
 
-![Transformation and Database Loading](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/transformation-and-database-loading.jpg?raw=true)
+![Transformation and Database Loading](assets/Architecture/transformation-and-database-loading.jpg)
 
 The goal of the Transformation and Loading steps are to do an ETL (Extract, Transform and Load) on the Comma Separated or Tab Separated Metadata files into the Neo4J Graph Database. The files are first stored on the S3 Metadata bucket with a &#39;raw&#39; prefix and then run through a Transformation process and stored in the same Metadata bucket under a &#39;Processed&#39; prefix using the Kettle/Spoon components of the Pentaho Business Intelligence Platform. The files from the &#39;Processed&#39; prefix folder are then picked up by the Python Script and validated against a Data Model stored in [this](https://github.com/CBIIT/icdc-model-tool) GitHub repository as well as business rules against the Neo4J DB. Once validated, the appropriate Nodes and Relationships are created by the Python Script and the ETL is deemed complete. For loading raw files e.g. BAM/FastQ etc., the files are loaded with a Pre-Manifest in a tar/zip format on the S3 Raw Files bucket on a per batch basis. This triggers a notification into the SQS queue and the Python Script which is polling the queue extracts the raw files, validates the Pre-Manifest, creates the appropriate file nodes and relationships in the DB and creates a final Manifest which is then sent to the IndexD service for file indexing which completes the File Ingestion process.
 
@@ -47,7 +47,7 @@ The goal of the Transformation and Loading steps are to do an ETL (Extract, Tran
 
 The Bento infrastructure has the following components as shown below.
 
-![Bento Infrastructure and Operations](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/infrastructure-and-operations.jpg?raw=true)
+![Bento Infrastructure and Operations](assets/Architecture/infrastructure-and-operations.jpg)
 
 The DevOps process starts with the developer team members checking in the code in the GitHub Repository. There is a Jenkins Server that polls the GitHub repository periodically every 5 minutes. When there is new code deployed on the Master branch of the codebase, it triggers a process where Jenkins pulls the new code from the repository and generates a new Docker Image. The Image is then tagged and uploaded to the container repository. Subsequently, the Jenkins job runs the code with the new container image on the EC2 instances and sends the build status to the appropriate Slack channel.
 
@@ -59,7 +59,7 @@ We have 4 environments which are the Development, QA, Staging and Production. Cu
 
 The Security Strategy for Bento comprises of the following components as shown below:
 
-![Security Approach](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/security-approach.jpg?raw=true)
+![Security Approach](assets/Architecture/security-approach.jpg)
 
 Strategy for Bento security can be thought of in two ways i.e. Static and Dynamic. The Static Security Component focuses on the Code and the Container respectively. The Codacy Monitoring Platform is being utilized for monitoring Code Quality and Code Security. The platform continuously monitors the Github Code Repository and provides real-time feedback on vulnerable code sections or coding practices to along with real time trend metrics. This information is then utilized to address the vulnerabilities identified during the Sprint Cycle. The Twistlock Vulnerability Management tool monitors the Nessus Container Image repository and provides periodic reports which are then utilized to remedy the vulnerabilities identified.
 
@@ -174,7 +174,7 @@ Redux is a state management system. Therefore, we will need:
 
 **Backend &amp; API Documentation General Overview**
 
-![Backend and API Documentation General Overview](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-and-api-general.jpg?raw=true)
+![Backend and API Documentation General Overview](assets/Architecture/backend-and-api-general.jpg)
 
 - Bento has two layers: Front-end and Back-end. Front-end is written in React.js and back-end follows API design is coded in JAVA.
 - We put two layers together as a Java application.
@@ -185,7 +185,7 @@ Redux is a state management system. Therefore, we will need:
 
 **Backend Architecture**
 
-![Backend Architecture](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-architecture.png?raw=true)
+![Backend Architecture](master/assets/Architecture/backend-architecture.png)
 
 - Front-end and cloud resource will send the request to the backend.
 - Front-end uses GraphQL endpoint by sending the GraphQL query to the backend through POST method.
@@ -208,7 +208,7 @@ Redux is a state management system. Therefore, we will need:
 
 The diagram below represents backend connection to Neo4j Database:
 
-![Backend Connection to Neo4j](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/backend-neo4j-connection.jpg?raw=true)
+![Backend Connection to Neo4j](assets/Architecture/backend-neo4j-connection.jpg)
 
 - The connection to the database neo4j goes through Neo4j Graphql Endpoint. Neo4j has graphql plugin which will expose endpoint to consume the graphql request.
 

@@ -159,7 +159,7 @@ In an app where data is shared among components, it might be confusing to actual
 
 Simply put, Redux is a state management tool. While it&#39;s mostly used with React, it can be used with any other JavaScript framework or library. It is lightweight at 2KB (including dependencies), so developer don&#39;t have to worry about it making your application&#39;s asset size bigger. With Redux, the state of your application is kept in a store and each component can access any state that it needs from this store.
 
-![FE Redux Architecture](https://github.com/CBIIT/bento-docs/blob/master/assets/Architecture/redux-architecture.jpg?raw=true)
+![FE Redux Architecture](assets/Architecture/redux-architecture.jpg)
 
 Redux is a state management system. Therefore, we will need:
 
@@ -185,7 +185,7 @@ Redux is a state management system. Therefore, we will need:
 
 **Backend Architecture**
 
-![Backend Architecture](master/assets/Architecture/backend-architecture.png)
+![Backend Architecture](assets/Architecture/backend-architecture.png)
 
 - Front-end and cloud resource will send the request to the backend.
 - Front-end uses GraphQL endpoint by sending the GraphQL query to the backend through POST method.

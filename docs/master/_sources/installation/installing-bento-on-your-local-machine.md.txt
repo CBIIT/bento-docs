@@ -13,7 +13,7 @@ All local copies of source code and configuration files used for your environmen
 
 Bento-local consists of three components hosted within Docker containers and a separate Dataloader container that will run the Bento dataloader scripts. Depending on configuration options the build can take several minutes. When the build is complete the Bento components will be configured as follows:
 
-![System Architecture](resources/bento-local/architecture.jpg)
+![System Architecture](../assets/bento-local/architecture.jpg)
 
 **Front End:**
 
@@ -65,7 +65,7 @@ The bento-local scripts can be found in Github at: [https://github.com/CBIIT/ben
 You can clone this repository onto your local workstation using any git client you have installed to get the Bento-Local scripts:
 
 
-![Initial Configuration](resources/bento-local/initial-pull.jpg)
+![Initial Configuration](../assets/bento-local/initial-pull.jpg)
 
 ### Initialize your bento-local project
 
@@ -80,7 +80,7 @@ Details for the initialization script can be found in the README file in bento-l
 * bento-model: cloned from https://github.com/CBIIT/bento-model.git
 * data: a copy of the included demo data
 
-![Initial Configuration](resources/bento-local/after-init.jpg)
+![Initial Configuration](../assets/bento-local/after-init.jpg)
 
 Note that the bento-local build will use the actual code you have cloned locally when it builds - if you require features from a specific branch you must clone that branch specifically using git or by updating the defaults used in the initializion script. For a vanilla install of Bento the default branches will be sufficient.
 

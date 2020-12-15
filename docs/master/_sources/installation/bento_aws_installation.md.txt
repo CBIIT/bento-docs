@@ -21,7 +21,7 @@ The code in this demo will create the following resources via Terraform:
 * ECS cluster with one EC2 node
 * Neo4j Database in private subnet
 
-![Architecture](resources/bento-cloud/bentoawsarchitecture.png)
+![Architecture](../assets/bento-cloud/bentoawsarchitecture.png)
 
 ## D. Pre-requisites
 Ensure you have the following tools installed and configured before proceeding. All instructions provided here assumes you have unix-like environment
@@ -105,18 +105,18 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 * Click [State Manager](https://us-west-1.console.aws.amazon.com/systems-manager/state-manager) in the left pane of the navigation
 * You will see the current status of the deployment. If everything goes well the **status** should change from **Pending** to **Success** as shown below.
 
-![Pending](resources/bento-cloud/bentopending.png)
-![Pending](resources/bento-cloud/bentosuccess.png)
+![Pending](../assets/bento-cloud/bentopending.png)
+![Pending](../assets/bento-cloud/bentosuccess.png)
 
 ### d Verify Deployment
 When the deployment is completed, navigate to the **custodian\_url\** to verify that the application is loaded successfully.
 
 * Home page
-![Home](resources/bento-cloud/bentoindexpage.png)
+![Home](../assets/bento-cloud/bentoindexpage.png)
 * Cases Page
-![Cases](resources/bento-cloud/bentocasespage.png)
+![Cases](../assets/bento-cloud/bentocasespage.png)
 * Program Page
-![Cases](resources/bento-cloud/bentoprogrampage.png)
+![Cases](../assets/bento-cloud/bentoprogrampage.png)
 
 
 ### e) Teardown
@@ -134,7 +134,7 @@ Many times, there are needs to customize Bento Framework based on your unique ne
 ### a) Edit  vars.tfvars file
 *  Using your favorite text editor open and edit **${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars** file.
 *  Replace the values of backend_repo and frontend_repo with the new url of your forked repositories as shown below; 
-![git repositories](resources/bento-cloud/gitrepositories.png)
+![git repositories](../assets/bento-cloud/gitrepositories.png)
 
 
 ### b) Apply changes to terraform state
