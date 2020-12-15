@@ -82,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome!</span></p>
+              <p class="caption"><span class="caption-text">Welcome</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
@@ -99,6 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation/installing-bento-on-your-local-machine.html">Installing Bento on Your Local Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation/bento_aws_installation.html">Deploying Bento on AWS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation/bento_gcp_cloud_run_installation.html">Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/bento_gcp_gke_installation.html">Deploying Bento on GCP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -110,6 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="configuration/case-detail-page.html">Case Detail Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration/dashboard.html">Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration/cart-workflow.html">Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/static-pages.html">Static Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -185,6 +187,15 @@
     
   </ul>
 
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="installation/bento-quick-start.html" class="btn btn-neutral float-right" title="Quick Start Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Bento Project Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
   
   <hr/>
 </div>
@@ -264,20 +275,20 @@
 </ol>
 <p>Apollo Client is a complete state management library for JavaScript apps. Simply write a GraphQL query, and Apollo Client will take care of requesting and caching your data, as well as updating your UI. Fetching data with Apollo Client guides you to structure your code in a predictable, declarative way consistent with modern React best practices. With Apollo, you can build high-quality features faster without the hassle of writing data plumbing boilerplate.</p>
 <p><strong>2.1 - Sample Query</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET_STUDYTABLE_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
-<span class="sb">    studiesByProgram {</span>
-<span class="sb">        program_id</span>
-<span class="sb">        clinical_study_designation</span>
-<span class="sb">        clinical_study_name</span>
-<span class="sb">         clinical_study_type</span>
-<span class="sb">         numberOfCases</span>
-<span class="sb">    }</span>
-<span class="sb">  }</span>
-<span class="sb">  `</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export const GET_STUDYTABLE_DATA_QUERY = gql`{
+    studiesByProgram {
+        program_id
+        clinical_study_designation
+        clinical_study_name
+         clinical_study_type
+         numberOfCases
+    }
+  }
+  `;
 </pre></div>
 </div>
 <p><strong>2.2 – Sample Query Call</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>const studiesContainer= () =&gt; (
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const studiesContainer= () =&gt; (
     &lt;Query query={ studiesContainer}&gt;
     {({ data, loading, error }) =&gt; (
         loading ? &lt;Loading /&gt;: ( error || !data ? &lt;Error /&gt;: &lt;Studies data={data} /&gt; )
@@ -288,22 +299,22 @@
 </div>
 <p>Here is the Query is provided from react-apollo, When React mounts and renders a component that calls the useQuery hook, Apollo Client automatically executes the specified query</p>
 <p><strong>2.3 – Sample Response</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;studiesByProgram&quot;</span><span class="o">:</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;studiesByProgram&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="s2">&quot;program_id&quot;</span><span class="o">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_type&quot;</span><span class="o">:</span> <span class="s2">&quot;Clinical Trial&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;numberOfCases&quot;</span><span class="o">:</span> <span class="mf">84</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="o">:</span> <span class="s2">&quot;COTC007B&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Preclinical Comparison of Three Indenoisoquinoline Candidates in Tumor-Bearing Dogs&quot;</span>
+        <span class="s2">&quot;program_id&quot;</span><span class="p">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Clinical Trial&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numberOfCases&quot;</span><span class="p">:</span> <span class="mi">84</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="p">:</span> <span class="s2">&quot;COTC007B&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Preclinical Comparison of Three Indenoisoquinoline Candidates in Tumor-Bearing Dogs&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">&quot;program_id&quot;</span><span class="o">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_type&quot;</span><span class="o">:</span> <span class="s2">&quot;Transcriptomics&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;numberOfCases&quot;</span><span class="o">:</span> <span class="mf">60</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="o">:</span> <span class="s2">&quot;NCATS-COP01&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;clinical_study_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Models for Diagnosis and Treatment of Human Cancers Using Comparative Canine-Human Transcriptomics&quot;</span>
+        <span class="s2">&quot;program_id&quot;</span><span class="p">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Transcriptomics&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numberOfCases&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="p">:</span> <span class="s2">&quot;NCATS-COP01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Models for Diagnosis and Treatment of Human Cancers Using Comparative Canine-Human Transcriptomics&quot;</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>
@@ -406,7 +417,7 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 9:13:30 AM.
+        Last updated on Dec 15, 2020, 9:37:22 AM.
       </span>
 
     </p>

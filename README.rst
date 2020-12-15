@@ -2,7 +2,7 @@
 Bento Project Documentation
 ===========================
 
-.. image:: source/assets/Bento-Header-Logo.png
+.. image:: https://github.com/CBIIT/bento-docs/blob/master/source/assets/Bento-Header-Logo.png
     :alt: Bento Logo
 
 Welcome! This is the documentation site for the Bento Project. It describes the Bento project's background and explains how to set up a data sharing platform using the Bento framework.

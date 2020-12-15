@@ -44,7 +44,6 @@ html_sidebars = {
     "**": [
         "index.html",
         "navigation.html",
-        "relations.html",
         "searchbox.html",
         "versions.html",
     ],
@@ -83,17 +82,10 @@ master_doc = "index"
 
 ## sphinx_rtd_theme options
 html_theme_options = {
-    'logo_only': False,
-    #'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    #'style_nav_header_background': 'white',
+    'prev_next_buttons_location': 'both',
+    'vcs_pageview_mode': 'blob',
     # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
     'navigation_depth': 3,
-    'includehidden': True,
-    'titles_only': False
 }
 
 
