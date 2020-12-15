@@ -1,23 +1,23 @@
 .. include:: ../README.rst
 
 .. toctree::
-    :caption: Welcome!
+    :caption: Welcome
     :maxdepth: 1
 
     overview
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Installation
 
     installation/bento-quick-start
     installation/installing-bento-on-your-local-machine
     installation/bento_aws_installation
     installation/bento_gcp_cloud_run_installation
-    installation/bento_gcp_gke_insallation
+    installation/bento_gcp_gke_installation
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Configuration
 
     configuration/global-ui-elements
@@ -28,10 +28,10 @@
     configuration/case-detail-page
     configuration/dashboard
     configuration/cart-workflow
-    configuraiton/static-pages
+    configuration/static-pages
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Data and Modeling
 
     data-and-modeling/data-loader
@@ -43,7 +43,7 @@
     data-and-modeling/bento-data-model-attributes
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Project Info
 
     project-info/Bento-Glossary

@@ -82,51 +82,67 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-architecture">Bento Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-frontend-documentation">Bento – Frontend Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-backend-api-architecture-documentation">Bento – Backend &amp; API Architecture Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-data-model">Bento Data Model</a></li>
+              <p class="caption"><span class="caption-text">Welcome!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">Deploying Bento on GCP Cloud Run</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">Program Listing Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Program Detail Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#page-title-configuration">Page Title Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-page-title-page-subtitle-and-breadcrumb">Configuring the Page Title, Page Subtitle and Breadcrumb</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/README.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/bento-quick-start.html">Quick Start Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">Installing Bento on Your Local Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/bento_aws_installation.html">Deploying Bento on AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">Deploying Bento on GCP Cloud Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">Deploying Bento on GCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-aggregate-count">Configuring the Aggregate Count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-icons-in-the-program-detail-page">Configuring icons in the Program Detail Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-program-detail-page-panels">Configuring the Program Detail Page Panels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-left-hand-panel">Configuring the Left Hand Panel</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="global-ui-elements.html">Global UI Elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="landing-page.html">Landing Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="program-listing-page.html">Program Listing Page</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Program Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arm-detail-page.html">Arm  Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="case-detail-page.html">Case Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart-workflow.html">Cart Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="static-pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-right-hand-panel">Configuring the Right Hand Panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-donut-widget">Configuring the Donut widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-file-count-widget">Configuring the File Count widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/README.html">Data and Modeling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/data-loader.html">Data Loader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/model-converter.html">Model Converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/file-copier.html">File Copier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-backend.html">Bento Backend Framework Configuration Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">Bento TailoRx Data Dictionary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">Relationships among Bento TailoRx node types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">Bento TailoRx Model Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-program-detail-page-table">The Program Detail Page Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-program-detail-page-table">Configuring the Program Detail Page Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-program-detail-page-table">Adding columns to the Program Detail Page Table.</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/README.html">Project Info</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/Bento-Glossary.html">Bento Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/meet-the-team.html">Meet the Team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suggested-best-practice">Suggested Best Practice</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">Cart Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">License</a></li>
 </ul>
 
             
@@ -172,8 +188,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="configuration.html">Configuration</a> &raquo;</li>
         
       <li>Program Detail Page</li>
     
@@ -616,7 +630,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 8:41:41 AM.
+        Last updated on Dec 15, 2020, 9:13:30 AM.
       </span>
 
     </p>

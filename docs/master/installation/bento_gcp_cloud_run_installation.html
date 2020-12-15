@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deploying Bento on GCP" href="bento_gcp_gke_installation.html" />
+    <link rel="next" title="Global UI Elements" href="../configuration/global-ui-elements.html" />
     <link rel="prev" title="Deploying Bento on AWS" href="bento_aws_installation.html" /> 
 </head>
 
@@ -82,51 +82,72 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-architecture">Bento Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-frontend-documentation">Bento – Frontend Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-backend-api-architecture-documentation">Bento – Backend &amp; API Architecture Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../overview.html#bento-data-model">Bento Data Model</a></li>
+              <p class="caption"><span class="caption-text">Welcome!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bento-quick-start.html">Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html">Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento_aws_installation.html">Deploying Bento on AWS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deploying Bento on GCP Cloud Run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-introduction">A. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#b-disclaimer">B. Disclaimer</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="README.html">Installation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="bento-quick-start.html">Quick Start Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installing-bento-on-your-local-machine.html">Installing Bento on Your Local Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bento_aws_installation.html">Deploying Bento on AWS</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Deploying Bento on GCP Cloud Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bento_gcp_gke_installation.html">Deploying Bento on GCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-architecture">C. Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-pre-requisites">D. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e-installations">E. Installations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-clone-bento-framework">a) Clone Bento Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-setup-gcp-environment">b) Setup GCP Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-populate-vars-tfvars-file">c) Populate vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-deploy-application">d) Deploy Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e-verify-deployment">e) Verify Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f-teardown">f) Teardown</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/configuration.html">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/global-ui-elements.html">Global UI Elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/landing-page.html">Landing Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/program-listing-page.html">Program Listing Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/program-detail-page.html">Program Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/arm-detail-page.html">Arm  Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/case-detail-page.html">Case Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/dashboard.html">Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/cart-workflow.html">Cart Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/static-pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-application-updates">F. Application Updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-edit-vars-tfvars-file">a) Edit  vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-apply-changes-to-terraform-state">b) Apply changes to terraform state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-apply-changes-using-ansible">c) Apply Changes using Ansible</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/README.html">Data and Modeling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/data-loader.html">Data Loader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/model-converter.html">Model Converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/file-copier.html">File Copier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-backend.html">Bento Backend Framework Configuration Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">Bento TailoRx Data Dictionary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">Relationships among Bento TailoRx node types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">Bento TailoRx Model Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#g-data-model-updates">G. Data Model Updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">a) Edit  vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">b) Apply changes to terraform state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">c) Apply Changes using Ansible</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/README.html">Project Info</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/Bento-Glossary.html">Bento Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/meet-the-team.html">Meet the Team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project-info/license.html">License</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-listing-page.html">Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-detail-page.html">Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/arm-detail-page.html">Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/case-detail-page.html">Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/cart-workflow.html">Cart Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">License</a></li>
 </ul>
 
             
@@ -172,8 +193,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="README.html">Installation</a> &raquo;</li>
         
       <li>Deploying Bento on GCP Cloud Run</li>
     
@@ -481,7 +500,7 @@ bento@custodian:$ gcloud services enable vpcaccess.googleapis.com
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bento_gcp_gke_installation.html" class="btn btn-neutral float-right" title="Deploying Bento on GCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../configuration/global-ui-elements.html" class="btn btn-neutral float-right" title="Global UI Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="bento_aws_installation.html" class="btn btn-neutral float-left" title="Deploying Bento on AWS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -496,7 +515,7 @@ bento@custodian:$ gcloud services enable vpcaccess.googleapis.com
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 8:41:41 AM.
+        Last updated on Dec 15, 2020, 9:13:30 AM.
       </span>
 
     </p>

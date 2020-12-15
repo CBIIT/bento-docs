@@ -101,7 +101,7 @@ Apollo Client is a complete state management library for JavaScript apps. Simply
 
   **2.1 - Sample Query**
 
-```javascript
+```
 export const GET_STUDYTABLE_DATA_QUERY = gql`{
     studiesByProgram {
         program_id
@@ -116,7 +116,7 @@ export const GET_STUDYTABLE_DATA_QUERY = gql`{
 
   **2.2 – Sample Query Call**
 
-```javascript
+```
 const studiesContainer= () => (
     <Query query={ studiesContainer}>
     {({ data, loading, error }) => (
@@ -130,7 +130,7 @@ Here is the Query is provided from react-apollo, When React mounts and renders a
 
 **2.3 – Sample Response**
 
-```javascript
+```
 {
   "data": {
     "studiesByProgram": [

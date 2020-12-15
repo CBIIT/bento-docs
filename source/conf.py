@@ -89,9 +89,9 @@ html_theme_options = {
     'style_external_links': False,
     #'style_nav_header_background': 'white',
     # Toc options
-    'collapse_navigation': False,
+    'collapse_navigation': True,
     'sticky_navigation': True,
-    'navigation_depth': 2,
+    'navigation_depth': 3,
     'includehidden': True,
     'titles_only': False
 }
