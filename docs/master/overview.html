@@ -208,12 +208,14 @@
 <br>This site provides you with the background and instructions you need to set up your own data sharing platform using Bento.</p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Bento is an open-source software framework for data sharing platforms that allow users to store, manage, share and analyze large-scale data according to the <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR</a> principles.
-<br>Bento is built on three organizing principles:
-<br>1. <strong>Bento is data agnostic.</strong> You can use Bento to develop data sharing platforms for data types of your choice. The framework is built to support the sharing of any kind of large scale biological data, be it next-generation sequencing, , proteomics, flow-cytometry or single-cell sequencing data sets.
-<br>2. <strong>Bento is modular.</strong> The Bento architecture separates the front-end code, back-end code and the underlying graph database into three separate modules. This modularity allows users to separately update each module. For example, the database model may be updated and the resulting database will work with the other modules to form a functioning application, or the front-end code may be updated to provide a different user interface, without modifying the back-end or database modules. We believe this modularity allows Bento-enabled data sharing platforms to be scaled up and out to keep pace with the platform custodian’s evolving needs.
-<br>3. <strong>Bento is cloud enabled.</strong> We have built Bento to be deployed on your on-premise servers as well as on the Amazon Web Services and Google Cloud platforms.
-<br><a class="reference external" href="http://dev.bento-tools.org/">This</a> data sharing platform was built as a reference implementation of Bento. You can explore it to better understand the capabilities of the framework.</p>
+<p>Bento is an open-source software framework for data sharing platforms that allow users to store, manage, share and analyze large-scale data according to the <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR</a> principles.</p>
+<p>Bento is built on three organizing principles:</p>
+<ol class="simple">
+<li><p><strong>Bento is data agnostic.</strong> You can use Bento to develop data sharing platforms for data types of your choice. The framework is built to support the sharing of any kind of large scale biological data, be it next-generation sequencing, , proteomics, flow-cytometry or single-cell sequencing data sets.</p></li>
+<li><p><strong>Bento is modular.</strong> The Bento architecture separates the front-end code, back-end code and the underlying graph database into three separate modules. This modularity allows users to separately update each module. For example, the database model may be updated and the resulting database will work with the other modules to form a functioning application, or the front-end code may be updated to provide a different user interface, without modifying the back-end or database modules. We believe this modularity allows Bento-enabled data sharing platforms to be scaled up and out to keep pace with the platform custodian’s evolving needs.</p></li>
+<li><p><strong>Bento is cloud enabled.</strong> We have built Bento to be deployed on your on-premise servers as well as on the Amazon Web Services and Google Cloud platforms.</p></li>
+</ol>
+<p><a class="reference external" href="http://dev.bento-tools.org/">This</a> data sharing platform was built as a reference implementation of Bento. You can explore it to better understand the capabilities of the framework.</p>
 </div>
 <div class="section" id="bento-architecture">
 <h2>Bento Architecture<a class="headerlink" href="#bento-architecture" title="Permalink to this headline">¶</a></h2>
@@ -388,9 +390,9 @@
 <h2>Bento Data Model<a class="headerlink" href="#bento-data-model" title="Permalink to this headline">¶</a></h2>
 <p>The Bento Core Data Model is a graphical data model that has been designed to address the data storage needs of clinical trials and research programs; it can be adapted to most data generation workflows. Graphical data models organize data in the form of a graph. The Bento Core Data Model models key components of a data generation workflow as nodes, and the relationships among them as edges. Both nodes and edges can store data in the form of properties.
 It is based on the Aggregated Data Model developed by the <a class="reference external" href="https://datascience.cancer.gov/data-commons/center-cancer-data-harmonization-ccdh">Center for Cancer Data Harmonization</a>. The Aggregated Data Model synthesizes core concepts from three data sharing platforms- the <a class="reference external" href="https://gdc.cancer.gov/">Genomic Data Commons</a>; the <a class="reference external" href="https://proteomic.datacommons.cancer.gov/pdc/">Proteomic Data Commons</a> and the <a class="reference external" href="https://caninecommons-dev.cancer.gov/">Integrated Canine Data Commmons</a>.
-This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sharing platform, where users can navigate from a selected clinical trial or program to a set of files of their choice.
-<br>Being schema-less, graphical data models can be easily extended, to include additional node and relationship types, without breaking the existing model. This feature allows you to expand the Bento Core Data Model to suit the evolving needs of your data sharing platform.
-<br>You can access the Bento Core Data Model <a class="reference external" href="https://github.com/CBIIT/bento-model.git">here</a>. We have extended the core data model to build the reference implementation; the extended BENTO_TAILORx data model can be found <a class="reference external" href="https://github.com/CBIIT/BENTO-TAILORx-model">here</a>.</p>
+This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sharing platform, where users can navigate from a selected clinical trial or program to a set of files of their choice.</p>
+<p>Being schema-less, graphical data models can be easily extended, to include additional node and relationship types, without breaking the existing model. This feature allows you to expand the Bento Core Data Model to suit the evolving needs of your data sharing platform.</p>
+<p>You can access the Bento Core Data Model <a class="reference external" href="https://github.com/CBIIT/bento-model.git">here</a>. We have extended the core data model to build the reference implementation; the extended BENTO_TAILORx data model can be found <a class="reference external" href="https://github.com/CBIIT/BENTO-TAILORx-model">here</a>.</p>
 </div>
 </div>
 
@@ -417,7 +419,7 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 11:50:31 AM.
+        Last updated on Dec 15, 2020, 12:50:58 PM.
       </span>
 
     </p>
@@ -449,6 +451,7 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
   <div class="rst-other-versions">
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../MVP/index.html">MVP</a></dd>
       <dd><a href="overview.html">master</a></dd>
     </dl>
   </div>

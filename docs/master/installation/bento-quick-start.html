@@ -211,8 +211,8 @@
 <h1><span class="section-number">1. </span>Quick Start Tutorial<a class="headerlink" href="#quick-start-tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Bento follows the principle of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform.
-<br>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS.</p>
+<p>Bento follows the principle of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform.</p>
+<p>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS.</p>
 </div>
 <div class="section" id="fork-the-bento-repositories">
 <h2><span class="section-number">1.2. </span>Fork the Bento Repositories<a class="headerlink" href="#fork-the-bento-repositories" title="Permalink to this headline">¶</a></h2>
@@ -223,10 +223,12 @@
 <li><p>Data Model: <a class="reference external" href="https://github.com/CBIIT/BENTO-TAILORx-model">https://github.com/CBIIT/BENTO-TAILORx-model</a></p></li>
 </ol>
 <p>Fork each of these to create your own remote repos. Instructions on forking a GitHub repo are <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/getting-started-with-github/fork-a-repo">here</a>.</p>
-<p>For this tutorial we shall assume that you have named your repos:
-<br><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-frontend.git</span></code>
-<br><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-backend.git</span></code>
-<br><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-model.git</span></code></p>
+<p>For this tutorial we shall assume that you have named your repos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-frontend.git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-backend.git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-model.git</span></code></p></li>
+</ul>
 </div>
 <div class="section" id="set-up-the-bento-local-environment-on-your-machine">
 <h2><span class="section-number">1.3. </span>Set up the Bento Local Environment on your machine.<a class="headerlink" href="#set-up-the-bento-local-environment-on-your-machine" title="Permalink to this headline">¶</a></h2>
@@ -281,7 +283,7 @@ For this tutorial we shall consider <code class="docutils literal notranslate"><
 <li><p>Open the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file using a text editor of your choice.</p>
 <ul class="simple">
 <li><p>Set the following variables: <code class="docutils literal notranslate"><span class="pre">FRONTEND_REPO</span></code>, <code class="docutils literal notranslate"><span class="pre">BACKEND_REPO</span></code>, <code class="docutils literal notranslate"><span class="pre">MODEL_REPO</span></code> to the URLS of your forked repos for the front end, back end and data model respectively.</p></li>
-<li><p>Set the variable BUILD_MODE to <code class="docutils literal notranslate"><span class="pre">dev</span></code>. Note: see “Installing Bento on you Local Machine” for a discussion on the three modes for Bento local environment.</p></li>
+<li><p>Set the variable BUILD_MODE to <code class="docutils literal notranslate"><span class="pre">dev</span></code>. Note: see <a class="reference external" href="installing-bento-on-your-local-machine.html">Installing Bento on you Local Machine</a> for a discussion on the three modes for Bento local environment.</p></li>
 <li><p>Save and exit the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file.</p></li>
 </ul>
 </li>
@@ -384,8 +386,10 @@ The initialization script will query you <code class="docutils literal notransla
 <li><p>Note 2: For advanced users, you may load your own Bento-model compliant data set to the S3 bucket.</p></li>
 </ul>
 </li>
-<li><p>Open the <code class="docutils literal notranslate"><span class="pre">vars.tfvars</span></code> file with an editor of your choice. The path of this file is: <code class="docutils literal notranslate"><span class="pre">/bento-custodian/terraform/aws/vars.tfvars</span></code>.
-<br> See <code class="docutils literal notranslate"><span class="pre">/bento-custodian/terraform/aws/variables.tf</span></code> for a description of the variables in <code class="docutils literal notranslate"><span class="pre">vars.tfvars</span></code>.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">vars.tfvars</span></code> file with an editor of your choice. The path of this file is: <code class="docutils literal notranslate"><span class="pre">/bento-custodian/terraform/aws/vars.tfvars</span></code>.</p></li>
+</ol>
+<p>See <code class="docutils literal notranslate"><span class="pre">/bento-custodian/terraform/aws/variables.tf</span></code> for a description of the variables in <code class="docutils literal notranslate"><span class="pre">vars.tfvars</span></code>.</p>
+<ol class="simple">
 <li><p>Update the following variables in <code class="docutils literal notranslate"><span class="pre">vars.tfvars</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">profile</span></code>: The name of your profile as it is set in the <code class="docutils literal notranslate"><span class="pre">.aws/credential</span></code> file.</p></li>
@@ -495,7 +499,7 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 11:50:31 AM.
+        Last updated on Dec 15, 2020, 12:50:58 PM.
       </span>
 
     </p>
@@ -527,6 +531,7 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
   <div class="rst-other-versions">
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../MVP/index.html">MVP</a></dd>
       <dd><a href="bento-quick-start.html">master</a></dd>
     </dl>
   </div>
