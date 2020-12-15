@@ -30,6 +30,7 @@ author = 'CBIIT'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
+    'sphinx_markdown_tables',
     "sphinx_multiversion",
     'sphinx_rtd_theme',
     'recommonmark'

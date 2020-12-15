@@ -52,12 +52,12 @@ There are a number of static pages that are available for the Bento framework. T
 
 | Element                                            | Syntax                                                     | Example                                                      |
 | -------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Link or Download  File from externally hosted file | `$$[title](link)$$`                                        | `$$[Cloud Resources](https://datascience.cancer.gov/data-commons/cloud-resources)$$`<br /> (opens in new tab with link-out icon) |
+| Link or Download  File from externally hosted file | `$$[title](link)$$`                                        | `$$[Cloud Resources](https://datascience.cancer.gov/data-commons/cloud-resources)$$` (opens in new tab with link-out icon) |
 | Bold Title                                         | `$$#text#$$`                                               | `$$#Cloud Resourses#$$`                                      |
 | Bold Inline Text                                   | `$$*text*$$`                                               | `$$@CloudResourses@$$`                                       |
 | Download Submission PDF                            | `$${Text}$$`                                               | `$${submission guide [PDF]}$$`                               |
-| Enhanced Link                                      | `$$[Title](target:[_self] url:[url] type:[Optional] )$$`   | `$$[Testing](target:_self url:/#/developers type:0)$$`<br />(opens in same page without link-out icon) |
-| Enhanced Link                                      | `$$[Title](target:[_blank] url:[url] type:[Optional]  )$$` | `$$[Testing](target:_blankurl:/#/developers type:0)$$`<br />(opens in new tab without link-out icon) |
+| Enhanced Link                                      | `$$[Title](target:[_self] url:[url] type:[Optional] )$$`   | `$$[Testing](target:_self url:/#/developers type:0)$$` (opens in same page without link-out icon) |
+| Enhanced Link                                      | `$$[Title](target:[_blank] url:[url] type:[Optional]  )$$` | `$$[Testing](target:_blankurl:/#/developers type:0)$$` (opens in new tab without link-out icon) |
 
 ## Best Practices
 1. It is recommended to have the title of each page in the 'About' menu match the title on the actual page.

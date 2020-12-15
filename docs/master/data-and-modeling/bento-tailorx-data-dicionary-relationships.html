@@ -198,46 +198,240 @@
   <div class="section" id="relationships-among-bento-tailorx-node-types">
 <h1><span class="section-number">6. </span>Relationships among Bento TailoRx node types<a class="headerlink" href="#relationships-among-bento-tailorx-node-types" title="Permalink to this headline">¶</a></h1>
 <p>Relationships among BENTO_TAILORx node types. Listed are relationships that connect node types in the BENTO_TAILORx conceptual data model, the source and destination nodes for each relationship, and the multiplicity of each relationship.</p>
-<p>|     Relationship               |     Source                    |     Destination                 |     Multiplicity    |
-|——————————–|——————————-|———————————|———————|
-|     of_institution             |     program                   |     institution                 |     many_to_many    |
-|     of_program                 |     project                   |     program                     |     many_to_many    |
-|     of_program                 |     study                     |     program                     |     many_to_many    |
-|     of_program                 |     study_subject             |     program                     |     many_to_many    |
-|     of_program                 |     laboratory_procedure      |     program                     |     many_to_many    |
-|     cross_referenced_at        |     study_subject             |     cross_reference_database    |     many_to_many    |
-|     of_project                 |     study_subject             |     project                     |     many_to_many    |
-|     of_study                   |     study_subject             |     study                       |     many_to_many    |
-|     of_study_subject           |     sample                    |     study_subject               |     many_to_one     |
-|     of_sample                  |     fraction                  |     sample                      |     many_to_one     |
-|     of_fraction                |     analyte                   |     fraction                    |     many_to_one     |
-|     of_analyte                 |     aliquot                   |     analyte                     |     many_to_one     |
-|     of_sample                  |     analyte                   |     sample                      |     many_to_one     |
-|     processed_by               |     aliquot                   |     laboratory_procedure        |     many_to_many    |
-|     processed_by               |     analyte                   |     laboratory_procedure        |     many_to_many    |
-|     processed_by               |     fraction                  |     laboratory_procedure        |     many_to_many    |
-|     processed_by               |     sample                    |     laboratory_procedure        |     many_to_many    |
-|     of_sample                  |     report                    |     sample                      |     one_to_one      |
-|     of_fraction                |     report                    |     fraction                    |     one_to_one      |
-|     of_analyte                 |     report                    |     analyte                     |     one_to_one      |
-|     of_aliquot                 |     report                    |     aliquot                     |     one_to_one      |
-|     of_laboratory_procedure    |     report                    |     laboratory_procedure        |     one_to_one      |
-|     of_study_subject           |     demographic_data          |     study_subject               |     one_to_one      |
-|     of_study_subject           |     exposure                  |     study_subject               |     one_to_one      |
-|     of_study_subject           |     family_medical_history    |     study_subject               |     one_to_one      |
-|     of_study_subject           |     file                      |     study_subject               |     many_to_one     |
-|     of_sample                  |     file                      |     sample                      |     many_to_one     |
-|     of_laboratory_procedure    |     file                      |     laboratory_procedure        |     many_to_one     |
-|     of_study                   |     file                      |     study                       |     many_to_one     |
-|     of_project                 |     file                      |     project                     |     many_to_one     |
-|     of_program                 |     file                      |     program                     |     many_to_one     |
-|     of_diagnosis               |     file                      |     diagnosis                   |     many_to_one     |
-|     of_diagnosis               |     therapeutic_procedure     |     diagnosis                   |     many_to_one     |
-|     of_diagnosis               |     follow_up                 |     diagnosis                   |     many_to_one     |
-|     of_study_subject           |     diagnosis                 |     study_subject               |     many_to_one     |
-|     of_study_subject           |     stratification_factor     |     study_subject               |     one_to_one      |
-|     of_study_subject           |     follow_up                 |     study_subject               |     many_to_one     |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Multiplicity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>of_institution</td>
+<td>program</td>
+<td>institution</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_program</td>
+<td>project</td>
+<td>program</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_program</td>
+<td>study</td>
+<td>program</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_program</td>
+<td>study_subject</td>
+<td>program</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_program</td>
+<td>laboratory_procedure</td>
+<td>program</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>cross_referenced_at</td>
+<td>study_subject</td>
+<td>cross_reference_database</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_project</td>
+<td>study_subject</td>
+<td>project</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_study</td>
+<td>study_subject</td>
+<td>study</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>sample</td>
+<td>study_subject</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_sample</td>
+<td>fraction</td>
+<td>sample</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_fraction</td>
+<td>analyte</td>
+<td>fraction</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_analyte</td>
+<td>aliquot</td>
+<td>analyte</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_sample</td>
+<td>analyte</td>
+<td>sample</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>processed_by</td>
+<td>aliquot</td>
+<td>laboratory_procedure</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>processed_by</td>
+<td>analyte</td>
+<td>laboratory_procedure</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>processed_by</td>
+<td>fraction</td>
+<td>laboratory_procedure</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>processed_by</td>
+<td>sample</td>
+<td>laboratory_procedure</td>
+<td>many_to_many</td>
+</tr>
+<tr>
+<td>of_sample</td>
+<td>report</td>
+<td>sample</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_fraction</td>
+<td>report</td>
+<td>fraction</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_analyte</td>
+<td>report</td>
+<td>analyte</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_aliquot</td>
+<td>report</td>
+<td>aliquot</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_laboratory_procedure</td>
+<td>report</td>
+<td>laboratory_procedure</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>demographic_data</td>
+<td>study_subject</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>exposure</td>
+<td>study_subject</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>family_medical_history</td>
+<td>study_subject</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>file</td>
+<td>study_subject</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_sample</td>
+<td>file</td>
+<td>sample</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_laboratory_procedure</td>
+<td>file</td>
+<td>laboratory_procedure</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_study</td>
+<td>file</td>
+<td>study</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_project</td>
+<td>file</td>
+<td>project</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_program</td>
+<td>file</td>
+<td>program</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_diagnosis</td>
+<td>file</td>
+<td>diagnosis</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_diagnosis</td>
+<td>therapeutic_procedure</td>
+<td>diagnosis</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_diagnosis</td>
+<td>follow_up</td>
+<td>diagnosis</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>diagnosis</td>
+<td>study_subject</td>
+<td>many_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>stratification_factor</td>
+<td>study_subject</td>
+<td>one_to_one</td>
+</tr>
+<tr>
+<td>of_study_subject</td>
+<td>follow_up</td>
+<td>study_subject</td>
+<td>many_to_one</td>
+</tr>
+</tbody>
+</table></div>
 
 
            </div>
@@ -262,7 +456,7 @@
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 15, 2020, 11:16:19 AM.
+        Last updated on Dec 15, 2020, 11:31:57 AM.
       </span>
 
     </p>
