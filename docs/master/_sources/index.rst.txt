@@ -36,7 +36,7 @@
     configuration/static-pages
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Data and Modeling
 
@@ -49,7 +49,7 @@
     data-and-modeling/bento-data-model-attributes
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Project Info
 

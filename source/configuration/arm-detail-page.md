@@ -2,6 +2,7 @@
 The Arm Detail Page provides a summary of a Study/Project/Arm of that belongs to a Program that participates in your data sharing platform.
 
 ![Arm Detail Page](../assets/arm-detail-page.png)
+
 **Arm Detail Page**. Displayed are the configurable components of the Arm Detail Page.
 
 ### Prerequisites

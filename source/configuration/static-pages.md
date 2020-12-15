@@ -32,7 +32,7 @@ There are a number of static pages that are available for the Bento framework. T
 ### Edit configuration file
 1. There is a maximum of 6 pages that can appear under "About". If no informational pages are configured to be displayed, the "About" menu option will be hidden.
 
-2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](configuration/global-ui-elements.html#global-navigation-bar)
+2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](global-ui-elements.html#global-navigation-bar)
 
 3. To edit the title for each page in the 'About' menu: 
    * edit file: `$(src)/aboutPagesContent.yaml` 

@@ -2,6 +2,7 @@
 The Case Detail Page lists the key attributes of a case or study subject participating in a clinical study or research program in your data sharing platform.
 
 ![Case Detail Page](../assets/case-detail-page.png)
+
 **Case Detail Page.** Displayed are the configurable components of a Case Detail Page.
 
 ### Prerequisites

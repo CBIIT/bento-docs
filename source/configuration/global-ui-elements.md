@@ -1,7 +1,9 @@
 # Global UI Elements
 
 Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. See below for details.
+
 ![Global UI Elements](../assets/global_elements.png)
+
 **Global User Interface Elements**. Displayed are the global elements that are displayed on all pages of a Bento-based data sharing platform. These are: the web browser tab, the global header, global footer, the navigation bar and the stats bar. The Stats Bar is semi-global in scope as it is displayed in only a subset of the application's pages.
 
 
@@ -76,7 +78,9 @@ export default {
 
 ## Global Footer
 The Global Footer appears at the bottom of every page in a Bento-based application. The Global Footer may be used to display an organization logo and additional links, that may be helpful for the end user, such as documentation, support email and social media platforms.
+
 ![Global Footer Elements](../assets/global_footer.png)
+
 **The Global Footer.** Displayed are the elements of the Global Footer. 
 
 ### Configuring the Organization Logo 

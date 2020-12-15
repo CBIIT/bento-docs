@@ -2,7 +2,8 @@
 
 ## Introduction
 Bento follows the principle of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform. 
-<br>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS. 
+
+The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS. 
 
 ## Fork the Bento Repositories
 The Bento code-base is divided into three main components: (a) the front end (b) the back end and (c) the database. The code-base for all three are stored on GitHub. Here are the repos to fork:
@@ -16,9 +17,9 @@ The Bento code-base is divided into three main components: (a) the front end (b)
 Fork each of these to create your own remote repos. Instructions on forking a GitHub repo are [here](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
 
 For this tutorial we shall assume that you have named your repos:
-<br>`https://github.com/CBIIT/bento-demo-frontend.git`
-<br>`https://github.com/CBIIT/bento-demo-backend.git`
-<br>`https://github.com/CBIIT/bento-demo-model.git` 
+ * `https://github.com/CBIIT/bento-demo-frontend.git`
+ * `https://github.com/CBIIT/bento-demo-backend.git`
+ * `https://github.com/CBIIT/bento-demo-model.git` 
 
 
 ## Set up the Bento Local Environment on your machine.
@@ -73,7 +74,7 @@ drwxr-xr-x   6 <your user name>  <your group name>    192 Oct 24 08:23 initializ
 
 3. Open the `.env` file using a text editor of your choice. 
     * Set the following variables: `FRONTEND_REPO`, `BACKEND_REPO`, `MODEL_REPO` to the URLS of your forked repos for the front end, back end and data model respectively. 
-    * Set the variable BUILD_MODE to `dev`. Note: see "Installing Bento on you Local Machine" for a discussion on the three modes for Bento local environment.
+    * Set the variable BUILD_MODE to `dev`. Note: see [Installing Bento on you Local Machine](installing-bento-on-your-local-machine.html) for a discussion on the three modes for Bento local environment.
     * Save and exit the `.env` file.
 
 
@@ -178,7 +179,8 @@ git clone https://github.com/CBIIT/bento-custodian
 
 
 3. Open the `vars.tfvars` file with an editor of your choice. The path of this file is: `/bento-custodian/terraform/aws/vars.tfvars`. 
-<br> See `/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
+
+See `/bento-custodian/terraform/aws/variables.tf` for a description of the variables in `vars.tfvars`.
 
 4. Update the following variables in `vars.tfvars`:
     * `profile`: The name of your profile as it is set in the `.aws/credential` file.

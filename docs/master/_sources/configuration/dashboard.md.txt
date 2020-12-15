@@ -1,7 +1,7 @@
 # Dashboard
 The Dashboard provides the end user with several capabilities (a) filter data entities of in interested via faceted search (b) view graphical summaries of data entities and (c) select data entities for further exploration.
 
-![Dashboard Elements](https://github.com/CBIIT/bento-docs/blob/master/assets/dashboard.png?raw=true)
+![Dashboard Elements](../assets/dashboard.png)
 **Dashboard**. Displayed are the configurable elements of a Bento Dashboard. These are: Dashboard Sidebar Filters, Dashboard Widgets and Dashboard Table.
 
 ### Prerequisites
