@@ -13,3 +13,5 @@ Example site using Bento framework: `Bento-tools <https://bento-tools.org/#/>`_
 
 Bento Documentation: `https://cbiit.github.io/bento-docs/ <https://cbiit.github.io/bento-docs/>`_
 
+GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-docs/>`_
+

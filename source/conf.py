@@ -83,7 +83,6 @@ master_doc = "index"
 ## sphinx_rtd_theme options
 html_theme_options = {
     'prev_next_buttons_location': 'both',
-    'vcs_pageview_mode': 'blob',
     # Toc options
     'navigation_depth': 3,
 }

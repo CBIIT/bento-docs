@@ -1,3 +1,6 @@
+.. image:: assets/Bento-Header-Logo.png
+    :alt: Bento Logo
+
 .. include:: ../README.rst
 
 .. toctree::
@@ -7,7 +10,8 @@
     overview
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+    :numbered:
     :caption: Installation
 
     installation/bento-quick-start
@@ -17,7 +21,8 @@
     installation/bento_gcp_gke_installation
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+    :numbered:
     :caption: Configuration
 
     configuration/global-ui-elements
@@ -32,6 +37,7 @@
 
 .. toctree::
     :maxdepth: 2
+    :numbered:
     :caption: Data and Modeling
 
     data-and-modeling/data-loader
@@ -44,6 +50,7 @@
 
 .. toctree::
     :maxdepth: 2
+    :numbered:
     :caption: Project Info
 
     project-info/Bento-Glossary
