@@ -33,7 +33,7 @@ extensions = [
     'sphinx_markdown_tables',
     "sphinx_multiversion",
     'sphinx_rtd_theme',
-    'recommonmark'
+    'recommonmark',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -46,6 +46,7 @@ html_sidebars = {
         "navigation.html",
         "searchbox.html",
         "versions.html",
+        "sourcelink.html",
     ],
 }
 
@@ -62,17 +63,29 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
+html_theme_path = ["_themes", ]
 
 html_last_updated_fmt = "%c"
 master_doc = "index"
 
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "CBIIT", # Username
+    "github_repo": "bento-docs", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/source/", # Path in the checkout to the docs root
+}
+
 ## sphinx_rtd_theme options
 html_theme_options = {
+    'vcs_pageview_mode': 'edit',
     'prev_next_buttons_location': 'both',
     'sticky_navigation': True,
     # Toc options
     'navigation_depth': 3,
+    'github_url': 'https://github.com/CBIIT/bento-docs/',
 }
+html_show_sourcelink = True
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
