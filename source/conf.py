@@ -46,6 +46,7 @@ html_sidebars = {
         "navigation.html",
         "searchbox.html",
         "versions.html",
+        "sourcelink.html",
     ],
 }
 
@@ -67,16 +68,24 @@ html_theme_path = ["_themes", ]
 html_last_updated_fmt = "%c"
 master_doc = "index"
 
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "CBIIT", # Username
+    "github_repo": "bento-docs", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/source/", # Path in the checkout to the docs root
+}
+
 ## sphinx_rtd_theme options
 html_theme_options = {
-    'canonical_url': 'https://github.com/CBIIT/bento-docs/',
+    'vcs_pageview_mode': 'edit',
     'prev_next_buttons_location': 'both',
     'sticky_navigation': True,
     # Toc options
     'navigation_depth': 3,
-    # edit on github
-    'github_url': True,
+    'github_url': 'https://github.com/CBIIT/bento-docs/',
 }
+html_show_sourcelink = True
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
