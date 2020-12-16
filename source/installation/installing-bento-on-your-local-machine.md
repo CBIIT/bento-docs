@@ -199,6 +199,27 @@ To clean all docker volumes (NOTE: this will remove any data loaded into Neo4j):
 
 	docker system prune --volumes
 
+## Loading data into Bento-local:
+There are two methids provided for loading data into Bento-local:
+
+* Using a Neo4j dump file: A dataset that has been previously loaded into a Neo4j database and exported as a dump file can be loaded into the Bento-local Neo4j container. This is the preferred method for loading data as it can easily be used to load large data sets quickly.
+* Using the Bento-local dataloader container: This allows users to load locally stored Bento compliant data using scripts run within a dataloader Docker container.
+
+### Loading a Neo4j dump file:
+Loading data using a Neo4j dump file allows users to quickly load large datasets. This requires that the data to be used has been loaded into a Neo4j database and exported as a dump file. Please note that loading from a dump file will replace any data currently stored in Neo4j and that the data contained in the dump file should be compliant with the Bento data schema.
+
+The following steps should be used to stage the dump file to be loaded:
+* Copy the dump file to be used into the data folder within your Bento-local project
+* Rename the dump file to 'bento-data.dump'. Note that this same file name and location is used by the initialization scripts for demo data, if this file is already present it should be removed and replaced with your custom file.
+
+Once your data file is in place use the following commands to rebuild the Neo4j container and load your data:
+
+	* Windows:    $Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose up -d --build neo4j
+	* Linux/Mac:  COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up -d --build neo4j
+
+Additionally the backend container should be restarted to reload the data schema:
+
+	* Both Windows and Linux/Mac:	docker restart backend
 
 ### Running the Bento-local dataloader:
 The Bento Dataloader allows a user to load locally stored data into the Bento database in Neo4j. If you are using the Bento demo data your data folder will be populated when your Bento-Local project is initialized. If you have a different data set to load you can replace the demo data and use the dataloader with that data set.
