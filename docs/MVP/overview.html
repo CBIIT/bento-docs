@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Bento  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Quick Start Tutorial" href="installation/bento-quick-start.html" />
+    <link rel="prev" title="Bento Project Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bento-architecture">Bento Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bento-frontend-documentation">Bento – Frontend Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bento-backend-api-architecture-documentation">Bento – Backend &amp; API Architecture Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bento-data-model">Bento Data Model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configuration/global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/landing-page.html">2. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/program-listing-page.html">3. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/cart-workflow.html">8. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/static-pages.html">9. Static Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-info/meet-the-team.html">2. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-info/license.html">3. License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/overview.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="installation/bento-quick-start.html" class="btn btn-neutral float-right" title="1. Quick Start Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Bento Project Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Bento is a software framework being built to support NCI’s <a class="reference external" href="https://datascience.cancer.gov/data-commons">Cancer Research Data Commons</a> projects, including Integrated Canine Data Commons (ICDC), and Clinical Trial Data Commons (CTDC).
+<br>This site provides you with the background and instructions you need to set up your own data sharing platform using Bento.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Bento is an open-source software framework for data sharing platforms that allow users to store, manage, share and analyze large-scale data according to the <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR</a> principles.</p>
+<p>Bento is built on three organizing principles:</p>
+<ol class="simple">
+<li><p><strong>Bento is data agnostic.</strong> You can use Bento to develop data sharing platforms for data types of your choice. The framework is built to support the sharing of any kind of large scale biological data, be it next-generation sequencing, , proteomics, flow-cytometry or single-cell sequencing data sets.</p></li>
+<li><p><strong>Bento is modular.</strong> The Bento architecture separates the front-end code, back-end code and the underlying graph database into three separate modules. This modularity allows users to separately update each module. For example, the database model may be updated and the resulting database will work with the other modules to form a functioning application, or the front-end code may be updated to provide a different user interface, without modifying the back-end or database modules. We believe this modularity allows Bento-enabled data sharing platforms to be scaled up and out to keep pace with the platform custodian’s evolving needs.</p></li>
+<li><p><strong>Bento is cloud enabled.</strong> We have built Bento to be deployed on your on-premise servers as well as on the Amazon Web Services and Google Cloud platforms.</p></li>
+</ol>
+<p><a class="reference external" href="http://dev.bento-tools.org/">This</a> data sharing platform was built as a reference implementation of Bento. You can explore it to better understand the capabilities of the framework.</p>
+</div>
+<div class="section" id="bento-architecture">
+<h2>Bento Architecture<a class="headerlink" href="#bento-architecture" title="Permalink to this headline">¶</a></h2>
+<p><strong>System Architecture</strong></p>
+<p>The System Architecture is described in terms of 2 different ecosystem components. These 2 eco systems are</p>
+<ul class="simple">
+<li><p>The Web/Database components.</p></li>
+<li><p>The Transformation and DB Loading components.</p></li>
+</ul>
+<p><strong>Web and Database Components</strong></p>
+<p>The Bento ecosystems’ Web and Database components consist of two main parts, the Web Application Containers and the Database Server. The Web Application Containers consist of the Web Application which consists in turn of two main frameworks: Java, Graph API framework supporting the back end and the React Framework to power the User Interface as shown below:</p>
+<p><img alt="Web and Database Components" src="_images/web-and-database.jpg" /></p>
+<p>The Front End uses the React Framework and sends GraphQL API requests to the backend Java Web Application. The request is then converted to a Cypher Query and a custom protocol over TCP (Bolt) is used to communicate with the Neo4J graph database. The response is converted into JSON and sent out to the requesting Clients. The supporting infrastructure is as shown below:</p>
+<p><img alt="AWS Infrastructure" src="_images/aws-infrastructure.jpg" /></p>
+<p>The Application/DB infrastructure for Bento hosted on Amazon Web Services (AWS) consists of an Application Load Balancer, 3 EC2 (Elastic Cloud Compute) Virtual Machines per environment (Development, QA, Staging and Production) and 2 Simple Storage Service (S3) buckets. The HTTPs requests from the User’s browser or a GraphQL client get routed to the appropriate ALB which forwards the request to the Application running on Docker Containers hosted on the EC2 instances. The Application in turn sends the request to the Neo4J graph database and upon receipt of the information, sends the response back in JSON format to the Client Application.</p>
+<p>The graph database consists of Nodes and Relationships.The Metadata S3 bucket stores the Node and Relationships’ Metadata prior to being loaded into Neo4J. The File S3 bucket stores raw files (FastQ, Pathology Reports, Images etc.) with their URL paths amongst other attributes (MD5, UUID etc.) being stored as File Node Attributes in Neo4J. The details of the Database Loading and S3 File Loading will be described in a subsequent section. Additionally, information detailing the different environments and the DevOps Pipeline will also be covered in a subsequent section.</p>
+<p><strong>Transformation and Database Loading</strong></p>
+<p>The Transformation and DB ecosystem components are as shown below:</p>
+<p><img alt="Transformation and Database Loading" src="_images/transformation-and-database-loading.jpg" /></p>
+<p>The goal of the Transformation and Loading steps are to do an ETL (Extract, Transform and Load) on the Comma Separated or Tab Separated Metadata files into the Neo4J Graph Database. The files are first stored on the S3 Metadata bucket with a ‘raw’ prefix and then run through a Transformation process and stored in the same Metadata bucket under a ‘Processed’ prefix using the Kettle/Spoon components of the Pentaho Business Intelligence Platform. The files from the ‘Processed’ prefix folder are then picked up by the Python Script and validated against a Data Model stored in <a class="reference external" href="https://github.com/CBIIT/icdc-model-tool">this</a> GitHub repository as well as business rules against the Neo4J DB. Once validated, the appropriate Nodes and Relationships are created by the Python Script and the ETL is deemed complete. For loading raw files e.g. BAM/FastQ etc., the files are loaded with a Pre-Manifest in a tar/zip format on the S3 Raw Files bucket on a per batch basis. This triggers a notification into the SQS queue and the Python Script which is polling the queue extracts the raw files, validates the Pre-Manifest, creates the appropriate file nodes and relationships in the DB and creates a final Manifest which is then sent to the IndexD service for file indexing which completes the File Ingestion process.</p>
+<p><strong>Bento Infrastructure and Operations</strong></p>
+<p>The Bento infrastructure has the following components as shown below.</p>
+<p><img alt="Bento Infrastructure and Operations" src="_images/infrastructure-and-operations.jpg" /></p>
+<p>The DevOps process starts with the developer team members checking in the code in the GitHub Repository. There is a Jenkins Server that polls the GitHub repository periodically every 5 minutes. When there is new code deployed on the Master branch of the codebase, it triggers a process where Jenkins pulls the new code from the repository and generates a new Docker Image. The Image is then tagged and uploaded to the container repository. Subsequently, the Jenkins job runs the code with the new container image on the EC2 instances and sends the build status to the appropriate Slack channel.</p>
+<p>On the EC2 instances there are New Relic agents as well as Sumologic Agents running. The NewRelic Agent sends application and instance performance metrics to its Cloud and the Sumologic Agents send the log files for our application to the Sumologic Log aggregation platform. The NewRelic infrastructure is set up to generate alerts on specific events on Slack and Sumologic is used to troubleshoot application issues as they are found.</p>
+<p>We have 4 environments which are the Development, QA, Staging and Production. Currently, the code is deployed in an automated fashion in the development environment and is manually deployed periodically in the rest of the environments.</p>
+<p><strong>Security Approach</strong></p>
+<p>The Security Strategy for Bento comprises of the following components as shown below:</p>
+<p><img alt="Security Approach" src="_images/security-approach.jpg" /></p>
+<p>Strategy for Bento security can be thought of in two ways i.e. Static and Dynamic. The Static Security Component focuses on the Code and the Container respectively. The Codacy Monitoring Platform is being utilized for monitoring Code Quality and Code Security. The platform continuously monitors the Github Code Repository and provides real-time feedback on vulnerable code sections or coding practices to along with real time trend metrics. This information is then utilized to address the vulnerabilities identified during the Sprint Cycle. The Twistlock Vulnerability Management tool monitors the Nessus Container Image repository and provides periodic reports which are then utilized to remedy the vulnerabilities identified.</p>
+<p>The Dynamic Security components focuses on the deployed infrastructure and the application. IBM AppScan is utilized to periodically run vulnerability scans on the Bento Web Application. The vulnerabilities identified are then remedied in the current Sprint or added to the Sprint Backlog for future action depending upon the severity. The security of the network and instances utilize AWS recommended best practices. The access to the Web instances is allowed only via the ALB and on specific ports only using AWS Security Groups which act as an instance Firewall. Placing the ALB on a Public Subnet and instances on Private Subnets with a NAT (Network Address Translator) using Route Tables provides network level isolation for the instances keeping the virtual machines secure from malicious traffic while allowing them to get software updates as necessary.</p>
+</div>
+<div class="section" id="bento-frontend-documentation">
+<h2>Bento – Frontend Documentation<a class="headerlink" href="#bento-frontend-documentation" title="Permalink to this headline">¶</a></h2>
+<p><strong>1-Technical Stack</strong></p>
+<ol class="simple">
+<li><p><strong>- React</strong></p></li>
+</ol>
+<p>The JavaScript ecosystem is very dynamic. New tools and libraries pop up regularly, each one a little different from the rest, and the user has a wide selection to pick from. Frameworks are no exception. React has already hit the point of being mainstream and is used by a number of large companies including, of course, Facebook, but also Netflix, AirBNB, DropBox, IMDb, PayPal, Tesla Motors, Walmart and many others. Pretty good company to keep! There is a robust ecosystem to support it with tools, support, and experienced developers. And, of course, there is its Facebook parentage.</p>
+<p><strong>Major Benefits</strong> :</p>
+<ul class="simple">
+<li><p><em>The Virtual DOM</em></p></li>
+</ul>
+<p>This is the major thing we found out during our initial research, Normally, when we develop an app that has a lot of user interaction and data updates, we have to carefully consider how app structure is going to impact performance. Even with fast client platforms and JavaScript engines, extensive DOM manipulation can be a performance bottleneck and even result in an annoying user experience. Worse, because the DOM is tree-structured, simple changes at the top level can cause huge ripples to the user interface.</p>
+<p>React solves this by using a virtual DOM. This is, as the name implies, a virtual representation of the DOM. Any new view changes are first performed on the virtual DOM, which lives in memory and not on your screen. An efficient algorithm then determines the changes made to the virtual DOM to identify the changes that need to be made to the real DOM. It then determines the most effective way to make these changes and then applies only those changes to the real DOM. This guarantees a minimum update time to the real DOM, providing higher performance and a cleaner user experience all around.</p>
+<ul class="simple">
+<li><p><em>Reusable Components</em></p></li>
+</ul>
+<p>Components are wonderful and React is based on them. We can start with small things, which can be used to build bigger things, which is used to build apps. Each component has its own logic and controls its own rendering and can be reused wherever we need them. Code re-use helps make apps easier to develop and easier to maintain. They also helps to implement a consistent look and feel across the whole project. Using components provides a large advantage in your development efforts.</p>
+<ul class="simple">
+<li><p><em>Great Developer Tools</em></p></li>
+</ul>
+<p>React is well covered in terms of design and debugging tools. React Developer Tools, available for Chrome and Firefox, is a browser extension for React. It allows to inspect the React component hierarchies in the virtual DOM. One can select individual components and examine and edit their current properties and state. One can also track the hierarchy of any component and discover both parent and child components.</p>
+<p>1.2 <strong>- NPM</strong> (Node Package Manager)</p>
+<p>npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them and manages dependency conflicts intelligently. It is extremely configurable to support a wide variety of use cases. Most commonly, it is used to publish, discover, install, and develop node programs.</p>
+<p>npm is configured to use npm, Inc.’s public registry at https://registry.npmjs.org by default. We can configure npm to use any compatible registry you like, and even run your own registry (which we might do in future).</p>
+<ol class="simple">
+<li><p><strong>Backend Query</strong></p></li>
+</ol>
+<p>Apollo Client is a complete state management library for JavaScript apps. Simply write a GraphQL query, and Apollo Client will take care of requesting and caching your data, as well as updating your UI. Fetching data with Apollo Client guides you to structure your code in a predictable, declarative way consistent with modern React best practices. With Apollo, you can build high-quality features faster without the hassle of writing data plumbing boilerplate.</p>
+<p><strong>2.1 - Sample Query</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export const GET_STUDYTABLE_DATA_QUERY = gql`{
+    studiesByProgram {
+        program_id
+        clinical_study_designation
+        clinical_study_name
+         clinical_study_type
+         numberOfCases
+    }
+  }
+  `;
+</pre></div>
+</div>
+<p><strong>2.2 – Sample Query Call</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const studiesContainer= () =&gt; (
+    &lt;Query query={ studiesContainer}&gt;
+    {({ data, loading, error }) =&gt; (
+        loading ? &lt;Loading /&gt;: ( error || !data ? &lt;Error /&gt;: &lt;Studies data={data} /&gt; )
+        )}
+    &lt;/Query&gt;
+);
+</pre></div>
+</div>
+<p>Here is the Query is provided from react-apollo, When React mounts and renders a component that calls the useQuery hook, Apollo Client automatically executes the specified query</p>
+<p><strong>2.3 – Sample Response</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;studiesByProgram&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;program_id&quot;</span><span class="p">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Clinical Trial&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numberOfCases&quot;</span><span class="p">:</span> <span class="mi">84</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="p">:</span> <span class="s2">&quot;COTC007B&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Preclinical Comparison of Three Indenoisoquinoline Candidates in Tumor-Bearing Dogs&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;program_id&quot;</span><span class="p">:</span> <span class="s2">&quot;COP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Transcriptomics&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numberOfCases&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_designation&quot;</span><span class="p">:</span> <span class="s2">&quot;NCATS-COP01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clinical_study_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Models for Diagnosis and Treatment of Human Cancers Using Comparative Canine-Human Transcriptomics&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>3 Redux</strong></p>
+<p>In an app where data is shared among components, it might be confusing to actually know where a state should live. Ideally, the data in a component should live in just one component. So sharing data among sibling components becomes difficult. The way Redux works is simple. There is a central store that holds the entire state of the application. Each component can access the stored state without having to send down props from one component to another.</p>
+<p>Simply put, Redux is a state management tool. While it’s mostly used with React, it can be used with any other JavaScript framework or library. It is lightweight at 2KB (including dependencies), so developer don’t have to worry about it making your application’s asset size bigger. With Redux, the state of your application is kept in a store and each component can access any state that it needs from this store.</p>
+<p><img alt="FE Redux Architecture" src="_images/redux-architecture.jpg" /></p>
+<p>Redux is a state management system. Therefore, we will need:</p>
+<ul class="simple">
+<li><p>Place to save the state</p>
+<ul>
+<li><p><strong>Store</strong> is a place where we save the state.</p></li>
+</ul>
+</li>
+<li><p>Method to get the state</p>
+<ul>
+<li><p><strong>getState</strong> is the method to get the state.</p></li>
+</ul>
+</li>
+<li><p>Method to change the state</p>
+<ul>
+<li><p><strong>action &amp; reducer</strong> is the method to change the mapStateToProps. Redux update the state through action and reducer. The action tell reducer what it wants to do. Then the reducer updates the state base on the type and additional data provided by action</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bento-backend-api-architecture-documentation">
+<h2>Bento – Backend &amp; API Architecture Documentation<a class="headerlink" href="#bento-backend-api-architecture-documentation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Backend &amp; API Documentation General Overview</strong></p>
+<p><img alt="Backend and API Documentation General Overview" src="_images/backend-and-api-general.jpg" /></p>
+<ul class="simple">
+<li><p>Bento has two layers: Front-end and Back-end. Front-end is written in React.js and back-end follows API design is coded in JAVA.</p></li>
+<li><p>We put two layers together as a Java application.</p></li>
+<li><p>The figure above shows how system works and how back-end response the request.</p></li>
+<li><p>Client as an API consumer send a request, the JAVA servlet will capture the event and dispatch to the right endpoint.</p></li>
+<li><p>Client requests a web page, the JAVA servlet will capture the event and redirect the request to the React Component, React.js use Express to handle the request and render the HTML to the client.</p></li>
+<li><p>Back-end provides two types of APIs - GraphQL and REST for purposes.</p></li>
+</ul>
+<p><strong>Backend Architecture</strong></p>
+<p><img alt="Backend Architecture" src="_images/backend-architecture.png" /></p>
+<ul class="simple">
+<li><p>Front-end and cloud resource will send the request to the backend.</p></li>
+<li><p>Front-end uses GraphQL endpoint by sending the GraphQL query to the backend through POST method.</p></li>
+<li><p>The benefit for using GraphQL: reduce the number of requests needed. Front end can send the GraphQL query which indicates what front-end need, the backend will compose the data and response to request by one shot.</p></li>
+<li><p>Compare to the REST api, it may require many requests to get all kinds of data then compose in the front-end.</p></li>
+<li><p>Too many requests will cause the performance issue. For the request from cloud resource, they may not familiar with GraphQL, so we provide the REST API for the cloud resource.</p></li>
+</ul>
+<p><strong>GraphQL API</strong></p>
+<ul class="simple">
+<li><p>The GraphQL query will be accepted by the GraphQL endpoint.</p></li>
+<li><p>The backend will evaluate the request by checking the token and query.</p></li>
+<li><p>Token validation is part of Authorization and authentication which go through the fence. The query checking is to validate if the query is accepted or not, currently we only check the type of query, only the “query” is allowed (read only), mutation is not permitted for now.</p></li>
+<li><p>After validating the query and token, the GraphQL query will send to the Neo4j graphql endpoint, neo4j GraphQL plugin will translate GraphQL into Cypher and retrieve the data back to the client.</p></li>
+</ul>
+<p><strong>REST API</strong> :</p>
+<ul class="simple">
+<li><p>When user send request to the REST API endpoint, REST API will take the value of parameters and compose it into a GraphQL Query. Then send it to the Neo4j graphql endpoint.</p></li>
+</ul>
+<p><strong>Backend Connection to Neo4j Database</strong></p>
+<p>The diagram below represents backend connection to Neo4j Database:</p>
+<p><img alt="Backend Connection to Neo4j" src="_images/backend-neo4j-connection.jpg" /></p>
+<ul class="simple">
+<li><p>The connection to the database neo4j goes through Neo4j Graphql Endpoint. Neo4j has graphql plugin which will expose endpoint to consume the graphql request.</p></li>
+</ul>
+<p>RESTFUL API will send the graphql request to the neo4j. GraphQL API will validate the payload, if is valid request then send the graphql request to the neo4j.</p>
+</div>
+<div class="section" id="bento-data-model">
+<h2>Bento Data Model<a class="headerlink" href="#bento-data-model" title="Permalink to this headline">¶</a></h2>
+<p>The Bento Core Data Model is a graphical data model that has been designed to address the data storage needs of clinical trials and research programs; it can be adapted to most data generation workflows. Graphical data models organize data in the form of a graph. The Bento Core Data Model models key components of a data generation workflow as nodes, and the relationships among them as edges. Both nodes and edges can store data in the form of properties.
+It is based on the Aggregated Data Model developed by the <a class="reference external" href="https://datascience.cancer.gov/data-commons/center-cancer-data-harmonization-ccdh">Center for Cancer Data Harmonization</a>. The Aggregated Data Model synthesizes core concepts from three data sharing platforms- the <a class="reference external" href="https://gdc.cancer.gov/">Genomic Data Commons</a>; the <a class="reference external" href="https://proteomic.datacommons.cancer.gov/pdc/">Proteomic Data Commons</a> and the <a class="reference external" href="https://caninecommons-dev.cancer.gov/">Integrated Canine Data Commmons</a>.
+This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sharing platform, where users can navigate from a selected clinical trial or program to a set of files of their choice.</p>
+<p>Being schema-less, graphical data models can be easily extended, to include additional node and relationship types, without breaking the existing model. This feature allows you to expand the Bento Core Data Model to suit the evolving needs of your data sharing platform.</p>
+<p>You can access the Bento Core Data Model <a class="reference external" href="https://github.com/CBIIT/bento-model.git">here</a>. We have extended the core data model to build the reference implementation; the extended BENTO_TAILORx data model can be found <a class="reference external" href="https://github.com/CBIIT/BENTO-TAILORx-model">here</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation/bento-quick-start.html" class="btn btn-neutral float-right" title="1. Quick Start Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Bento Project Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, CBIIT
+      <span class="lastupdated">
+        Last updated on Dec 16, 2020, 2:09:18 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: MVP
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="overview.html">MVP</a></dd>
+      <dd><a href="../master/index.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
