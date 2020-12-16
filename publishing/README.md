@@ -40,3 +40,6 @@ Either markdown or restructured text can be used for writing.
 Please place images in the `source/assests/` folder. 
 
 Please use relative paths; do not reference their location using the github base url (don't use: `https://github.com/CBIIT/bento-docs/blob/master/source/assets/Bento-Header-Logo.png`).
+
+## Versioning and Github
+Please see `gitflow-model.md` for more information about the naming of versions that appear, and how to update documentation in git.
