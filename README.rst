@@ -1,7 +1,7 @@
 
 .. image:: source/assets/Bento-Header-Logo.png
    :width: 300px
-   
+
 |
 
 ===========================
