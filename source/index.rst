@@ -13,14 +13,10 @@ Bento is a software framework being built to support NCI’s `Cancer Research Da
 
 This site provides you with the background and instructions you need to set up your own data sharing platform using Bento.
 
-|
-
 .. image:: assets/bento_tools_demo_site_thumb.png
    :target: https://bento-tools\.org/#/
 
 Checkout our example site using Bento framework! `Bento-tools <https://bento-tools.org/#/>`_
-
-|
 
 Bento Documentation (this site): `https://cbiit.github.io/bento-docs/ <https://cbiit.github.io/bento-docs/>`_
 
