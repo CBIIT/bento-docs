@@ -1,5 +1,22 @@
 # README
 
+## Introduction
+The documentation uses the python-based sphinx framework. After adding a markdown-formatted file to the repo, it must be compiled (or built) into html for it to appear on the documentation site.
+
+## python virtual environment
+Start by setting up a python virtual environment in the root directory (where you have checked out the `bento-docs` directory.
+
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+This virtual environment (venv) is automatically excluded from the git repo (see the `.gitignore` file. 
+
+Now that you have the python virtual environment setup, you can build/compile the html from markdown. 
+
+
 ## Commands
 To build the documentation, run the following command in the root directory of this repo:
 
