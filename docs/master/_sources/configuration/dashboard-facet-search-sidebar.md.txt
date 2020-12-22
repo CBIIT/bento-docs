@@ -3,7 +3,8 @@
 The dashboard facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.
 
 
-### **Facet Search Section**
+
+## Facet Search Filters 
 
 The facet search on the dashboard's side bar can be organized into into sections (or categories), with a maximum count of 15 facets.
 
@@ -50,7 +51,7 @@ To configure the facets:
 
 
 
-### **Sidebar Sections Styling**
+## Sidebar Sections Styling
 
 The style of each section of the side bar can be easily configured.
 

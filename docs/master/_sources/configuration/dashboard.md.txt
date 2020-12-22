@@ -78,5 +78,5 @@ The facet filters and the sidebar are configured as described in [Dashboard: Fac
 
 The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://dev.bento-tools.org/#/cases) the Dashboard Table list the cases (or study subjects) in the program.
 
-Dashboard tabs and tables are configured as described in [Dashboard:Tabs and Tables](dashboard-tabs-and-tables.md)
+Dashboard tabs and tables are configured as described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md)
 

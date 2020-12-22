@@ -102,11 +102,15 @@
 <li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. Arm  Detail Page</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">5.1. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page">5.2. Configuring the Arm Detail Page.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page-table">5.3. Configuring the Arm Detail Page Table.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-columns-to-the-arm-detail-page-table">5.4. Adding columns to the Arm Detail Page Table.</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#internal-links-in-the-arm-detail-page-table">5.4.1. Internal Links in the Arm Detail Page Table.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#external-links-in-the-arm-detail-page-table">5.4.2. External Links in the Arm Detail Page Table.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page">5.2. Configuring the Arm Detail Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page-table">5.3. Configuring the Arm Detail Page Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-arm-detail-page-table">5.3.1. Adding columns to the Arm Detail Page Table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurating-the-associated-files-table">5.4. Configurating The “Associated Files” Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-links-in-the-dashboard-table">5.4.1. Internal Links in the Dashboard Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-links-in-the-dashboard-table">5.4.2. External Links in the Dashboard Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphql-query">5.4.3. GraphQL Query</a></li>
 </ul>
 </li>
 </ul>
@@ -133,8 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/appendix.html">4. Appendix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">4. Change Log</a></li>
 </ul>
 
             
@@ -226,13 +229,11 @@
 </ol>
 </div>
 <div class="section" id="configuring-the-arm-detail-page">
-<h2><span class="section-number">5.2. </span>Configuring the Arm Detail Page.<a class="headerlink" href="#configuring-the-arm-detail-page" title="Permalink to this headline">¶</a></h2>
-<p>The Arm Detail Page allows you to add key arm attributes as label value pairs within a set of subsections(See Step 3. below). A maximum of <strong>6</strong> sections can be added to the Arm Detail Page. Within each subsection a maximum of <strong>10</strong> attributes can be displayed as label:value pairs.
-<br>If more than 6 subsections are configured, <strong>only the first 6 subsections will be displayed in the UI, other subsections will be ignored</strong>.
-<br>If more than 10 properties are configured, <strong>only first 10 properties will be displayed in the UI, other properties will be ignored</strong>.
-<br> The Arm Detail Page also allows you to add an optional table to list Arm level entities.</p>
+<h2><span class="section-number">5.2. </span>Configuring the Arm Detail Page<a class="headerlink" href="#configuring-the-arm-detail-page" title="Permalink to this headline">¶</a></h2>
+<p>The Arm Detail Page allows you to add key arm attributes as label value pairs within a set of subsections(See Step 3. below). A maximum of <strong>6</strong> sections can be added to the Arm Detail Page. Within each subsection a maximum of <strong>10</strong> attributes can be displayed as label:value pairs.</p>
+<p>The Arm Detail Page also allows you to add an optional table to list Arm level entities.</p>
 <ol class="simple">
-<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/src/bento/armDetailData.js</span></code>.</p></li>
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">header</span></code>:</p>
 <ul class="simple">
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">label</span></code> to the display label for your Arm Detail Page.</p></li>
@@ -257,9 +258,13 @@
 </ul>
 </li>
 </ol>
+<blockquote>
+<div><p>:warning: <strong>WARNING</strong>: If more than 6 subsections are configured, <strong>only the first 6 subsections will be displayed in the UI, other subsections will be ignored</strong>.</p>
+<p>:warning: <strong>WARNING</strong>: If more than 10 properties are configured, <strong>only first 10 properties will be displayed in the UI, other properties will be ignored</strong>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="configuring-the-arm-detail-page-table">
-<h2><span class="section-number">5.3. </span>Configuring the Arm Detail Page Table.<a class="headerlink" href="#configuring-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Configuring the Arm Detail Page Table<a class="headerlink" href="#configuring-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h2>
 <p>You can add a table to the Arm Detail Page. <em>This is optional.</em></p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
@@ -292,9 +297,8 @@
 <span class="sb">}</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="adding-columns-to-the-arm-detail-page-table">
-<h2><span class="section-number">5.4. </span>Adding columns to the Arm Detail Page Table.<a class="headerlink" href="#adding-columns-to-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">5.3.1. </span>Adding columns to the Arm Detail Page Table<a class="headerlink" href="#adding-columns-to-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h3>
 <p>You can add up to 10 columns in the Arm Detail Page Table. If you add more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
@@ -334,24 +338,125 @@
 </pre></div>
 </div>
 <div class="section" id="internal-links-in-the-arm-detail-page-table">
-<h3><span class="section-number">5.4.1. </span>Internal Links in the Arm Detail Page Table.<a class="headerlink" href="#internal-links-in-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">5.3.1.1. </span>Internal Links in the Arm Detail Page Table.<a class="headerlink" href="#internal-links-in-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
-<li><p>links starting with ‘/’ are considered as internal links.</p></li>
-<li><p>Internal links shall be opened in the same tab.</p></li>
-<li><p>Dynamic links can be generated by passing a valid table field to ‘{}’. For example, ‘/program/{program_id}’ shall link to ‘program/NCT00310180’.</p></li>
+<li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
+<li><p>Internal links will be opened in the same tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> will; link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="external-links-in-the-arm-detail-page-table">
-<h3><span class="section-number">5.4.2. </span>External Links in the Arm Detail Page Table.<a class="headerlink" href="#external-links-in-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">5.3.1.2. </span>External Links in the Arm Detail Page Table.<a class="headerlink" href="#external-links-in-the-arm-detail-page-table" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
-<li><p>External links shall start with ‘http://’ or’https://’.</p></li>
-<li><p>External links shall show-up with ‘externalLinkIcon’. Note: In this version of Bento the External Link Icon of the Arm Detail Page is not configurable.</p></li>
-<li><p>External link shall be opened in a new tab.</p></li>
-<li><p>Dynamic links can be generated by passing a valid table filed to ‘{}’.
-For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘https://pubmed.ncbi.nlm.nih.gov/29860917/’.</p></li>
+<li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>. Note: In this version of Bento the External Link Icon of the Arm Detail Page is not configurable.</p></li>
+<li><p>External link will be opened in a new tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>:warning: <strong>WARNING</strong>: You can add a maximum of <strong>10</strong> columns to the table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="configurating-the-associated-files-table">
+<h2><span class="section-number">5.4. </span>Configurating The “Associated Files” Table<a class="headerlink" href="#configurating-the-associated-files-table" title="Permalink to this headline">¶</a></h2>
+<p>This table lists files that are associated with the Arm.  It can be configured as follows:</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code></p></li>
+<li><p>Edit the  <code class="docutils literal notranslate"><span class="pre">table</span></code> object :</p></li>
+</ol>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">display</span></code></strong>:  Show  or Hide column (must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tableTitle</span></code></strong> : Text to show on table title</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">subjectDetailField</span></code></strong> : field name in “Data” object to get values for table. Field name for files / Samples data, need to be updated only when using a different GraphQL query</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code></strong>: Value must be one of the ‘dataField’ in columns.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortDirection</span></code></strong>: Sort default column in Ascending or Descending order (value must be <code class="docutils literal notranslate"><span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">desc</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">buttonText</span></code></strong>: Text to appear on Add to cart button</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tooltipMessage</span></code></strong> <strong>:</strong> Help Icon Message.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">columns</span></code></strong>: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each column object  is described by the following fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataField</span></code>: specifies what data appears in the column, field must be from the GraphQL API query</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: Heading Text for column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sort</span></code>: sort order for column</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">desc</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">primary</span></code>: applies to primary field of table like “sample_ID” or “File_ID” based on which files will be added in to cart.</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display</span></code>: Show  or Hide column</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataFromRoot</span></code>: Get data from parent element.</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">link</span></code>: Hyperlink to internal or external page. The value can be injected in link dynamically using <code class="docutils literal notranslate"><span class="pre">{datafield}</span></code>, for example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Internal Link </span>
+<span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;/arm/{dataField}&#39;</span><span class="p">,</span>
+
+<span class="c1">// External Link</span>
+<span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;https://example.com/{dataField}&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="internal-links-in-the-dashboard-table">
+<h3><span class="section-number">5.4.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
+<li><p>Internal links will be opened in the same tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
 </ol>
 </div>
+<div class="section" id="external-links-in-the-dashboard-table">
+<h3><span class="section-number">5.4.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>.</p></li>
+<li><p>External link should be opened in a new tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
+</ol>
 </div>
+<div class="section" id="graphql-query">
+<h3><span class="section-number">5.4.3. </span>GraphQL Query<a class="headerlink" href="#graphql-query" title="Permalink to this headline">¶</a></h3>
+<p>The GraphQL Query used for the Associated Files table is defined in <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>. For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span>
+<span class="kr">const</span> <span class="nx">GET_ARM_DETAIL_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`</span>
+<span class="sb">  query armDetail($study_acronym: String) {</span>
+<span class="sb">    armDetail(study_acronym: $study_acronym) {</span>
+<span class="sb">      study_acronym</span>
+<span class="sb">      study_name</span>
+<span class="sb">      study_type</span>
+<span class="sb">      study_full_description</span>
+<span class="sb">      study_info</span>
+<span class="sb">      num_subjects</span>
+<span class="sb">      num_files</span>
+<span class="sb">      num_samples</span>
+<span class="sb">      num_lab_procedures</span>
+<span class="sb">      diagnoses {</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb"> `</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>:warning: <strong>WARNING</strong>: You can add a maximum of <strong>10</strong> columns to the table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
 </div>
 
 
@@ -377,7 +482,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2020, 8:02:15 AM.
+        Last updated on Dec 22, 2020, 9:43:54 AM.
       </span>
 
     </p>
