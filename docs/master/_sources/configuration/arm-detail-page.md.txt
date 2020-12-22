@@ -153,27 +153,19 @@ This table lists files that are associated with the Arm.  It can be configured a
 
 * **`columns`**: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each column object  is described by the following fields:
 
-  * `dataField`: specifies what data appears in the column, field must be from the GraphQL API query
+  * **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query
 
-  * `header`: Heading Text for column
+  * **`header`**: Heading Text for column
 
-  * `sort`: sort order for column
+  * **`sort`**: sort order for column; must be `asc` or `desc`
 
-    * must be `asc` or `desc`
+  * **`primary`**: applies to primary field of table like "sample_ID" or "File_ID" based on which files will be added in to cart; must be `true`  or `false`
 
-  * `primary`: applies to primary field of table like "sample_ID" or "File_ID" based on which files will be added in to cart.
+  * **`display`**: Show  or Hide column; must be `true`  or `false`
 
-    * must be `true`  or `false`
+  * **`dataFromRoot`**: Get data from parent element; must be `true`  or `false`
 
-  * `display`: Show  or Hide column 
-
-    * must be `true`  or `false`
-
-  * `dataFromRoot`: Get data from parent element.
-
-    * must be `true`  or `false`
-
-  * `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
+  * **`link`**: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
 
     ```javascript
     // Internal Link 
