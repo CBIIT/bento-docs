@@ -74,7 +74,7 @@ drwxr-xr-x   6 <your user name>  <your group name>    192 Oct 24 08:23 initializ
 
 3. Open the `.env` file using a text editor of your choice. 
     * Set the following variables: `FRONTEND_REPO`, `BACKEND_REPO`, `MODEL_REPO` to the URLS of your forked repos for the front end, back end and data model respectively. 
-    * Set the variable BUILD_MODE to `dev`. Note: see [Installing Bento on you Local Machine](installation/installing-bento-on-your-local-machine.md) for a discussion on the three modes for Bento local environment.
+    * Set the variable BUILD_MODE to `dev`. Note: see [Installing Bento on you Local Machine](installing-bento-on-your-local-machine.md) for a discussion on the three modes for Bento local environment.
     * Save and exit the `.env` file.
 
 
