@@ -23,7 +23,7 @@ To configure the facets:
   
   - `section`:  the section (or category) that the facet should appear in the sidebar 
   
-  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs](dashboard-tabs.md))
+  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
   
   - `show`: controls if the facet is displayed or hidden (must be `true` or `false`)
   
@@ -44,9 +44,9 @@ To configure the facets:
   
   
 
-> :warning:   **NOTE**:  For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections) 
+> :warning:   **WARNING**:  For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections) 
 >
-> :warning:   **NOTE**:  Update the GraphQL API Query in  `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your filters
+> :point_right:   **NOTE**:  Update the GraphQL API Query in  `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your filters
 
 
 
