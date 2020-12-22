@@ -51,8 +51,8 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/arm-detail-page
     configuration/case-detail-page
     configuration/dashboard
-    configuration/multi-category-dashboard-filters
-    configuration/multi-tab-dashboard
+    configuration/dashboard-facet-search-sidebar
+    configuration/dashboard-tabs
     configuration/cart-workflow
     configuration/static-pages
 
@@ -77,3 +77,4 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     project-info/Bento-Glossary
     project-info/meet-the-team
     project-info/license
+    project-info/appendix

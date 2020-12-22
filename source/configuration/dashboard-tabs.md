@@ -1,7 +1,10 @@
-# Dashboard Tabs
+# Dashboard: Tabs
+
+
+
+
 
 1. Open `bento-frontend/src/bento/dashboardTabData.js`
-
 2. To change Properties of tab go to `tabs` object:
 - **`name`** : Text to show on tab
 - **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query

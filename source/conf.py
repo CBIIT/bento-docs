@@ -37,6 +37,7 @@ extensions = [
     "sphinx_multiversion",
     'sphinx_rtd_theme',
     'recommonmark',
+    'sphinxemoji.sphinxemoji',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
