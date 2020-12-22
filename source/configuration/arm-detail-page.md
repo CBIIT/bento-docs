@@ -22,15 +22,15 @@ The Arm Detail Page allows you to add key arm attributes as label value pairs wi
 
 1. Open the file `$(src)/src/bento/armDetailData.js`.
 2. Under `header`:
-	* Set the field `label` to the display label for your Arm Detail Page.
-	* Set the field `dataField` to the GraphQL API query that returns the value, such as the Arm Name or Arm ID that you want to display.
+    * Set the field `label` to the display label for your Arm Detail Page.
+    * Set the field `dataField` to the GraphQL API query that returns the value, such as the Arm Name or Arm ID that you want to display.
 3. Under `subsections`:
-	* For each label:value pair that you wish to display, create a object {label: ,datafield: ,} in `properties`:
+    * For each label:value pair that you wish to display, create a object {label: ,datafield: ,} in `properties`:
         * Set the field `label` to the display label for your attribute.
         * Set the field `dataField` to the GraphQL API query that returns the data to be displayed as value for the given label:value pair.
-		* You can embed an optional link in your label or your value, or both. Links can be internal or external. 
-			* To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object. 
-			* To add a link to your *label* specify an internal or external link by adding a `labelLink` attribute to your object.
+        * You can embed an optional link in your label or your value, or both. Links can be internal or external. 
+            * To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object. 
+            * To add a link to your *label* specify an internal or external link by adding a `labelLink` attribute to your object.
     * Add the GraphQL API query field to `GET_ARM_DETAIL_DATA_QUERY`. 
 
 ### Configuring the Arm Detail Page Table.

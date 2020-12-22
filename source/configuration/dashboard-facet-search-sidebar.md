@@ -1,5 +1,6 @@
 # Dashboard: Facet Search Sidebar
 
+The dashboard facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.
 
 
 ### **Facet Search Section**
@@ -10,27 +11,27 @@ To configure the facets:
 
 - Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
 
-- Edit or create a facets under the `facetSearchData` object
+- To represent your filter, edit or create a facet object under the `facetSearchData` object
   
 - Each facet is defined as follows:
   
-  - `label`:	the text that appears for the facet in the sidebar
+  - `label`:	the display label for your facet filter that appears in the sidebar
   
-  - `api`:  the type in the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  (in same file: `dashboardData.js`)
+  - `api`:  the type in the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your filter.  (It is in the same file: `dashboardData.js`)
   
-  - `field`:  the field in the above `api`
+  - `field`:  the specific field in the GraphQL API query, as the  `api`
   
   - `section`:  the section (or category) that the facet should appear in the sidebar 
   
-  - `datafield`: the variable name used to pass data in dashboard tab table, as defined in `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs](dashboard-tabs.md))
+  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs](dashboard-tabs.md))
   
-  - `show`: controls if the facet is displayed or hidden
+  - `show`: controls if the facet is displayed or hidden (must be `true` or `false`)
   
     
   
   For Example: 
   
-    ```javascript
+  ```javascript
     {
     	 label: 'Program', 
     	 field: 'group', 
@@ -39,11 +40,13 @@ To configure the facets:
     	 section: 'Filter By Cases',
      	 show: true,
     },
-    ```
+  ```
   
   
 
-> :warning:   **NOTE**:   For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections) 
+> :warning:   **NOTE**:  For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections) 
+>
+> :warning:   **NOTE**:  Update the GraphQL API Query in  `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your filters
 
 
 

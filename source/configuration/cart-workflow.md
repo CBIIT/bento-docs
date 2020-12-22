@@ -1,6 +1,9 @@
 # Cart Workflow
 
+
+
 ## Introduction
+
 The cart workflow is a mechanism for users to generate a manifest for working with case files.
 
 <p>&nbsp;</p>

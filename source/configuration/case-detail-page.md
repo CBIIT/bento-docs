@@ -23,9 +23,9 @@ The Case Detail Page lists the key attributes of a case or study subject partici
 
 The Case Detail Page allows you to add key case attributes as label:value pairs within a set of subsections. A maximum of **6** sections can be added to the Case Detail Page; **3** in the Left Hand Panel and **3** in the Right Hand Panel. Within each subsection a maximum of **10** attributes can be displayed as label:value pairs. 
 
-    * If more than 3 subsections are configured in a panel, **only the first 3 subsections will be displayed in the UI, other subsections will be ignored**. 
-    * If more than 10 properties are configured, **only first 10 properties will be displayed in the UI, other properties will be ignored**.
-    * The Case Detail Page also allows you to add an optional table to list case level data.
+* If more than 3 subsections are configured in a panel, **only the first 3 subsections will be displayed in the UI, other subsections will be ignored**. 
+* If more than 10 properties are configured, **only first 10 properties will be displayed in the UI, other properties will be ignored**.
+* The Case Detail Page also allows you to add an optional table to list case level data.
 
 
 

@@ -52,7 +52,7 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/case-detail-page
     configuration/dashboard
     configuration/dashboard-facet-search-sidebar
-    configuration/dashboard-tabs
+    configuration/dashboard-tabs-and-tables
     configuration/cart-workflow
     configuration/static-pages
 
