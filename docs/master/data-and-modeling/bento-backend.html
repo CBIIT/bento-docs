@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Bento Backend Framework Configuration Guide &mdash; Bento  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Bento TailoRx Data Dictionary" href="Bento_TailoRx_Data_Dictionary.html" />
+    <link rel="prev" title="3. File Copier" href="file-copier.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">2. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-listing-page.html">3. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard-facet-search-sidebar.html">8. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard-tabs-and-tables.html">9. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/cart-workflow.html">10. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/static-pages.html">11. Static Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Bento Backend Framework Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">4.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">4.2. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">4.3. Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-access-authentication">4.4. Basic Access Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">4.4.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-base64-encoding-in-terminal-bash">4.4.2. Generate base64 encoding in terminal/bash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-base64-encoding-in-powershell">4.4.3. Generate base64 encoding in powershell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/appendix.html">4. Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>Bento Backend Framework Configuration Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob/master/source/data-and-modeling/bento-backend.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="Bento_TailoRx_Data_Dictionary.html" class="btn btn-neutral float-right" title="5. Bento TailoRx Data Dictionary" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="file-copier.html" class="btn btn-neutral float-left" title="3. File Copier" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bento-backend-framework-configuration-guide">
+<h1><span class="section-number">4. </span>Bento Backend Framework Configuration Guide<a class="headerlink" href="#bento-backend-framework-configuration-guide" title="Permalink to this headline">¶</a></h1>
+<p>This is the user documentation for the Bento Backend.</p>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Bento Backend Framework is a server-side backend written in Java to be used with Bento based applications. The Bento Backend is meant to be used in conjunction with the Bento Frontend Framework and a Neo4j database running the GraphQL plugin.</p>
+<p>The Bento Backend can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/bento-backend">Bento Backend</a></p>
+</div>
+<div class="section" id="pre-requisites">
+<h2><span class="section-number">4.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Java 11 or newer installed on the server hosting the Bento Backend</p></li>
+<li><p>The Neo4j database containing the Bento data has been initialized and is running</p></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><span class="section-number">4.3. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The following file will need to be edited to configure the Bento Backend Code to work within a Bento based application:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">src/main/resources/application.properties</span></code></strong></p>
+<ol class="simple">
+<li><p>create this file by creating a copy of <code class="docutils literal notranslate"><span class="pre">src/main/resources/application_example.properties</span></code> and renaming it to use as a starting point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">2</span></code> - change the value of <code class="docutils literal notranslate"><span class="pre">neo4j.graphql.endpoint</span></code> to the GraphQL endpoint running on the applications Neo4j database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code> - change the value of  <code class="docutils literal notranslate"><span class="pre">graphql.schema</span></code> to the path of the GraphQL schema file that will be uploaded to the database. The file path should be relative to the <code class="docutils literal notranslate"><span class="pre">main</span></code> folder in the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code> - change the value of <code class="docutils literal notranslate"><span class="pre">neo4j.authorization</span></code> to the basic access authentication for your Neo4j database. (See the <strong>Basic Access Authentication</strong> section for instructions on how to generate this value).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">9</span></code> - this value is an all lowercase Boolean value to determine if GraphQL queries will be enabled for the application.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">10</span></code> - this value is an all lowercase Boolean value to determine if GraphQL mutations will be enabled for the application.</p></li>
+</ol>
+</div>
+<div class="section" id="basic-access-authentication">
+<h2><span class="section-number">4.4. </span>Basic Access Authentication<a class="headerlink" href="#basic-access-authentication" title="Permalink to this headline">¶</a></h2>
+<p>The basic access authentication value used in the <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> file is of the form <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">&lt;base64</span> <span class="pre">encoding</span> <span class="pre">of</span> <span class="pre">username:password&gt;</span></code>. To generate this value generate the base64 encoding of the username and password as shown below and append that to the String “Basic “.</p>
+<div class="section" id="example">
+<h3><span class="section-number">4.4.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Username:<code class="docutils literal notranslate"><span class="pre">neo4j</span></code></p></li>
+<li><p>Password:<code class="docutils literal notranslate"><span class="pre">my_password</span></code></p></li>
+<li><p>Authorization Value:<code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">bmVvNGo6bXlfcGFzc3dvcmQ=</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="generate-base64-encoding-in-terminal-bash">
+<h3><span class="section-number">4.4.2. </span>Generate base64 encoding in terminal/bash<a class="headerlink" href="#generate-base64-encoding-in-terminal-bash" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">-n</span> <span class="pre">&quot;neo4j:my_password&quot;</span> <span class="pre">|</span> <span class="pre">base64</span></code></p>
+</div>
+<div class="section" id="generate-base64-encoding-in-powershell">
+<h3><span class="section-number">4.4.3. </span>Generate base64 encoding in powershell<a class="headerlink" href="#generate-base64-encoding-in-powershell" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">[Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(&quot;neo4j:my_password&quot;))</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Bento_TailoRx_Data_Dictionary.html" class="btn btn-neutral float-right" title="5. Bento TailoRx Data Dictionary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="file-copier.html" class="btn btn-neutral float-left" title="3. File Copier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, CBIIT
+      <span class="lastupdated">
+        Last updated on Dec 22, 2020, 8:02:15 AM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../MVP/index.html">MVP</a></dd>
+      <dd><a href="bento-backend.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

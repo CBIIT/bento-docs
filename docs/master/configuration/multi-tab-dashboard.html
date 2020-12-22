@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. Dashboard Tabs &mdash; Bento  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Cart Workflow" href="cart-workflow.html" />
+    <link rel="prev" title="8. Dashboard Facet Search Sidebar" href="multi-category-dashboard-filters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">3. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-category-dashboard-filters.html">8. Dashboard Facet Search Sidebar</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Dashboard Tabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">9. </span>Dashboard Tabs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob/master/source/configuration/multi-tab-dashboard.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="cart-workflow.html" class="btn btn-neutral float-right" title="10. Cart Workflow" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multi-category-dashboard-filters.html" class="btn btn-neutral float-left" title="8. Dashboard Facet Search Sidebar" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dashboard-tabs">
+<h1><span class="section-number">9. </span>Dashboard Tabs<a class="headerlink" href="#dashboard-tabs" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">bento-frontend/src/bento/dashboardTabData.js</span></code></p></li>
+<li><p>To change Properties of tab go to <code class="docutils literal notranslate"><span class="pre">tabs</span></code> object:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> : Text to show on tab</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataField</span></code></strong>: specifies what data appears in the column, field must be from the GraphQL API query</p></li>
+</ul>
+<ol class="simple">
+<li><p>To change style of tab go to <code class="docutils literal notranslate"><span class="pre">tabIndex</span></code> object :</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">title</span></code></strong> : Text to shown on tab</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">primaryColor</span></code></strong> : background color when tab is selected</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">selectedColor</span></code></strong> : font color when tab is selected</p></li>
+</ul>
+<ol class="simple">
+<li><p>To change Properties of table go to <code class="docutils literal notranslate"><span class="pre">table</span></code> object:</p></li>
+</ol>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataField</span></code></strong> : field name in “Data” object to get values for table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code></strong>: Value must be one of the ‘dataField’ in columns.</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultSortField</span><span class="p">:</span> <span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>defaultSortDirection</strong>: Sort default column in Ascending or Descending order.</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultSortDirection</span><span class="p">:</span> <span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>buttonText</strong>: Text to appear on Add to cart button**</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buttonText</span><span class="p">:</span> <span class="s1">&#39;&lt;Button Text&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>saveButtonDefaultStyle</strong>: Style of on Add to cart button**</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">saveButtonDefaultStyle</span><span class="p">:</span> <span class="s1">&#39;&lt;Button Style&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>ActiveSaveButtonDefaultStyle</strong>: Style of on Add to cart button when it is active mode**</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ActiveSaveButtonDefaultStyle</span><span class="p">:</span> <span class="s1">&#39;&lt;Button Style&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DeactiveSaveButtonDefaultStyle</strong>: Style of on Add to cart button when it is disabled mode**</p></li>
+<li><p>ActiveSaveButtonDefaultStyle: ‘<Button Style>’</p></li>
+<li><p>columns:</p>
+<p>List of Columns. Max 10 Columns. If added more than 10 columns,</p>
+<p>Bento will display the first 10 columns without an error or warning message</p>
+<p>. The top-down order of columns will be displayed left to right on the UI.</p>
+<ul>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="p">{</span>
+      <span class="n">dataField</span><span class="p">:</span> <span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span>
+      <span class="n">header</span><span class="p">:</span> <span class="s1">&#39;&lt;Column Header&gt;&#39;</span><span class="p">,</span>
+      <span class="n">link</span><span class="p">:</span> <span class="s1">&#39;&lt;link to be embedded in column value&gt;&#39;</span>
+      <span class="n">sort</span><span class="p">:</span> <span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span>
+      <span class="n">primary</span><span class="p">:</span> <span class="n">true</span> <span class="ow">or</span> <span class="n">false</span><span class="p">,</span>
+      <span class="n">display</span><span class="p">:</span> <span class="n">true</span> <span class="ow">or</span> <span class="n">false</span><span class="p">,</span>
+      <span class="n">dataFromRoot</span><span class="p">:</span> <span class="n">true</span> <span class="ow">or</span> <span class="n">false</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><p><strong>dataField:</strong> GraphQL API query field returning data for this column</p></li>
+<li><p><strong>header</strong>: Heading Text for column</p></li>
+<li><p><strong>sort:</strong> sort order for column</p></li>
+<li><p><strong>primary:</strong> applies to primary field of table like “sample_ID” or “File_ID” based on which files will be added in to cart.</p></li>
+<li><p><strong>display:</strong> Show or Hide column</p></li>
+<li><p><strong>dataFromRoot:</strong> Get data from parent element.</p></li>
+<li><p>link:</p>
+<p>Hyperlink to internal or external page. Field value can be injected in link dynamically using * { datafield }</p>
+<p>* in link value string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Internal</span> <span class="n">Link</span> 
+<span class="n">link</span><span class="p">:</span> <span class="s1">&#39;/arm/</span><span class="si">{dataField}</span><span class="s1">&#39;</span><span class="p">,</span>
+
+<span class="o">//</span> <span class="n">External</span> <span class="n">Link</span>
+<span class="n">link</span><span class="p">:</span> <span class="s1">&#39;https://example.com/</span><span class="si">{dataField}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol class="simple">
+<li><p>To change Properties of tooltip go to tooltipContent object:</p></li>
+</ol>
+<ul>
+<li><p><strong>icon</strong>: The help tip icon that appears next to the ‘add button’</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">icon</span><span class="p">:</span> <span class="s1">&#39;&lt;Icon Url&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>alt</strong>: alt for the tooltip image **</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="p">:</span> <span class="s1">&#39;&lt;Alt Text&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>0,1,2</strong>: tooltip content for first tab, second tab and third tab.</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;&lt;Tooltip Message&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>GraphQL Query used in the Dashboard page:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">DASHBOARD_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  numberOfPrograms</span>
+<span class="sb">  numberOfStudies</span>
+<span class="sb">  numberOfSubjects</span>
+<span class="sb">  numberOfSamples</span>
+<span class="sb">  numberOfLabProcedures</span>
+<span class="sb">  numberOfFiles</span>
+<span class="sb">  subjectCountByProgram{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByStudy{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByDiagnoses{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByRecurrenceScore{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByTumorSize{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByChemotherapyRegimen{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">    subjectCountByTumorGrade{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">  subjectCountByErStatus{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">  subjectCountByPrStatus{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">  subjectCountByMenopauseStatus{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">  subjectCountByChemotherapyRegimen{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">      subjectCountByEndocrineTherapy{</span>
+<span class="sb">    group</span>
+<span class="sb">    subjects</span>
+<span class="sb">  }</span>
+<span class="sb">    armsByPrograms {</span>
+<span class="sb">        program</span>
+<span class="sb">        caseSize</span>
+<span class="sb">        children {</span>
+<span class="sb">            arm</span>
+<span class="sb">            caseSize</span>
+<span class="sb">            size</span>
+<span class="sb">        }</span>
+<span class="sb">    }  subjectOverViewPaged(first: 1000000) {</span>
+<span class="sb">      subject_id</span>
+<span class="sb">      program_id</span>
+<span class="sb">      study_info</span>
+<span class="sb">      samples</span>
+<span class="sb">      program</span>
+<span class="sb">      study_acronym</span>
+<span class="sb">      diagnosis</span>
+<span class="sb">      recurrence_score</span>
+<span class="sb">      tumor_size</span>
+<span class="sb">      tumor_grade</span>
+<span class="sb">      er_status</span>
+<span class="sb">      pr_status</span>
+<span class="sb">      chemotherapy</span>
+<span class="sb">      endocrine_therapy</span>
+<span class="sb">      menopause_status</span>
+<span class="sb">      age_at_index</span>
+<span class="sb">      survival_time</span>
+<span class="sb">      lab_procedures</span>
+<span class="sb">      files{</span>
+<span class="sb">        file_id</span>
+<span class="sb">      }</span>
+<span class="sb">  }</span>
+<span class="sb">    sampleOverview {</span>
+<span class="sb">        sample_id</span>
+<span class="sb">        subject_id</span>
+<span class="sb">        program</span>
+<span class="sb">        arm</span>
+<span class="sb">        diagnosis</span>
+<span class="sb">        tissue_type</span>
+<span class="sb">        tissue_composition</span>
+<span class="sb">        sample_anatomic_site</span>
+<span class="sb">        sample_procurement_method</span>
+<span class="sb">        platform</span>
+<span class="sb">        files </span>
+<span class="sb">    }</span>
+<span class="sb">    </span>
+<span class="sb">    fileOverview {</span>
+<span class="sb">        file_id</span>
+<span class="sb">        file_name</span>
+<span class="sb">        association</span>
+<span class="sb">        file_description</span>
+<span class="sb">        file_format</span>
+<span class="sb">        file_size</span>
+<span class="sb">        program</span>
+<span class="sb">        arm</span>
+<span class="sb">        subject_id</span>
+<span class="sb">        sample_id</span>
+<span class="sb">        diagnosis</span>
+<span class="sb">    }</span>
+<span class="sb">  }`</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cart-workflow.html" class="btn btn-neutral float-right" title="10. Cart Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multi-category-dashboard-filters.html" class="btn btn-neutral float-left" title="8. Dashboard Facet Search Sidebar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, CBIIT
+      <span class="lastupdated">
+        Last updated on Dec 22, 2020, 4:18:29 AM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../MVP/index.html">MVP</a></dd>
+      <dd><a href="multi-tab-dashboard.html">master</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
