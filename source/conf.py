@@ -5,6 +5,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import sphinx_rtd_theme
+import recommonmark
+from recommonmark.transform import AutoStructify
+
 
 # -- Path setup --------------------------------------------------------------
 
@@ -78,12 +81,12 @@ html_context = {
 
 ## sphinx_rtd_theme options
 html_theme_options = {
-    'vcs_pageview_mode': 'edit',
+    #'vcs_pageview_mode': 'edit',
     'prev_next_buttons_location': 'both',
     'sticky_navigation': True,
     # Toc options
     'navigation_depth': 3,
-    'github_url': 'https://github.com/CBIIT/bento-docs/',
+    #'github_url': 'https://github.com/CBIIT/bento-docs/',
 }
 html_show_sourcelink = True
 
@@ -104,3 +107,13 @@ smv_branch_whitelist = r'^.*$'
 # Whitelist pattern for remotes (set to None to use local branches only)
 # Only use local branches
 smv_remote_whitelist = None
+
+# AutoStructify - for advanced markdown to rst transformations
+# Needs to be at the bottom of conf.py
+# as described in https://recommonmark.readthedocs.io/en/latest/index.html
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+            }, True)
+    app.add_transform(AutoStructify)

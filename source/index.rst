@@ -15,6 +15,7 @@ This site provides you with the background and instructions you need to set up y
 
 .. image:: assets/bento_tools_demo_site_thumb.png
    :target: https://bento-tools\.org/#/
+
 Checkout our example site using Bento framework! `Bento-tools <https://bento-tools.org/#/>`_
 
 Bento Documentation (this site): `https://cbiit.github.io/bento-docs/ <https://cbiit.github.io/bento-docs/>`_
@@ -50,6 +51,8 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/arm-detail-page
     configuration/case-detail-page
     configuration/dashboard
+    configuration/multi-category-dashboard-filters
+    configuration/multi-tab-dashboard
     configuration/cart-workflow
     configuration/static-pages
 
