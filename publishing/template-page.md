@@ -46,7 +46,9 @@ Download this template here: [template-page.md](https://raw.githubusercontent.co
     * spell check the documentation
 
 
+
 ## An Example Section
+
 An examples of markdown syntax is included [here](https://cbiit.github.io/bento-docs/reference/example)
 
 ### Code Blocks
@@ -59,7 +61,10 @@ function fancyAlert(arg) {
 }
 ```
 
+
+
 ## Editor
+
 Looking for a Markdown Editor? Try [Typora](https://typora.io/)! 
 
 Most IDEs have markdown and restructuredText plugins.

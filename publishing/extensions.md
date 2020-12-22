@@ -117,3 +117,16 @@ Use `recommonmark` to use markdown in sphinx
 ## markdown tables
 Use `sphinx-markdown-tables` to render markdown tables into html. Otherwise, you get a mess.
 
+
+## markdown support for AutoStructify
+This allows you to import parts of other markdown from another file 
+(kinda like .
+# AutoStructify - for advanced markdown to rst transformations
+# Needs to be at the bottom of conf.py
+# as described in https://recommonmark.readthedocs.io/en/latest/index.html
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+            }, True)
+    app.add_transform(AutoStructify)

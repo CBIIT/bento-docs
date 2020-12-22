@@ -1,17 +1,21 @@
 # Sphinx Notes
 
+
+
 ## Errors
 
 Error caused by broken links
-```
+```bash
 /var/folders/7x/d920c3ld56n6h2l894fbk9zcznn481/T/tmpf8mm17pn/dd932aebde54e5eab70e277f2d9b66fc060c79b3/source/configuration/dashboard.md:81: WARNING: None:any reference target not found: dashboard-tabs
 /var/folders/7x/d920c3ld56n6h2l894fbk9zcznn481/T/tmpf8mm17pn/dd932aebde54e5eab70e277f2d9b66fc060c79b3/source/configuration/dashboard-facet-search-sidebar.md:26: WARNING: None:any reference target not found: dashboard-tabs
 ```
 
-## build log
+
+
+## Success 
 
 Typical successful build log looks like this
-```
+```bash
 ❯ sphinx-multiversion source docs
 Running Sphinx v3.3.1
 WARNING: The config value `smv_tag_whitelist' has type `NoneType', defaults to `str'.
@@ -64,3 +68,4 @@ build succeeded, 1 warning.
 
 The HTML pages are in ../../../../../../../../Users/bensonml/0_SRC/bento-docs/docs/master.
 ```
+
