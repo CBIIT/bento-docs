@@ -31,6 +31,41 @@ You do not need to run `make html` in the `source` directory, and do not manuall
 It is recommended to run the `sphinx-multiversion` on the master branch, and then push the master branch to github.
 
 
+## Workflow
+The overall process of adding content to `bento-docs` will be something like the following:
+1. Clone the bento-docs repo (if you haven't already).
+2. Fetch, pull the most recent master branch from github (origin) (assuming you are editing the latest documentation). See [Gitflow model](gitflow-model.md) for more info.
+3. Edit the page (will be in the `source` directory)
+4. If you are adding a new page, put properly formatted markdown file under the `source` directory.
+   * Add the new page in `index.rst`, under the appropriate `toctree`. Note that the `index.rst` file uses [RestructuredText](https://docutils.sourceforge.io/rst.html) _not_ [Markdown](https://daringfireball.net/projects/markdown/syntax).
+5. Please:
+   * Put any images in the `assets` directory
+   * Add links to other pages, pointing to the markdown formatted files. If it is in the same directory: [Page Name](page-name.md), otherwise, use [Other Page Name](../path/to/page.md)
+   * Try to have a similar style; see [Bento Docs Style Guide](bento-docs-style-guide.md)
+   * Use spell checker
+6. Add changes to the branch, and commit with an informative message. (Preferring many, small commits over large changes). 
+   * ideally, put the JIRA ticket number as the first line in the commit message (e.g. 'BENTO-123 Add instructions to take over world')
+7. Build/activate the python virtual environment (see "python virtual environment" above)
+8. Build the html changes, from the root directory of the repo (e.g. docroot) (see "Commands" above)
+   * `>$ sphinx-multiversion source docs`
+   * watch for any errors (see [Sphinx Notes](sphinx-notes.md) for examples of errors and successful build logs
+9. Preview the generated html in the docs directory 
+   * `>$ cd docs`
+   * Start the python webserver to preview results (see "Test locally" below); 
+   * `>$ python -m http.server 8000`
+   * open browser and review changes
+   * `http://localhost:8000/`
+   * (assuming everything works, the browser will redirect to `http://localhost:8000/master/index.html`)
+   * triple check the files you touched; only if the passed, should you continue to step 10
+   * check that only the expected branches exist under `doc/` directory, along with the file `index.html`, and `.nojekyll`.  Nothing else should be in this directory.
+10. Add the changes and commit to the master branch with a reasonable message
+   * ideally, put the JIRA ticket number as the first line in the commit message (e.g. 'BENTO-123 Add instructions to take over world')
+   * push the branch to github
+   * wait 1 minute and make sure it appears as expected at `https://cbiit.github.io/bento-docs/`
+
+
+
+
 ## Publishing Lag
 When changes are made and pushed to github, they are NOT going to show up right away at https://cbiit.github.io/bento-docs/ . It may take up to five minutes for changes to appear.
 
