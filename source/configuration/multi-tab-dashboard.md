@@ -1,4 +1,4 @@
-## To Configure tabs on Dashboard: 
+# Dashboard Tabs
 
 1. Open `bento-frontend/src/bento/dashboardTabData.js`
 

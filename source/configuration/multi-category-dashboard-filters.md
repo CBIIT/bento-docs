@@ -1,4 +1,4 @@
-## **Configuring Facet Search Sidebar**
+# Dashboard Facet Search Sidebar
 
 ### **Facet Search Section**
 
