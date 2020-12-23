@@ -6,6 +6,10 @@
 
 The cart workflow is a mechanism for users to generate a manifest for working with case files.
 
+![File-centric Cart](../assets/fileCentric-Cart.png)
+
+**Cart Workflow**. Displayed are the configurable components of the file-centric Cart.
+
 <p>&nbsp;</p>
 
 ## Prerequisites
