@@ -147,7 +147,6 @@ query filesInList($file_ids: [String]) {
 
 ### Configuring the Navigation Bar for the Cart Workflow
 
-![Cart Workflow - Menu Bar](../assets/cart-workflow-menu-bar.png)
 
 ### Navigation Bar Link Text
 To configure the link text that appears on the nav bar:
