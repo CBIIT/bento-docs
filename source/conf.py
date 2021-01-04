@@ -76,7 +76,7 @@ html_context = {
     "display_github": True, # Integrate GitHub
     "github_user": "CBIIT", # Username
     "github_repo": "bento-docs", # Repo name
-    "github_version": "master", # Version
+    #"github_version": "master", # Version
     "conf_py_path": "/source/", # Path in the checkout to the docs root
 }
 
@@ -102,9 +102,8 @@ html_static_path = ['_static']
 smv_tag_whitelist = None
 
 # Whitelist pattern for branches (set to None to ignore all branches)
-#smv_branch_whitelist = r'^(master).*$'
-smv_branch_whitelist = r'^.*$'
 #smv_branch_whitelist = r'^(?!master).*$'      # Include all branches except "master"
+smv_branch_whitelist = r'^.*$'
 
 # Whitelist pattern for remotes (set to None to use local branches only)
 # Only use local branches
