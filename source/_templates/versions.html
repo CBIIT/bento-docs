@@ -9,17 +9,17 @@
 
       {% if versions %}
       <h3>{{ _('Releases') }}</h3>
-      <dl>
+      <ul>
         {%- for item in versions.releases %}
-        <dd><a href="{{ item.url }}">{{ item.name }}</a></dd>
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
         {%- endfor %}
-      </dl>
+      </ul>
       <h3>{{ _('In Development') }}</h3>
-      <dl>
+      <ul>
         {%- for item in versions.in_development %}
-        <dd><a href="{{ item.url }}">{{ item.name }}</a></dd>
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
         {%- endfor %}
-      </dl>
+      </ul>
       {% endif %}
 
     <!-- comment out branches

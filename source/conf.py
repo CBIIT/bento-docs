@@ -25,6 +25,8 @@ from recommonmark.transform import AutoStructify
 project = 'Bento'
 copyright = '2020, CBIIT'
 author = 'CBIIT'
+release = "release-2.0.0"
+version = "release-2.0.0"
 
 # -- General configuration ---------------------------------------------------
 
@@ -112,7 +114,8 @@ smv_remote_whitelist = None
 # A Regular Expression is used to determine if a version of the documentation 
 # has been released or if it’s a development version. To allow more 
 # flexibility, the regex is evaluated over the full refname.
-smv_released_pattern = r'^.*release.*$'
+smv_released_pattern = r'.*release.*'
+smv_latest_version = '.*master.*'
 
 # AutoStructify - for advanced markdown to rst transformations
 # Needs to be at the bottom of conf.py
