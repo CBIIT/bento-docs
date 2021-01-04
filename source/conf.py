@@ -104,10 +104,17 @@ smv_tag_whitelist = None
 # Whitelist pattern for branches (set to None to ignore all branches)
 #smv_branch_whitelist = r'^(master).*$'
 smv_branch_whitelist = r'^.*$'
+#smv_branch_whitelist = r'^(?!master).*$'      # Include all branches except "master"
 
 # Whitelist pattern for remotes (set to None to use local branches only)
 # Only use local branches
 smv_remote_whitelist = None
+
+# A Regular Expression is used to determine if a version of the documentation 
+# has been released or if it’s a development version. To allow more 
+# flexibility, the regex is evaluated over the full refname.
+
+smv_released_pattern = r'^heads/release*$'
 
 # AutoStructify - for advanced markdown to rst transformations
 # Needs to be at the bottom of conf.py
