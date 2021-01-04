@@ -113,8 +113,7 @@ smv_remote_whitelist = None
 # A Regular Expression is used to determine if a version of the documentation 
 # has been released or if it’s a development version. To allow more 
 # flexibility, the regex is evaluated over the full refname.
-
-smv_released_pattern = r'^(release.*).*$'
+smv_released_pattern = r'^(heads|remotes/[^/]+)/(?!:master).*$'
 
 # AutoStructify - for advanced markdown to rst transformations
 # Needs to be at the bottom of conf.py
