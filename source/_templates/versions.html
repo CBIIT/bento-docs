@@ -6,14 +6,23 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    {%- if versions.tags %}
-    <dl>
-      <dt>Tags</dt>
-      {%- for item in versions.tags %}
-      <dd><a href="{{ item.url }}">{{ item.name }}</a></dd>
-      {%- endfor %}
-    </dl>
-    {%- endif %}
+
+      {% if versions %}
+      <h3>{{ _('Releases') }}</h3>
+      <ul>
+        {%- for item in versions.releases %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        {%- endfor %}
+      </ul>
+      <h3>{{ _('In Development') }}</h3>
+      <ul>
+        {%- for item in versions.in_development %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        {%- endfor %}
+      </ul>
+      {% endif %}
+
+    <!-- comment out branches
     {%- if versions.branches %}
     <dl>
       <dt>Branches</dt>
@@ -22,6 +31,8 @@
       {%- endfor %}
     </dl>
     {%- endif %}
+   -->
+
   </div>
 </div>
 {%- endif %}
