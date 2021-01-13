@@ -29,7 +29,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -315,7 +314,7 @@ The Title, or tab text, can be specified as follows:</p>
 <li><p>Set field <code class="docutils literal notranslate"><span class="pre">globalHeaderLogoAltText</span></code> to the ALT tags for the Global Header Logo.</p></li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">globalHeaderLogo</span><span class="o">:</span> <span class="s1">&#39;&lt;path to Global Header Logo file&gt;&#39;</span><span class="p">,</span>
   <span class="nx">globalHeaderLogoLink</span><span class="o">:</span> <span class="s1">&#39;&lt;URL to be embedded in Global Header Logo&gt;&#39;</span><span class="p">,</span>
   <span class="nx">globalHeaderLogoAltText</span><span class="o">:</span> <span class="s1">&#39;&lt;ALT tags for Global Header Logo.&gt;&#39;</span>
@@ -331,7 +330,7 @@ The Title, or tab text, can be specified as follows:</p>
 <li><p>Set field <code class="docutils literal notranslate"><span class="pre">globalHeaderImage</span></code> with a stored image URL.</p></li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="nx">globalHeaderImage</span><span class="o">:</span> <span class="s1">&#39;&lt;path to Global Header Image file&gt;&#39;</span><span class="p">,</span>
 <span class="p">};</span>
@@ -351,7 +350,7 @@ The Title, or tab text, can be specified as follows:</p>
 <li><p>Set field <code class="docutils literal notranslate"><span class="pre">footerLogoImage</span></code> with stored image URL.</p></li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">footerLogoImage</span><span class="o">:</span> <span class="s1">&#39;&lt;URL for Global Footer Logo file&gt;&#39;</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">};</span>
@@ -365,7 +364,7 @@ The Title, or tab text, can be specified as follows:</p>
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">footerStaticText</span></code> to the text of your choice.</p></li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="nx">footerStaticText</span><span class="o">:</span> <span class="s1">&#39;&lt;Your footer text&gt;&#39;</span><span class="p">,</span>
   <span class="p">...</span>
@@ -392,7 +391,7 @@ If you specify more than 4 links, <strong>Bento will display only the first 4 li
 <ol class="simple">
 <li><p>Here is an example of a Footer Subsection with four types Footer Subsection links:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="nx">link_sections</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -438,7 +437,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
 <ol class="simple">
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
 <span class="p">...</span>
   <span class="nx">global_footer_links</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -469,7 +468,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
 <ol class="simple">
 <li><p>Example of adding a Menu Item of type ‘Link’:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">[</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">[</span>
   <span class="p">{</span>
     <span class="nx">labelText</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span>
     <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;link&#39;</span><span class="p">,</span>
@@ -490,7 +489,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
 <ol class="simple">
 <li><p>Example of adding a Menu Item of type ‘Drop-down’:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">[</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="k">default</span> <span class="p">[</span>
   <span class="p">...</span>
   <span class="p">{</span>
     <span class="nx">labelText</span><span class="o">:</span> <span class="s1">&#39;&lt;Label for drop-down Menu&gt;&#39;</span><span class="p">,</span>
@@ -535,7 +534,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
 <ol class="simple">
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">globalStatsData</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">globalStatsData</span> <span class="o">=</span> <span class="p">[</span>
   <span class="c1">// A maximum of 6 stats are allowed</span>
   <span class="p">{</span>
     <span class="nx">statTitle</span><span class="o">:</span> <span class="s1">&#39;&lt;Stat Label&gt;&#39;</span><span class="p">,</span>
@@ -546,7 +545,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
   <span class="p">},</span>
   <span class="p">...</span>
   <span class="p">]</span>
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET_GLOBAL_STATS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">GET_GLOBAL_STATS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  &#39;&lt;Your GraphQL API query&gt;&#39;</span>
 <span class="sb">  ...</span>
 <span class="sb">  }</span>
@@ -593,7 +592,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Jan 4, 2021, 12:14:26 PM.
+        Last updated on Jan 13, 2021, 11:31:02 AM.
       </span>
 
     </p>
@@ -628,6 +627,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
       <h3>Releases</h3>
       <ul>
         <li><a href="global-ui-elements.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -642,6 +642,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
       <dt>Branches</dt>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="global-ui-elements.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

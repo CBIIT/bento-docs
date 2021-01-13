@@ -29,7 +29,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -252,12 +251,12 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programListingIcon</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">programListingIcon</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;URL for your Table Icon&#39;</span><span class="p">,</span>
   <span class="nx">alt</span><span class="o">:</span> <span class="s1">&#39;ALT tag for your Table Icon&#39;</span><span class="p">,</span>
 <span class="p">};</span>
 
-<span class="kr">const</span> <span class="nx">externalLinkIcon</span> <span class="o">=</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">externalLinkIcon</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;URL for your External Link Icon&#39;</span><span class="p">,</span>
   <span class="nx">alt</span><span class="o">:</span> <span class="s1">&#39;ALT tag for your External Link Icon&#39;</span><span class="p">,</span>
 <span class="p">};</span>
@@ -285,14 +284,14 @@
 <li><p>Example:</p></li>
 </ol>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">display</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;&lt;Table Title&gt;&#39;</span><span class="p">,</span>
   <span class="nx">dataField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query returning data for this page.&gt;&#39;</span><span class="p">,</span>
   <span class="nx">defaultSortField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span><span class="p">,</span>
   <span class="nx">defaultSortDirection</span><span class="o">:</span> <span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span>
  <span class="p">...</span>
-<span class="kr">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<span class="kd">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
 <span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
 <span class="sb">	... </span>
@@ -320,7 +319,7 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -338,7 +337,7 @@
 
 <span class="p">};</span>
 
-<span class="kr">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<span class="kd">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
 <span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
 <span class="sb">	... </span>
@@ -399,7 +398,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
         
         &copy; Copyright 2020, CBIIT
       <span class="lastupdated">
-        Last updated on Jan 4, 2021, 12:14:26 PM.
+        Last updated on Jan 13, 2021, 11:31:02 AM.
       </span>
 
     </p>
@@ -434,6 +433,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
       <h3>Releases</h3>
       <ul>
         <li><a href="program-listing-page.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -448,6 +448,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
       <dt>Branches</dt>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="program-listing-page.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->
