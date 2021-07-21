@@ -75,6 +75,7 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     :caption: Project Info
 
     project-info/Bento-Glossary
+    project-info/gitflow
     project-info/meet-the-team
     project-info/license
     project-info/change-log
