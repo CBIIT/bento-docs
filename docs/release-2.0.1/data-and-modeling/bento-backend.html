@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>4. Bento Backend Framework Configuration Guide &mdash; Bento  documentation</title>
@@ -88,11 +89,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
@@ -100,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">1. Global UI Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">2. Landing Page</a></li>
@@ -114,7 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration/cart-workflow.html">10. Cart Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/static-pages.html">11. Static Pages</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="data-loader.html">1. Data Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model-converter.html">2. Model Converter</a></li>
@@ -135,7 +136,7 @@
 <li class="toctree-l1"><a class="reference internal" href="bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Project Info</span></p>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
@@ -217,22 +218,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bento-backend-framework-configuration-guide">
+  <section id="bento-backend-framework-configuration-guide">
 <h1><span class="section-number">4. </span>Bento Backend Framework Configuration Guide<a class="headerlink" href="#bento-backend-framework-configuration-guide" title="Permalink to this headline">¶</a></h1>
 <p>This is the user documentation for the Bento Backend.</p>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The Bento Backend Framework is a server-side backend written in Java to be used with Bento based applications. The Bento Backend is meant to be used in conjunction with the Bento Frontend Framework and a Neo4j database running the GraphQL plugin.</p>
 <p>The Bento Backend can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/bento-backend">Bento Backend</a></p>
-</div>
-<div class="section" id="pre-requisites">
+</section>
+<section id="pre-requisites">
 <h2><span class="section-number">4.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Java 11 or newer installed on the server hosting the Bento Backend</p></li>
 <li><p>The Neo4j database containing the Bento data has been initialized and is running</p></li>
 </ul>
-</div>
-<div class="section" id="configuration">
+</section>
+<section id="configuration">
 <h2><span class="section-number">4.3. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>The following file will need to be edited to configure the Bento Backend Code to work within a Bento based application:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">src/main/resources/application.properties</span></code></strong></p>
@@ -244,28 +245,28 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">9</span></code> - this value is an all lowercase Boolean value to determine if GraphQL queries will be enabled for the application.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">10</span></code> - this value is an all lowercase Boolean value to determine if GraphQL mutations will be enabled for the application.</p></li>
 </ol>
-</div>
-<div class="section" id="basic-access-authentication">
+</section>
+<section id="basic-access-authentication">
 <h2><span class="section-number">4.4. </span>Basic Access Authentication<a class="headerlink" href="#basic-access-authentication" title="Permalink to this headline">¶</a></h2>
 <p>The basic access authentication value used in the <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> file is of the form <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">&lt;base64</span> <span class="pre">encoding</span> <span class="pre">of</span> <span class="pre">username:password&gt;</span></code>. To generate this value generate the base64 encoding of the username and password as shown below and append that to the String “Basic “.</p>
-<div class="section" id="example">
+<section id="example">
 <h3><span class="section-number">4.4.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Username:<code class="docutils literal notranslate"><span class="pre">neo4j</span></code></p></li>
 <li><p>Password:<code class="docutils literal notranslate"><span class="pre">my_password</span></code></p></li>
 <li><p>Authorization Value:<code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">bmVvNGo6bXlfcGFzc3dvcmQ=</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="generate-base64-encoding-in-terminal-bash">
+</section>
+<section id="generate-base64-encoding-in-terminal-bash">
 <h3><span class="section-number">4.4.2. </span>Generate base64 encoding in terminal/bash<a class="headerlink" href="#generate-base64-encoding-in-terminal-bash" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">-n</span> <span class="pre">&quot;neo4j:my_password&quot;</span> <span class="pre">|</span> <span class="pre">base64</span></code></p>
-</div>
-<div class="section" id="generate-base64-encoding-in-powershell">
+</section>
+<section id="generate-base64-encoding-in-powershell">
 <h3><span class="section-number">4.4.3. </span>Generate base64 encoding in powershell<a class="headerlink" href="#generate-base64-encoding-in-powershell" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(&quot;neo4j:my_password&quot;))</span></code></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -288,9 +289,9 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, CBIIT
+        &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on May 27, 2021, 9:36:18 PM.
+        Last updated on Jul 21, 2021, 7:33:06 AM.
       </span>
 
     </p>
@@ -326,6 +327,7 @@
       <ul>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="bento-backend.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -341,6 +343,7 @@
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="bento-backend.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

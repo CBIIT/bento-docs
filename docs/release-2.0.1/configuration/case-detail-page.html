@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>6. Case Detail Page &mdash; Bento  documentation</title>
@@ -88,11 +89,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
@@ -100,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
@@ -127,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
@@ -137,7 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Project Info</span></p>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
@@ -219,12 +220,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="case-detail-page">
+  <section id="case-detail-page">
 <h1><span class="section-number">6. </span>Case Detail Page<a class="headerlink" href="#case-detail-page" title="Permalink to this headline">¶</a></h1>
 <p>The Case Detail Page lists the key attributes of a case or study subject participating in a clinical study or research program in your data sharing platform.</p>
 <p><img alt="Case Detail Page" src="../_images/case-detail-page.png" /></p>
 <p><strong>Case Detail Page.</strong> Displayed are the configurable components of a Case Detail Page.</p>
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h2><span class="section-number">6.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Case Detail Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
@@ -232,8 +233,8 @@
 <li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
 <li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
 </ol>
-</div>
-<div class="section" id="configuring-the-case-detail-page">
+</section>
+<section id="configuring-the-case-detail-page">
 <h2><span class="section-number">6.2. </span>Configuring the Case Detail Page.<a class="headerlink" href="#configuring-the-case-detail-page" title="Permalink to this headline">¶</a></h2>
 <p>The Case Detail Page allows you to add key case attributes as label:value pairs within a set of subsections. A maximum of <strong>6</strong> sections can be added to the Case Detail Page; <strong>3</strong> in the Left Hand Panel and <strong>3</strong> in the Right Hand Panel. Within each subsection a maximum of <strong>10</strong> attributes can be displayed as label:value pairs.</p>
 <ul class="simple">
@@ -241,7 +242,7 @@
 <li><p>If more than 10 properties are configured, <strong>only first 10 properties will be displayed in the UI, other properties will be ignored</strong>.</p></li>
 <li><p>The Case Detail Page also allows you to add an optional table to list case level data.</p></li>
 </ul>
-<div class="section" id="configuring-the-case-detail-page-header">
+<section id="configuring-the-case-detail-page-header">
 <h3><span class="section-number">6.2.1. </span>Configuring the Case Detail Page Header<a class="headerlink" href="#configuring-the-case-detail-page-header" title="Permalink to this headline">¶</a></h3>
 <p>The Case Detail Page Header displays the Case ID.</p>
 <ol class="simple">
@@ -254,8 +255,8 @@
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="configuring-the-left-and-right-hand-panels-of-case-detail-page">
+</section>
+<section id="configuring-the-left-and-right-hand-panels-of-case-detail-page">
 <h3><span class="section-number">6.2.2. </span>Configuring the Left and Right Hand Panels of Case Detail Page<a class="headerlink" href="#configuring-the-left-and-right-hand-panels-of-case-detail-page" title="Permalink to this headline">¶</a></h3>
 <p>The Left and Right Hand Panels allow for the display of case attributes as label:value pairs with a set of subsections; related data attributes can be grouped together in a section.</p>
 <ol class="simple">
@@ -306,15 +307,15 @@
 <span class="sb"> `</span>
 </pre></div>
 </div>
-<div class="section" id="internal-links-to-labels-and-values">
+<section id="internal-links-to-labels-and-values">
 <h4><span class="section-number">6.2.2.1. </span>Internal Links to Labels and Values<a class="headerlink" href="#internal-links-to-labels-and-values" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links</p></li>
 <li><p>Internal links shall be opened in the same tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/arm/{study_acronym}</span></code> shall link to <code class="docutils literal notranslate"><span class="pre">arm/A</span></code></p></li>
 </ol>
-</div>
-<div class="section" id="external-links-to-labels-and-values">
+</section>
+<section id="external-links-to-labels-and-values">
 <h4><span class="section-number">6.2.2.2. </span>External Links to Labels and Values<a class="headerlink" href="#external-links-to-labels-and-values" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>External links shall start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code></p></li>
@@ -322,13 +323,13 @@
 <li><p>External link shall be opened in a new tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> shall link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
 </ol>
-</div>
-</div>
-</div>
-<div class="section" id="the-case-detail-page-associated-files-and-associated-samples-tables">
+</section>
+</section>
+</section>
+<section id="the-case-detail-page-associated-files-and-associated-samples-tables">
 <h2><span class="section-number">6.3. </span>The Case Detail Page “Associated Files” and “Associated Samples” Tables<a class="headerlink" href="#the-case-detail-page-associated-files-and-associated-samples-tables" title="Permalink to this headline">¶</a></h2>
 <p>The Case Detail Page has tables can be used to display case-level information such as the files and samples that belong to a case.</p>
-<div class="section" id="configuring-the-associated-files-and-or-associated-samples-tables">
+<section id="configuring-the-associated-files-and-or-associated-samples-tables">
 <h3><span class="section-number">6.3.1. </span>Configuring the “Associated Files” and/or “Associated Samples” Tables<a class="headerlink" href="#configuring-the-associated-files-and-or-associated-samples-tables" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/caseDetailData.js</span></code>.</p></li>
@@ -361,8 +362,8 @@
 <span class="sb">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-columns-to-the-associated-files-and-or-associated-samples-tables">
+</section>
+<section id="adding-columns-to-the-associated-files-and-or-associated-samples-tables">
 <h3><span class="section-number">6.3.2. </span>Adding columns to the “Associated Files” and/or “Associated Samples” Tables<a class="headerlink" href="#adding-columns-to-the-associated-files-and-or-associated-samples-tables" title="Permalink to this headline">¶</a></h3>
 <p>You can add up to 10 columns in the “Associated Files” Table. If you add more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
 <ol class="simple">
@@ -403,15 +404,15 @@
 <span class="sb">}</span>
 </pre></div>
 </div>
-<div class="section" id="internal-links-in-the-associated-files-and-or-associated-samples-tables">
+<section id="internal-links-in-the-associated-files-and-or-associated-samples-tables">
 <h4><span class="section-number">6.3.2.1. </span>Internal Links in the “Associated Files” and/or “Associated Samples” Tables<a class="headerlink" href="#internal-links-in-the-associated-files-and-or-associated-samples-tables" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
 <li><p>Internal links shall be opened in the same tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> shall link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
 </ol>
-</div>
-<div class="section" id="external-links-in-the-case-detail-page-table">
+</section>
+<section id="external-links-in-the-case-detail-page-table">
 <h4><span class="section-number">6.3.2.2. </span>External Links in the Case Detail Page Table.<a class="headerlink" href="#external-links-in-the-case-detail-page-table" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>External links shall start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
@@ -420,10 +421,10 @@
 <li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
 For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> shall link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code>.</p></li>
 </ol>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -446,9 +447,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, CBIIT
+        &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on May 27, 2021, 9:36:18 PM.
+        Last updated on Jul 21, 2021, 7:33:06 AM.
       </span>
 
     </p>
@@ -484,6 +485,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
       <ul>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="case-detail-page.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -499,6 +501,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="case-detail-page.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

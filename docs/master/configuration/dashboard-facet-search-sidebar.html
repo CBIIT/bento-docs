@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>8. Dashboard: Facet Search Sidebar &mdash; Bento  documentation</title>
@@ -88,11 +89,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
@@ -100,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
@@ -118,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
@@ -128,12 +129,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Project Info</span></p>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">4. Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
 </ul>
 
             
@@ -210,10 +212,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dashboard-facet-search-sidebar">
+  <section id="dashboard-facet-search-sidebar">
 <h1><span class="section-number">8. </span>Dashboard: Facet Search Sidebar<a class="headerlink" href="#dashboard-facet-search-sidebar" title="Permalink to this headline">¶</a></h1>
 <p>The dashboard facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.</p>
-<div class="section" id="facet-search-filters">
+<section id="facet-search-filters">
 <h2><span class="section-number">8.1. </span>Facet Search Filters<a class="headerlink" href="#facet-search-filters" title="Permalink to this headline">¶</a></h2>
 <p>The facet search on the dashboard’s side bar can be organized into into sections (or categories), with a maximum count of 15 facets.</p>
 <p>To configure the facets:</p>
@@ -246,8 +248,8 @@
 <div><p>:warning:   <strong>WARNING</strong>:  For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections)</p>
 <p>:point_right:   <strong>NOTE</strong>:  Update the GraphQL API Query in  <code class="docutils literal notranslate"><span class="pre">GET_DASHBOARD_DATA_QUERY</span></code> as needed; it should contain all queries and fields that are associated with your filters</p>
 </div></blockquote>
-</div>
-<div class="section" id="sidebar-sections-styling">
+</section>
+<section id="sidebar-sections-styling">
 <h2><span class="section-number">8.2. </span>Sidebar Sections Styling<a class="headerlink" href="#sidebar-sections-styling" title="Permalink to this headline">¶</a></h2>
 <p>The style of each section of the side bar can be easily configured.</p>
 <p><strong>Color</strong></p>
@@ -276,8 +278,8 @@
 </div>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -300,9 +302,9 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, CBIIT
+        &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on May 27, 2021, 9:35:17 PM.
+        Last updated on Jul 21, 2021, 7:32:47 AM.
       </span>
 
     </p>
@@ -338,6 +340,7 @@
       <ul>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -353,6 +356,7 @@
       <dd><a href="dashboard-facet-search-sidebar.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

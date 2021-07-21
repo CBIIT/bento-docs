@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>7. Dashboard &mdash; Bento  documentation</title>
@@ -88,11 +89,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
@@ -100,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
@@ -123,7 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
@@ -133,12 +134,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Project Info</span></p>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">4. Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
 </ul>
 
             
@@ -215,12 +217,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dashboard">
+  <section id="dashboard">
 <h1><span class="section-number">7. </span>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h1>
 <p>The Dashboard provides the end user with several capabilities (a) filter data entities of in interested via faceted search (b) view graphical summaries of data entities and (c) select data entities for further exploration.</p>
 <p><img alt="Dashboard Elements" src="../_images/dashboard.png" /></p>
 <p><strong>Dashboard</strong>. Displayed are the configurable elements of a Bento Dashboard. These are: Dashboard Sidebar Filters, Dashboard Widgets and Dashboard Table.</p>
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h2><span class="section-number">7.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Dashboard are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
@@ -228,11 +230,11 @@
 <li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
 <li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
 </ol>
-</div>
-<div class="section" id="dashboard-widgets">
+</section>
+<section id="dashboard-widgets">
 <h2><span class="section-number">7.2. </span>Dashboard Widgets<a class="headerlink" href="#dashboard-widgets" title="Permalink to this headline">¶</a></h2>
 <p>Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, you can add 3, 4 or 6 widgets. If you add more than <strong>6</strong> widgets, Bento will display the first widgets without any error or warning message.</p>
-<div class="section" id="configuring-the-dashboard-widgets">
+<section id="configuring-the-dashboard-widgets">
 <h3><span class="section-number">7.2.1. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
@@ -276,19 +278,19 @@
 <span class="sb">}  </span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="dashboard-facet-search-filters-on-the-sidebar">
+</section>
+</section>
+<section id="dashboard-facet-search-filters-on-the-sidebar">
 <h2><span class="section-number">7.3. </span>Dashboard Facet Search Filters on the Sidebar<a class="headerlink" href="#dashboard-facet-search-filters-on-the-sidebar" title="Permalink to this headline">¶</a></h2>
 <p>The dashboard’s facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.</p>
 <p>The facet filters and the sidebar are configured as described in <a class="reference internal" href="dashboard-facet-search-sidebar.html"><span class="doc">Dashboard: Facet Search Sidebar</span></a></p>
-</div>
-<div class="section" id="dashboard-tabs-and-tables">
+</section>
+<section id="dashboard-tabs-and-tables">
 <h2><span class="section-number">7.4. </span>Dashboard Tabs and Tables<a class="headerlink" href="#dashboard-tabs-and-tables" title="Permalink to this headline">¶</a></h2>
 <p>The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the <a class="reference external" href="https://dev.bento-tools.org/#/cases">Bento reference implementation</a> the Dashboard Table list the cases (or study subjects) in the program.</p>
 <p>Dashboard tabs and tables are configured as described in <a class="reference internal" href="dashboard-tabs-and-tables.html"><span class="doc">Dashboard: Tabs and Tables</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -311,9 +313,9 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, CBIIT
+        &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on May 27, 2021, 9:35:17 PM.
+        Last updated on Jul 21, 2021, 7:32:47 AM.
       </span>
 
     </p>
@@ -349,6 +351,7 @@
       <ul>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
@@ -364,6 +367,7 @@
       <dd><a href="dashboard.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

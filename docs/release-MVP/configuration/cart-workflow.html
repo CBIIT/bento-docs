@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>8. Cart Workflow &mdash; Bento  documentation</title>
@@ -84,11 +85,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
@@ -96,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
@@ -138,7 +139,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="static-pages.html">9. Static Pages</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Data and Modeling</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
@@ -148,7 +149,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Project Info</span></p>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
@@ -229,26 +230,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cart-workflow">
+  <section id="cart-workflow">
 <h1><span class="section-number">8. </span>Cart Workflow<a class="headerlink" href="#cart-workflow" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The cart workflow is a mechanism for users to generate a manifest for working with case files.</p>
-<p>&nbsp;</p></div>
-<div class="section" id="prerequisites">
+<p>&nbsp;</p></section>
+<section id="prerequisites">
 <h2><span class="section-number">8.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Fork the GitHub repo <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>)</p></li>
 <li><p>Create a local clone of your fork into a local directory, represented here as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 </ol>
-<p>&nbsp;</p></div>
-<div class="section" id="configuring-the-cases-page-in-the-cart-workflow">
+<p>&nbsp;</p></section>
+<section id="configuring-the-cases-page-in-the-cart-workflow">
 <h2><span class="section-number">8.3. </span>Configuring the Cases page in the Cart Workflow<a class="headerlink" href="#configuring-the-cases-page-in-the-cart-workflow" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Cart Workflow - Cases Page" src="../_images/cart-workflow-cases.png" /></p>
-<div class="section" id="cases-page-table-title">
+<section id="cases-page-table-title">
 <h3><span class="section-number">8.3.1. </span>Cases Page: Table Title<a class="headerlink" href="#cases-page-table-title" title="Permalink to this headline">¶</a></h3>
 <p>To configure the table title on the page (right above the table)</p>
-<div class="section" id="edit-configuration-file">
+<section id="edit-configuration-file">
 <h4><span class="section-number">8.3.1.1. </span>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -265,30 +266,30 @@
   <span class="nx">myCasesSubTitle</span><span class="o">:</span> <span class="s1">&#39;Subjects&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="cases-page-table-content">
+</section>
+</section>
+<section id="cases-page-table-content">
 <h3><span class="section-number">8.3.2. </span>Cases Page: Table Content<a class="headerlink" href="#cases-page-table-content" title="Permalink to this headline">¶</a></h3>
 <p>To configure the table on the “My Cases” page</p>
-<div class="section" id="id1">
+<section id="id1">
 <h4><span class="section-number">8.3.2.1. </span>Edit configuration file<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">GET_MY_CASES_DATA_QUERY</span></code>, set graphql query …</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="cases-page-table-icon">
+</section>
+</section>
+<section id="cases-page-table-icon">
 <h3><span class="section-number">8.3.3. </span>Cases Page: Table Icon<a class="headerlink" href="#cases-page-table-icon" title="Permalink to this headline">¶</a></h3>
 <p>To configure the Table Icon for the “My Cases” page</p>
-</div>
-<div class="section" id="cases-page-add-icon">
+</section>
+<section id="cases-page-add-icon">
 <h3><span class="section-number">8.3.4. </span>Cases Page: Add Icon<a class="headerlink" href="#cases-page-add-icon" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-<div class="section" id="id2">
+<section id="id2">
 <h4><span class="section-number">8.3.4.1. </span>Edit configuration file<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -306,12 +307,12 @@
   <span class="nx">headerIconAlt</span><span class="o">:</span> <span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="cases-page-go-to-files-button">
+</section>
+</section>
+<section id="cases-page-go-to-files-button">
 <h3><span class="section-number">8.3.5. </span>Cases Page: “Go To Files” Button<a class="headerlink" href="#cases-page-go-to-files-button" title="Permalink to this headline">¶</a></h3>
 <p>To configure the Configure “Go To Files” Button* for the “Shopping Cart/My Cases” workflow</p>
-<div class="section" id="id3">
+<section id="id3">
 <h4><span class="section-number">8.3.5.1. </span>Edit configuration file<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -323,19 +324,19 @@
   <span class="nx">buttonText</span><span class="o">:</span> <span class="s1">&#39;Go To Files Page&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="cases-page-workflow-icon">
+</section>
+</section>
+<section id="cases-page-workflow-icon">
 <h3><span class="section-number">8.3.6. </span>Cases Page: Workflow Icon<a class="headerlink" href="#cases-page-workflow-icon" title="Permalink to this headline">¶</a></h3>
 <p>To configure the Workflow Icon for the “Shopping Cart/My Cases” workflow</p>
-<div class="section" id="add-icon-file-to-repo">
+<section id="add-icon-file-to-repo">
 <h4><span class="section-number">8.3.6.1. </span>Add Icon file to repo<a class="headerlink" href="#add-icon-file-to-repo" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h4><span class="section-number">8.3.6.2. </span>Edit configuration file<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -354,16 +355,16 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>&nbsp;</p></div>
-</div>
-</div>
-<div class="section" id="configuring-files-page-in-cart-workflow">
+<p>&nbsp;</p></section>
+</section>
+</section>
+<section id="configuring-files-page-in-cart-workflow">
 <h2><span class="section-number">8.4. </span>Configuring Files Page in Cart Workflow<a class="headerlink" href="#configuring-files-page-in-cart-workflow" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Cart Workflow - Files Page" src="../_images/cart-workflow-files.png" /></p>
-<div class="section" id="files-page-table-title">
+<section id="files-page-table-title">
 <h3><span class="section-number">8.4.1. </span>Files Page: Table Title<a class="headerlink" href="#files-page-table-title" title="Permalink to this headline">¶</a></h3>
 <p>To configure the table title on the page (right above the table)</p>
-<div class="section" id="id5">
+<section id="id5">
 <h4><span class="section-number">8.4.1.1. </span>Edit configuration file<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -380,19 +381,19 @@
   <span class="nx">myFilesSubTitle</span><span class="o">:</span> <span class="s1">&#39;Files&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="files-page-table-icon">
+</section>
+</section>
+<section id="files-page-table-icon">
 <h3><span class="section-number">8.4.2. </span>Files Page: Table Icon<a class="headerlink" href="#files-page-table-icon" title="Permalink to this headline">¶</a></h3>
 <p>To configure the Table Icon for the “My Files” page</p>
-<div class="section" id="id6">
+<section id="id6">
 <h4><span class="section-number">8.4.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h4><span class="section-number">8.4.2.2. </span>Edit configuration file<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -410,19 +411,19 @@
   <span class="nx">headerIconAlt</span><span class="o">:</span> <span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="files-page-workflow-icon">
+</section>
+</section>
+<section id="files-page-workflow-icon">
 <h3><span class="section-number">8.4.3. </span>Files Page: Workflow Icon<a class="headerlink" href="#files-page-workflow-icon" title="Permalink to this headline">¶</a></h3>
 <p>To configure the Workflow Icon for the Files Page in the “Shopping Cart/My Cases” workflow</p>
-<div class="section" id="add-an-icon">
+<section id="add-an-icon">
 <h4><span class="section-number">8.4.3.1. </span>Add an Icon<a class="headerlink" href="#add-an-icon" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h4><span class="section-number">8.4.3.2. </span>Edit configuration file<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -441,12 +442,12 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="files-page-file-manifest-name">
+</section>
+</section>
+<section id="files-page-file-manifest-name">
 <h3><span class="section-number">8.4.4. </span>Files Page: File Manifest Name<a class="headerlink" href="#files-page-file-manifest-name" title="Permalink to this headline">¶</a></h3>
 <p>To configure the File Manifest Name for “Shopping Cart/My Cases” workflow</p>
-<div class="section" id="id9">
+<section id="id9">
 <h4><span class="section-number">8.4.4.1. </span>Edit configuration file<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -460,16 +461,16 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>&nbsp;</p></div>
-</div>
-</div>
-<div class="section" id="configuring-the-menu-bar-for-the-cart-workflow">
+<p>&nbsp;</p></section>
+</section>
+</section>
+<section id="configuring-the-menu-bar-for-the-cart-workflow">
 <h2><span class="section-number">8.5. </span>Configuring the Menu Bar for the Cart Workflow<a class="headerlink" href="#configuring-the-menu-bar-for-the-cart-workflow" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Cart Workflow - Menu Bar" src="../_images/cart-workflow-menu-bar.png" /></p>
-<div class="section" id="menu-bar-text">
+<section id="menu-bar-text">
 <h3><span class="section-number">8.5.1. </span>Menu Bar Text<a class="headerlink" href="#menu-bar-text" title="Permalink to this headline">¶</a></h3>
 <p>To configure the link that appears on the menu bar:</p>
-<div class="section" id="id10">
+<section id="id10">
 <h4><span class="section-number">8.5.1.1. </span>Edit configuration file<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -480,19 +481,19 @@
   <span class="nx">cartLabel</span><span class="o">:</span> <span class="s1">&#39;MY SUBJECTS&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="menu-bar-icon">
+</section>
+</section>
+<section id="menu-bar-icon">
 <h3><span class="section-number">8.5.2. </span>Menu Bar Icon<a class="headerlink" href="#menu-bar-icon" title="Permalink to this headline">¶</a></h3>
 <p>To configure the icon that appears on the menu bar:</p>
-<div class="section" id="id11">
+<section id="id11">
 <h4><span class="section-number">8.5.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>Add and commit file to your repo; then push the commit to github</p></li>
 </ol>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h4><span class="section-number">8.5.2.2. </span>Edit configuration file<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -511,15 +512,15 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>&nbsp;</p></div>
-</div>
-</div>
-<div class="section" id="configuring-notifications-for-cart-workflow">
+<p>&nbsp;</p></section>
+</section>
+</section>
+<section id="configuring-notifications-for-cart-workflow">
 <h2><span class="section-number">8.6. </span>Configuring Notifications for Cart Workflow<a class="headerlink" href="#configuring-notifications-for-cart-workflow" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Cart Workflow - Notifications" src="../_images/cart-notification-add.png" /></p>
-<div class="section" id="notification-text-messages-when-adding-cases-to-cart">
+<section id="notification-text-messages-when-adding-cases-to-cart">
 <h3><span class="section-number">8.6.1. </span>Notification text/messages when adding cases to Cart<a class="headerlink" href="#notification-text-messages-when-adding-cases-to-cart" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id13">
+<section id="id13">
 <h4><span class="section-number">8.6.1.1. </span>Edit configuration file<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -532,11 +533,11 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="notification-text-messages-when-removing-cases-from-cart">
+</section>
+</section>
+<section id="notification-text-messages-when-removing-cases-from-cart">
 <h3><span class="section-number">8.6.2. </span>Notification text/messages when removing cases from Cart<a class="headerlink" href="#notification-text-messages-when-removing-cases-from-cart" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id14">
+<section id="id14">
 <h4><span class="section-number">8.6.2.1. </span>Edit configuration file<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
@@ -549,10 +550,10 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -575,9 +576,9 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, CBIIT
+        &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on May 27, 2021, 9:36:38 PM.
+        Last updated on Jul 21, 2021, 7:33:25 AM.
       </span>
 
     </p>
@@ -613,6 +614,7 @@
       <ul>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="cart-workflow.html">release-MVP</a></li>
       </ul>
       <br>
@@ -628,6 +630,7 @@
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="cart-workflow.html">release-MVP</a></dd>
     </dl>
    -->
