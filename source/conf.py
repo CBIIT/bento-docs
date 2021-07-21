@@ -23,7 +23,7 @@ from recommonmark.transform import AutoStructify
 # -- Project information -----------------------------------------------------
 
 project = 'Bento'
-copyright = '2020, CBIIT'
+copyright = '2021, CBIIT'
 author = 'CBIIT'
 version = "latest"
 
