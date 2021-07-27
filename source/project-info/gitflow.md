@@ -47,7 +47,7 @@ Note that `feature` branches combined with the `develop` branch is, for
 all intents and purposes, the Feature Branch Workflow. But, the Gitflow
 Workflow doesn’t stop there.
 
-`Feature` branches are generally created off to the latest `develop`
+`Feature` branches are generally created off the latest `develop`
 branch.
 
 ### Creating a feature branch
@@ -72,12 +72,12 @@ is to merge the `feature_branch` into `develop`.
 ## Release Branches
 
 
-Once `develop` has acquired enough features for a release for week 1(or a
+Once `develop` has acquired enough features for a release for week 1 (or a
 predetermined release date is approaching), you fork a `releaseversion-alpha` 
 branch off of `develop` for QA to test the features we develop during week 1. 
 
-After week 2 will create ou fork a `releaseversion` branch off of `develop`. Creating this branch starts the next release cycle, so
-no new features can be added after this point—only bug fixes,
+After week 2, we will create a fork for the `releaseversion` branch off of `develop`. Creating this branch starts the next release cycle, so
+no new features can be added after this point; only bug fixes,
 documentation generation, and other release-oriented tasks should go in
 this branch. Once it's ready to ship, the `releaseversion` branch gets merged
 into `main` and tagged with a version number. In addition, it should be
@@ -85,8 +85,8 @@ merged back into `develop`, which may have progressed since the release
 was initiated.
 
 Using a dedicated branch to prepare releases makes it possible for one
-team to polish the current release while and if have time team continues working
-on features for the next release. It also creates well-defined phases of
+team to polish the current release, while another team continues working
+on features for the next release if time permits. It also creates well-defined phases of
 development.
 
 Making `release` branches is another straightforward branching
@@ -103,19 +103,19 @@ After week 2:
     git checkout 1.1.0
 
 
-Once the release is ready to ship, it will get merged it into `main` and
+Once the release is ready to ship, it will get merged into `main` and
 `develop`, then the `release` branch will be deleted. It’s important to
 merge back into `develop` because critical updates may have been added
 to the `release` branch and they need to be accessible to new features.
 This would be an ideal place for a pull request.
 
-If any new bug fixes need to go to release branch after the QA started
-testing. Here is the way to release bug fixes to release.
+If new bug fixes need to go to the release branch after the QA team started
+testing, here is the way to release bug fixes to the release branch.
 
 ```
 git checkout releaseversion
 git merge hotfix_branch
-git checkout developgit merge hotfix_branch
+git checkout develop git merge hotfix_branch
 git branch -D hotfix_branch
 ```
 
@@ -149,7 +149,7 @@ into both `main` and `develop.`
 ```
 git checkout main
 git merge hotfix_branch
-git checkout developgit merge hotfix_branch
+git checkout develop git merge hotfix_branch
 git branch -D hotfix_branch
 ```
 
@@ -163,10 +163,10 @@ Assuming we have a repo setup with a `main` branch.
 ```
 git checkout main
 git checkout -b develop
-git checkout -b feature_branch # work happens on feature branch
+git checkout -b feature_branch # work is done and commits are added to the feature_branch
 git checkout develop
 git merge feature_branch
-git checkout maingit merge develop
+git checkout main git merge develop
 git branch -d feature_branch
 ````
 
@@ -174,7 +174,7 @@ In addition to the `feature` and `release` flow, a `hotfix` example is
 as follows:
 
     git checkout main
-    git checkout -b hotfix_branch# work is done commits are added to the hotfix_branch
+    git checkout -b hotfix_branch # work is done and commits are added to the hotfix_branch
     git checkout develop
     git merge hotfix_branch
     git checkout main
@@ -207,22 +207,22 @@ The overall flow of Gitflow is:
 
 ## Release Workflow
 
-After week1 Lead developer will create a releaseversion-alpha branch and trigger an new "Build and Deploy" Job in jenkins and release versions QA. QA then will trigger "Deploy" JOb in jenkins to QA.
+After week 1, the lead developer will create a releaseversion-alpha branch and trigger a new "Build and Deploy" job in jenkins and release versions to QA. QA will then trigger "Deploy" job in jenkins to QA.
 
-It will give QA versions to deploy look similar to like this.
+It will give QA versions to deploy similar to those shown below.
     
     FE Version: {version-alpha}-{buildnumber}
     BE Version: {version-alpha}-{buildnumber}
 
-After week2 Lead developer will provide new build versions to deploy to QA.
+After week 2, the lead developer will provide new build versions to deploy to QA.
     
-Once the release is ready to ship, it will get merged it into `main` and
+Once the release is ready to ship, it will get merged into `main` and
 `develop`, then the `release` branch will be deleted. It’s important to
 merge back into `develop` because critical updates may have been added
 to the `release` branch and they need to be accessible to new features.
 
-Once release is merged to main branch the new release tag is created from main
-branch and add the release notes. The  release notes should includes the changes made and the docker build image number that was thested on QA.
+Once the release is merged to the main branch, the new release tag is created from the main
+branch and release notes are added. The release notes should include the changes made and the docker build image number that was tested on QA.
 
 **Sample release notes**
 
