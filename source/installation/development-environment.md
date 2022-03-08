@@ -8,7 +8,7 @@ There are several microservices and a group of scripts used in Bento backend:
 - bento-auth: Authentication service [GitHub repo](https://github.com/CBIIT/bento-auth)
 - data-loader: Scripts for loading data [GitHub repo](https://github.com/CBIIT/icdc-dataloader)
 
-To set up a bento backend development environment, you need following components:
+To set up a backend development environment, following tools are needed:
 - Neo4j
 - OpenSearch
 - Redis
