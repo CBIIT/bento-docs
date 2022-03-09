@@ -16,7 +16,7 @@ To set up a backend development environment, following tools are needed:
 - NodeJS
 - Python
 
-Pre-requisites
+### Pre-requisites
 #### Mac
 1. To install Homebrew on your Mac
     ```
