@@ -31,24 +31,13 @@ To set up a backend development environment, following tools are needed:
 Bento backend needs Neo4j version 4.2.x.
 
 #### Mac
-1. Download the version of 4.2.X from https://neo4j.com/download-center/#community in your local machine
+1. Download the latest version of Neo4j Desktop for Mac from https://neo4j.com/download/ in your local machine
 
-2. Extract the contents of the archive, using command
-    ```
-    tat -xf <filename>
-    ```
-3. Download apoc-4.2.0.10-core.jar into the $neo4j/plugins
-    ```
-   https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/4.2.0.10/apoc-4.2.0.10-core.jar
-    ```
-4. Change the targeted directory & run Neo4j:
-   ```
-   cd $neo4j
-   ```
-   ```
-   ./bin/neo4j console
-   ```
-After the command, logs are printed in the console.
+2. Double-click the Neo4j .dmg file
+
+3. After installation, you can add the desired Neo4j version recommending 4.2.X for Bento framework.
+ 
+4. After creating your database, by going into the Manage screen, and then click to install the APOC box in the Plugins tab.
 
 #### Windows
 
