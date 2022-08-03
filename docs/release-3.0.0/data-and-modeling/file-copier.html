@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>3. File Copier &mdash; Bento release-3.0.0 documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -224,12 +224,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="file-copier">
-<h1><span class="section-number">3. </span>File Copier<a class="headerlink" href="#file-copier" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="file-copier">
+<h1><span class="section-number">3. </span>File Copier<a class="headerlink" href="#file-copier" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation for the File Copier module contained in the ICDC-Dataloader utility.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
-<section id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The File Copier copies files from a source URL to a designated AWS S3 Bucket. It has 3 modes of operation:</p>
 <ul class="simple">
 <li><p><strong>Master mode</strong> - The File Copier will read all of the file information from the pre-manifest, push jobs onto the job queue, and then listen to the results queue for the loading results.</p></li>
@@ -237,9 +237,9 @@
 <li><p><strong>Solo mode</strong> - The File Copier will read all of the file information from the pre-manifest and then copy all of the files to the destination S3 bucket.</p></li>
 </ul>
 <p>The File Copier can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/icdc-dataloader">ICDC-Dataloader</a></p>
-</section>
-<section id="pre-requisites">
-<h2><span class="section-number">3.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pre-requisites">
+<h2><span class="section-number">3.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Python 3.6 or newer</p></li>
 <li><p>An initialized destination AWS S3 bucket</p></li>
@@ -247,9 +247,9 @@
 <li><p>Initialized Job and Result SQS FIFO Queues (<code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">slave</span></code> modes only)</p></li>
 <li><p>An adapter to process information read from pre-manifest</p></li>
 </ul>
-</section>
-<section id="dependencies">
-<h2><span class="section-number">3.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dependencies">
+<h2><span class="section-number">3.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> to install dependencies. Or run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> if you are using virtualenv. The dependencies included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> are listed below:</p>
 <ul class="simple">
 <li><p>pyyaml</p></li>
@@ -257,9 +257,9 @@
 <li><p>boto3</p></li>
 <li><p>requests</p></li>
 </ul>
-</section>
-<section id="inputs">
-<h2><span class="section-number">3.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="inputs">
+<h2><span class="section-number">3.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>The location of the files to be copied</p></li>
 <li><p>The name of the destination S3 bucket</p></li>
@@ -268,18 +268,18 @@
 <li><p>A pre-manifest file (in TSV format)</p></li>
 <li><p>The names of the job and result SQS FIFO queues (<code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">slave</span></code> modes only)</p></li>
 </ul>
-</section>
-<section id="outputs">
-<h2><span class="section-number">3.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="outputs">
+<h2><span class="section-number">3.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <p>The File Copier module will produce following outputs</p>
 <ul class="simple">
 <li><p>Copies files into the specified S3 bucket</p></li>
 <li><p>Generates two manifest files in the same place as pre-manifest file, one for DCF/IndexD, the other for Neo4j database.</p></li>
 <li><p>Log messages to console as well as a log file inside <code class="docutils literal notranslate"><span class="pre">tmp/</span></code> folder.</p></li>
 </ul>
-</section>
-<section id="configuration-file">
-<h2><span class="section-number">3.6. </span>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="configuration-file">
+<h2><span class="section-number">3.6. </span>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this heading">¶</a></h2>
 <p>All the inputs of File Copier can be set in a YAML format configuration file by using the fields defined below.</p>
 <p>An example configuration file can be found in <code class="docutils literal notranslate"><span class="pre">config/file-copier-config.example.yml</span></code></p>
 <ul class="simple">
@@ -300,9 +300,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">dryrun</span></code>: Runs checks on original files but does not perform the copy operation.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">verify_md5</span></code>: Verify that the size and MD5 hash of the original file and the generated copy are the same.</p></li>
 </ul>
-</section>
-<section id="command-line-arguments">
-<h2><span class="section-number">3.7. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="command-line-arguments">
+<h2><span class="section-number">3.7. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Configuration File</strong></p>
 <ul>
@@ -433,30 +433,30 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="usage-examples">
-<h2><span class="section-number">3.8. </span>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="usage-examples">
+<h2><span class="section-number">3.8. </span>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this heading">¶</a></h2>
 <p>Below are example commands to run the File Copier.</p>
-<section id="solo-mode">
-<h3><span class="section-number">3.8.1. </span>Solo Mode<a class="headerlink" href="#solo-mode" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="solo-mode">
+<h3><span class="section-number">3.8.1. </span>Solo Mode<a class="headerlink" href="#solo-mode" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_copier</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">b</span> <span class="n">example_bucket</span> <span class="o">--</span><span class="n">domain</span> <span class="n">example_domain</span> <span class="o">-</span><span class="n">p</span> <span class="n">example_prefix</span> <span class="o">-</span><span class="n">m</span> <span class="n">solo</span> <span class="o">--</span><span class="n">pre</span><span class="o">-</span><span class="n">manifest</span> <span class="n">example_file</span><span class="o">.</span><span class="n">tsv</span> <span class="o">--</span><span class="n">adapter</span><span class="o">-</span><span class="n">module</span> <span class="n">example_module</span> <span class="o">--</span><span class="n">adapter</span><span class="o">-</span><span class="k">class</span> <span class="nc">example_class</span> <span class="n">example_config</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-</section>
-<section id="master-mode">
-<h3><span class="section-number">3.8.2. </span>Master Mode<a class="headerlink" href="#master-mode" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="master-mode">
+<h3><span class="section-number">3.8.2. </span>Master Mode<a class="headerlink" href="#master-mode" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_copier</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">b</span> <span class="n">example_bucket</span> <span class="o">--</span><span class="n">domain</span> <span class="n">example_domain</span> <span class="o">-</span><span class="n">p</span> <span class="n">example_prefix</span> <span class="o">-</span><span class="n">m</span> <span class="n">master</span> <span class="o">--</span><span class="n">job</span><span class="o">-</span><span class="n">queue</span> <span class="n">example_job_queue</span> <span class="o">--</span><span class="n">result</span><span class="o">-</span><span class="n">queue</span> <span class="n">example_result_queue</span> <span class="o">--</span><span class="n">pre</span><span class="o">-</span><span class="n">manifest</span> <span class="n">example_file</span><span class="o">.</span><span class="n">tsv</span> <span class="o">--</span><span class="n">adapter</span><span class="o">-</span><span class="n">module</span> <span class="n">example_module</span> <span class="o">--</span><span class="n">adapter</span><span class="o">-</span><span class="k">class</span> <span class="nc">example_class</span> <span class="n">example_config</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-</section>
-<section id="id1">
-<h3><span class="section-number">3.8.3. </span>Solo Mode<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">3.8.3. </span>Solo Mode<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_copier</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">b</span> <span class="n">example_bucket</span> <span class="o">-</span><span class="n">m</span> <span class="n">slave</span> <span class="o">--</span><span class="n">job</span><span class="o">-</span><span class="n">queue</span> <span class="n">example_job_queue</span> <span class="o">--</span><span class="n">result</span><span class="o">-</span><span class="n">queue</span> <span class="n">example_result_queue</span> <span class="n">example_config</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-</section>
-<section id="example-inputs">
-<h3><span class="section-number">3.8.4. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-inputs">
+<h3><span class="section-number">3.8.4. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Destination S3 Bucket Name</strong></p>
 <ul>
@@ -511,9 +511,9 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -538,7 +538,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:16 AM.
+        Last updated on Aug 3, 2022, 7:47:30 PM.
       </span>
 
     </p>
@@ -580,6 +580,9 @@
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -587,6 +590,9 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

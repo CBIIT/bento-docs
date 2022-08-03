@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>1. Data Loader &mdash; Bento  documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -214,17 +214,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="data-loader">
-<h1><span class="section-number">1. </span>Data Loader<a class="headerlink" href="#data-loader" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="data-loader">
+<h1><span class="section-number">1. </span>Data Loader<a class="headerlink" href="#data-loader" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation for the Data Loader module contained in the ICDC-Dataloader utility.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
-<section id="introduction">
-<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Data Loader module is a versatile Python application used to load data into a Neo4j database. The application is capable of loading data from either a system directory or from an Amazon Web Services (AWS) S3 Bucket</p>
 <p>The Data Loader can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/icdc-dataloader">ICDC-Dataloader</a></p>
-</section>
-<section id="pre-requisites">
-<h2><span class="section-number">1.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pre-requisites">
+<h2><span class="section-number">1.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Python 3.6 or newer</p></li>
 <li><p>An initialized and running Neo4j database</p></li>
@@ -232,9 +232,9 @@
 <li><p>If the Neo4j database is running remotely, SSH login permissions are required.</p></li>
 <li><p>On the system running the Neo4j database, the <code class="docutils literal notranslate"><span class="pre">&lt;Neo4j</span> <span class="pre">Home&gt;/bin</span></code> directory must be added to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable in order to perform the backup operation.</p></li>
 </ul>
-</section>
-<section id="dependencies">
-<h2><span class="section-number">1.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dependencies">
+<h2><span class="section-number">1.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> to install dependencies. Or run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> if you are using virtualenv. The dependencies included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> are listed below:</p>
 <ul class="simple">
 <li><p>pyyaml</p></li>
@@ -242,9 +242,9 @@
 <li><p>boto3</p></li>
 <li><p>requests</p></li>
 </ul>
-</section>
-<section id="inputs">
-<h2><span class="section-number">1.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="inputs">
+<h2><span class="section-number">1.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>A Data Loader configuration file</p></li>
 <li><p>Neo4j endpoint and credentials</p></li>
@@ -252,13 +252,13 @@
 <li><p>If loading from an AWS S3 bucket, the S3 folder and bucket name</p></li>
 <li><p>The dataset directory or a local temporary folder if loading from an AWS S3 bucket</p></li>
 </ul>
-</section>
-<section id="outputs">
-<h2><span class="section-number">1.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="outputs">
+<h2><span class="section-number">1.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <p>The Data Loader module loads data into the specified Neo4j database, and log messages to console as well as a log file inside <code class="docutils literal notranslate"><span class="pre">tmp/</span></code> folder.</p>
-</section>
-<section id="data-file-format-specifications">
-<h2><span class="section-number">1.6. </span>Data File Format Specifications<a class="headerlink" href="#data-file-format-specifications" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-file-format-specifications">
+<h2><span class="section-number">1.6. </span>Data File Format Specifications<a class="headerlink" href="#data-file-format-specifications" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Files must be in TSV format with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> or <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension</p></li>
 <li><p>Files must contain a <code class="docutils literal notranslate"><span class="pre">type</span></code> column indicates what node type of the record/node</p></li>
@@ -266,9 +266,9 @@
 <li><p>Any column with a <code class="docutils literal notranslate"><span class="pre">relationship_type$field_name</span></code> formatted heading will be treated as a property on that relationship</p></li>
 <li><p>All other columns will be treated as regular properties for the record/node</p></li>
 </ul>
-</section>
-<section id="configuration-file">
-<h2><span class="section-number">1.7. </span>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="configuration-file">
+<h2><span class="section-number">1.7. </span>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading">¶</a></h2>
 <p>All the inputs of Data Loader can be set in a YAML format configuration file by using the fields defined below. Using a configuration file can make your Data Loader command significantly shorter.</p>
 <p>An example configuration file can be found in <code class="docutils literal notranslate"><span class="pre">config/data-loader-config.example.yml</span></code></p>
 <ul class="simple">
@@ -291,9 +291,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">loading_mode</span></code>: The loading mode to be used</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dataset</span></code>: The directory containing the data to be loaded, a temporary directory if loading from an S3 bucket</p></li>
 </ul>
-</section>
-<section id="command-line-arguments">
-<h2><span class="section-number">1.8. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="command-line-arguments">
+<h2><span class="section-number">1.8. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
 <p>All the command line arguments can be specified in the configuration file. If an argument is specified in both the configuration file and the command line then the command line value will be used.</p>
 <ul class="simple">
 <li><p><strong>Configuration File</strong></p>
@@ -450,15 +450,15 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="usage-example">
-<h2><span class="section-number">1.9. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="usage-example">
+<h2><span class="section-number">1.9. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this heading">¶</a></h2>
 <p>Below is an example command to run the Model Converter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python3 loader.py config/config.yml -p secret -s tests/data/icdc-model.yml -s tests/data/icdc-model-props.yml --prop-file config/props-icdc.yml --no-backup -–dataset /data/Dataset-20191119
 </pre></div>
 </div>
-<section id="example-inputs">
-<h3><span class="section-number">1.9.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-inputs">
+<h3><span class="section-number">1.9.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Neo4j Password</strong></p>
 <ul>
@@ -492,9 +492,9 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -519,7 +519,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:25 AM.
+        Last updated on Aug 3, 2022, 7:47:38 PM.
       </span>
 
     </p>
@@ -561,6 +561,9 @@
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -568,6 +571,9 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

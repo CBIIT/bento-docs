@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>2. Installing Bento on Your Local Machine &mdash; Bento  documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -227,10 +227,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="installing-bento-on-your-local-machine">
-<h1><span class="section-number">2. </span>Installing Bento on Your Local Machine<a class="headerlink" href="#installing-bento-on-your-local-machine" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
-<h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="installing-bento-on-your-local-machine">
+<h1><span class="section-number">2. </span>Installing Bento on Your Local Machine<a class="headerlink" href="#installing-bento-on-your-local-machine" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>The Bento-Local environment is designed to run directly within Docker on a user’s workstation. This allows users to create and deploy their local copy of Bento with minimal changes to their local environment and allows a configuration that can be used with different workstation operating systems.</p>
 <p>The Bento-Local project supports the following build modes:</p>
 <ul class="simple">
@@ -262,9 +262,9 @@
 <ul class="simple">
 <li><p>The Dataloader container will load a local data set into the graph database hosted within the Neo4j container. This component requires local copies of the bento-backend and bento-model repositories as well as a local copy of the data to be loaded. This container will not continue running after data has been loaded.</p></li>
 </ul>
-</section>
-<section id="docker">
-<h2><span class="section-number">2.2. </span>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="docker">
+<h2><span class="section-number">2.2. </span>Docker<a class="headerlink" href="#docker" title="Permalink to this heading">¶</a></h2>
 <p>The official Docker documentation can be found <a class="reference external" href="https://docs.docker.com/get-started/">here</a>. If you’ve never used Docker before it may be helpful to read some of the Docker documentation to familiarize yourself with containers.</p>
 <p>To install Docker choose from the following options:</p>
 <p><strong>Install Docker Desktop:</strong></p>
@@ -273,18 +273,18 @@
 <p><strong>Install Docker Engine:</strong></p>
 <p>Instructions for installing Docker Engine can be found <a class="reference external" href="https://docs.docker.com/engine/install/">here</a>.</p>
 <p>If choosing this option docker-compose will need to be installed separately. Instructions for installing docker-compose can be found <a class="reference external" href="https://docs.docker.com/compose/install/">here</a>.</p>
-</section>
-<section id="installing-bento">
-<h2><span class="section-number">2.3. </span>Installing Bento<a class="headerlink" href="#installing-bento" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installing-bento">
+<h2><span class="section-number">2.3. </span>Installing Bento<a class="headerlink" href="#installing-bento" title="Permalink to this heading">¶</a></h2>
 <p>After installing Docker perform the following tasks from the command line to finish setting up Bento:</p>
-<section id="get-the-bento-local-scripts">
-<h3><span class="section-number">2.3.1. </span>Get the Bento-local scripts<a class="headerlink" href="#get-the-bento-local-scripts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="get-the-bento-local-scripts">
+<h3><span class="section-number">2.3.1. </span>Get the Bento-local scripts<a class="headerlink" href="#get-the-bento-local-scripts" title="Permalink to this heading">¶</a></h3>
 <p>The bento-local scripts can be found in Github at: <a class="reference external" href="https://github.com/CBIIT/bento-local">https://github.com/CBIIT/bento-local</a> NOTE: these scripts are available on the master branch</p>
 <p>You can clone this repository onto your local workstation using any git client you have installed to get the Bento-Local scripts:</p>
 <p><img alt="Initial Configuration" src="../_images/initial-pull.jpg" /></p>
-</section>
-<section id="initialize-your-bento-local-project">
-<h3><span class="section-number">2.3.2. </span>Initialize your bento-local project<a class="headerlink" href="#initialize-your-bento-local-project" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="initialize-your-bento-local-project">
+<h3><span class="section-number">2.3.2. </span>Initialize your bento-local project<a class="headerlink" href="#initialize-your-bento-local-project" title="Permalink to this heading">¶</a></h3>
 <p>Bento-Local includes initialization scripts that will prepare your local environment to build. Note that for all build types other than “demo” it is required to initialize the bento-local environment. The initialization scripts will checkout all of the required Bento source code and include demo data to use if desired. After running the initialization script return to the root of your Bento-Local environment and you will be ready to build your project.</p>
 <p>Initialization scripts are avilable for Mac/Linux or Windows (either powershell or command line) platforms within the initialization folder. To initialize your local environment please choose and run one of the available scripts from the initialization folder.</p>
 <p>Details for the initialization script can be found in the README file in bento-local/initialization. Note that for modes other than “dev_mode” building bento-local will require updates to configuration files. Initializing your bento-local project will create the following additional folders:</p>
@@ -296,9 +296,9 @@
 </ul>
 <p><img alt="Initial Configuration" src="../_images/after-init.jpg" /></p>
 <p>Note that the bento-local build will use the actual code you have cloned locally when it builds - if you require features from a specific branch you must clone that branch specifically using git or by updating the defaults used in the initializion script. For a vanilla install of Bento the default branches will be sufficient.</p>
-</section>
-<section id="configure-environment-settings-for-your-local-instance">
-<h3><span class="section-number">2.3.3. </span>Configure Environment settings for your local instance<a class="headerlink" href="#configure-environment-settings-for-your-local-instance" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="configure-environment-settings-for-your-local-instance">
+<h3><span class="section-number">2.3.3. </span>Configure Environment settings for your local instance<a class="headerlink" href="#configure-environment-settings-for-your-local-instance" title="Permalink to this heading">¶</a></h3>
 <p>The bento-local build and initialization scripts use configuration options defined in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file that is included within the bento-local project. This file contains default values to use when building Bento-Local, it is possible to use the default settings to build Bento-Local in “dev” mode. The configurations can be changed as needed, however please note that the username for new Neo4j containers should always remain “neo4j”. The default values for this file are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
 <span class="c1">#                                      #</span>
@@ -340,9 +340,9 @@
 </pre></div>
 </div>
 <p>Note that the locations of the FRONTEND_SOURCE_FOLDER, BACKEND_SOURCE_FOLDER, and BENTO_DATA_MODEL are important. These values are relative paths and must be within the root of the Bento-Local project.</p>
-</section>
-<section id="run-the-bento-local-environment">
-<h3><span class="section-number">2.3.4. </span>Run the Bento-local Environment<a class="headerlink" href="#run-the-bento-local-environment" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="run-the-bento-local-environment">
+<h3><span class="section-number">2.3.4. </span>Run the Bento-local Environment<a class="headerlink" href="#run-the-bento-local-environment" title="Permalink to this heading">¶</a></h3>
 <p><em><strong>docker-compose environment variables:</strong></em></p>
 <p>The docker-compose files for bento-local have been written to make use of Buildkit and the Docker CLI. The commands used for docker-compose should set these options as active by passing environment variables as:</p>
 <ul class="simple">
@@ -350,9 +350,9 @@
 <li><p>Linux/Mac: <code class="docutils literal notranslate"><span class="pre">COMPOSE_DOCKER_CLI_BUILD=1</span> <span class="pre">DOCKER_BUILDKIT=1</span></code></p></li>
 </ul>
 <p>Many of the commands listed in this document will need to be appended to this variable declaration. Choose the correct command for the system you are running on.</p>
-</section>
-<section id="running-bento-local-services">
-<h3><span class="section-number">2.3.5. </span>Running Bento-local services<a class="headerlink" href="#running-bento-local-services" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="running-bento-local-services">
+<h3><span class="section-number">2.3.5. </span>Running Bento-local services<a class="headerlink" href="#running-bento-local-services" title="Permalink to this heading">¶</a></h3>
 <p>NOTE: all commands must be run from within the root of the Bento-Local project.</p>
 <p>To build the bento-local infrastructure and start all containers:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* Windows:    $Env:COMPOSE_DOCKER_CLI_BUILD=1; $Env:DOCKER_BUILDKIT=1; docker-compose up -d
@@ -380,9 +380,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="o">&lt;</span><span class="n">container</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>   <span class="p">(</span><span class="n">use</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ash</span> <span class="k">for</span> <span class="n">frontend</span> <span class="ow">and</span> <span class="n">backend</span> <span class="n">containers</span> <span class="k">as</span> <span class="n">they</span> <span class="n">are</span> <span class="n">based</span> <span class="n">on</span> <span class="n">alpine</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="changing-the-bento-local-build-mode">
-<h3><span class="section-number">2.3.6. </span>Changing the Bento-local build mode<a class="headerlink" href="#changing-the-bento-local-build-mode" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="changing-the-bento-local-build-mode">
+<h3><span class="section-number">2.3.6. </span>Changing the Bento-local build mode<a class="headerlink" href="#changing-the-bento-local-build-mode" title="Permalink to this heading">¶</a></h3>
 <p>To change the build mode of your Bento-Local project the following steps must be taken:</p>
 <ul class="simple">
 <li><p>Update the BUILD_MODE variable in the .env file: this should be changed to the desired mode</p></li>
@@ -393,9 +393,9 @@
 </pre></div>
 </div>
 <p>Taking these steps will rebuild the Bento-Local environment with the desired build mode. Note that rebuilding Bento-Local does not require reloading data.</p>
-</section>
-<section id="cleaning-your-bento-local-project">
-<h3><span class="section-number">2.3.7. </span>Cleaning your Bento-local project<a class="headerlink" href="#cleaning-your-bento-local-project" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cleaning-your-bento-local-project">
+<h3><span class="section-number">2.3.7. </span>Cleaning your Bento-local project<a class="headerlink" href="#cleaning-your-bento-local-project" title="Permalink to this heading">¶</a></h3>
 <p>The following commands can be used to remove the Docker cache and to return your system to a clean state. When running these commands only unused objects will be removed - if you want to fully remove all cached objects you will need to stop all running Docker containers by running “docker-compose down”</p>
 <p>To clean docker objects for all stopped containers (this command can be used to return to a clean system and start over with new configurations):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">prune</span> <span class="o">-</span><span class="n">a</span>
@@ -405,17 +405,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">prune</span> <span class="o">--</span><span class="n">volumes</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="loading-data-into-bento-local">
-<h2><span class="section-number">2.4. </span>Loading data into Bento-local:<a class="headerlink" href="#loading-data-into-bento-local" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="loading-data-into-bento-local">
+<h2><span class="section-number">2.4. </span>Loading data into Bento-local:<a class="headerlink" href="#loading-data-into-bento-local" title="Permalink to this heading">¶</a></h2>
 <p>There are two methids provided for loading data into Bento-local:</p>
 <ul class="simple">
 <li><p>Using a Neo4j dump file: A dataset that has been previously loaded into a Neo4j database and exported as a dump file can be loaded into the Bento-local Neo4j container. This is the preferred method for loading data as it can easily be used to load large data sets quickly.</p></li>
 <li><p>Using the Bento-local dataloader container: This allows users to load locally stored Bento compliant data using scripts run within a dataloader Docker container.</p></li>
 </ul>
-<section id="loading-a-neo4j-dump-file">
-<h3><span class="section-number">2.4.1. </span>Loading a Neo4j dump file:<a class="headerlink" href="#loading-a-neo4j-dump-file" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="loading-a-neo4j-dump-file">
+<h3><span class="section-number">2.4.1. </span>Loading a Neo4j dump file:<a class="headerlink" href="#loading-a-neo4j-dump-file" title="Permalink to this heading">¶</a></h3>
 <p>Loading data using a Neo4j dump file allows users to quickly load large datasets. This requires that the data to be used has been loaded into a Neo4j database and exported as a dump file. Please note that loading from a dump file will replace any data currently stored in Neo4j and that the data contained in the dump file should be compliant with the Bento data schema.</p>
 <p>The following steps should be used to stage the dump file to be loaded:</p>
 <ul class="simple">
@@ -431,9 +431,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Both</span> <span class="n">Windows</span> <span class="ow">and</span> <span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span><span class="p">:</span>	<span class="n">docker</span> <span class="n">restart</span> <span class="n">backend</span>
 </pre></div>
 </div>
-</section>
-<section id="running-the-bento-local-dataloader">
-<h3><span class="section-number">2.4.2. </span>Running the Bento-local dataloader:<a class="headerlink" href="#running-the-bento-local-dataloader" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="running-the-bento-local-dataloader">
+<h3><span class="section-number">2.4.2. </span>Running the Bento-local dataloader:<a class="headerlink" href="#running-the-bento-local-dataloader" title="Permalink to this heading">¶</a></h3>
 <p>The Bento Dataloader allows a user to load locally stored data into the Bento database in Neo4j. If you are using the Bento demo data your data folder will be populated when your Bento-Local project is initialized. If you have a different data set to load you can replace the demo data and use the dataloader with that data set.</p>
 <p>Note that the dataloader requires the following local resources, note that all of these are created by the bento-local initialization script:</p>
 <ul class="simple">
@@ -447,9 +447,9 @@
 * Linux/Mac:  COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f dataloader.yml up --build bento-dataloader
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -474,7 +474,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:32:47 AM.
+        Last updated on Aug 3, 2022, 7:47:04 PM.
       </span>
 
     </p>
@@ -516,6 +516,9 @@
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="installing-bento-on-your-local-machine.html">master</a></li>
       </ul>
       
@@ -523,6 +526,9 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="installing-bento-on-your-local-machine.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

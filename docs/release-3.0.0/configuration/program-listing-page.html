@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>3. Program Listing Page &mdash; Bento release-3.0.0 documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -221,25 +221,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="program-listing-page">
-<h1><span class="section-number">3. </span>Program Listing Page<a class="headerlink" href="#program-listing-page" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="program-listing-page">
+<h1><span class="section-number">3. </span>Program Listing Page<a class="headerlink" href="#program-listing-page" title="Permalink to this heading">¶</a></h1>
 <p>The Program Listing Page lists the programs that store data in your data sharing platform. A Bento Program Listing Page has several configurable components. See below for details.</p>
 <p><img alt="Program Listing Page Elements" src="../_images/program-listing-page.png" /></p>
 <p><strong>Program Listing Page</strong>. Displayed are the configurable elements of a Bento Program Listing Page. These are: Table Title, Table Icon, Table Column Headers, Table Content, embedded Internal and External URLs and External Link Icon.</p>
-<section id="prerequisites">
-<h2><span class="section-number">3.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">3.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Program Listing Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration Parameters for all Program Listing Page elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
 <li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
 <li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
 </ol>
-</section>
-<section id="icons-in-the-program-listing-page">
-<h2><span class="section-number">3.2. </span>Icons in the Program Listing Page.<a class="headerlink" href="#icons-in-the-program-listing-page" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="icons-in-the-program-listing-page">
+<h2><span class="section-number">3.2. </span>Icons in the Program Listing Page.<a class="headerlink" href="#icons-in-the-program-listing-page" title="Permalink to this heading">¶</a></h2>
 <p>There are two configurable icons in the Program Listing Page: (a) the Table Icon, that is a visual represenation of the Program Listing Table and (b) the External Link Icon that is a visual representation of an external link.</p>
-<section id="configuring-the-icons-in-the-program-listing-page">
-<h3><span class="section-number">3.2.1. </span>Configuring the Icons in the Program Listing Page.<a class="headerlink" href="#configuring-the-icons-in-the-program-listing-page" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuring-the-icons-in-the-program-listing-page">
+<h3><span class="section-number">3.2.1. </span>Configuring the Icons in the Program Listing Page.<a class="headerlink" href="#configuring-the-icons-in-the-program-listing-page" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">programListingIcon</span></code>:</p>
@@ -256,24 +256,24 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">programListingIcon</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;URL for your Table Icon&#39;</span><span class="p">,</span>
-  <span class="nx">alt</span><span class="o">:</span> <span class="s1">&#39;ALT tag for your Table Icon&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">programListingIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;URL for your Table Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ALT tag for your Table Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">externalLinkIcon</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;URL for your External Link Icon&#39;</span><span class="p">,</span>
-  <span class="nx">alt</span><span class="o">:</span> <span class="s1">&#39;ALT tag for your External Link Icon&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">externalLinkIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;URL for your External Link Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ALT tag for your External Link Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="the-program-listing-table">
-<h2><span class="section-number">3.3. </span>The Program Listing Table<a class="headerlink" href="#the-program-listing-table" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="the-program-listing-table">
+<h2><span class="section-number">3.3. </span>The Program Listing Table<a class="headerlink" href="#the-program-listing-table" title="Permalink to this heading">¶</a></h2>
 <p>The table in the Program Listing Page lists the programs that store data in your data sharing platform.</p>
-<section id="configuring-the-program-listing-table">
-<h3><span class="section-number">3.3.1. </span>Configuring the Program Listing Table.<a class="headerlink" href="#configuring-the-program-listing-table" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuring-the-program-listing-table">
+<h3><span class="section-number">3.3.1. </span>Configuring the Program Listing Table.<a class="headerlink" href="#configuring-the-program-listing-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">table</span></code>:</p>
@@ -288,15 +288,15 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="kd">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">display</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;&lt;Table Title&gt;&#39;</span><span class="p">,</span>
-  <span class="nx">dataField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query returning data for this page.&gt;&#39;</span><span class="p">,</span>
-  <span class="nx">defaultSortField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span><span class="p">,</span>
-  <span class="nx">defaultSortDirection</span><span class="o">:</span> <span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span>
- <span class="p">...</span>
-<span class="kd">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Table Title&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query returning data for this page.&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">defaultSortField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">defaultSortDirection</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_PROGRAMS_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
 <span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
 <span class="sb">	... </span>
@@ -304,9 +304,9 @@
 <span class="sb">}</span>
 </pre></div>
 </div>
-</section>
-<section id="adding-columns-to-the-program-listing-table">
-<h3><span class="section-number">3.3.2. </span>Adding columns to the Program Listing Table.<a class="headerlink" href="#adding-columns-to-the-program-listing-table" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="adding-columns-to-the-program-listing-table">
+<h3><span class="section-number">3.3.2. </span>Adding columns to the Program Listing Table.<a class="headerlink" href="#adding-columns-to-the-program-listing-table" title="Permalink to this heading">¶</a></h3>
 <p>You can add up to 10 columns in the Program Listing Table. If you add more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
@@ -324,25 +324,25 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nx">dataField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span>
-      <span class="nx">header</span><span class="o">:</span> <span class="s1">&#39;&lt;Column Header&gt;&#39;</span><span class="p">,</span>
-      <span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;&lt;link to be embedded in column value&gt;&#39;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nx">dataField</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span>
-      <span class="nx">header</span><span class="o">:</span> <span class="s1">&#39;PubMed ID&#39;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-  <span class="p">],</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Column Header&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;link to be embedded in column value&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;PubMed ID&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
 
 
-<span class="p">};</span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">GET_PROGRAMS_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_PROGRAMS_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
 <span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
 <span class="sb">	... </span>
@@ -350,16 +350,16 @@
 <span class="sb">}</span>
 </pre></div>
 </div>
-<section id="internal-links-in-the-program-listing-table">
-<h4><span class="section-number">3.3.2.1. </span>Internal Links in the Program Listing Table.<a class="headerlink" href="#internal-links-in-the-program-listing-table" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="internal-links-in-the-program-listing-table">
+<h4><span class="section-number">3.3.2.1. </span>Internal Links in the Program Listing Table.<a class="headerlink" href="#internal-links-in-the-program-listing-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>links starting with ‘/’ are considered as internal links.</p></li>
 <li><p>Internal links shall be opened in the same tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table field to ‘{}’. For example, ‘/program/{program_id}’ shall link to ‘program/NCT00310180’.</p></li>
 </ol>
-</section>
-<section id="external-links-in-the-program-listing-table">
-<h4><span class="section-number">3.3.2.2. </span>External Links in the Program Listing Table.<a class="headerlink" href="#external-links-in-the-program-listing-table" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="external-links-in-the-program-listing-table">
+<h4><span class="section-number">3.3.2.2. </span>External Links in the Program Listing Table.<a class="headerlink" href="#external-links-in-the-program-listing-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>External links shall start with ‘http://’ or’https://’.</p></li>
 <li><p>External links shall show-up with ‘externalLinkIcon’.</p></li>
@@ -367,18 +367,18 @@
 <li><p>Dynamic links can be generated by passing a valid table filed to ‘{}’.
 For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘https://pubmed.ncbi.nlm.nih.gov/29860917/’.</p></li>
 </ol>
-</section>
-</section>
-</section>
-<section id="suggested-best-practice">
-<h2><span class="section-number">3.4. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="suggested-best-practice">
+<h2><span class="section-number">3.4. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Dimension of the Program Listing Icon= 100 X 100 pixels.</p></li>
 <li><p>Dimension of the External Link Icon = 16 X 16 pixels.</p></li>
 <li><p>All images should have a resolution &gt;= 72 ppi and should be in the PNG format.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -403,7 +403,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:16 AM.
+        Last updated on Aug 3, 2022, 7:47:30 PM.
       </span>
 
     </p>
@@ -445,6 +445,9 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -452,6 +455,9 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

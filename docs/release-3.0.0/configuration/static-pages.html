@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>11. Static Pages &mdash; Bento release-3.0.0 documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -219,39 +219,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="static-pages">
-<h1><span class="section-number">11. </span>Static Pages<a class="headerlink" href="#static-pages" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
-<h2><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="static-pages">
+<h1><span class="section-number">11. </span>Static Pages<a class="headerlink" href="#static-pages" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the “About” link on the Navigation Bar. In the example below, the static pages are “Bento”, “Resources”, and “GraphQL”.</p>
-<p>&nbsp;</p></section>
-<section id="prerequisites">
-<h2><span class="section-number">11.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">11.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>Fork the GitHub repo <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>)</p></li>
 <li><p>Create a local clone of your fork into a local directory, represented here as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 </ol>
-<p>&nbsp;</p></section>
-<section id="instructions">
-<h2><span class="section-number">11.3. </span>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+<div class="section" id="instructions">
+<h2><span class="section-number">11.3. </span>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">¶</a></h2>
 <p><img alt="About on Navigation Bar" src="../_images/static-pages-bento.png" /></p>
-<section id="make-and-test-the-local-environment-changes-changes">
-<h3><span class="section-number">11.3.1. </span>Make and Test the local environment changes changes<a class="headerlink" href="#make-and-test-the-local-environment-changes-changes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="make-and-test-the-local-environment-changes-changes">
+<h3><span class="section-number">11.3.1. </span>Make and Test the local environment changes changes<a class="headerlink" href="#make-and-test-the-local-environment-changes-changes" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/.env</span></code></p></li>
 <li><p>Change the <code class="docutils literal notranslate"><span class="pre">REACT_APP_ABOUT_CONTENT_URL</span></code> variable to gibberish. One example <code class="docutils literal notranslate"><span class="pre">REACT_APP_ABOUT_CONTENT_URL= https://raw.githubusercondsdsdstent.com/CBIIT/bento-frontend/master/src/content/prod/aboutPagesContent.yaml</span></code></p></li>
 <li><p>Now edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/content/prod/aboutPagesContent.yaml</span></code>, and the system will show the changes</p></li>
 </ol>
-</section>
-<section id="to-create-a-new-static-page-with-new-route">
-<h3><span class="section-number">11.3.2. </span>To Create A New Static Page with new Route<a class="headerlink" href="#to-create-a-new-static-page-with-new-route" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="to-create-a-new-static-page-with-new-route">
+<h3><span class="section-number">11.3.2. </span>To Create A New Static Page with new Route<a class="headerlink" href="#to-create-a-new-static-page-with-new-route" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento/aboutPagesRoutes.js</span></code> add a new path</p></li>
 <li><p>Add a new copy of yaml property to  with page name matching above path</p></li>
 </ol>
-</section>
-<section id="edit-configuration-file">
-<h3><span class="section-number">11.3.3. </span>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="edit-configuration-file">
+<h3><span class="section-number">11.3.3. </span>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>There is a maximum of 6 pages that can appear under “About”. If no informational pages are configured to be displayed, the “About” menu option will be hidden.</p></li>
 <li><p>To add contents to the ‘About’ menu, see <a class="reference external" href="global-ui-elements.html#global-navigation-bar">“Global Navigation Bar” instructions</a></p></li>
@@ -320,16 +320,16 @@
 <td><code>$$[Testing](target:_blankurl:/#/developers type:0)$$</code> (opens in new tab without link-out icon)</td>
 </tr>
 </tbody>
-</table></section>
-</section>
-<section id="best-practices">
-<h2><span class="section-number">11.4. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+</table></div>
+</div>
+<div class="section" id="best-practices">
+<h2><span class="section-number">11.4. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>It is recommended to have the title of each page in the ‘About’ menu match the title on the actual page.</p></li>
 <li><p>The suggested syntax for YAML files is to use 2 spaces for indentation, but YAML will follow whatever indentation system that the individual file uses. In our files we used 2 spaces to represent</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -354,7 +354,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:16 AM.
+        Last updated on Aug 3, 2022, 7:47:30 PM.
       </span>
 
     </p>
@@ -396,6 +396,9 @@
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -403,6 +406,9 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>7. Dashboard &mdash; Bento  documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -217,26 +217,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="dashboard">
-<h1><span class="section-number">7. </span>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dashboard">
+<h1><span class="section-number">7. </span>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this heading">¶</a></h1>
 <p>The Dashboard provides the end user with several capabilities (a) filter data entities of in interested via faceted search (b) view graphical summaries of data entities and (c) select data entities for further exploration.</p>
 <p><img alt="Dashboard Elements" src="../_images/dashboard.png" /></p>
 <p><strong>Dashboard</strong>. Displayed are the configurable elements of a Bento Dashboard. These are: Dashboard Sidebar Filters, Dashboard Widgets and Dashboard Table.</p>
-<section id="prerequisites">
-<h2><span class="section-number">7.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">7.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Dashboard are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration Parameters for Dashboard elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
 <li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
 </ol>
-</section>
-<section id="dashboard-sidebar-filters">
-<h2><span class="section-number">7.2. </span>Dashboard Sidebar Filters<a class="headerlink" href="#dashboard-sidebar-filters" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dashboard-sidebar-filters">
+<h2><span class="section-number">7.2. </span>Dashboard Sidebar Filters<a class="headerlink" href="#dashboard-sidebar-filters" title="Permalink to this heading">¶</a></h2>
 <p>The Dashboard Sidebar Filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.
 <br>You can add a maximum of <strong>12</strong> filters. If you add more than 12 filters, <strong>Bento will display only the first twelve filters, without any warning or error message</strong>.</p>
-<section id="configuring-the-dashboard-sidebar-filters">
-<h3><span class="section-number">7.2.1. </span>Configuring the Dashboard Sidebar Filters<a class="headerlink" href="#configuring-the-dashboard-sidebar-filters" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuring-the-dashboard-sidebar-filters">
+<h3><span class="section-number">7.2.1. </span>Configuring the Dashboard Sidebar Filters<a class="headerlink" href="#configuring-the-dashboard-sidebar-filters" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">facetSearchData</span></code> add an object {label: , field: , api: , datafield: , show: ,} to represent your filter.</p>
@@ -251,32 +251,32 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">facetSearchData</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;&lt;Filter Label&gt;&#39;</span><span class="p">,</span> 
-    <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;&lt;API query field&gt;&#39;</span><span class="p">,</span> 
-    <span class="nx">api</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query&gt;&#39;</span><span class="p">,</span> 
-    <span class="nx">datafield</span><span class="o">:</span> <span class="s1">&#39;&lt;responsive_api_query&gt;&#39;</span><span class="p">,</span> 
-    <span class="nx">show</span><span class="o">:</span> <span class="o">&lt;</span><span class="s1">&#39;true|false&#39;</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">...</span>
-  <span class="p">]</span>
-<span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">GET_DASHBOARD_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">facetSearchData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Filter Label&gt;&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;API query field&gt;&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">api</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query&gt;&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;responsive_api_query&gt;&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="s1">&#39;true|false&#39;</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_DASHBOARD_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb"> GraphQL API query{</span>
 <span class="sb"> 	API query field</span>
 <span class="sb"> }</span>
 <span class="sb">}  </span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="dashboard-widgets">
-<h2><span class="section-number">7.3. </span>Dashboard Widgets<a class="headerlink" href="#dashboard-widgets" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="dashboard-widgets">
+<h2><span class="section-number">7.3. </span>Dashboard Widgets<a class="headerlink" href="#dashboard-widgets" title="Permalink to this heading">¶</a></h2>
 <p>Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, you can add 3, 4 or 6 widgets. If you add more than <strong>6</strong> widgets, Bento will display the first widgets without any error or warning message.</p>
-<section id="configuring-the-dashboard-widgets">
-<h3><span class="section-number">7.3.1. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuring-the-dashboard-widgets">
+<h3><span class="section-number">7.3.1. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">widgetsData</span></code> add an object {type: ,label: , dataName: , datatable_field: ,show:} to represent your widget.</p>
@@ -292,41 +292,41 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">widgetsData</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;sunburst&#39;</span><span class="p">,</span>
-    <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;&lt;Widget Label&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">dataName</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">datatable_level1_field</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQl API query field that returns data for inner ring of sunburst&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">datatable_level2_field</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQl API query field that returns data for outer ring of sunburst&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">show</span><span class="o">:</span> <span class="s1">&#39;&lt;true|false&gt;&#39;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;donut&#39;</span><span class="p">,</span>
-    <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Diagnosis&#39;</span><span class="p">,</span>
-    <span class="nx">dataName</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">datatable_field</span><span class="o">:</span> <span class="s1">&#39;&lt;GraphQl API query field that returns data for donut&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">show</span><span class="o">:</span> <span class="s1">&#39;&lt;true|false&gt;&#39;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">...</span>
-  <span class="p">]</span>
-<span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">GET_DASHBOARD_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">widgetsData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;sunburst&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Widget Label&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">dataName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">datatable_level1_field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQl API query field that returns data for inner ring of sunburst&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">datatable_level2_field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQl API query field that returns data for outer ring of sunburst&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;true|false&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;donut&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Diagnosis&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">dataName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">datatable_field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQl API query field that returns data for donut&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;true|false&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_DASHBOARD_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb"> GraphQL API query{</span>
 <span class="sb"> 	API query field</span>
 <span class="sb"> }</span>
 <span class="sb">}  </span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="dashboard-table">
-<h2><span class="section-number">7.4. </span>Dashboard Table<a class="headerlink" href="#dashboard-table" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="dashboard-table">
+<h2><span class="section-number">7.4. </span>Dashboard Table<a class="headerlink" href="#dashboard-table" title="Permalink to this heading">¶</a></h2>
 <p>The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the <a class="reference external" href="https://dev.bento-tools.org/#/cases">Bento reference implementation</a> the Dashboard Table list the cases (or study subjects) in the program.
 <br>You can add a maximum of <strong>10</strong> columns to the Dashboard Table. If you add more than 10 columns, <strong>Bento will display only the first ten filters, without any warning or error message</strong>.</p>
-<section id="configuring-external-icon-link">
-<h3><span class="section-number">7.4.1. </span>Configuring External Icon Link<a class="headerlink" href="#configuring-external-icon-link" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuring-external-icon-link">
+<h3><span class="section-number">7.4.1. </span>Configuring External Icon Link<a class="headerlink" href="#configuring-external-icon-link" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>:</p>
@@ -337,17 +337,17 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">externalLinkIcon</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;&lt;URL for the External Icon of your choice.&gt;&#39;</span><span class="p">,</span>
-  <span class="nx">alt</span><span class="o">:</span> <span class="s1">&#39;&lt;ALT tags&gt;&#39;</span><span class="p">,</span>
-<span class="p">};</span>
-<span class="p">...</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">externalLinkIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;URL for the External Icon of your choice.&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;ALT tags&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="configuring-the-dashboard-table">
-<h3><span class="section-number">7.4.2. </span>Configuring the Dashboard Table<a class="headerlink" href="#configuring-the-dashboard-table" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="configuring-the-dashboard-table">
+<h3><span class="section-number">7.4.2. </span>Configuring the Dashboard Table<a class="headerlink" href="#configuring-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">dashboardTable</span></code>:</p>
@@ -368,38 +368,38 @@
 </li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">dashboardTable</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">tableTitle</span><span class="o">:</span> <span class="s1">&#39;Cases&#39;</span><span class="p">,</span>
-  <span class="nx">tableData</span><span class="o">:</span> <span class="p">[</span>
-    <span class="c1">// A maximum of 10 columns (tableData) are allowed</span>
-    <span class="p">{</span>
-      <span class="nx">dataField</span><span class="o">:</span> <span class="s1">&#39;subject_id&#39;</span><span class="p">,</span>
-      <span class="nx">header</span><span class="o">:</span> <span class="s1">&#39;Case ID&#39;</span><span class="p">,</span>
-      <span class="nx">sort</span><span class="o">:</span> <span class="s1">&#39;asc&#39;</span><span class="p">,</span>
-      <span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;/case/{subject_id}&#39;</span><span class="p">,</span>
-      <span class="nx">primary</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">display</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-  <span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">GET_DASHBOARD_TABLE_DATA_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">dashboardTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tableTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Cases&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tableData</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// A maximum of 10 columns (tableData) are allowed</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Case ID&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">sort</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;asc&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/case/{subject_id}&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_DASHBOARD_TABLE_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 
 <span class="sb">}</span>
 </pre></div>
 </div>
-<section id="internal-links-in-the-dashboard-table">
-<h4><span class="section-number">7.4.2.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="internal-links-in-the-dashboard-table">
+<h4><span class="section-number">7.4.2.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>links starting with ‘/’ are considered as internal links.</p></li>
 <li><p>Internal links shall be opened in the same tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table field to ‘{}’. For example, ‘/program/{program_id}’ shall link to ‘program/NCT00310180’.</p></li>
 </ol>
-</section>
-<section id="external-links-in-the-dashboard-table">
-<h4><span class="section-number">7.4.2.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="external-links-in-the-dashboard-table">
+<h4><span class="section-number">7.4.2.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>External links shall start with ‘http://’ or’https://’.</p></li>
 <li><p>External links shall show-up with ‘externalLinkIcon’.</p></li>
@@ -407,17 +407,17 @@
 <li><p>Dynamic links can be generated by passing a valid table filed to ‘{}’.
 For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘https://pubmed.ncbi.nlm.nih.gov/29860917/’.</p></li>
 </ol>
-</section>
-</section>
-</section>
-<section id="suggested-best-practice">
-<h2><span class="section-number">7.5. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="suggested-best-practice">
+<h2><span class="section-number">7.5. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Dimension of the External Link Icon = 16 X 16 pixels.</p></li>
 <li><p>All images should have a resolution &gt;= 72 ppi and should be in the PNG format.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -442,7 +442,7 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:25 AM.
+        Last updated on Aug 3, 2022, 7:47:38 PM.
       </span>
 
     </p>
@@ -484,6 +484,9 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -491,6 +494,9 @@ For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>

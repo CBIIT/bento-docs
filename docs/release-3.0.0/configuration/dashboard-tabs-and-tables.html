@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>9. Dashboard: Tabs and Tables &mdash; Bento release-3.0.0 documentation</title>
@@ -32,6 +31,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -218,12 +218,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="dashboard-tabs-and-tables">
-<h1><span class="section-number">9. </span>Dashboard: Tabs and Tables<a class="headerlink" href="#dashboard-tabs-and-tables" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dashboard-tabs-and-tables">
+<h1><span class="section-number">9. </span>Dashboard: Tabs and Tables<a class="headerlink" href="#dashboard-tabs-and-tables" title="Permalink to this heading">¶</a></h1>
 <p>The dashboard is structured to organize the data tables using tabs beneath the widgets.</p>
 <p>These tables can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the <a class="reference external" href="https://dev.bento-tools.org/#/cases">Bento reference implementation</a> the Dashboard Table list the cases (or study subjects) in the program.</p>
-<section id="tabs">
-<h2><span class="section-number">9.1. </span>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tabs">
+<h2><span class="section-number">9.1. </span>Tabs<a class="headerlink" href="#tabs" title="Permalink to this heading">¶</a></h2>
 <p>The tabs can be configured as follows:</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardTabData.js</span></code></p></li>
@@ -245,9 +245,9 @@
 <blockquote>
 <div><p>:point_right:   <strong>NOTE</strong>: the order of the entries in <code class="docutils literal notranslate"><span class="pre">tabIndex</span></code> should match the order in the <code class="docutils literal notranslate"><span class="pre">tabs</span></code> object. This is the order that the tabs will be displayed left to right on the UI.</p>
 </div></blockquote>
-</section>
-<section id="tables">
-<h2><span class="section-number">9.2. </span>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tables">
+<h2><span class="section-number">9.2. </span>Tables<a class="headerlink" href="#tables" title="Permalink to this heading">¶</a></h2>
 <p>The tables on each tab can be configured as follows:</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardTabData.js</span></code></p></li>
@@ -301,27 +301,27 @@
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">link</span></code>: Hyperlink to internal or external page. The value can be injected in link dynamically using <code class="docutils literal notranslate"><span class="pre">{datafield}</span></code>, for example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Internal Link </span>
-<span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;/arm/{dataField}&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Internal Link </span><span class="w"></span>
+<span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/arm/{dataField}&#39;</span><span class="p">,</span><span class="w"></span>
 
-<span class="c1">// External Link</span>
-<span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;https://example.com/{dataField}&#39;</span><span class="p">,</span>
+<span class="c1">// External Link</span><span class="w"></span>
+<span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://example.com/{dataField}&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
 </ul>
-<section id="internal-links-in-the-dashboard-table">
-<h3><span class="section-number">9.2.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="internal-links-in-the-dashboard-table">
+<h3><span class="section-number">9.2.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
 <li><p>Internal links will be opened in the same tab.</p></li>
 <li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
 </ol>
-</section>
-<section id="external-links-in-the-dashboard-table">
-<h3><span class="section-number">9.2.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="external-links-in-the-dashboard-table">
+<h3><span class="section-number">9.2.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
 <li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>.</p></li>
@@ -329,21 +329,21 @@
 <li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
 For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
 </ol>
-</section>
-<section id="tool-tip">
-<h3><span class="section-number">9.2.3. </span>Tool Tip<a class="headerlink" href="#tool-tip" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="tool-tip">
+<h3><span class="section-number">9.2.3. </span>Tool Tip<a class="headerlink" href="#tool-tip" title="Permalink to this heading">¶</a></h3>
 <p>To change Properties of tool tip for each tab, table go to <code class="docutils literal notranslate"><span class="pre">tooltipContent</span></code> object:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">icon</span></code></strong>: The help tip icon that appears next to the ‘add button’</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">alt</span></code></strong>: alt for the tooltip image</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">0,1,2</span></code></strong>: tooltip content for first tab, second tab and third tab.</p></li>
 </ul>
-</section>
-<section id="graphql-query">
-<h3><span class="section-number">9.2.4. </span>GraphQL Query<a class="headerlink" href="#graphql-query" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="graphql-query">
+<h3><span class="section-number">9.2.4. </span>GraphQL Query<a class="headerlink" href="#graphql-query" title="Permalink to this heading">¶</a></h3>
 <p>The GraphQL Query used in the Dashboard page is defined in <code class="docutils literal notranslate"><span class="pre">DASHBOARD_QUERY</span></code>. For example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">DASHBOARD_QUERY</span> <span class="o">=</span> <span class="nx">gql</span><span class="sb">`{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">DASHBOARD_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
 <span class="sb">  numberOfPrograms</span>
 <span class="sb">  numberOfStudies</span>
 <span class="sb">  numberOfSubjects</span>
@@ -368,22 +368,22 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
 <span class="sb">        sample_id</span>
 <span class="sb">        diagnosis</span>
 <span class="sb">    }</span>
-<span class="sb">  }`</span><span class="p">;</span>
+<span class="sb">  }`</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="suggested-best-practices">
-<h4><span class="section-number">9.2.4.1. </span>Suggested Best Practices<a class="headerlink" href="#suggested-best-practices" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="suggested-best-practices">
+<h4><span class="section-number">9.2.4.1. </span>Suggested Best Practices<a class="headerlink" href="#suggested-best-practices" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Dimension of the External Link Icon = 16 X 16 pixels.</p></li>
 <li><p>All images should have a resolution &gt;= 72 ppi and should be in the PNG format.</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <blockquote>
 <div><p>:warning: <strong>WARNING</strong>: You can add a maximum of <strong>10</strong> columns to the dashboard tab table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
 </div></blockquote>
-</section>
+</div>
 
 
            </div>
@@ -408,7 +408,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:16 AM.
+        Last updated on Aug 3, 2022, 7:47:30 PM.
       </span>
 
     </p>
@@ -450,6 +450,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -457,6 +460,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
