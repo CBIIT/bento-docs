@@ -115,7 +115,8 @@ smv_remote_whitelist = None
 # has been released or if it’s a development version. To allow more 
 # flexibility, the regex is evaluated over the full refname.
 smv_released_pattern = r'.*release.*'
-smv_latest_version = '.*master.*'
+#smv_latest_version = '.*master.*'
+smv_latest_version = 'release-3.0.0'
 
 # AutoStructify - for advanced markdown to rst transformations
 # Needs to be at the bottom of conf.py
