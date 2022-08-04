@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Data Loader &mdash; Bento  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Model Converter" href="model-converter.html" />
+    <link rel="prev" title="11. Static Pages" href="../configuration/static-pages.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">2. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-listing-page.html">3. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard-facet-search-sidebar.html">8. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/dashboard-tabs-and-tables.html">9. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/cart-workflow.html">10. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/static-pages.html">11. Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Data Loader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">1.2. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">1.3. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">1.4. Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs">1.5. Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-file-format-specifications">1.6. Data File Format Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-file">1.7. Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-arguments">1.8. Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-example">1.9. Usage Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-inputs">1.9.1. Example Inputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>Data Loader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/data-and-modeling/data-loader.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="model-converter.html" class="btn btn-neutral float-right" title="2. Model Converter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../configuration/static-pages.html" class="btn btn-neutral float-left" title="11. Static Pages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-loader">
+<h1><span class="section-number">1. </span>Data Loader<a class="headerlink" href="#data-loader" title="Permalink to this heading">¶</a></h1>
+<p>This is the user documentation for the Data Loader module contained in the ICDC-Dataloader utility.</p>
+<p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
+<div class="section" id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The Data Loader module is a versatile Python application used to load data into a Neo4j database. The application is capable of loading data from either a system directory or from an Amazon Web Services (AWS) S3 Bucket</p>
+<p>The Data Loader can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/icdc-dataloader">ICDC-Dataloader</a></p>
+</div>
+<div class="section" id="pre-requisites">
+<h2><span class="section-number">1.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Python 3.6 or newer</p></li>
+<li><p>An initialized and running Neo4j database</p></li>
+<li><p>AWS S3 bucket, if applicable</p></li>
+<li><p>If the Neo4j database is running remotely, SSH login permissions are required.</p></li>
+<li><p>On the system running the Neo4j database, the <code class="docutils literal notranslate"><span class="pre">&lt;Neo4j</span> <span class="pre">Home&gt;/bin</span></code> directory must be added to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable in order to perform the backup operation.</p></li>
+</ul>
+</div>
+<div class="section" id="dependencies">
+<h2><span class="section-number">1.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> to install dependencies. Or run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> if you are using virtualenv. The dependencies included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> are listed below:</p>
+<ul class="simple">
+<li><p>pyyaml</p></li>
+<li><p>neo4j - version 1.7.6</p></li>
+<li><p>boto3</p></li>
+<li><p>requests</p></li>
+</ul>
+</div>
+<div class="section" id="inputs">
+<h2><span class="section-number">1.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A Data Loader configuration file</p></li>
+<li><p>Neo4j endpoint and credentials</p></li>
+<li><p>YAML formatted schema file and properties files</p></li>
+<li><p>If loading from an AWS S3 bucket, the S3 folder and bucket name</p></li>
+<li><p>The dataset directory or a local temporary folder if loading from an AWS S3 bucket</p></li>
+</ul>
+</div>
+<div class="section" id="outputs">
+<h2><span class="section-number">1.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
+<p>The Data Loader module loads data into the specified Neo4j database, and log messages to console as well as a log file inside <code class="docutils literal notranslate"><span class="pre">tmp/</span></code> folder.</p>
+</div>
+<div class="section" id="data-file-format-specifications">
+<h2><span class="section-number">1.6. </span>Data File Format Specifications<a class="headerlink" href="#data-file-format-specifications" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Files must be in TSV format with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> or <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension</p></li>
+<li><p>Files must contain a <code class="docutils literal notranslate"><span class="pre">type</span></code> column indicates what node type of the record/node</p></li>
+<li><p>Any column with a <code class="docutils literal notranslate"><span class="pre">parent_node_type.parent_id_field</span></code> formatted heading will be used as parent of current record/node</p></li>
+<li><p>Any column with a <code class="docutils literal notranslate"><span class="pre">relationship_type$field_name</span></code> formatted heading will be treated as a property on that relationship</p></li>
+<li><p>All other columns will be treated as regular properties for the record/node</p></li>
+</ul>
+</div>
+<div class="section" id="configuration-file">
+<h2><span class="section-number">1.7. </span>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading">¶</a></h2>
+<p>All the inputs of Data Loader can be set in a YAML format configuration file by using the fields defined below. Using a configuration file can make your Data Loader command significantly shorter.</p>
+<p>An example configuration file can be found in <code class="docutils literal notranslate"><span class="pre">config/data-loader-config.example.yml</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">neo4j:uri</span></code>: Address of the target Neo4j endpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">neo4j:user</span></code>: Username to be used for the Neo4j database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">neo4j:password</span></code>: Password to be used for the Neo4j database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schema</span></code>: The file path(s) of the YAML formatted schema file(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prop_file</span></code>: The file containing the properties for the specified schema</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cheat_mode</span></code>: Disables data validation before loading data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code>: Runs data validation only, disables loading data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wipe_db</span></code>: Clears all data in the database before loading the data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_backup</span></code>: Skips the backing up the database before loading the data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">backup_folder</span></code>: Location to store database backup</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_confirmation</span></code>: Automatically confirms any confirmation prompts that are displayed during the data loading</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_violations</span></code>: The maximum number of violations (per data file) to be displayed in the console output during data loading</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_parents</span></code>: Does not save parent node IDs in children nodes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split_transactions</span></code>: Splits the database load operations into separate transactions for each file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s3_bucket</span></code>: The name of the S3 bucket containing the data to be loaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s3_folder</span></code>: The name of the S3 folder containing the data to be loaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loading_mode</span></code>: The loading mode to be used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset</span></code>: The directory containing the data to be loaded, a temporary directory if loading from an S3 bucket</p></li>
+</ul>
+</div>
+<div class="section" id="command-line-arguments">
+<h2><span class="section-number">1.8. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
+<p>All the command line arguments can be specified in the configuration file. If an argument is specified in both the configuration file and the command line then the command line value will be used.</p>
+<ul class="simple">
+<li><p><strong>Configuration File</strong></p>
+<ul>
+<li><p>The YAML file containing the configuration details for the Data Loader execution</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">&lt;configuration</span> <span class="pre">file&gt;</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Neo4j URI</strong></p>
+<ul>
+<li><p>Address of the target Neo4j endpoint</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-i/--uri</span> <span class="pre">&lt;URI&gt;</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">bolt://localhost:7687</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Neo4j Username</strong></p>
+<ul>
+<li><p>Username to be used for the Neo4j database</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-u/--user</span> <span class="pre">&lt;username&gt;</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">neo4j</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Neo4j Password</strong></p>
+<ul>
+<li><p>Password to be used for the Neo4j database</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-p/--password</span> <span class="pre">&lt;password&gt;</span></code></p></li>
+<li><p>Not required if specified in the configuration file, or in environment variable <code class="docutils literal notranslate"><span class="pre">NEO_PASSWORD</span></code></p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Schema File(s)</strong></p>
+<ul>
+<li><p>The file path(s) of the YAML formatted schema file(s). Use multiple –schema arguments (one for each schema file), if more than one schema files are needed</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-s/--schema</span> <span class="pre">&lt;schema1&gt;</span> <span class="pre">-s/--schema</span> <span class="pre">&lt;schema2&gt;</span> <span class="pre">…</span></code></p></li>
+<li><p>Not required if specified in the configuration file</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Properties File</strong></p>
+<ul>
+<li><p>The file containing additional properties for the specified schema such as type mappings, id field identifications, and plurals mappings.</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--prop-file</span> <span class="pre">&lt;properties</span> <span class="pre">file&gt;</span></code></p></li>
+<li><p>Not required if specified in the configuration file</p></li>
+<li><p>Example files can be found under <code class="docutils literal notranslate"><span class="pre">config/</span></code> folder, such as  <code class="docutils literal notranslate"><span class="pre">config/props-bento-ext.yml</span></code> for Bento reference implementation, and <code class="docutils literal notranslate"><span class="pre">config/props-ctdc.yml</span></code> for CTDC etc.</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Enable Cheat Mode</strong></p>
+<ul>
+<li><p>Disables data validation before loading data</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-c/--cheat-mode</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Enable Dry Run</strong></p>
+<ul>
+<li><p>Runs data validation only, disables loading data</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-d/--dry-run</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Wipe Database</strong></p>
+<ul>
+<li><p>Clears all data in the database before loading the data</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--wipe-db</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Disable Backup</strong></p>
+<ul>
+<li><p>Skips the backing up the database before loading the data</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--no-backup</span></code></p></li>
+<li><p>Not required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Database Backup Folder</strong></p>
+<ul>
+<li><p>The folder where the database backup will be stored.</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--backup-folder</span></code></p></li>
+<li><p>Required unless the backup operation is disabled by the <code class="docutils literal notranslate"><span class="pre">--no-backup</span></code> command</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Enable Auto-Confirm</strong></p>
+<ul>
+<li><p>Automatically confirms any confirmation prompts that are displayed during the data loading</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-y/--yes</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Maximum Violations to Display</strong></p>
+<ul>
+<li><p>The maximum number of violations (per data file) to be displayed in the console output during data loading</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-M/--max-violations</span> <span class="pre">&lt;number&gt;</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>S3 Bucket Name</strong></p>
+<ul>
+<li><p>The name of the S3 bucket containing the data to be loaded</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-b/--bucket</span> <span class="pre">&lt;bucket</span> <span class="pre">name&gt;</span></code></p></li>
+<li><p>Not required if data is not being loaded from an S3 bucket</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>S3 Folder Name</strong></p>
+<ul>
+<li><p>The name of the S3 folder containing the data to be loaded</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-f/--s3-folder</span> <span class="pre">&lt;folder</span> <span class="pre">name&gt;</span></code></p></li>
+<li><p>Not required if data is not being loaded from an S3 bucket</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Mode Selection</strong></p>
+<ul>
+<li><p>The loading mode, valid inputs are <code class="docutils literal notranslate"><span class="pre">upsert</span></code>, <code class="docutils literal notranslate"><span class="pre">new</span></code>, <code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">-m/--mode</span> <span class="pre">&lt;mode&gt;</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">UPSERT_MODE</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Enable No Parent IDs Mode</strong></p>
+<ul>
+<li><p>Does not save parent node IDs in children nodes</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--no-parents</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Enable Split Transactions Mode</strong></p>
+<ul>
+<li><p>Creates a separate database transactions for each file while loading</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--split-transactions</span></code></p></li>
+<li><p>Not Required</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Dataset Directory</strong></p>
+<ul>
+<li><p>The directory containing the data to be loaded, a temporary directory if loading from an S3 bucket</p></li>
+<li><p>Command : <code class="docutils literal notranslate"><span class="pre">--dataset</span> <span class="pre">&lt;dir&gt;</span></code></p></li>
+<li><p>Not required if specified in the configuration file</p></li>
+<li><p>Default Value : <code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="usage-example">
+<h2><span class="section-number">1.9. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this heading">¶</a></h2>
+<p>Below is an example command to run the Model Converter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python3 loader.py config/config.yml -p secret -s tests/data/icdc-model.yml -s tests/data/icdc-model-props.yml --prop-file config/props-icdc.yml --no-backup -–dataset /data/Dataset-20191119
+</pre></div>
+</div>
+<div class="section" id="example-inputs">
+<h3><span class="section-number">1.9.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Neo4j Password</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">secret</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Schema Files</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/data/icdc-model.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/data/icdc-model-props.yml</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Configuration File</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">config/config.yml</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Properties File</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">config/props-icdc.yml</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Disable Backup</strong></p>
+<ul>
+<li><p>Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> with <code class="docutils literal notranslate"><span class="pre">--no-backup</span></code> argument</p></li>
+</ul>
+</li>
+<li><p><strong>Dataset Directory</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/data/Dataset-20191119</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="model-converter.html" class="btn btn-neutral float-right" title="2. Model Converter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../configuration/static-pages.html" class="btn btn-neutral float-left" title="11. Static Pages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Aug 4, 2022, 6:23:33 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: jenkins_test
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-MVP/index.html">release-MVP</a></li>
+      </ul>
+      <br>
+      <h3>In Development</h3>
+      <ul>
+        <li><a href="data-loader.html">jenkins_test</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="data-loader.html">jenkins_test</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

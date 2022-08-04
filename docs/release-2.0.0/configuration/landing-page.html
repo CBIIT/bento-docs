@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Landing Page &mdash; Bento release-2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Program Listing Page" href="program-listing-page.html" />
+    <link rel="prev" title="1. Global UI Elements" href="global-ui-elements.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Landing Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">2.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#landing-page-hero-image">2.2. Landing Page Hero Image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-landing-page-hero-image">2.2.1. Configuring the Landing Page Hero Image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#call-to-action">2.3. Call To Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-call-to-action-feature">2.4. Configuring the Call To Action Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#landing-page-tiles">2.5. Landing Page Tiles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-landing-page-tiles">2.5.1. Configuring the Landing Page Tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#landing-page-stats-bar">2.6. Landing Page Stats Bar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-landing-page-stats-bar">2.6.1. Configuring the Landing Page Stats Bar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#suggested-best-practice">2.7. Suggested Best Practice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">3. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">8. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">9. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">4. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Landing Page</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/landing-page.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="program-listing-page.html" class="btn btn-neutral float-right" title="3. Program Listing Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-left" title="1. Global UI Elements" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="landing-page">
+<h1><span class="section-number">2. </span>Landing Page<a class="headerlink" href="#landing-page" title="Permalink to this heading">¶</a></h1>
+<p>The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird’s eye view of what an end user can accomplish at your data sharing platform. A Bento Landing Page has several configurable components. See below for details.</p>
+<p><img alt="Landing Page Elements" src="../_images/landing-page-elements.png" /></p>
+<p><strong>Landing Page Elements</strong>. Displayed are the configurable components of a Bento Landing Page. These are: Landing Page Hero Image, Call To Action, Landing Page Tiles, Landing Page Stats Bar. The Call To Action feature consists of a title, a descriptive section and a text button. Each of the four Landing Page Tiles consist of an image, a title, a descriptive section and a text button.</p>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">2.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration Parameters for all Landing Page elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/landingData.js</span></code></p></li>
+<li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
+<li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
+</ol>
+</div>
+<div class="section" id="landing-page-hero-image">
+<h2><span class="section-number">2.2. </span>Landing Page Hero Image<a class="headerlink" href="#landing-page-hero-image" title="Permalink to this heading">¶</a></h2>
+<p>The Landing Page Hero Image is a visual representation of the mission of your data sharing platform.</p>
+<div class="section" id="configuring-the-landing-page-hero-image">
+<h3><span class="section-number">2.2.1. </span>Configuring the Landing Page Hero Image<a class="headerlink" href="#configuring-the-landing-page-hero-image" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/landingData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">landingPageData</span></code></p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">landingPageHero.img</span></code> with the URL to the Landing Page Hero image of your choice.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">landingPageHero.alt</span></code> with the alt text to be associated with the Landing Page Hero image.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">landingPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w"> </span><span class="nx">landingPageHero</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Alt Tag&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">img</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;URL for your Landing Page Hero Image&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="call-to-action">
+<h2><span class="section-number">2.3. </span>Call To Action<a class="headerlink" href="#call-to-action" title="Permalink to this heading">¶</a></h2>
+<p>The Call To Action feature provides a concise summary of the all that an end user can accomplish at your data sharing platform.</p>
+</div>
+<div class="section" id="configuring-the-call-to-action-feature">
+<h2><span class="section-number">2.4. </span>Configuring the Call To Action Feature<a class="headerlink" href="#configuring-the-call-to-action-feature" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/landingData.js</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">landingPageData</span></code>:</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">callToActionTitle</span></code> to the Call To Action Title.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">callToActionDescription</span></code> to the Call to Action Descriptive Text.</p></li>
+<li><p>Set the  field <code class="docutils literal notranslate"><span class="pre">callToActionButtonText</span></code> to the label for the Call To Action button.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">callToActionButtonLink</span></code> to the link to be embedded in the Call To Action button.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">landingPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">callToActionTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Call To Action Title&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">callToActionDescription</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Call To Action Descriptive Text&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">callToActionButtonText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Call To Action Button Label&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">callToActionLink</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Call To Action Embedded Link&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="landing-page-tiles">
+<h2><span class="section-number">2.5. </span>Landing Page Tiles<a class="headerlink" href="#landing-page-tiles" title="Permalink to this heading">¶</a></h2>
+<p>The four Landing Page Tiles provide additional visual and textual description of the mission and capabilities of your data sharing platform (see figure above for tile numbering). Note that in this version of Bento, the number, position and dimensions of these tiles cannot be configured.</p>
+<div class="section" id="configuring-the-landing-page-tiles">
+<h3><span class="section-number">2.5.1. </span>Configuring the Landing Page Tiles<a class="headerlink" href="#configuring-the-landing-page-tiles" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/landingData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">landingPageData</span></code>, for a tile, <code class="docutils literal notranslate"><span class="pre">tile&lt;i&gt;</span></code>:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.titleText</span></code> to the Tile Title.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.descriptionText</span></code> to the Tile Description.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.img</span></code> to the URL for the tile image.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.alt</span></code> to the ALT tag for the tile image.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.callToActionText</span></code> to the Call To Action text.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tile_i.callToActionLink</span></code> to the Call To Action embedded link.</p></li>
+</ul>
+<ol class="simple">
+<li><p>For example, to edit properties of tile3:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">landingPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tile3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;ALT tag for tile&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">img</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Link to image&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">titleText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Tile title&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">descriptionText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Tile description&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">callToActionText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Tile Link Label&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">callToActionLink</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Tile Link&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="landing-page-stats-bar">
+<h2><span class="section-number">2.6. </span>Landing Page Stats Bar<a class="headerlink" href="#landing-page-stats-bar" title="Permalink to this heading">¶</a></h2>
+<p>The Landing Page Stats Bar provides the end user with a high level view of the volume and diversity of your stored data, by providing the counts of up to five major data entity types. Bento allows a maximum of <strong>5</strong> statistics. If you add more than 5 statistics, <strong>only the top 5 will be displayed without any warning or error message</strong>.</p>
+<div class="section" id="configuring-the-landing-page-stats-bar">
+<h3><span class="section-number">2.6.1. </span>Configuring the Landing Page Stats Bar<a class="headerlink" href="#configuring-the-landing-page-stats-bar" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/landingData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">landingPageData</span></code> you can add your statistic to landingPageStatsBar.</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">statTitle</span></code> to the label to be displayed for your statistic.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">statAPI</span></code> to the GraphQL API query that returns your statistics of interest.</p></li>
+<li><p>Add the GraphQL query to <code class="docutils literal notranslate"><span class="pre">GET_LANDING_PAGE_DATA_QUERY</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">landingPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">landingPageStatsBar</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">statTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your Statistic Label&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">statAPI</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Your GraphQL API query&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_LANDING_PAGE_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  &#39;&lt;Your GraphQL API query&gt;&#39;</span>
+<span class="sb">  ...</span>
+<span class="sb">  }</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="suggested-best-practice">
+<h2><span class="section-number">2.7. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Dimensions of Landing Page Hero image: 1200x500 pixels</p></li>
+<li><p>Dimensions of  Tile 1, Tile 2 and Tile 3 images: 293x349 pixels</p></li>
+<li><p>Dimensions of Tile 4 image: 600x 436 pixels</p></li>
+<li><p>Image resolution &gt;= 72 ppi and image format: PNG</p></li>
+<li><p>The “Call To Action” title should be limited to a maximum of 60 characters.</p></li>
+<li><p>The “Call to Action” description should be limited to a maximum of 150 characters.</p></li>
+<li><p>The Tile title should be limited to a maximum of 60 characters.</p></li>
+<li><p>The Title description should be limited to a maximum of 150 characters.</p></li>
+<li><p>Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="program-listing-page.html" class="btn btn-neutral float-right" title="3. Program Listing Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-left" title="1. Global UI Elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Aug 4, 2022, 6:23:42 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: release-2.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Releases</h3>
+      <ul>
+        <li><a href="landing-page.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-MVP/index.html">release-MVP</a></li>
+      </ul>
+      <br>
+      <h3>In Development</h3>
+      <ul>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
+      <dd><a href="landing-page.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
