@@ -105,7 +105,8 @@ smv_tag_whitelist = None
 # Whitelist pattern for branches (set to None to ignore all branches)
 #smv_branch_whitelist = r'^(?!master).*$'      # Include all branches except "master"
 #smv_branch_whitelist = r'^.*$'
-smv_branch_whitelist = r'.*release.*|.*test.*'
+#smv_branch_whitelist = r'.*release.*|.*test.*'
+smv_branch_whitelist = r'.*release.*'
 
 # Whitelist pattern for remotes (set to None to use local branches only)
 # Only use local branches
