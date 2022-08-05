@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Program Listing Page &mdash; Bento  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Program Detail Page" href="program-detail-page.html" />
+    <link rel="prev" title="2. Landing Page" href="landing-page.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Program Listing Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">3.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#icons-in-the-program-listing-page">3.2. Icons in the Program Listing Page.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-icons-in-the-program-listing-page">3.2.1. Configuring the Icons in the Program Listing Page.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-program-listing-table">3.3. The Program Listing Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-program-listing-table">3.3.1. Configuring the Program Listing Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-program-listing-table">3.3.2. Adding columns to the Program Listing Table.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#suggested-best-practice">3.4. Suggested Best Practice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">5. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">6. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">7. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">8. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">9. Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">2. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">3. License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Program Listing Page</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/program-listing-page.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="program-detail-page.html" class="btn btn-neutral float-right" title="4. Program Detail Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="landing-page.html" class="btn btn-neutral float-left" title="2. Landing Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-page">
+<h1><span class="section-number">3. </span>Program Listing Page<a class="headerlink" href="#program-listing-page" title="Permalink to this heading">¶</a></h1>
+<p>The Program Listing Page lists the programs that store data in your data sharing platform. A Bento Program Listing Page has several configurable components. See below for details.</p>
+<p><img alt="Program Listing Page Elements" src="../_images/program-listing-page.png" /></p>
+<p><strong>Program Listing Page</strong>. Displayed are the configurable elements of a Bento Program Listing Page. These are: Table Title, Table Icon, Table Column Headers, Table Content, embedded Internal and External URLs and External Link Icon.</p>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">3.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters of the Program Listing Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration Parameters for all Program Listing Page elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
+<li><p>All images and icons that you use in your Bento instance should be accessible via a public url.</p></li>
+<li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return your data of interest.</p></li>
+</ol>
+</div>
+<div class="section" id="icons-in-the-program-listing-page">
+<h2><span class="section-number">3.2. </span>Icons in the Program Listing Page.<a class="headerlink" href="#icons-in-the-program-listing-page" title="Permalink to this heading">¶</a></h2>
+<p>There are two configurable icons in the Program Listing Page: (a) the Table Icon, that is a visual represenation of the Program Listing Table and (b) the External Link Icon that is a visual representation of an external link.</p>
+<div class="section" id="configuring-the-icons-in-the-program-listing-page">
+<h3><span class="section-number">3.2.1. </span>Configuring the Icons in the Program Listing Page.<a class="headerlink" href="#configuring-the-icons-in-the-program-listing-page" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">programListingIcon</span></code>:</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">src</span></code> to the URL of your Table Icon image file.</p></li>
+<li><p>Set the fild <code class="docutils literal notranslate"><span class="pre">alt</span></code> to the ALT tag for your Table Icon.</p></li>
+</ul>
+</li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>:</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">src</span></code> to the URL of your External Link Icon image file.</p></li>
+<li><p>Set the fild <code class="docutils literal notranslate"><span class="pre">alt</span></code> to the ALT tag for your External Link Icon.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">programListingIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;URL for your Table Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ALT tag for your Table Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">externalLinkIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;URL for your External Link Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ALT tag for your External Link Icon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-program-listing-table">
+<h2><span class="section-number">3.3. </span>The Program Listing Table<a class="headerlink" href="#the-program-listing-table" title="Permalink to this heading">¶</a></h2>
+<p>The table in the Program Listing Page lists the programs that store data in your data sharing platform.</p>
+<div class="section" id="configuring-the-program-listing-table">
+<h3><span class="section-number">3.3.1. </span>Configuring the Program Listing Table.<a class="headerlink" href="#configuring-the-program-listing-table" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">table</span></code>:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">display</span></code> field is set to true, by default. <em>Set this field to false if you do not wish to display a table in the Program Listing Page</em>.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">title</span></code> to the the title of your table.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the name of the GraphQL API query being used to return data for the Program Listing Page. <em>Note: This query should match the GraphQL API query in <code class="docutils literal notranslate"><span class="pre">GET_PROGRAMS_DATA_QUERY</span></code></em>.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code> to the name of the query field that will be used to sort the Program Listing Table. Note: this query field should be displayed as one of the columns in the Program Listing Table.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">defaultSortDirection</span></code> to the sort order of your choice. Valid values are ‘asc’ (ascending) and ‘desc’ (descending).</p></li>
+<li><p>Add your GraphQL API query to <code class="docutils literal notranslate"><span class="pre">GET_PROGRAMS_DATA_QUERY</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Table Title&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query returning data for this page.&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">defaultSortField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">defaultSortDirection</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_PROGRAMS_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
+<span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
+<span class="sb">	... </span>
+<span class="sb"> }</span>
+<span class="sb">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-columns-to-the-program-listing-table">
+<h3><span class="section-number">3.3.2. </span>Adding columns to the Program Listing Table.<a class="headerlink" href="#adding-columns-to-the-program-listing-table" title="Permalink to this heading">¶</a></h3>
+<p>You can add up to 10 columns in the Program Listing Table. If you add more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/programData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">table</span></code>,</p>
+<ul class="simple">
+<li><p>Add an object {dataField:, header: , link: } to <code class="docutils literal notranslate"><span class="pre">columns</span></code>:</p>
+<ul>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the GraphQL API query data field that returns the data for the column.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">header</span></code> to the column header name.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">link</span></code> to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. <em>Links are optional</em>.</p></li>
+</ul>
+</li>
+<li><p>Add your GraphQL API query data field to <code class="docutils literal notranslate"><span class="pre">GET_PROGRAMS_DATA_QUERY</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Column Header&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;link to be embedded in column value&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;PubMed ID&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+
+
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_PROGRAMS_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
+<span class="sb">  	&#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
+<span class="sb">	... </span>
+<span class="sb"> }</span>
+<span class="sb">}</span>
+</pre></div>
+</div>
+<div class="section" id="internal-links-in-the-program-listing-table">
+<h4><span class="section-number">3.3.2.1. </span>Internal Links in the Program Listing Table.<a class="headerlink" href="#internal-links-in-the-program-listing-table" title="Permalink to this heading">¶</a></h4>
+<ol class="simple">
+<li><p>links starting with ‘/’ are considered as internal links.</p></li>
+<li><p>Internal links shall be opened in the same tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table field to ‘{}’. For example, ‘/program/{program_id}’ shall link to ‘program/NCT00310180’.</p></li>
+</ol>
+</div>
+<div class="section" id="external-links-in-the-program-listing-table">
+<h4><span class="section-number">3.3.2.2. </span>External Links in the Program Listing Table.<a class="headerlink" href="#external-links-in-the-program-listing-table" title="Permalink to this heading">¶</a></h4>
+<ol class="simple">
+<li><p>External links shall start with ‘http://’ or’https://’.</p></li>
+<li><p>External links shall show-up with ‘externalLinkIcon’.</p></li>
+<li><p>External link shall be opened in a new tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table filed to ‘{}’.
+For example, ‘https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}’ shall link to ‘https://pubmed.ncbi.nlm.nih.gov/29860917/’.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="suggested-best-practice">
+<h2><span class="section-number">3.4. </span>Suggested Best Practice<a class="headerlink" href="#suggested-best-practice" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Dimension of the Program Listing Icon= 100 X 100 pixels.</p></li>
+<li><p>Dimension of the External Link Icon = 16 X 16 pixels.</p></li>
+<li><p>All images should have a resolution &gt;= 72 ppi and should be in the PNG format.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="program-detail-page.html" class="btn btn-neutral float-right" title="4. Program Detail Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="landing-page.html" class="btn btn-neutral float-left" title="2. Landing Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Aug 5, 2022, 11:55:40 AM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: release-MVP
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="program-listing-page.html">release-MVP</a></li>
+      </ul>
+      <br>
+      <h3>In Development</h3>
+      <ul>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="program-listing-page.html">release-MVP</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
