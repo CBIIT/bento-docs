@@ -13,7 +13,9 @@ The Bento Framework supports a user-driven data access request workflow that ena
 ## Prerequisites
 1. The files that specify the configuration parameters for the DAR service are stored in the GitHub repository `https://github.com/CBIIT/bento-frontend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for DAR elements can be specified in the file: `$(src)/bento-frontend/enter-rest-of-path`.
+2. Configuration parameters for DAR elements can be specified in the file: `$(src)/bento-frontend/src/bento/requestAccessData.js`.
+
+3. Configuration parameters for Public Access can be specified in the file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`.
 
 <p>&nbsp;</p>     
 
@@ -31,12 +33,34 @@ Access to data can be specified and controlled at the node-level and requires co
 
 1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
 2. Update fields: node-level access, node_name, and node_displayed_label
+3. Example:
+```javascript
+// Public Level Access
+export const PUBLIC_ACCESS = 'Metadata Only';
+
+// Node level access
+export const NODE_LEVEL_ACCESS = true;
+export const NODE_NAME = 'Arm';
+export const NODE_LABEL = 'Study Arm';
+```
 
 
 ## Configuring Fields for the DAR Form
 
-1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
-2. Update fields...
+1. Edit file: `$(src)/bento-frontend/src/bento/requestAccessData.js`
+2. Create form fields using the supported formats of either "textBox" or "aclDropdown"
+Example:
+```javascript
+export const formFields = [
+  {
+    id: 'lastName',
+    type: 'textBox',
+    required: true,
+    label: 'Last Name',
+    placeHolder: 'Last Name',
+    display: true,
+  },
+  ```
 
 ## Configuring Automated Email Content
 
