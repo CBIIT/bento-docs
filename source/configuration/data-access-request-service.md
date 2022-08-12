@@ -19,9 +19,10 @@ The Bento Framework supports a user-driven data access request workflow that ena
 
 <p>&nbsp;</p>     
 
-## Configuring Access to Data
+## Configuring Public Access
 Access to data can be specified and controlled at the node-level and requires configuration of the following parameters:
-
+1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
+2. Update fields: node-level access, node_name, and node_displayed_label
 ### Node-Level Access
     * Acceptable values are True or False. The default value is True.
     * If value is True, data access is controlled at the node-level and the node Node Name and Node Displayed Label parameters must be specified
@@ -31,8 +32,6 @@ Access to data can be specified and controlled at the node-level and requires co
 ### Node Displayed Label
     * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
 
-1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
-2. Update fields: node-level access, node_name, and node_displayed_label
 3. Example:
 ```javascript
 // Public Level Access
@@ -43,7 +42,6 @@ export const NODE_LEVEL_ACCESS = true;
 export const NODE_NAME = 'Arm';
 export const NODE_LABEL = 'Study Arm';
 ```
-
 
 ## Configuring Fields for the DAR Form
 
