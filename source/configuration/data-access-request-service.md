@@ -23,13 +23,13 @@ The Bento Framework supports a user-driven data access request workflow that ena
 Access to data can be specified and controlled at the node-level and requires configuration of the following parameters:
 1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
 2. Update fields: node-level access, node_name, and node_displayed_label
-### Node-Level Access
+#### Node-Level Access
     * Acceptable values are True or False. The default value is True.
     * If value is True, data access is controlled at the node-level and the node Node Name and Node Displayed Label parameters must be specified
     * If value is False, there is no ability to control data access at the node-level and instead users will either have access to all of the data or none of the data based upon authentication and authorization
-### Node Name
+#### Node Name
     * Acceptable values are any node in the data model (ie. Program, project, study, trial, etc.). The default is Arm.
-### Node Displayed Label
+#### Node Displayed Label
     * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
 
 3. Example:
@@ -47,7 +47,7 @@ export const NODE_LABEL = 'Study Arm';
 
 1. Edit file: `$(src)/bento-frontend/src/bento/requestAccessData.js`
 2. Create form fields using the supported formats of either "textBox" or "aclDropdown"
-Example:
+3. Example:
 ```javascript
 export const formFields = [
   {
