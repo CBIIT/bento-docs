@@ -1,0 +1,20 @@
+# Authentication
+
+## Introduction
+Bento supports several identity providers that can be configured in the bento-auth repository.
+
+<p>&nbsp;</p>
+
+## Prerequisites
+1. The files that specify the configuration parameters for authentication are stored in the GitHub `https://github.com/CBIIT/bento-auth` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+
+2. Configuration Parameters for authentication elements can be specified in the file: `$(src)/bento-auth/config.js`.
+
+<p>&nbsp;</p>
+
+## Configuring an Identity Provider
+
+1. Edit file: `$(src)/bento-auth/config.js`
+
+2. Configure the idp: to either 'google', 'login.gov', or 'nih'
+
