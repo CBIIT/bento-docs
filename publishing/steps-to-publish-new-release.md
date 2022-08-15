@@ -8,18 +8,19 @@
 1. For each new bento release, create a develop branch from master. Follow pattern of semantic versioning for branch naming : `develop-major.minor.patch`.  For example: `develop-3.8.0` 
 
 2. If not done already, clone the bento-docs repository on your machine   
-    `git clone https://github.com/CBIIT/bento-docs.git bento-docs` 
+   `git clone https://github.com/CBIIT/bento-docs.git bento-docs` 
 
 3. Make sure you have an updated master branch
-      `git pull`
+   `git pull`
 
 4. Switch to the deveop branch.
-   `git checkout develop-3.8.0`
-   `git pull`
+   1. `git checkout develop-3.8.0`
+   2. `git pull`
 
 5. Add new pages and other content as desired in the develop branch  
    Add the new pages (.md) to their respective folder under the `source/` folder, ex/ configuration, data-and-modeling  
-      <u>Note</u>: it is recommended that new pages be written in markdown (or github-flavored markdown) and use the `.md` extension. It is not recommended to mix both restructured text (rst) and markdown. While many platforms can parse and handle mixed markup - it can cause issues. If there are issues such as improperly formatted markdown - it will hang/stop the documentation during the building step (having a new line in middle of hyperlink to an image path will stop the build).
+   
+   <u>Note</u>: it is recommended that new pages be written in markdown (or github-flavored markdown) and use the `.md` extension. It is not recommended to mix both restructured text (rst) and markdown. While many platforms can parse and handle mixed markup - it can cause issues. If there are issues such as improperly formatted markdown - it will hang/stop the documentation during the building step (having a new line in middle of hyperlink to an image path will stop the build).
          
 6. Add the new pages (.md) to the `source/project-info/index.rst` file whcih is the main documentation file to explicitly list the page, otherwise it will not appear.
       
@@ -27,7 +28,7 @@
      
 8. In new branch, update `conf.py` to specify desired version and release.
 
-         1. master branch `conf.py` will have:
+      1. master branch `conf.py` will have:
 
          ```
          # -- Project information -----------------------------------------------------
@@ -38,7 +39,7 @@
          version = "latest"
          ```
 
-         1. the new release branch (e.g. `release-3.8.0`) then should have `conf.py` have something like:
+      2. the new release branch (e.g. `release-3.8.0`) then should have `conf.py` have something like:
 
          ```
          # -- Project information -----------------------------------------------------
@@ -52,10 +53,11 @@
 
 9. Commit these changes to your develop-branch, ex/ `develop-3.8.0` 
       
-10. Rename develop branch to release branch 
-   Rename `develop-3.8.0` to `release-3.8.0`
-   push the new release branches to github (origin)
-   Create a PR to merge `release-3.8.0` to master
+10. Rename develop branch to release branch
+
+   1. Rename `develop-3.8.0` to `release-3.8.0`
+   2. push the new release branches to github (origin)
+   3. Create a PR to merge `release-3.8.0` to master
 
       <u>Note</u>: For this exercise - this content will appear in both the master branch and the new release branch.
 
@@ -64,7 +66,7 @@
    1. Checkout master branch and pull all of the branches that have `release-` prefix.
       <u>Note</u>: when rebuilding the documentation, each github branch is treated as a release. Only the master branch and release branches (prefixed with "release-") will be built to create html output under the docs folder. 
 
-      If you have extra branches that you do not want them to be treated as a release, either remove the branch, or use sphinx-multiversion "Tag/Branch/Remote whitelists" (see [documentation here](https://holzhaus.github.io/sphinx-multiversion/master/configuration.html)).  For this reason, it is recommended to not have any extra git branches other than for release versions (branches such as `gitflow` where integrated and then deleted). Additionally, the sphinx-multiversion branches can be configured to use both/either remote and local branches!
+      <u>Note</u>: If you have extra branches that you do not want them to be treated as a release, either remove the branch, or use sphinx-multiversion "Tag/Branch/Remote whitelists" (see [documentation here](https://holzhaus.github.io/sphinx-multiversion/master/configuration.html)).  For this reason, it is recommended to not have any extra git branches other than for release versions (branches such as `gitflow` where integrated and then deleted). Additionally, the sphinx-multiversion branches can be configured to use both/either remote and local branches!
 
    2. In the master branch, in the root directory, activate a virtual environment, e.g.  `venv`
       1. if there are any problems, simple remove and rebuild the virtual environment, i.e.:
@@ -74,10 +76,12 @@
          
    3. rebuild docs (in root directory)
       1. `sphinx-multiversion source docs`
+
    4. test the new build
       1. `cd docs/; python3 -m http.server 8000`
       2. open browser, review http://localhost:8000 for correct changes
-   45 if everything passes, then commit newly generated output (located in the docs folder) build to master branch.
-      1. Make sure to look at all the pages where changes were made.
-      2. As needed - repeat the above processes, and re
+
+12. if everything passes, then commit newly generated output (located in the docs folder) build to master branch.
+   1. Make sure to look at all the pages where changes were made.
+     2. As needed - repeat the above processes, and re
 
