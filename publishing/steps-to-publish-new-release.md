@@ -54,29 +54,24 @@
 9. Commit these changes to your develop-branch, ex/ `develop-3.8.0` 
       
 10. Rename develop branch to release branch
-
    1. Rename `develop-3.8.0` to `release-3.8.0`
    2. push the new release branches to github (origin)
    3. Create a PR to merge `release-3.8.0` to master
 
-      <u>Note</u>: For this exercise - this content will appear in both the master branch and the new release branch.
+   <u>Note</u>: For this exercise - this content will appear in both the master branch and the new release branch.
 
 11. Rebuild the documentation
-
    1. Checkout master branch and pull all of the branches that have `release-` prefix.
       <u>Note</u>: when rebuilding the documentation, each github branch is treated as a release. Only the master branch and release branches (prefixed with "release-") will be built to create html output under the docs folder. 
 
       <u>Note</u>: If you have extra branches that you do not want them to be treated as a release, either remove the branch, or use sphinx-multiversion "Tag/Branch/Remote whitelists" (see [documentation here](https://holzhaus.github.io/sphinx-multiversion/master/configuration.html)).  For this reason, it is recommended to not have any extra git branches other than for release versions (branches such as `gitflow` where integrated and then deleted). Additionally, the sphinx-multiversion branches can be configured to use both/either remote and local branches!
-
    2. In the master branch, in the root directory, activate a virtual environment, e.g.  `venv`
       1. if there are any problems, simple remove and rebuild the virtual environment, i.e.:
          1. `python3 -m venv venv`
          2. `source venv/bin/activate`
-         3. `pip install -r requirements.txt`
-         
+         3. `pip install -r requirements.txt`         
    3. rebuild docs (in root directory)
       1. `sphinx-multiversion source docs`
-
    4. test the new build
       1. `cd docs/; python3 -m http.server 8000`
       2. open browser, review http://localhost:8000 for correct changes
