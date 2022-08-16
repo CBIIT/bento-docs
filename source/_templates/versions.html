@@ -21,13 +21,6 @@
         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
         {%- endfor %}
       </ul>
-      <br>
-      <h3>{{ _('In Development') }}</h3>
-      <ul>
-        {%- for item in versions.in_development %}
-        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-        {%- endfor %}
-      </ul>
       {% endif %}
 
     <!-- comment out branches
