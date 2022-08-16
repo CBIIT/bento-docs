@@ -60,8 +60,8 @@ export const formFields = [
   },
   ```
 
-## Configuring Automated Email Content
+[comment]: <> ## Configuring Automated Email Content
 
-1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
-2. Update fields...
+[comment]: <> 1. Edit file: `$(src)/bento-frontend/src/bento/to-be-determined`
+[comment]: <> 2. Update fields...
 
