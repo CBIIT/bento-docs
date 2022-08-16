@@ -7,7 +7,14 @@
   </span>
   <div class="rst-other-versions">
 
-      {% if versions %}
+      {% if latest_version %}
+      <h3>{{ _('Latest') }}</h3>
+      <ul>
+        <li><a href="{{ latest_version.url }}">{{ latest_version.name }}</a></li>
+      <br>
+      {% endif %}
+
+	  {% if versions %}
       <h3>{{ _('Latest') }}</h3>
       <ul>
         {%- for item in versions.in_development %}
