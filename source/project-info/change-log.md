@@ -1,5 +1,60 @@
 # Change Log
 
+
+## release-3.8.0
+
+* Authentication service supports multiple Identity Providers (IdPs)
+* Ability to configure IdPs
+
+## release-3.7.0
+
+**Features**
+
+* Authentication service enabled
+* Google supported as an Identity Provider
+* Lock icons are displayed if unauthenticated user tries to download files
+* Ability to enable or disable authentication
+* Advanced facet filters for number ranges added to Explore Dashboard
+
+## release-3.6.0
+
+**Features**
+
+* Elastic Search added to improve performance
+    * Support for Global Search of site contents
+    * Auto-complete of entered text for Global Search
+    * Ability to filter Global Search results and counts
+    * Consistent metadata displayed across Global Search categories
+    * Magnifying glass for Global Search
+    * Global Search results return hyperlinks that redirect to additional details
+    * Return of paginated and ordered results from Global Search
+* Support for Local Find for case IDs
+    * Auto-complete of entered text for Local Find
+    * Ability to enter a list to find a set of cases
+    * Static query returned from Local Find parameters
+    * Ability to view and modify previously loaded case sets
+    * Display of both matched and unmatched entered case IDs in a pop-up window
+    * Support for uploading a file to find a set of cases
+* Dynamic query builds upon selection or removal of faceted filters and Local Find results
+* Integration of JBrowse a next-generation genome browser
+    * Visualization of bam and vcf files
+    * Support for the human genome version hg19
+* Increased compliance with the Individuals with Disabilities Education Act (IDEA)
+* Mock dataset generator
+    * Support for reading ID fields from a config file
+    * Compatibility with Docker
+* Bento Code Refactoring 
+
+## release-3.2.0
+
+**Features**
+
+* Ability to sort and order additional facet values
+* Widget text is configurable
+* Text cutoff(...) for widgets on the Explore Dashboard
+* Default styling for faceted sections
+* Upgraded react-dev-utils from 7.0.5 to 11.0.4
+
 ## release-3.0.0
 
 **Improvements**
