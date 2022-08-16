@@ -15,13 +15,6 @@
       {% endif %}
 
 	  {% if versions %}
-      <!-- <h3>{{ _('Latest') }}</h3>
-      <ul>
-        {%- for item in versions.in_development %}
-        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-        {%- endfor %}
-      </ul>
-      <br> -->
 	  <h3>{{ _('Releases') }}</h3>
       <ul>
         {%- for item in versions.releases %}
