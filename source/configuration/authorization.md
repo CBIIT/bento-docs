@@ -35,16 +35,16 @@ Currently, public accessibility to data contained within a Bento-based system ca
 1. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
 2. Update field: public_access
 
-### Public_Access
+### Public Access
 
-* Acceptalbe values are Metadata Only or None. The default is Metadata Only. 
-* If public_access is set to "metadata only", public users can see all metadata in the database, but cannot open or download any files.
+    * Acceptable values are Metadata Only or None. The default is Metadata Only. 
+    * If Public Access is set to "metadata only", public users can see all metadata in the database, but cannot open or download any files.
 
 3. Example:
 ```javascript
 export const PUBLIC_ACCESS = 'Metadata Only';
 ```
-* If public access is set to "none", public users cannot see any data and any attempts to access restricted pages will redirect unauthenticated users to the Login page and unauthorized users to the Data Access Request (DAR) page.
+    * If public access is set to "none", public users cannot see any data and any attempts to access restricted pages will redirect unauthenticated users to the Login page and unauthorized users to the Data Access Request (DAR) page.
 
 4. Example:
 ```javascript
