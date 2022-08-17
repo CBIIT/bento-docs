@@ -1,7 +1,7 @@
 # Authorization
 
 ## Introduction
-The Bento Framework supports role-based access control (RBAC) as a method of restricting access to protected or controlled data to authorized users based upon an ascribed role. This enables systematic and reproducible assignment of permissions to facilitate auditing and reduce the potential for error. 
+The Bento Framework supports role-based access control (RBAC) as a method of enforcing authorization and restricting access to protected or controlled data to authorized users based upon an ascribed role. This enables systematic and reproducible assignment of permissions to facilitate auditing and reduce the potential for error. 
 
 
 <p>&nbsp;</p>
