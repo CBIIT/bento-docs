@@ -32,7 +32,7 @@ Access to data can be specified and controlled at the node-level and requires co
 #### Node_Name
     * The node in the data model that is used to govern the granularity of data access
     * Acceptable values are any node in the data model (ie. Program, project, study, trial, etc.). The default is Arm.
-    
+
 #### Node_Label
     * The value displayed on the user interface that is used to govern the granularity of data access
     * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
@@ -45,22 +45,3 @@ export const NODE_LEVEL_ACCESS = true;
 export const NODE_NAME = 'Arm';
 export const NODE_LABEL = 'Study Arm';
 ```
-
-## Configuring Fields for the DAR Form
-
-1. Edit file: `$(src)/bento-frontend/src/bento/requestAccessData.js`
-2. Create form fields using the supported formats of either "textBox" or "aclDropdown"
-3. Example:
-```javascript
-export const formFields = [
-  {
-    id: 'lastName',
-    type: 'textBox',
-    required: true,
-    label: 'Last Name',
-    placeHolder: 'Last Name',
-    display: true,
-  },
-  ```
-
-
