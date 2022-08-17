@@ -3,8 +3,14 @@
 
 ## release-3.8.0
 
+**Features**
 * Authentication service supports multiple Identity Providers (IdPs)
 * Ability to configure IdPs
+* Authorization service enabled
+* Authorization can be configured to control public access
+* Authorization can be configured at the node-level
+* Data Access Request (DAR) Service to support data access
+* Admin portal to manage data access 
 
 ## release-3.7.0
 
