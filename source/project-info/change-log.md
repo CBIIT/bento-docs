@@ -5,12 +5,18 @@
 
 **Features**
 * Authentication service supports multiple Identity Providers (IdPs)
-* Ability to configure IdPs
+* IdP availability, icons, and buttons can be configured
 * Authorization service enabled
 * Authorization can be configured to control public access
 * Authorization can be configured at the node-level
-* Data Access Request (DAR) Service to support data access
-* Admin portal to manage data access 
+* Data Access Request (DAR) Service to support data access workflows
+* Admin portal to manage users and data access
+* User profile page to enable users to review data access
+* Users can navigate to the DAR form from user profile page
+* Users can navigate to the DAR form from the Files tab 
+* Global search results displayed conforms to configured authorization
+* API access to data conforms to configured authorization
+* Application page data conforms to configured authorization
 
 ## release-3.7.0
 
