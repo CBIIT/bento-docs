@@ -20,15 +20,14 @@ The Bento Framework supports a user-driven data access request workflow that ena
 <p>&nbsp;</p>     
 
 ## Configuring Node-Level Access 
-Access to data can be specified and controlled at the node-level and requires configuration of the following parameters:
+Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.  
 1. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
-2. Update fields: node_level_access, node_name, and node_label
+2. Update fields: node_level_access and node_label
 3. Example:
 
 ```javascript
 // Node level access
 export const NODE_LEVEL_ACCESS = true;
-export const NODE_NAME = 'Arm';
 export const NODE_LABEL = 'Study Arm';
 ```
 
@@ -36,10 +35,6 @@ export const NODE_LABEL = 'Study Arm';
     * Acceptable values are True or False. The default value is True.
     * If value is True, data access is controlled at the node-level and the node Node Name and Node Displayed Label parameters must be specified.
     * If value is False, there is no ability to control data access at the node-level and instead users will either have access to all of the data or none of the data based upon authentication and authorization.
-
-#### Node_Name
-    * The node in the data model that is used to govern the granularity of data access
-    * Acceptable values are any node in the data model (ie. Program, project, study, trial, etc.). The default is Arm.
 
 #### Node_Label
     * The label displayed on the user interface that is used to represent the node that governs data access granularity.
