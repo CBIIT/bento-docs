@@ -37,7 +37,7 @@ Currently, public accessibility to data contained within a Bento-based system ca
 
 ### Public Access
 
-    * Acceptable values are Metadata Only or None. The default is Metadata Only. 
+    * Acceptable values are Metadata Only or None. The default is Metadata Only. Values are case sensitive. 
     * If Public Access is set to "metadata only", public users can see all metadata in the database, but cannot open or download any files.
 
 3. Example:
