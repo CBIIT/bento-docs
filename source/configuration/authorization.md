@@ -24,7 +24,7 @@ Establishes "which data you have access to" with a given application
 
 <p>&nbsp;</p>
 
-### Public Access
+## Public Access
 
     * Acceptable values are Metadata Only or None. The default is Metadata Only. Values are case sensitive. 
     * If Public Access is set to "metadata only", public users can see all metadata in the database, but cannot open or download any files.
@@ -37,7 +37,7 @@ Establishes "which data you have access to" with a given application
 Currently, public accessibility to data contained within a Bento-based system can be configured at the time of standing up the system. The configuration applies to both unauthenticated users that have not logged in and unauthorized users that have logged in, but have not yet submitted any data access requests and therefore do not have access to any data.
 
 
-## Configuring Public Access on the back-end of the Bento web application
+### Configuring Public Access on the back-end of the Bento web application
 
 1. Edit file: $(src)/bento-backend/src/main/resources/application.properties
 2. Update field: auth.enabled
@@ -50,7 +50,7 @@ auth.enabled=false
 auth.enabled=true
 ```
 
-## Configuring Public Access on the front-end of the Bento web application
+### Configuring Public Access on the front-end of the Bento web application
 
 1. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
 2. Update field: public_access
