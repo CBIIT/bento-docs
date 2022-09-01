@@ -28,7 +28,7 @@ Access to data can be controlled as a single entity or at the node level. Contro
 ```javascript
 // Node level access
 export const NODE_LEVEL_ACCESS = true;
-export const NODE_LABEL = 'Study Arm';
+export const NODE_LABEL = 'Study Arm(s)';
 ```
 
 #### Node-Level_Access
@@ -38,4 +38,4 @@ export const NODE_LABEL = 'Study Arm';
 
 #### Node_Label
     * The label displayed on the user interface that is used to represent the node that governs data access granularity.
-    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm.
+    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
