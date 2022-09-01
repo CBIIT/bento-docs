@@ -38,4 +38,4 @@ export const NODE_LABEL = 'Study Arm';
 
 #### Node_Label
     * The label displayed on the user interface that is used to represent the node that governs data access granularity.
-    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
+    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm.
