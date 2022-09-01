@@ -16,7 +16,7 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 
 <p>&nbsp;</p>
 
-## Configuring Authentication 
+### Configuring Authentication 
 Authentication can be enabled or disabled for any Bento-based system.
   * Acceptable values for auth.enabled are "true" or "false". This value is important for determining Public Access. Refer to Authorization configuration for details.
 1. Edit file: `$(src)/bento-backend/src/main/resources/application.properties`
@@ -42,7 +42,7 @@ export default {
 };
 ```
 
-## Configuring the Display of Identity Providers
+### Configuring the Display of Identity Providers
 The displayed icons and button text for IdPs is configurable.
 1. Edit file `$(src)/bento-frontend/src/bento/userLoginData.js`
 2. Set the path for the icon field.
