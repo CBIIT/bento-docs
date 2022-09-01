@@ -40,7 +40,7 @@ Establishes "which data you have access to" with a given application
 Currently, public accessibility to data contained within a Bento-based system can be configured at the time of standing up the system. The configuration applies to both unauthenticated users that have not logged in and unauthorized users that have logged in, but have not yet submitted any data access requests and therefore do not have access to any data.
 
 
-### Configuring Public Access on the back-end of the Bento web application
+### Configuring Public Access
 
 1. Edit file: $(src)/bento-backend/src/main/resources/application.properties
 2. Update field: auth.enabled
@@ -52,18 +52,15 @@ auth.enabled=false
 ```javascript
 auth.enabled=true
 ```
-
-### Configuring Public Access on the front-end of the Bento web application
-
-1. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
-2. Update field: public_access
-3. Example: set Public Access to "Metadata Only"
+5. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+6. Update field: public_access
+7. Example: set Public Access to "Metadata Only"
 ```javascript
 export const PUBLIC_ACCESS = 'Metadata Only';
 ```
     * If public access is set to "none", public users cannot see any data and any attempts to access restricted pages will redirect unauthenticated users to the Login page and unauthorized users to the Data Access Request (DAR) page.
 
-4. Example: set Public Access to "None"
+8. Example: set Public Access to "None"
 ```javascript
 export const PUBLIC_ACCESS = 'None';
 ```
