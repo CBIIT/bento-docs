@@ -20,7 +20,7 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 Authentication can be enabled or disabled for any Bento-based system.
   
   * Acceptable values for auth.enabled are "true" or "false". This value is important for determining Public Access. Refer to Authorization configuration for details.
-  
+
 1. Edit file: `$(src)/bento-backend/src/main/resources/application.properties`
 2. Update field: auth.enabled
 
@@ -31,7 +31,7 @@ auth.enabled=false
 
 5. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
 6. Set the field `enableAuthentication` to True or False
-7. Set the field `authEndPoint` to google, NIH, or login.gov
+7. Set the field `authProviders` to google, nih, or loginGov
 8. Example: 
 ```javascript
 export default {
