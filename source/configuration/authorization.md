@@ -1,5 +1,5 @@
 # Authorization
-
+*Service only available for cloud installations of the Bento Framework*
 ## Introduction
 The Bento Framework supports role-based access control (RBAC) as a method of enforcing authorization and restricting access to protected or controlled data to authorized users based upon an ascribed role. This enables systematic and reproducible assignment of permissions to facilitate auditing and reduce the potential for error. When a Bento Data Commons is stood up, system owners will need to determine at what level the data will be controlled. This configurability is only available at the time of intializing the system and requires setting fields on both the front-end and the back-end of the Bento web application.
 
@@ -28,7 +28,6 @@ Establishes "which data you have access to" with a given application
 <p>&nbsp;</p>
 
 ## Public Access
-
     * Acceptable values are Metadata Only or None. The default is Metadata Only. Values are case sensitive. 
     * If Public Access is set to "metadata only", public users can see all metadata in the database, but cannot open or download any files.
 

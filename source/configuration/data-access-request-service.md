@@ -1,5 +1,5 @@
 # Data Access Request (DAR) Service
-
+*Service only available for cloud installations of the Bento Framework*
 ## Introduction
 The Bento Framework supports a user-driven data access request workflow that enables authenticated users to request access to a specific dataset or resource (ie. arm, study, project, program, etc.) and allows system administrators to review, approve, and reject data access requests submitted by users. System triggered emails are generated at each definitive point in the workflow. Admins can navigate the data access request workflow using the Bento Admin Portal. 
 

@@ -1,5 +1,5 @@
 # Authentication
-
+*Service only available for cloud installations of the Bento Framework*
 ## Introduction
 The Bento Framework provides an OIDC-compliant authentication (AuthN) service so that Bento-based platforms have the ability to authenticate users. Authentication can be enabled or disabled. Bento currently supports several identity providers (IdPs) and a single IdP or multiple IdPs can be configured for any given Bento platform. The configured IdPs will appear on the Bento login page and will allow users to select an account type before redirecting to the specific Login page of the selected IdP. The default behavior will redirect any unauthenticated users to the Bento Login page if attempting to access protected pages. Google is the current default IdP.
 
