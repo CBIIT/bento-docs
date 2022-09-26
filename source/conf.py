@@ -25,7 +25,8 @@ from recommonmark.transform import AutoStructify
 project = 'Bento'
 copyright = '2021, CBIIT'
 author = 'CBIIT'
-version = "latest"
+release = "release-3.8.0"
+version = "release-3.8.0"
 
 # -- General configuration ---------------------------------------------------
 
