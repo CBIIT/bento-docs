@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Arm Detail Page &mdash; Bento  documentation</title>
+  <title>7. Arm Detail Page &mdash; Bento release-3.8.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Case Detail Page" href="case-detail-page.html" />
-    <link rel="prev" title="4. Program Detail Page" href="program-detail-page.html" /> 
+    <link rel="next" title="8. Case Detail Page" href="case-detail-page.html" />
+    <link rel="prev" title="6. Program Detail Page" href="program-detail-page.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                latest
+                release-3.8.0
               </div>
             
           
@@ -104,31 +104,33 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">3. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Arm  Detail Page</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">5.1. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page">5.2. Configuring the Arm Detail Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page-table">5.3. Configuring the Arm Detail Page Table</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-arm-detail-page-table">5.3.1. Adding columns to the Arm Detail Page Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">3. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">4. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">5. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">6. Program Detail Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Arm  Detail Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">7.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page">7.2. Configuring the Arm Detail Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-arm-detail-page-table">7.3. Configuring the Arm Detail Page Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-arm-detail-page-table">7.3.1. Adding columns to the Arm Detail Page Table</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configurating-the-associated-files-table">5.4. Configurating The “Associated Files” Table</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#internal-links-in-the-dashboard-table">5.4.1. Internal Links in the Dashboard Table.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#external-links-in-the-dashboard-table">5.4.2. External Links in the Dashboard Table.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#graphql-query">5.4.3. GraphQL Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configurating-the-associated-files-table">7.4. Configurating The “Associated Files” Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-links-in-the-dashboard-table">7.4.1. Internal Links in the Dashboard Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-links-in-the-dashboard-table">7.4.2. External Links in the Dashboard Table.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphql-query">7.4.3. GraphQL Query</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">6. Case Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">7. Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">8. Dashboard: Facet Search Sidebar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">9. Dashboard: Tabs and Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">8. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">9. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">10. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">11. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">12. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">13. Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -193,7 +195,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Arm  Detail Page</li>
+      <li><span class="section-number">7. </span>Arm  Detail Page</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,10 +213,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="case-detail-page.html" class="btn btn-neutral float-right" title="6. Case Detail Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="case-detail-page.html" class="btn btn-neutral float-right" title="8. Case Detail Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="program-detail-page.html" class="btn btn-neutral float-left" title="4. Program Detail Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="program-detail-page.html" class="btn btn-neutral float-left" title="6. Program Detail Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -224,12 +226,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="arm-detail-page">
-<h1><span class="section-number">5. </span>Arm  Detail Page<a class="headerlink" href="#arm-detail-page" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">7. </span>Arm  Detail Page<a class="headerlink" href="#arm-detail-page" title="Permalink to this heading">¶</a></h1>
 <p>The Arm Detail Page provides a summary of a Study/Project/Arm of that belongs to a Program that participates in your data sharing platform.</p>
 <p><img alt="Arm Detail Page" src="../_images/arm-detail-page.png" /></p>
 <p><strong>Arm Detail Page</strong>. Displayed are the configurable components of the Arm Detail Page.</p>
 <div class="section" id="prerequisites">
-<h2><span class="section-number">5.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Arm Detail Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration Parameters for all Arm Detail Page elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/blob/master/src/bento/armDetailData.js</span></code>.</p></li>
@@ -238,7 +240,7 @@
 </ol>
 </div>
 <div class="section" id="configuring-the-arm-detail-page">
-<h2><span class="section-number">5.2. </span>Configuring the Arm Detail Page<a class="headerlink" href="#configuring-the-arm-detail-page" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Configuring the Arm Detail Page<a class="headerlink" href="#configuring-the-arm-detail-page" title="Permalink to this heading">¶</a></h2>
 <p>The Arm Detail Page allows you to add key arm attributes as label value pairs within a set of subsections(See Step 3. below). A maximum of <strong>6</strong> sections can be added to the Arm Detail Page. Within each subsection a maximum of <strong>10</strong> attributes can be displayed as label:value pairs.</p>
 <p>The Arm Detail Page also allows you to add an optional table to list Arm level entities.</p>
 <ol class="simple">
@@ -273,7 +275,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="configuring-the-arm-detail-page-table">
-<h2><span class="section-number">5.3. </span>Configuring the Arm Detail Page Table<a class="headerlink" href="#configuring-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Configuring the Arm Detail Page Table<a class="headerlink" href="#configuring-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h2>
 <p>You can add a table to the Arm Detail Page. <em>This is optional.</em></p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
@@ -307,7 +309,7 @@
 </pre></div>
 </div>
 <div class="section" id="adding-columns-to-the-arm-detail-page-table">
-<h3><span class="section-number">5.3.1. </span>Adding columns to the Arm Detail Page Table<a class="headerlink" href="#adding-columns-to-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Adding columns to the Arm Detail Page Table<a class="headerlink" href="#adding-columns-to-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h3>
 <p>You can add up to 10 columns in the Arm Detail Page Table. If you add more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
@@ -347,7 +349,7 @@
 </pre></div>
 </div>
 <div class="section" id="internal-links-in-the-arm-detail-page-table">
-<h4><span class="section-number">5.3.1.1. </span>Internal Links in the Arm Detail Page Table.<a class="headerlink" href="#internal-links-in-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h4>
+<h4><span class="section-number">7.3.1.1. </span>Internal Links in the Arm Detail Page Table.<a class="headerlink" href="#internal-links-in-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
 <li><p>Internal links will be opened in the same tab.</p></li>
@@ -355,7 +357,7 @@
 </ol>
 </div>
 <div class="section" id="external-links-in-the-arm-detail-page-table">
-<h4><span class="section-number">5.3.1.2. </span>External Links in the Arm Detail Page Table.<a class="headerlink" href="#external-links-in-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h4>
+<h4><span class="section-number">7.3.1.2. </span>External Links in the Arm Detail Page Table.<a class="headerlink" href="#external-links-in-the-arm-detail-page-table" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
 <li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>. Note: In this version of Bento the External Link Icon of the Arm Detail Page is not configurable.</p></li>
@@ -370,7 +372,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
 </div>
 </div>
 <div class="section" id="configurating-the-associated-files-table">
-<h2><span class="section-number">5.4. </span>Configurating The “Associated Files” Table<a class="headerlink" href="#configurating-the-associated-files-table" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Configurating The “Associated Files” Table<a class="headerlink" href="#configurating-the-associated-files-table" title="Permalink to this heading">¶</a></h2>
 <p>This table lists files that are associated with the Arm.  It can be configured as follows:</p>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/armDetailData.js</span></code></p></li>
@@ -405,7 +407,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
 </li>
 </ul>
 <div class="section" id="internal-links-in-the-dashboard-table">
-<h3><span class="section-number">5.4.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">7.4.1. </span>Internal Links in the Dashboard Table.<a class="headerlink" href="#internal-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
 <li><p>Internal links will be opened in the same tab.</p></li>
@@ -413,7 +415,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
 </ol>
 </div>
 <div class="section" id="external-links-in-the-dashboard-table">
-<h3><span class="section-number">5.4.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">7.4.2. </span>External Links in the Dashboard Table.<a class="headerlink" href="#external-links-in-the-dashboard-table" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
 <li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>.</p></li>
@@ -423,7 +425,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
 </ol>
 </div>
 <div class="section" id="graphql-query">
-<h3><span class="section-number">5.4.3. </span>GraphQL Query<a class="headerlink" href="#graphql-query" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>GraphQL Query<a class="headerlink" href="#graphql-query" title="Permalink to this heading">¶</a></h3>
 <p>The GraphQL Query used for the Associated Files table is defined in <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>. For example:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">GET_ARM_DETAIL_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`</span>
@@ -460,10 +462,10 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="case-detail-page.html" class="btn btn-neutral float-right" title="6. Case Detail Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="case-detail-page.html" class="btn btn-neutral float-right" title="8. Case Detail Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="program-detail-page.html" class="btn btn-neutral float-left" title="4. Program Detail Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="program-detail-page.html" class="btn btn-neutral float-left" title="6. Program Detail Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -475,7 +477,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Sep 26, 2022, 8:47:03 PM.
+        Last updated on Sep 26, 2022, 9:36:24 PM.
       </span>
 
     </p>
@@ -506,6 +508,11 @@ For example, <code class="docutils literal notranslate"><span class="pre">https:
   </span>
   <div class="rst-other-versions">
 
+      
+      <h3>Latest</h3>
+      <ul>
+        <li><a href="arm-detail-page.html">master</a></li>
+      <br>
       
 
 	  
