@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>8. Cart Workflow &mdash; Bento  documentation</title>
@@ -32,7 +31,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -230,27 +231,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="cart-workflow">
-<h1><span class="section-number">8. </span>Cart Workflow<a class="headerlink" href="#cart-workflow" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
-<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="cart-workflow">
+<h1><span class="section-number">8. </span>Cart Workflow<a class="headerlink" href="#cart-workflow" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The cart workflow is a mechanism for users to generate a manifest for working with case files.</p>
-<p>&nbsp;</p></section>
-<section id="prerequisites">
-<h2><span class="section-number">8.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">8.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>Fork the GitHub repo <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>)</p></li>
 <li><p>Create a local clone of your fork into a local directory, represented here as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 </ol>
-<p>&nbsp;</p></section>
-<section id="configuring-the-cases-page-in-the-cart-workflow">
-<h2><span class="section-number">8.3. </span>Configuring the Cases page in the Cart Workflow<a class="headerlink" href="#configuring-the-cases-page-in-the-cart-workflow" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+<div class="section" id="configuring-the-cases-page-in-the-cart-workflow">
+<h2><span class="section-number">8.3. </span>Configuring the Cases page in the Cart Workflow<a class="headerlink" href="#configuring-the-cases-page-in-the-cart-workflow" title="Permalink to this heading">¶</a></h2>
 <p><img alt="Cart Workflow - Cases Page" src="../_images/cart-workflow-cases.png" /></p>
-<section id="cases-page-table-title">
-<h3><span class="section-number">8.3.1. </span>Cases Page: Table Title<a class="headerlink" href="#cases-page-table-title" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cases-page-table-title">
+<h3><span class="section-number">8.3.1. </span>Cases Page: Table Title<a class="headerlink" href="#cases-page-table-title" title="Permalink to this heading">¶</a></h3>
 <p>To configure the table title on the page (right above the table)</p>
-<section id="edit-configuration-file">
-<h4><span class="section-number">8.3.1.1. </span>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="edit-configuration-file">
+<h4><span class="section-number">8.3.1.1. </span>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myCasesPageData</span></code>,</p>
@@ -261,36 +262,36 @@
 </li>
 <li><p>For example, to have the page appear as ‘My Subjects: Subjects’ instead of ‘My Cases: Cases’ (with ‘My Cases’ being the title):</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myCasesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">myCasesMainTitle</span><span class="o">:</span> <span class="s1">&#39;My Subjects :&#39;</span><span class="p">,</span>
-  <span class="nx">myCasesSubTitle</span><span class="o">:</span> <span class="s1">&#39;Subjects&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myCasesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myCasesMainTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My Subjects :&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myCasesSubTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Subjects&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="cases-page-table-content">
-<h3><span class="section-number">8.3.2. </span>Cases Page: Table Content<a class="headerlink" href="#cases-page-table-content" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="cases-page-table-content">
+<h3><span class="section-number">8.3.2. </span>Cases Page: Table Content<a class="headerlink" href="#cases-page-table-content" title="Permalink to this heading">¶</a></h3>
 <p>To configure the table on the “My Cases” page</p>
-<section id="id1">
-<h4><span class="section-number">8.3.2.1. </span>Edit configuration file<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h4><span class="section-number">8.3.2.1. </span>Edit configuration file<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">GET_MY_CASES_DATA_QUERY</span></code>, set graphql query …</p></li>
 </ol>
-</section>
-</section>
-<section id="cases-page-table-icon">
-<h3><span class="section-number">8.3.3. </span>Cases Page: Table Icon<a class="headerlink" href="#cases-page-table-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="cases-page-table-icon">
+<h3><span class="section-number">8.3.3. </span>Cases Page: Table Icon<a class="headerlink" href="#cases-page-table-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the Table Icon for the “My Cases” page</p>
-</section>
-<section id="cases-page-add-icon">
-<h3><span class="section-number">8.3.4. </span>Cases Page: Add Icon<a class="headerlink" href="#cases-page-add-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cases-page-add-icon">
+<h3><span class="section-number">8.3.4. </span>Cases Page: Add Icon<a class="headerlink" href="#cases-page-add-icon" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-<section id="id2">
-<h4><span class="section-number">8.3.4.1. </span>Edit configuration file<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4><span class="section-number">8.3.4.1. </span>Edit configuration file<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"> <span class="pre">myCasesPageData</span></code>,</p>
@@ -301,43 +302,43 @@
 </li>
 <li><p>For example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myCasesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">headerIconSrc</span><span class="o">:</span> <span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/NewIcon.svg&#39;</span><span class="p">,</span>
-  <span class="nx">headerIconAlt</span><span class="o">:</span> <span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myCasesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">headerIconSrc</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/NewIcon.svg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">headerIconAlt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="cases-page-go-to-files-button">
-<h3><span class="section-number">8.3.5. </span>Cases Page: “Go To Files” Button<a class="headerlink" href="#cases-page-go-to-files-button" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="cases-page-go-to-files-button">
+<h3><span class="section-number">8.3.5. </span>Cases Page: “Go To Files” Button<a class="headerlink" href="#cases-page-go-to-files-button" title="Permalink to this heading">¶</a></h3>
 <p>To configure the Configure “Go To Files” Button* for the “Shopping Cart/My Cases” workflow</p>
-<section id="id3">
-<h4><span class="section-number">8.3.5.1. </span>Edit configuration file<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4><span class="section-number">8.3.5.1. </span>Edit configuration file<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myCasesPageData</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">buttonText</span></code> to have the desired text value</p></li>
 <li><p>For example, to have the link appear as ‘Go To Files Page’ instead of ‘GO TO FILES’:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myCasesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">buttonText</span><span class="o">:</span> <span class="s1">&#39;Go To Files Page&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myCasesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">buttonText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Go To Files Page&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="cases-page-workflow-icon">
-<h3><span class="section-number">8.3.6. </span>Cases Page: Workflow Icon<a class="headerlink" href="#cases-page-workflow-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="cases-page-workflow-icon">
+<h3><span class="section-number">8.3.6. </span>Cases Page: Workflow Icon<a class="headerlink" href="#cases-page-workflow-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the Workflow Icon for the “Shopping Cart/My Cases” workflow</p>
-<section id="add-icon-file-to-repo">
-<h4><span class="section-number">8.3.6.1. </span>Add Icon file to repo<a class="headerlink" href="#add-icon-file-to-repo" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="add-icon-file-to-repo">
+<h4><span class="section-number">8.3.6.1. </span>Add Icon file to repo<a class="headerlink" href="#add-icon-file-to-repo" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</section>
-<section id="id4">
-<h4><span class="section-number">8.3.6.2. </span>Edit configuration file<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id4">
+<h4><span class="section-number">8.3.6.2. </span>Edit configuration file<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myCasesPageData</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">cartLabel</span></code> to have the desired text value</p>
@@ -348,24 +349,24 @@
 </li>
 <li><p>For example, to have the icon to use the file <code class="docutils literal notranslate"><span class="pre">MyWizardIcon.svg</span></code> instead of file <code class="docutils literal notranslate"><span class="pre">MyCases-Wizard-Step2.svg</span></code></p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myCasesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>  
-  <span class="nx">wizardIconSrc</span><span class="o">:</span> <span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/MyWizardIcon.svg&#39;</span><span class="p">,</span>
-  <span class="nx">wizardIconAlt</span><span class="o">:</span> <span class="s1">&#39;Go To Step 2&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myCasesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w">  </span>
+<span class="w">  </span><span class="nx">wizardIconSrc</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/MyWizardIcon.svg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wizardIconAlt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Go To Step 2&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-<p>&nbsp;</p></section>
-</section>
-</section>
-<section id="configuring-files-page-in-cart-workflow">
-<h2><span class="section-number">8.4. </span>Configuring Files Page in Cart Workflow<a class="headerlink" href="#configuring-files-page-in-cart-workflow" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+</div>
+</div>
+<div class="section" id="configuring-files-page-in-cart-workflow">
+<h2><span class="section-number">8.4. </span>Configuring Files Page in Cart Workflow<a class="headerlink" href="#configuring-files-page-in-cart-workflow" title="Permalink to this heading">¶</a></h2>
 <p><img alt="Cart Workflow - Files Page" src="../_images/cart-workflow-files.png" /></p>
-<section id="files-page-table-title">
-<h3><span class="section-number">8.4.1. </span>Files Page: Table Title<a class="headerlink" href="#files-page-table-title" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="files-page-table-title">
+<h3><span class="section-number">8.4.1. </span>Files Page: Table Title<a class="headerlink" href="#files-page-table-title" title="Permalink to this heading">¶</a></h3>
 <p>To configure the table title on the page (right above the table)</p>
-<section id="id5">
-<h4><span class="section-number">8.4.1.1. </span>Edit configuration file<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h4><span class="section-number">8.4.1.1. </span>Edit configuration file<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myFilesPageData</span></code>,</p>
@@ -376,25 +377,25 @@
 </li>
 <li><p>For example, to have the page appear as ‘My Subjects: Files’ instead of ‘My Files: Files’:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myFilesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">myFilesMainTitle</span><span class="o">:</span> <span class="s1">&#39;My Subjects :&#39;</span><span class="p">,</span>
-  <span class="nx">myFilesSubTitle</span><span class="o">:</span> <span class="s1">&#39;Files&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myFilesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myFilesMainTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My Subjects :&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myFilesSubTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Files&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="files-page-table-icon">
-<h3><span class="section-number">8.4.2. </span>Files Page: Table Icon<a class="headerlink" href="#files-page-table-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="files-page-table-icon">
+<h3><span class="section-number">8.4.2. </span>Files Page: Table Icon<a class="headerlink" href="#files-page-table-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the Table Icon for the “My Files” page</p>
-<section id="id6">
-<h4><span class="section-number">8.4.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4><span class="section-number">8.4.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</section>
-<section id="id7">
-<h4><span class="section-number">8.4.2.2. </span>Edit configuration file<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id7">
+<h4><span class="section-number">8.4.2.2. </span>Edit configuration file<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"> <span class="pre">myFilesPageData</span></code>,</p>
@@ -405,26 +406,26 @@
 </li>
 <li><p>For example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myFilesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">headerIconSrc</span><span class="o">:</span> <span class="s1">&#39;https://raw.githubusercontent.com/YOUR_USERNAME/bento-frontend/master/src/assets/icons/NewIcon.svg&#39;</span><span class="p">,</span>
-  <span class="nx">headerIconAlt</span><span class="o">:</span> <span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myFilesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">headerIconSrc</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/YOUR_USERNAME/bento-frontend/master/src/assets/icons/NewIcon.svg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">headerIconAlt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NewIcon logo&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="files-page-workflow-icon">
-<h3><span class="section-number">8.4.3. </span>Files Page: Workflow Icon<a class="headerlink" href="#files-page-workflow-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="files-page-workflow-icon">
+<h3><span class="section-number">8.4.3. </span>Files Page: Workflow Icon<a class="headerlink" href="#files-page-workflow-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the Workflow Icon for the Files Page in the “Shopping Cart/My Cases” workflow</p>
-<section id="add-an-icon">
-<h4><span class="section-number">8.4.3.1. </span>Add an Icon<a class="headerlink" href="#add-an-icon" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="add-an-icon">
+<h4><span class="section-number">8.4.3.1. </span>Add an Icon<a class="headerlink" href="#add-an-icon" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>add and commit file to repo; then push the commit to github</p></li>
 </ol>
-</section>
-<section id="id8">
-<h4><span class="section-number">8.4.3.2. </span>Edit configuration file<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id8">
+<h4><span class="section-number">8.4.3.2. </span>Edit configuration file<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myFilesPageData</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">cartLabel</span></code> to have the desired text value</p>
@@ -435,66 +436,66 @@
 </li>
 <li><p>For example, to have the icon to use the file <code class="docutils literal notranslate"><span class="pre">MyWizardIcon.svg</span></code> instead of file <code class="docutils literal notranslate"><span class="pre">MyCases-Wizard-Step2.svg</span></code></p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myFilesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>  
-  <span class="nx">wizardIconSrc</span><span class="o">:</span> <span class="s1">&#39;https://raw.githubusercontent.com/YOUR_USERNAME/bento-frontend/master/src/assets/icons/MyWizardIcon.svg&#39;</span><span class="p">,</span>
-  <span class="nx">wizardIconAlt</span><span class="o">:</span> <span class="s1">&#39;Go To Step 2&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myFilesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w">  </span>
+<span class="w">  </span><span class="nx">wizardIconSrc</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/YOUR_USERNAME/bento-frontend/master/src/assets/icons/MyWizardIcon.svg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wizardIconAlt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Go To Step 2&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="files-page-file-manifest-name">
-<h3><span class="section-number">8.4.4. </span>Files Page: File Manifest Name<a class="headerlink" href="#files-page-file-manifest-name" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="files-page-file-manifest-name">
+<h3><span class="section-number">8.4.4. </span>Files Page: File Manifest Name<a class="headerlink" href="#files-page-file-manifest-name" title="Permalink to this heading">¶</a></h3>
 <p>To configure the File Manifest Name for “Shopping Cart/My Cases” workflow</p>
-<section id="id9">
-<h4><span class="section-number">8.4.4.1. </span>Edit configuration file<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4><span class="section-number">8.4.4.1. </span>Edit configuration file<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">myFilesPageData</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">manifestFileName</span></code>: to have the desired file value</p></li>
 <li><p>For example, to use the name “File Manifest” instead of <code class="docutils literal notranslate"><span class="pre">BENTO</span> <span class="pre">File</span> <span class="pre">Manifest</span></code></p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">myFilesPageData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>  
-  <span class="nx">manifestFileName</span><span class="o">:</span> <span class="s1">&#39;File Manifest&#39;</span><span class="p">,</span>
-  <span class="p">...</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myFilesPageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w">  </span>
+<span class="w">  </span><span class="nx">manifestFileName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;File Manifest&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-<p>&nbsp;</p></section>
-</section>
-</section>
-<section id="configuring-the-menu-bar-for-the-cart-workflow">
-<h2><span class="section-number">8.5. </span>Configuring the Menu Bar for the Cart Workflow<a class="headerlink" href="#configuring-the-menu-bar-for-the-cart-workflow" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+</div>
+</div>
+<div class="section" id="configuring-the-menu-bar-for-the-cart-workflow">
+<h2><span class="section-number">8.5. </span>Configuring the Menu Bar for the Cart Workflow<a class="headerlink" href="#configuring-the-menu-bar-for-the-cart-workflow" title="Permalink to this heading">¶</a></h2>
 <p><img alt="Cart Workflow - Menu Bar" src="../_images/cart-workflow-menu-bar.png" /></p>
-<section id="menu-bar-text">
-<h3><span class="section-number">8.5.1. </span>Menu Bar Text<a class="headerlink" href="#menu-bar-text" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="menu-bar-text">
+<h3><span class="section-number">8.5.1. </span>Menu Bar Text<a class="headerlink" href="#menu-bar-text" title="Permalink to this heading">¶</a></h3>
 <p>To configure the link that appears on the menu bar:</p>
-<section id="id10">
-<h4><span class="section-number">8.5.1.1. </span>Edit configuration file<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4><span class="section-number">8.5.1.1. </span>Edit configuration file<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">navarBarCartData</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">cartLabel</span></code> to have the desired text value</p></li>
 <li><p>For example, to have the link appear as ‘MY SUBJECTS’ instead of ‘MY CASES’:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">navBarCartData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">cartLabel</span><span class="o">:</span> <span class="s1">&#39;MY SUBJECTS&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">navBarCartData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">cartLabel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MY SUBJECTS&#39;</span><span class="p">,</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="menu-bar-icon">
-<h3><span class="section-number">8.5.2. </span>Menu Bar Icon<a class="headerlink" href="#menu-bar-icon" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="menu-bar-icon">
+<h3><span class="section-number">8.5.2. </span>Menu Bar Icon<a class="headerlink" href="#menu-bar-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the icon that appears on the menu bar:</p>
-<section id="id11">
-<h4><span class="section-number">8.5.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h4><span class="section-number">8.5.2.1. </span>Add Icon file to repo<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Add icon file to appropriate file location: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/assets/icons/</span></code></p></li>
 <li><p>Add and commit file to your repo; then push the commit to github</p></li>
 </ol>
-</section>
-<section id="id12">
-<h4><span class="section-number">8.5.2.2. </span>Edit configuration file<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id12">
+<h4><span class="section-number">8.5.2.2. </span>Edit configuration file<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">navarBarCartData</span></code>,</p>
@@ -505,55 +506,55 @@
 </li>
 <li><p>For example, to have the icon to use the file <code class="docutils literal notranslate"><span class="pre">MyIcon.svg</span></code> instead of file <code class="docutils literal notranslate"><span class="pre">Icon-MyCases.svg</span></code></p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">navBarCartData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">cartIcon</span><span class="o">:</span> <span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/MyIcon.svg&#39;</span><span class="p">,</span>
-  <span class="nx">cartIconAlt</span><span class="o">:</span> <span class="s1">&#39;my_icon_logo&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">navBarCartData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">cartIcon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/YOUR-USERNAME/bento-frontend/master/src/assets/icons/MyIcon.svg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">cartIconAlt</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my_icon_logo&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-<p>&nbsp;</p></section>
-</section>
-</section>
-<section id="configuring-notifications-for-cart-workflow">
-<h2><span class="section-number">8.6. </span>Configuring Notifications for Cart Workflow<a class="headerlink" href="#configuring-notifications-for-cart-workflow" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp;</p></div>
+</div>
+</div>
+<div class="section" id="configuring-notifications-for-cart-workflow">
+<h2><span class="section-number">8.6. </span>Configuring Notifications for Cart Workflow<a class="headerlink" href="#configuring-notifications-for-cart-workflow" title="Permalink to this heading">¶</a></h2>
 <p><img alt="Cart Workflow - Notifications" src="../_images/cart-notification-add.png" /></p>
-<section id="notification-text-messages-when-adding-cases-to-cart">
-<h3><span class="section-number">8.6.1. </span>Notification text/messages when adding cases to Cart<a class="headerlink" href="#notification-text-messages-when-adding-cases-to-cart" title="Permalink to this headline">¶</a></h3>
-<section id="id13">
-<h4><span class="section-number">8.6.1.1. </span>Edit configuration file<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="notification-text-messages-when-adding-cases-to-cart">
+<h3><span class="section-number">8.6.1. </span>Notification text/messages when adding cases to Cart<a class="headerlink" href="#notification-text-messages-when-adding-cases-to-cart" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id13">
+<h4><span class="section-number">8.6.1.1. </span>Edit configuration file<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">cartSelectionMessages</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">selectionsAddedMessage</span></code> to have the desired message</p></li>
 <li><p>For example,</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">cartSelectionMessages</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">selectionsAddedMessage</span><span class="o">:</span> <span class="s1">&#39;DONE: successfully added to the  list&#39;</span><span class="p">,</span>
-  <span class="p">...</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">cartSelectionMessages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">selectionsAddedMessage</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;DONE: successfully added to the  list&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="notification-text-messages-when-removing-cases-from-cart">
-<h3><span class="section-number">8.6.2. </span>Notification text/messages when removing cases from Cart<a class="headerlink" href="#notification-text-messages-when-removing-cases-from-cart" title="Permalink to this headline">¶</a></h3>
-<section id="id14">
-<h4><span class="section-number">8.6.2.1. </span>Edit configuration file<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="notification-text-messages-when-removing-cases-from-cart">
+<h3><span class="section-number">8.6.2. </span>Notification text/messages when removing cases from Cart<a class="headerlink" href="#notification-text-messages-when-removing-cases-from-cart" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id14">
+<h4><span class="section-number">8.6.2.1. </span>Edit configuration file<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/cartWorkflowData.js</span></code> with the editor of your choice</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">cartSelectionMessages</span></code>, set the field <code class="docutils literal notranslate"><span class="pre">selectionsRemovedMessage</span></code> to have the desired message</p></li>
 <li><p>For example,</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">cartSelectionMessages</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">selectionsRemovedMessage</span><span class="o">:</span> <span class="s1">&#39;DONE: successfully removed from the list&#39;</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">cartSelectionMessages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="nx">selectionsRemovedMessage</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;DONE: successfully removed from the list&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -578,7 +579,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:25 AM.
+        Last updated on Sep 26, 2022, 8:14:38 PM.
       </span>
 
     </p>
@@ -615,11 +616,15 @@
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="cart-workflow.html">release-MVP</a></li>
       </ul>
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -627,10 +632,14 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="cart-workflow.html">release-MVP</a></dd>
     </dl>
    -->

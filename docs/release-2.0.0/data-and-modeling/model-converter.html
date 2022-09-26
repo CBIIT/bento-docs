@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>2. Model Converter &mdash; Bento release-2.0.0 documentation</title>
@@ -32,7 +31,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -220,23 +221,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="model-converter">
-<h1><span class="section-number">2. </span>Model Converter<a class="headerlink" href="#model-converter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="model-converter">
+<h1><span class="section-number">2. </span>Model Converter<a class="headerlink" href="#model-converter" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation for the Model Converter module contained in the ICDC-Dataloader utility.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
-<section id="introduction">
-<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Model Converter uses a combination of YAML format schema files, a YAML formatted properties files, and a GraphQL formatted queries file to generate a GraphQL formatted schema. After the GraphQL schema is generated, the Model Converter also generates a simplified, more easily readable version of the GraphQL schema for documentation purposes.</p>
 <p>The Model Converter can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/icdc-dataloader">ICDC-Dataloader</a></p>
-</section>
-<section id="pre-requisites">
-<h2><span class="section-number">2.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pre-requisites">
+<h2><span class="section-number">2.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Python 3.6 or newer</p></li>
 </ul>
-</section>
-<section id="dependencies">
-<h2><span class="section-number">2.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dependencies">
+<h2><span class="section-number">2.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> to install dependencies. Or run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> if you are using virtualenv. The dependencies included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> are listed below:</p>
 <ul class="simple">
 <li><p>pyyaml</p></li>
@@ -244,25 +245,25 @@
 <li><p>boto3</p></li>
 <li><p>requests</p></li>
 </ul>
-</section>
-<section id="inputs">
-<h2><span class="section-number">2.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="inputs">
+<h2><span class="section-number">2.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>YAML formatted schema file(s)</p></li>
 <li><p>A YAML formatted properties file</p></li>
 <li><p>A GraphQL formatted queries file</p></li>
 <li><p>The filepath to be used for the generated output files</p></li>
 </ul>
-</section>
-<section id="outputs">
-<h2><span class="section-number">2.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="outputs">
+<h2><span class="section-number">2.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>A GraphQL formatted schema</p></li>
 <li><p>A simplified, more easily readable version of the GraphQL schema for documentation purposes</p></li>
 </ul>
-</section>
-<section id="command-line-arguments">
-<h2><span class="section-number">2.6. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="command-line-arguments">
+<h2><span class="section-number">2.6. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Schema File(s)</p>
 <ul>
@@ -298,15 +299,15 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="usage-example">
-<h2><span class="section-number">2.7. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="usage-example">
+<h2><span class="section-number">2.7. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this heading">¶</a></h2>
 <p>Below is an example command to run the model converter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">-</span><span class="n">converter</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">schema</span> <span class="n">schema</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mf">1.</span><span class="n">yml</span> <span class="o">--</span><span class="n">schema</span> <span class="n">schema</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mf">2.</span><span class="n">yml</span> <span class="o">--</span><span class="n">prop</span><span class="o">-</span><span class="n">file</span> <span class="n">schema</span><span class="o">-</span><span class="n">properties</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">file</span> <span class="n">queries</span><span class="o">.</span><span class="n">graphql</span> <span class="o">--</span><span class="n">output</span> <span class="n">output_folder</span>\<span class="n">data</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">schema</span><span class="o">.</span><span class="n">graphql</span>
 </pre></div>
 </div>
-<section id="example-inputs">
-<h3><span class="section-number">2.7.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-inputs">
+<h3><span class="section-number">2.7.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Schema Files</strong></p>
 <ul>
@@ -330,9 +331,9 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="example-outputs">
-<h3><span class="section-number">2.7.2. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-outputs">
+<h3><span class="section-number">2.7.2. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>GraphQL Schema</strong></p>
 <ul>
@@ -345,9 +346,9 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -372,7 +373,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:32:57 AM.
+        Last updated on Sep 26, 2022, 8:14:02 PM.
       </span>
 
     </p>
@@ -409,11 +410,15 @@
         <li><a href="model-converter.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -421,10 +426,14 @@
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="model-converter.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->

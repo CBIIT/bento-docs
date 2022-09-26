@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>1. Quick Start Tutorial &mdash; Bento  documentation</title>
@@ -32,7 +31,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -212,15 +213,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="quick-start-tutorial">
-<h1><span class="section-number">1. </span>Quick Start Tutorial<a class="headerlink" href="#quick-start-tutorial" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
-<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="quick-start-tutorial">
+<h1><span class="section-number">1. </span>Quick Start Tutorial<a class="headerlink" href="#quick-start-tutorial" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Bento follows the principle of “Configure Locally. Deploy Globally”. An end-user installs a local version of his/her application and configures it to its desired state. The updated application is then pushed to a cloud platform.</p>
 <p>The purpose of this tutorial is to walk the end-user through process of installing a data sharing platform on AWS.</p>
-</section>
-<section id="fork-the-bento-repositories">
-<h2><span class="section-number">1.2. </span>Fork the Bento Repositories<a class="headerlink" href="#fork-the-bento-repositories" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="fork-the-bento-repositories">
+<h2><span class="section-number">1.2. </span>Fork the Bento Repositories<a class="headerlink" href="#fork-the-bento-repositories" title="Permalink to this heading">¶</a></h2>
 <p>The Bento code-base is divided into three main components: (a) the front end (b) the back end and (c) the database. The code-base for all three are stored on GitHub. Here are the repos to fork:</p>
 <ol class="simple">
 <li><p>Front End Repo: <a class="reference external" href="https://github.com/CBIIT/bento-frontend.git">https://github.com/CBIIT/bento-frontend.git</a></p></li>
@@ -234,12 +235,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-backend.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-demo-model.git</span></code></p></li>
 </ul>
-</section>
-<section id="set-up-the-bento-local-environment-on-your-machine">
-<h2><span class="section-number">1.3. </span>Set up the Bento Local Environment on your machine.<a class="headerlink" href="#set-up-the-bento-local-environment-on-your-machine" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="set-up-the-bento-local-environment-on-your-machine">
+<h2><span class="section-number">1.3. </span>Set up the Bento Local Environment on your machine.<a class="headerlink" href="#set-up-the-bento-local-environment-on-your-machine" title="Permalink to this heading">¶</a></h2>
 <p>The ‘Bento Local’ environment is designed to run within Docker, on a user’s local machine, and can be set up within all types of operating systems- Windows, Mac and Unix flavors. This allows users to create and deploy their local copy of Bento, with minimal changes to their local environment.</p>
-<section id="prerequisites">
-<h3><span class="section-number">1.3.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="prerequisites">
+<h3><span class="section-number">1.3.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h3>
 <p>To install the ‘Bento Local’ environment you will need to:</p>
 <ol class="simple">
 <li><p>Install Git: Bento uses GitHub to commit, store and share its code base. Instructions to install Git, on your local machine, are found <a class="reference external" href="https://github.com/git-guides/install-git">here</a>.</p></li>
@@ -351,13 +352,13 @@ The initialization script will query you <code class="docutils literal notransla
 <li><p>To test, open a browser and go to URL: <code class="docutils literal notranslate"><span class="pre">http://localhost:8085/</span></code>. You should see the landing page for Bento:</p></li>
 </ol>
 <p><img alt="Home" src="../_images/bentoindexpage.png" /></p>
-</section>
-</section>
-<section id="set-up-bento-on-aws">
-<h2><span class="section-number">1.4. </span>Set up Bento on AWS.<a class="headerlink" href="#set-up-bento-on-aws" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="set-up-bento-on-aws">
+<h2><span class="section-number">1.4. </span>Set up Bento on AWS.<a class="headerlink" href="#set-up-bento-on-aws" title="Permalink to this heading">¶</a></h2>
 <p>At this point in the tutorial you will have successfully set up the Bento local environment. In this section, we will walk you through the process of installing Bento on AWS.</p>
-<section id="id1">
-<h3><span class="section-number">1.4.1. </span>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3><span class="section-number">1.4.1. </span>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>To install the Bento in AWS you will need to:</p>
 <ol class="simple">
 <li><p>Create an account on Amazon Web Services. You will need an administrator’s role on AWS, and the ability to create cloud resources. See <a class="reference external" href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">here</a> for instructions on creating an AWS account.</p></li>
@@ -477,9 +478,9 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <li><p>Once deployment has been successfully completed navigate to the <code class="docutils literal notranslate"><span class="pre">custodian_url</span></code> (see step 7.) to view the application installed on AWS. The application should look and behave like your local copy of Bento.</p></li>
 </ol>
 <p><img alt="Home" src="../_images/bentoindexpage.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -504,7 +505,7 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:25 AM.
+        Last updated on Sep 26, 2022, 8:14:38 PM.
       </span>
 
     </p>
@@ -541,11 +542,15 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="bento-quick-start.html">release-MVP</a></li>
       </ul>
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -553,10 +558,14 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="bento-quick-start.html">release-MVP</a></dd>
     </dl>
    -->

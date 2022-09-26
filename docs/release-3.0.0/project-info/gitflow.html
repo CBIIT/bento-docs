@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>2. Developer GitHub Workflow &mdash; Bento release-3.0.0 documentation</title>
@@ -32,7 +31,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -224,14 +225,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="developer-github-workflow">
-<h1><span class="section-number">2. </span>Developer GitHub Workflow<a class="headerlink" href="#developer-github-workflow" title="Permalink to this headline">¶</a></h1>
-<section id="how-it-works">
-<h2><span class="section-number">2.1. </span>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="developer-github-workflow">
+<h1><span class="section-number">2. </span>Developer GitHub Workflow<a class="headerlink" href="#developer-github-workflow" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="how-it-works">
+<h2><span class="section-number">2.1. </span>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this heading">¶</a></h2>
 <p><img alt="Git flow workflow - Historical Branches" src="../_images/git.png" /></p>
-</section>
-<section id="develop-and-main-branches">
-<h2><span class="section-number">2.2. </span>Develop and Main Branches<a class="headerlink" href="#develop-and-main-branches" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="develop-and-main-branches">
+<h2><span class="section-number">2.2. </span>Develop and Main Branches<a class="headerlink" href="#develop-and-main-branches" title="Permalink to this heading">¶</a></h2>
 <p>Instead of a single <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, this workflow uses two branches to
 record the history of the project. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch stores the official
 release history, and the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch serves as an integration
@@ -250,9 +251,9 @@ branch. A simple way to do this is for one developer to create an empty
 clone the central repository and create a tracking branch for <code class="docutils literal notranslate"><span class="pre">develop.</span></code></p>
 <p>When using the git-flow extension library, executing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">flow</span> <span class="pre">init</span></code> on
 an existing repo will create the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch:</p>
-</section>
-<section id="feature-branches">
-<h2><span class="section-number">2.3. </span>Feature Branches<a class="headerlink" href="#feature-branches" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="feature-branches">
+<h2><span class="section-number">2.3. </span>Feature Branches<a class="headerlink" href="#feature-branches" title="Permalink to this heading">¶</a></h2>
 <p>Each new feature should reside in its own branch, which can be
 <a class="reference external" href="https://www.atlassian.com/git/tutorials/syncing/git-push">pushed to the central repository</a> for backup/collaboration.
 But, instead of branching off of <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches use <code class="docutils literal notranslate"><span class="pre">develop</span></code>
@@ -263,26 +264,26 @@ all intents and purposes, the Feature Branch Workflow. But, the Gitflow
 Workflow doesn’t stop there.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Feature</span></code> branches are generally created off to the latest <code class="docutils literal notranslate"><span class="pre">develop</span></code>
 branch.</p>
-<section id="creating-a-feature-branch">
-<h3><span class="section-number">2.3.1. </span>Creating a feature branch<a class="headerlink" href="#creating-a-feature-branch" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-a-feature-branch">
+<h3><span class="section-number">2.3.1. </span>Creating a feature branch<a class="headerlink" href="#creating-a-feature-branch" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span> 
 <span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">develop</span>
 <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">feature_branch</span>
 </pre></div>
 </div>
 <p>Continue your work and use Git like you normally would.</p>
-</section>
-<section id="finishing-a-feature-branch">
-<h3><span class="section-number">2.3.2. </span>Finishing a feature branch<a class="headerlink" href="#finishing-a-feature-branch" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="finishing-a-feature-branch">
+<h3><span class="section-number">2.3.2. </span>Finishing a feature branch<a class="headerlink" href="#finishing-a-feature-branch" title="Permalink to this heading">¶</a></h3>
 <p>When you’re done with the development work on the feature, the next step
 is to merge the <code class="docutils literal notranslate"><span class="pre">feature_branch</span></code> into <code class="docutils literal notranslate"><span class="pre">develop</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">pull</span> <span class="n">request</span> <span class="n">to</span> <span class="n">merge</span> <span class="n">to</span> <span class="n">develop</span> 
 </pre></div>
 </div>
-</section>
-</section>
-<section id="release-branches">
-<h2><span class="section-number">2.4. </span>Release Branches<a class="headerlink" href="#release-branches" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="release-branches">
+<h2><span class="section-number">2.4. </span>Release Branches<a class="headerlink" href="#release-branches" title="Permalink to this heading">¶</a></h2>
 <p>Once <code class="docutils literal notranslate"><span class="pre">develop</span></code> has acquired enough features for a release for week 1(or a
 predetermined release date is approaching), you fork a <code class="docutils literal notranslate"><span class="pre">releaseversion-alpha</span></code>
 branch off of <code class="docutils literal notranslate"><span class="pre">develop</span></code> for QA to test the features we develop during week 1.</p>
@@ -320,9 +321,9 @@ testing. Here is the way to release bug fixes to release.</p>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">hotfix_branch</span>
 </pre></div>
 </div>
-</section>
-<section id="hotfix-branches">
-<h2><span class="section-number">2.5. </span>Hotfix Branches<a class="headerlink" href="#hotfix-branches" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="hotfix-branches">
+<h2><span class="section-number">2.5. </span>Hotfix Branches<a class="headerlink" href="#hotfix-branches" title="Permalink to this heading">¶</a></h2>
 <p>Maintenance or <code class="docutils literal notranslate"><span class="pre">“hotfix”</span></code> branches are used to quickly patch production
 releases. <code class="docutils literal notranslate"><span class="pre">Hotfix</span></code> branches are a lot like <code class="docutils literal notranslate"><span class="pre">release</span></code> branches and
 <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches except they’re based on <code class="docutils literal notranslate"><span class="pre">main</span></code> instead of <code class="docutils literal notranslate"><span class="pre">develop</span></code>.
@@ -347,8 +348,8 @@ into both <code class="docutils literal notranslate"><span class="pre">main</spa
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">hotfix_branch</span>
 </pre></div>
 </div>
-<section id="example">
-<h3><span class="section-number">2.5.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example">
+<h3><span class="section-number">2.5.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <p>A complete example demonstrating a Feature Branch Flow is as follows.
 Assuming we have a repo setup with a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
@@ -370,10 +371,10 @@ as follows:</p>
 <span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="summary">
-<h2><span class="section-number">2.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>Some key takeaways to know about Gitflow are:</p>
 <ul class="simple">
 <li><p>The workflow is great for a release-based software workflow.</p></li>
@@ -392,9 +393,9 @@ as follows:</p>
 <li><p>Once the <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> is complete it is merged to both <code class="docutils literal notranslate"><span class="pre">develop</span></code> and
 <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
 </ol>
-</section>
-<section id="release-workflow">
-<h2><span class="section-number">2.7. </span>Release Workflow<a class="headerlink" href="#release-workflow" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="release-workflow">
+<h2><span class="section-number">2.7. </span>Release Workflow<a class="headerlink" href="#release-workflow" title="Permalink to this heading">¶</a></h2>
 <p>After week1 Lead developer will create a releaseversion-alpha branch and trigger an new “Build and Deploy” Job in jenkins and release versions QA. QA then will trigger “Deploy” JOb in jenkins to QA.</p>
 <p>It will give QA versions to deploy look similar to like this.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FE</span> <span class="n">Version</span><span class="p">:</span> <span class="p">{</span><span class="n">version</span><span class="o">-</span><span class="n">alpha</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">buildnumber</span><span class="p">}</span>
@@ -433,8 +434,8 @@ branch and add the release notes. The  release notes should includes the changes
 <span class="n">BE</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">4.0.0</span><span class="o">-</span><span class="mi">599</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -459,7 +460,7 @@ branch and add the release notes. The  release notes should includes the changes
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jul 21, 2021, 7:33:16 AM.
+        Last updated on Sep 26, 2022, 8:14:20 PM.
       </span>
 
     </p>
@@ -496,11 +497,15 @@ branch and add the release notes. The  release notes should includes the changes
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="gitflow.html">release-3.0.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       <br>
       <h3>In Development</h3>
       <ul>
+        <li><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></li>
+        <li><a href="../../ES_Updates/index.html">ES_Updates</a></li>
+        <li><a href="../../jenkins_test/index.html">jenkins_test</a></li>
         <li><a href="../../master/index.html">master</a></li>
       </ul>
       
@@ -508,10 +513,14 @@ branch and add the release notes. The  release notes should includes the changes
     <!-- comment out branches
     <dl>
       <dt>Branches</dt>
+      <dd><a href="../../Develop-envrionment/index.html">Develop-envrionment</a></dd>
+      <dd><a href="../../ES_Updates/index.html">ES_Updates</a></dd>
+      <dd><a href="../../jenkins_test/index.html">jenkins_test</a></dd>
       <dd><a href="../../master/index.html">master</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="gitflow.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->
