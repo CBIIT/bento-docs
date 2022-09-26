@@ -80,3 +80,5 @@
 12. If everything passes, then commit newly generated output (located in the docs folder) build to master branch.
     1. Make sure to look at all the pages where changes were made.
         2. As needed - repeat the above processes and rebuild.
+
+*NOTE: For production releases these steps will be automated and built on the master branch of the bento-docs repository.
