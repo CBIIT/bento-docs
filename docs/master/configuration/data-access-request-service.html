@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Access Request (DAR) Service &mdash; Bento release-3.8.0 documentation</title>
+  <title>3. Data Access Request (DAR) Service &mdash; Bento release-3.8.0 documentation</title>
   
 
   
@@ -39,7 +39,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Global UI Elements" href="global-ui-elements.html" />
+    <link rel="prev" title="2. Authorization" href="authorization.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,20 +103,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">3. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">4. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">5. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">6. Program Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">7. Arm  Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">8. Case Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">9. Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">10. Dashboard: Facet Search Sidebar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">11. Dashboard: Tabs and Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">12. Cart Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">13. Static Pages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Data Access Request (DAR) Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">3.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-node-level-access">3.3. Configuring Node-Level Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-level-access">3.3.1. Node-Level_Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-label">3.3.2. Node_Label</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">10. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">11. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">12. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">13. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">14. Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -179,7 +191,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Data Access Request (DAR) Service</li>
+      <li><span class="section-number">3. </span>Data Access Request (DAR) Service</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,22 +207,31 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="data-access-request-dar-service">
-<h1>Data Access Request (DAR) Service<a class="headerlink" href="#data-access-request-dar-service" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">3. </span>Data Access Request (DAR) Service<a class="headerlink" href="#data-access-request-dar-service" title="Permalink to this heading">¶</a></h1>
 <p><em>Service only available for cloud installations of the Bento Framework</em></p>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Bento Framework supports a user-driven data access request workflow that enables authenticated users to request access to a specific dataset or resource (ie. arm, study, project, program, etc.) and allows system administrators to review, approve, and reject data access requests submitted by users. System triggered emails are generated at each definitive point in the workflow. Admins can navigate the data access request workflow using the Bento Admin Portal.</p>
 <p><img alt="Data Access Request (DAR) Workflow" src="../_images/dar-workflow.png" /></p>
 <p><img alt="Data Access Request (DAR) Example page" src="../_images/dar-example-page.png" /></p>
 <p>&nbsp;</p></div>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters for the DAR service are stored in the GitHub repository <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code>.</p></li>
@@ -218,7 +239,7 @@
 </ol>
 <p>&nbsp;</p>     </div>
 <div class="section" id="configuring-node-level-access">
-<h2>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
 <p>Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.</p>
 <ol class="simple">
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
@@ -231,7 +252,7 @@
 </pre></div>
 </div>
 <div class="section" id="node-level-access">
-<h3>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">3.3.1. </span>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">node</span> <span class="n">Node</span> <span class="n">Name</span> <span class="ow">and</span> <span class="n">Node</span> <span class="n">Displayed</span> <span class="n">Label</span> <span class="n">parameters</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">data</span> <span class="n">access</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">users</span> <span class="n">will</span> <span class="n">either</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">or</span> <span class="n">none</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">authorization</span><span class="o">.</span>
@@ -239,7 +260,7 @@
 </div>
 </div>
 <div class="section" id="node-label">
-<h3>Node_Label<a class="headerlink" href="#node-label" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">3.3.2. </span>Node_Label<a class="headerlink" href="#node-label" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">label</span> <span class="n">displayed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">user</span> <span class="n">interface</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">the</span> <span class="n">node</span> <span class="n">that</span> <span class="n">governs</span> <span class="n">data</span> <span class="n">access</span> <span class="n">granularity</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">string</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">max</span> <span class="n">length</span> <span class="n">of</span> <span class="mi">30</span> <span class="n">characters</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Study</span> <span class="n">Arm</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
@@ -254,6 +275,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -262,7 +292,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Sep 26, 2022, 9:36:24 PM.
+        Last updated on Sep 26, 2022, 10:54:14 PM.
       </span>
 
     </p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12. Cart Workflow &mdash; Bento release-3.8.0 documentation</title>
+  <title>13. Cart Workflow &mdash; Bento release-3.8.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. Static Pages" href="static-pages.html" />
-    <link rel="prev" title="11. Dashboard: Tabs and Tables" href="dashboard-tabs-and-tables.html" /> 
+    <link rel="next" title="14. Static Pages" href="static-pages.html" />
+    <link rel="prev" title="12. Dashboard: Tabs and Tables" href="dashboard-tabs-and-tables.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,30 +106,31 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">3. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">4. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">5. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">6. Program Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">7. Arm  Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">8. Case Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">9. Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">10. Dashboard: Facet Search Sidebar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">11. Dashboard: Tabs and Tables</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">12. Cart Workflow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">12.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">12.2. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#customizing-the-cart-workflow">12.3. Customizing the Cart Workflow:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#page-properties">12.3.1. Page Properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#file-table-properties">12.3.2. File Table Properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#file-table-data-graphql">12.3.3. File Table Data (GraphQL)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-the-navigation-bar-for-the-cart-workflow">12.3.4. Configuring the Navigation Bar for the Cart Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigation-bar-link-text">12.3.5. Navigation Bar Link Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigation-bar-icon">12.3.6. Navigation Bar Icon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">10. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">11. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">12. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. Cart Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">13.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">13.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-the-cart-workflow">13.3. Customizing the Cart Workflow:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#page-properties">13.3.1. Page Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-table-properties">13.3.2. File Table Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-table-data-graphql">13.3.3. File Table Data (GraphQL)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-navigation-bar-for-the-cart-workflow">13.3.4. Configuring the Navigation Bar for the Cart Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigation-bar-link-text">13.3.5. Navigation Bar Link Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigation-bar-icon">13.3.6. Navigation Bar Icon</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">13. Static Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">14. Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -194,7 +195,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">12. </span>Cart Workflow</li>
+      <li><span class="section-number">13. </span>Cart Workflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,10 +213,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="static-pages.html" class="btn btn-neutral float-right" title="13. Static Pages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="static-pages.html" class="btn btn-neutral float-right" title="14. Static Pages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dashboard-tabs-and-tables.html" class="btn btn-neutral float-left" title="11. Dashboard: Tabs and Tables" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dashboard-tabs-and-tables.html" class="btn btn-neutral float-left" title="12. Dashboard: Tabs and Tables" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -225,25 +226,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cart-workflow">
-<h1><span class="section-number">12. </span>Cart Workflow<a class="headerlink" href="#cart-workflow" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">13. </span>Cart Workflow<a class="headerlink" href="#cart-workflow" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">13.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The cart workflow is a mechanism for users to generate a manifest for working with case files.</p>
 <p><img alt="File-centric Cart" src="assets/fileCentric-Cart.png" /></p>
 <p><strong>Cart Workflow</strong>. Displayed are the configurable components of the file-centric Cart.</p>
 <p>&nbsp;</p></div>
 <div class="section" id="prerequisites">
-<h2><span class="section-number">12.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">13.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>Fork the GitHub repo <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>)</p></li>
 <li><p>Create a local clone of your fork into a local directory, represented here as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 </ol>
 <p>&nbsp;</p></div>
 <div class="section" id="customizing-the-cart-workflow">
-<h2><span class="section-number">12.3. </span>Customizing the Cart Workflow:<a class="headerlink" href="#customizing-the-cart-workflow" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">13.3. </span>Customizing the Cart Workflow:<a class="headerlink" href="#customizing-the-cart-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The configuration for the Cart page is found in the javascript file: <code class="docutils literal notranslate"><span class="pre">bento-frontend/src/bento/fileCentricCartWorkflowData.js</span></code></p>
 <div class="section" id="page-properties">
-<h3><span class="section-number">12.3.1. </span>Page Properties<a class="headerlink" href="#page-properties" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.1. </span>Page Properties<a class="headerlink" href="#page-properties" title="Permalink to this heading">¶</a></h3>
 <p>The Page-level properties are configured using the following fields the <code class="docutils literal notranslate"><span class="pre">myFilesPageData</span></code> object: (e.g. <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">const</span> <span class="pre">myFilesPageData</span> <span class="pre">=</span> <span class="pre">{</span></code> )</p>
 <p>Page Header Items:</p>
 <ul class="simple">
@@ -269,7 +270,7 @@
 </ul>
 </div>
 <div class="section" id="file-table-properties">
-<h3><span class="section-number">12.3.2. </span>File Table Properties<a class="headerlink" href="#file-table-properties" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.2. </span>File Table Properties<a class="headerlink" href="#file-table-properties" title="Permalink to this heading">¶</a></h3>
 <p>The file table on the page is is configured using the following fields in the <code class="docutils literal notranslate"><span class="pre">table</span></code> object:  (e.g. <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">const</span> <span class="pre">table</span> <span class="pre">=</span> <span class="pre">{</span></code> )</p>
 <p>Sorting:</p>
 <p>The default sorting behavior for the table can configured:</p>
@@ -321,7 +322,7 @@
 </ul>
 </div>
 <div class="section" id="file-table-data-graphql">
-<h3><span class="section-number">12.3.3. </span>File Table Data (GraphQL)<a class="headerlink" href="#file-table-data-graphql" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.3. </span>File Table Data (GraphQL)<a class="headerlink" href="#file-table-data-graphql" title="Permalink to this heading">¶</a></h3>
 <p>The data is retrieved using a GraphQL Query used in the Dashboard page:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// code placeholder</span><span class="w"></span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_MY_CART_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`</span>
@@ -343,10 +344,10 @@
 </div>
 </div>
 <div class="section" id="configuring-the-navigation-bar-for-the-cart-workflow">
-<h3><span class="section-number">12.3.4. </span>Configuring the Navigation Bar for the Cart Workflow<a class="headerlink" href="#configuring-the-navigation-bar-for-the-cart-workflow" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.4. </span>Configuring the Navigation Bar for the Cart Workflow<a class="headerlink" href="#configuring-the-navigation-bar-for-the-cart-workflow" title="Permalink to this heading">¶</a></h3>
 </div>
 <div class="section" id="navigation-bar-link-text">
-<h3><span class="section-number">12.3.5. </span>Navigation Bar Link Text<a class="headerlink" href="#navigation-bar-link-text" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.5. </span>Navigation Bar Link Text<a class="headerlink" href="#navigation-bar-link-text" title="Permalink to this heading">¶</a></h3>
 <p>To configure the link text that appears on the nav bar:</p>
 <ol class="simple">
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">navBarCartData</span></code>,</p></li>
@@ -359,7 +360,7 @@
 </div>
 </div>
 <div class="section" id="navigation-bar-icon">
-<h3><span class="section-number">12.3.6. </span>Navigation Bar Icon<a class="headerlink" href="#navigation-bar-icon" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">13.3.6. </span>Navigation Bar Icon<a class="headerlink" href="#navigation-bar-icon" title="Permalink to this heading">¶</a></h3>
 <p>To configure the icon that appears on the menu bar:</p>
 <ol class="simple">
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">navarBarCartData</span></code>,</p></li>
@@ -386,10 +387,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="static-pages.html" class="btn btn-neutral float-right" title="13. Static Pages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="static-pages.html" class="btn btn-neutral float-right" title="14. Static Pages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dashboard-tabs-and-tables.html" class="btn btn-neutral float-left" title="11. Dashboard: Tabs and Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dashboard-tabs-and-tables.html" class="btn btn-neutral float-left" title="12. Dashboard: Tabs and Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -401,7 +402,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Sep 26, 2022, 9:36:59 PM.
+        Last updated on Sep 26, 2022, 10:54:50 PM.
       </span>
 
     </p>

@@ -46,7 +46,7 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
 
     configuration/authentication
     configuration/authorization
-    configuration/data-access-request
+    configuration/data-access-request-service
     configuration/global-ui-elements
     configuration/landing-page
     configuration/program-listing-page
