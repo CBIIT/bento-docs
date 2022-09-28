@@ -237,14 +237,18 @@
 </ol>
 <p>&nbsp;</p><div class="section" id="configuring-authentication">
 <h3><span class="section-number">1.2.1. </span>Configuring Authentication<a class="headerlink" href="#configuring-authentication" title="Permalink to this heading">¶</a></h3>
-<p>Authentication can be enabled or disabled for any Bento-based system.</p>
-<ul class="simple">
-<li><p>Acceptable values for auth.enabled are “true” or “false”. This value is important for determining Public Access. Refer to Authorization configuration for details.</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="k">for</span> <span class="n">auth</span><span class="o">.</span><span class="n">enabled</span> <span class="n">are</span> <span class="s2">&quot;true&quot;</span> <span class="ow">or</span> <span class="s2">&quot;false&quot;</span><span class="o">.</span> <span class="n">This</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">important</span> <span class="k">for</span> <span class="n">determining</span> <span class="n">Public</span> <span class="n">Access</span><span class="o">.</span> <span class="n">Refer</span> <span class="n">to</span> <span class="n">Authorization</span> <span class="n">configuration</span> <span class="k">for</span> <span class="n">details</span><span class="o">.</span>
+
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">true</span><span class="p">,</span> <span class="n">the</span> <span class="n">service</span> <span class="n">will</span> <span class="n">require</span> <span class="n">a</span> <span class="n">user</span> <span class="n">to</span> <span class="n">login</span> <span class="n">before</span> <span class="n">API</span> <span class="n">calls</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span>
+
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">false</span><span class="p">,</span> <span class="n">the</span> <span class="n">service</span> <span class="n">allows</span> <span class="n">API</span> <span class="n">calls</span> <span class="n">to</span> <span class="n">metadata</span> <span class="n">before</span> <span class="n">login</span>
+</pre></div>
+</div>
+<div class="section" id="example">
+<h4><span class="section-number">1.2.1.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code></p></li>
 <li><p>Update field: auth.enabled</p></li>
-<li><p>Example: Disable authentication</p></li>
 </ol>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">false</span><span class="w"></span>
 </pre></div>
@@ -253,46 +257,48 @@
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">enableAuthentication</span></code> to True or False</p></li>
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">authProviders</span></code> to google, nih, or loginGov</p></li>
-<li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Suggested for replaceEmptyValueWith: &#39;N/A&#39; or &#39;-&#39; or &#39;&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">replaceEmptyValueWith</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Enable authenication</span><span class="w"></span>
-<span class="w">  </span><span class="nx">enableAuthentication</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// List for options for authentication empty array defaults to google</span><span class="w"></span>
-<span class="w">  </span><span class="nx">authProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;nih&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;loginGov&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// authEndPoint: []</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="k">default</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// Suggested for replaceEmptyValueWith: &#39;N/A&#39; or &#39;-&#39; or &#39;&#39;</span><span class="w"></span>
+<span class="nx">replaceEmptyValueWith</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="c1">// Enable authentication</span><span class="w"></span>
+<span class="nx">enableAuthentication</span><span class="o">:</span><span class="w">  </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="c1">// List for options for authentication empty array defaults to google</span><span class="w"></span>
+<span class="nx">authProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;nih&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;loginGov&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// authEndPoint: []</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="configuring-the-display-of-identity-providers">
 <h3><span class="section-number">1.2.2. </span>Configuring the Display of Identity Providers<a class="headerlink" href="#configuring-the-display-of-identity-providers" title="Permalink to this heading">¶</a></h3>
-<p>The displayed icons and button text for IdPs is configurable.</p>
+<p>The displayed icons and button text for IdPs are configurable</p>
+<div class="section" id="id1">
+<h4><span class="section-number">1.2.2.1. </span>Example<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <ol class="simple">
 <li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/userLoginData.js</span></code></p></li>
 <li><p>Set the path for the icon field.</p></li>
 <li><p>Enter the text for the loginButtonText field.</p></li>
-<li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">loginProvidersData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">google</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/google.png&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">loginButtonText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sign in with Google&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nx">loginGov</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;loginGov&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/login.gov.png&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">loginButtonText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sign in Login.gov&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nx">nih</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;nih&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/nih_itrust.png&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">loginButtonText</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sign in NIH iTrust&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">loginProvidersData</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nx">google</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nx">key</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">icon</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/google.png&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">loginButtonText</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;Sign in with Google&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+<span class="nx">loginGov</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nx">key</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;loginGov&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">icon</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/login.gov.png&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">loginButtonText</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;Sign in Login.gov&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+<span class="nx">nih</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nx">key</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;nih&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">icon</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/nih_itrust.png&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">loginButtonText</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;Sign in NIH iTrust&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -321,7 +327,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Sep 26, 2022, 10:54:14 PM.
+        Last updated on Sep 28, 2022, 2:03:38 PM.
       </span>
 
     </p>
