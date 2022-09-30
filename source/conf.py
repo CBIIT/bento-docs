@@ -116,6 +116,7 @@ smv_remote_whitelist = None
 # flexibility, the regex is evaluated over the full refname.
 smv_released_pattern = r'.*release.*'
 smv_latest_version = 'master'
+scv_sort = ('time','semver','alpha')
 #smv_latest_version = '.*master.*'
 
 # AutoStructify - for advanced markdown to rst transformations
