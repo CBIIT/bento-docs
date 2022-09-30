@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Dashboard &mdash; Bento  documentation</title>
+  <title>10. Dashboard &mdash; Bento release-3.8.0 documentation</title>
   
 
   
@@ -33,14 +33,15 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. Dashboard: Facet Search Sidebar" href="dashboard-facet-search-sidebar.html" />
-    <link rel="prev" title="6. Case Detail Page" href="case-detail-page.html" /> 
+    <link rel="next" title="11. Dashboard: Facet Search Sidebar" href="dashboard-facet-search-sidebar.html" />
+    <link rel="prev" title="9. Case Detail Page" href="case-detail-page.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +65,7 @@
             
             
               <div class="version">
-                latest
+                release-3.8.0
               </div>
             
           
@@ -103,26 +104,29 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">1. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">2. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">3. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">4. Program Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">5. Arm  Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">6. Case Detail Page</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Dashboard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">7.1. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dashboard-widgets">7.2. Dashboard Widgets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-the-dashboard-widgets">7.2.1. Configuring the Dashboard Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Dashboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">10.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard-widgets">10.2. Dashboard Widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-dashboard-widgets">10.2.1. Configuring the Dashboard Widgets</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#dashboard-facet-search-filters-on-the-sidebar">7.3. Dashboard Facet Search Filters on the Sidebar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dashboard-tabs-and-tables">7.4. Dashboard Tabs and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard-facet-search-filters-on-the-sidebar">10.3. Dashboard Facet Search Filters on the Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard-tabs-and-tables">10.4. Dashboard Tabs and Tables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">8. Dashboard: Facet Search Sidebar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">9. Dashboard: Tabs and Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">10. Cart Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">11. Static Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">11. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">12. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">13. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">14. Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -187,7 +191,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Dashboard</li>
+      <li><span class="section-number">10. </span>Dashboard</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,10 +209,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="dashboard-facet-search-sidebar.html" class="btn btn-neutral float-right" title="8. Dashboard: Facet Search Sidebar" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dashboard-facet-search-sidebar.html" class="btn btn-neutral float-right" title="11. Dashboard: Facet Search Sidebar" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="case-detail-page.html" class="btn btn-neutral float-left" title="6. Case Detail Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="case-detail-page.html" class="btn btn-neutral float-left" title="9. Case Detail Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -218,12 +222,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dashboard">
-<h1><span class="section-number">7. </span>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">10. </span>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this heading">¶</a></h1>
 <p>The Dashboard provides the end user with several capabilities (a) filter data entities of in interested via faceted search (b) view graphical summaries of data entities and (c) select data entities for further exploration.</p>
 <p><img alt="Dashboard Elements" src="../_images/dashboard.png" /></p>
 <p><strong>Dashboard</strong>. Displayed are the configurable elements of a Bento Dashboard. These are: Dashboard Sidebar Filters, Dashboard Widgets and Dashboard Table.</p>
 <div class="section" id="prerequisites">
-<h2><span class="section-number">7.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">10.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters of the Dashboard are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration Parameters for Dashboard elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
@@ -232,10 +236,10 @@
 </ol>
 </div>
 <div class="section" id="dashboard-widgets">
-<h2><span class="section-number">7.2. </span>Dashboard Widgets<a class="headerlink" href="#dashboard-widgets" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">10.2. </span>Dashboard Widgets<a class="headerlink" href="#dashboard-widgets" title="Permalink to this heading">¶</a></h2>
 <p>Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, you can add 3, 4 or 6 widgets. If you add more than <strong>6</strong> widgets, Bento will display the first widgets without any error or warning message.</p>
 <div class="section" id="configuring-the-dashboard-widgets">
-<h3><span class="section-number">7.2.1. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">10.2.1. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/dashboardData.js</span></code>.</p></li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">widgetsData</span></code> add an object {type: ,label: , dataName: , datatable_field: ,show:} to represent your widget.</p>
@@ -281,12 +285,12 @@
 </div>
 </div>
 <div class="section" id="dashboard-facet-search-filters-on-the-sidebar">
-<h2><span class="section-number">7.3. </span>Dashboard Facet Search Filters on the Sidebar<a class="headerlink" href="#dashboard-facet-search-filters-on-the-sidebar" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">10.3. </span>Dashboard Facet Search Filters on the Sidebar<a class="headerlink" href="#dashboard-facet-search-filters-on-the-sidebar" title="Permalink to this heading">¶</a></h2>
 <p>The dashboard’s facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.</p>
 <p>The facet filters and the sidebar are configured as described in <a class="reference internal" href="dashboard-facet-search-sidebar.html"><span class="doc">Dashboard: Facet Search Sidebar</span></a></p>
 </div>
 <div class="section" id="dashboard-tabs-and-tables">
-<h2><span class="section-number">7.4. </span>Dashboard Tabs and Tables<a class="headerlink" href="#dashboard-tabs-and-tables" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">10.4. </span>Dashboard Tabs and Tables<a class="headerlink" href="#dashboard-tabs-and-tables" title="Permalink to this heading">¶</a></h2>
 <p>The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the <a class="reference external" href="https://dev.bento-tools.org/#/cases">Bento reference implementation</a> the Dashboard Table list the cases (or study subjects) in the program.</p>
 <p>Dashboard tabs and tables are configured as described in <a class="reference internal" href="dashboard-tabs-and-tables.html"><span class="doc">Dashboard: Tabs and Tables</span></a></p>
 </div>
@@ -300,10 +304,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dashboard-facet-search-sidebar.html" class="btn btn-neutral float-right" title="8. Dashboard: Facet Search Sidebar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dashboard-facet-search-sidebar.html" class="btn btn-neutral float-right" title="11. Dashboard: Facet Search Sidebar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="case-detail-page.html" class="btn btn-neutral float-left" title="6. Case Detail Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="case-detail-page.html" class="btn btn-neutral float-left" title="9. Case Detail Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -315,7 +319,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Aug 16, 2022, 2:23:56 PM.
+        Last updated on Sep 30, 2022, 2:18:49 PM.
       </span>
 
     </p>

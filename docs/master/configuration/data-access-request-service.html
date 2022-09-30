@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Data Access Request (DAR) Service &mdash; Bento release-3.8.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Global UI Elements" href="global-ui-elements.html" />
+    <link rel="prev" title="2. Authorization" href="authorization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-3.8.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Data Access Request (DAR) Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">3.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-node-level-access">3.3. Configuring Node-Level Access</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">10. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-facet-search-sidebar.html">11. Dashboard: Facet Search Sidebar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard-tabs-and-tables.html">12. Dashboard: Tabs and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">13. Cart Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">14. Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Data Access Request (DAR) Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/data-access-request-service.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-access-request-dar-service">
+<h1><span class="section-number">3. </span>Data Access Request (DAR) Service<a class="headerlink" href="#data-access-request-dar-service" title="Permalink to this heading">¶</a></h1>
+<p><em>Service only available for cloud installations of the Bento Framework</em></p>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The Bento Framework supports a user-driven data access request workflow that enables authenticated users to request access to a specific dataset or resource (ie. arm, study, project, program, etc.) and allows system administrators to review, approve, and reject data access requests submitted by users. System triggered emails are generated at each definitive point in the workflow. Admins can navigate the data access request workflow using the Bento Admin Portal.</p>
+<p><img alt="Data Access Request (DAR) Workflow" src="../_images/dar-workflow.png" /></p>
+<p><img alt="Data Access Request (DAR) Example page" src="../_images/dar-example-page.png" /></p>
+<p>&nbsp;</p></div>
+<div class="section" id="prerequisites">
+<h2><span class="section-number">3.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters for the DAR service are stored in the GitHub repository <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code>.</p></li>
+<li><p>Configuration parameters for DAR form elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
+</ol>
+<p>&nbsp;</p>     </div>
+<div class="section" id="configuring-node-level-access">
+<h2><span class="section-number">3.3. </span>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
+<p>Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+### Node-Level_Access
+    * Acceptable values are True or False. The default value is True.
+    * If value is True, data access is controlled at the node-level and the node Node Name and Node Displayed Label parameters must be specified.
+    * If value is False, there is no ability to control data access at the node-level and instead users will either have access to all of the data or none of the data based upon authentication and authorization.
+
+### Node_Label
+    * The label displayed on the user interface that is used to represent the node that governs data access granularity.
+    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
+### Example
+Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+2. Update fields: node_level_access and node_label
+3. Example:
+
+```javascript
+// Node level access
+export const NODE_LEVEL_ACCESS = true;
+export const NODE_LABEL = &#39;Study Arm(s)&#39;;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Sep 30, 2022, 2:18:49 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Latest</h3>
+      <ul>
+        <li><a href="data-access-request-service.html">master</a></li>
+      <br>
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-MVP/index.html">release-MVP</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="data-access-request-service.html">master</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

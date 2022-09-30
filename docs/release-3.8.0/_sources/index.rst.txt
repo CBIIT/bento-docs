@@ -44,6 +44,9 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     :numbered:
     :caption: Configuration
 
+    configuration/authentication
+    configuration/authorization
+    configuration/data-access-request-service
     configuration/global-ui-elements
     configuration/landing-page
     configuration/program-listing-page
@@ -55,7 +58,6 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/dashboard-tabs-and-tables
     configuration/cart-workflow
     configuration/static-pages
-    configuration/authentication
 
 .. toctree::
     :maxdepth: 1
