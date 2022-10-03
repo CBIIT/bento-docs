@@ -17,7 +17,7 @@
 	  {% if versions %}
 	  <h3>{{ _('Releases') }}</h3>
       <ul>
-        {%- for item in versions.releases %}
+        {%- for item in versions.releases|sort(attribute='name', reverse = True) %}
         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
         {%- endfor %}
       </ul>
