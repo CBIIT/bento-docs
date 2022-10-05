@@ -109,7 +109,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Data Access Request (DAR) Service</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">3.2. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-node-level-access">3.3. Configuring Node-Level Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-node-level-access">3.3. Configuring Node-Level Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-level-access">3.3.1. Node-Level_Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-label">3.3.2. Node_Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">3.3.3. Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
@@ -233,29 +238,39 @@
 <li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code>.</p></li>
 <li><p>Configuration parameters for DAR form elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
 </ol>
-<p>&nbsp;</p>     </div>
+<p>&nbsp;</p></div>
 <div class="section" id="configuring-node-level-access">
 <h2><span class="section-number">3.3. </span>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
 <p>Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-### Node-Level_Access
-    * Acceptable values are True or False. The default value is True.
-    * If value is True, data access is controlled at the node-level and the node Node Name and Node Displayed Label parameters must be specified.
-    * If value is False, there is no ability to control data access at the node-level and instead users will either have access to all of the data or none of the data based upon authentication and authorization.
+<div class="section" id="node-level-access">
+<h3><span class="section-number">3.3.1. </span>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">.</span>
 
-### Node_Label
-    * The label displayed on the user interface that is used to represent the node that governs data access granularity.
-    * Acceptable values are any string with a max length of 30 characters. The default is Study Arm(s).
-### Example
-Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
-2. Update fields: node_level_access and node_label
-3. Example:
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">node</span> <span class="n">Node</span> <span class="n">Name</span> <span class="ow">and</span> <span class="n">Node</span> <span class="n">Displayed</span> <span class="n">Label</span> <span class="n">parameters</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
 
-```javascript
-// Node level access
-export const NODE_LEVEL_ACCESS = true;
-export const NODE_LABEL = &#39;Study Arm(s)&#39;;
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">data</span> <span class="n">access</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">users</span> <span class="n">will</span> <span class="n">either</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">or</span> <span class="n">none</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">authorization</span><span class="o">.</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="node-label">
+<h3><span class="section-number">3.3.2. </span>Node_Label<a class="headerlink" href="#node-label" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">label</span> <span class="n">displayed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">user</span> <span class="n">interface</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">the</span> <span class="n">node</span> <span class="n">that</span> <span class="n">governs</span> <span class="n">data</span> <span class="n">access</span> <span class="n">granularity</span><span class="o">.</span>
+
+<span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">string</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">max</span> <span class="n">length</span> <span class="n">of</span> <span class="mi">30</span> <span class="n">characters</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Study</span> <span class="n">Arm</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h3><span class="section-number">3.3.3. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p>
+<ol class="simple">
+<li><p>Update fields: node_level_access and node_label</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node level access</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LEVEL_ACCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LABEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -283,7 +298,7 @@ export const NODE_LABEL = &#39;Study Arm(s)&#39;;
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Sep 30, 2022, 6:09:30 PM.
+        Last updated on Oct 5, 2022, 6:55:49 PM.
       </span>
 
     </p>
@@ -324,11 +339,11 @@ export const NODE_LABEL = &#39;Study Arm(s)&#39;;
 	  
 	  <h3>Releases</h3>
       <ul>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
         <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
-        <li><a href="../../release-MVP/index.html">release-MVP</a></li>
       </ul>
       
 
@@ -336,11 +351,11 @@ export const NODE_LABEL = &#39;Study Arm(s)&#39;;
     <dl>
       <dt>Branches</dt>
       <dd><a href="data-access-request-service.html">master</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
       <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
       <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
-      <dd><a href="../../release-MVP/index.html">release-MVP</a></dd>
     </dl>
    -->
 
