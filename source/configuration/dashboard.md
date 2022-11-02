@@ -63,7 +63,7 @@ The dashboard's facet filters allow an end user to search for data of interest b
 
 The faceted filtering on the dashboard's side bar can be organized into into facet sections, each with a maximum count of 15 facets that are associated with facet values that can be used for filtering data upon selecting the respective checkboxes.
 
-![Bento Faceted Filtering](../assets/faceted-filtering)
+![Bento Faceted Filtering](../assets/faceted-filtering.jpg)
 
 To configure the facets:
 
@@ -77,7 +77,7 @@ To configure the facets:
 
   - `field`:  the specific field in the GraphQL API query, as the  `api`
   
-  - `api`:  the type in the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your facet.  (It is in the same file: `dashboardData.js`)
+  - `api`:  the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your facet.  (It is in the same file: `dashboardData.js`)
 
  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
   
