@@ -1,15 +1,15 @@
 # Dashboard
-The Dashboard provides the end user with several capabilities (a) filter data entities of interest via faceted search (b) view graphical summaries of data entities and (c) select data entities for further exploration.
+The Dashboard provides the end user with several capabilities (a) filter data entities of interest via faceted filtering (b) view graphical summaries of data entities and (c) select data entities for further exploration.
 
 ![Dashboard Elements](../assets/dashboard.png)
 
-**Dashboard**. Displayed are the configurable elements of a Bento Dashboard: widgets, facet search filters, table, and tabs.
+**Dashboard**. Displayed are the configurable elements of a Bento Dashboard: widgets, faceted filtering, table, and tabs.
 
 ### Prerequisites
 
 1. The files that specify the configuration parameters of the Dashboard are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for Dashboard elements can be specified in the file: `$(src)/bento-frontend/src/bento/dashboardData.js`.
+2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/bento-frontend/src/bento/dashboardData.js`.
 
 3. All images and icons that you use in your Bento instance should be accessible via a public url. 
 
@@ -57,80 +57,63 @@ export const GET_DASHBOARD_DATA_QUERY = gql`{
 }  
 ```
 
-## Configuring Faceted Search
+## Configuring Faceted Filtering
 
-The dashboard's facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.
+The dashboard's facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification of stored data entities.
 
-The facet search on the dashboard's side bar can be organized into into sections (or categories), with a maximum count of 15 facets.
+The faceted filtering on the dashboard's side bar can be organized into into facet sections, each with a maximum count of 15 facets that are associated with facet values that can be used for filtering data upon selecting the respective checkboxes.
+
+![Bento Faceted Filtering](../assets/faceted-filtering)
 
 To configure the facets:
 
 - Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
 
-- To represent your filter, edit or create a facet object under the `facetSearchData` object
+- To represent your facet, edit or create a facet object under the `facetSearchData` object
   
 - Each facet is defined as follows:
   
-  - `label`:	the display label for your facet filter that appears in the sidebar
-  
-  - `api`:  the type in the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your filter.  (It is in the same file: `dashboardData.js`)
-  
+  - `label`:	the display label for your facet that appears in the sidebar
+
   - `field`:  the specific field in the GraphQL API query, as the  `api`
   
-  - `section`:  the section (or category) that the facet should appear in the sidebar 
+  - `api`:  the type in the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your facet.  (It is in the same file: `dashboardData.js`)
+
+ - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
   
-  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
+  - `section`:  the facet section that the facet should appear in the sidebar  
   
   - `show`: controls if the facet is displayed or hidden (must be `true` or `false`)
+
+  - **Note** that the order of the facet sections and individual facets nested in each facet section is controlled by the order of the entries of the facets in the `facetSearchData` object
   
   For Example: 
   
   ```javascript
-    {
-    	 label: 'Program', 
-    	 field: 'group', 
-    	 api: 'subjectCountByProgram', 
-    	 datafield: 'programs',
-    	 section: 'Filter By Cases',
-     	 show: true,
-    },
+    export const facetSearchData = [
+  {
+    label: 'Program', 
+    field: 'group', 
+    api: 'subjectCountByProgram', 
+    apiForFiltering: 'filterSubjectCountByProgram', 
+    datafield: 'programs', 
+    section: 'Cases', 
+    show: true,
+  },
+  {
+    label: 'Tissue Composition', 
+    field: 'group', 
+    api: 'subjectCountByTissueComposition', 
+    apiForFiltering: 'filterSubjectCountByTissueComposition', 
+    datafield: 'composition', 
+    section: 'Samples', 
+    show: true,
+  },
   ```
   
-**NOTE**:  Update the GraphQL API Query in  `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your filters
+**NOTE**:  Update the GraphQL API Query in `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your facets
 
-### Faceted Search Styling
-
-The style of each facet section of the side bar can be easily configured.
-
-**Color**
-
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
-- Edit the value for corresponding 'section' under `facetSectionStyling` object
-  
-  For example:
-  
-    ```javascript
-    'Filter By Cases': {
-    	 color: '#10A075',
-    	 height: '5px',
-    },
-    ```
-  
-**Height**
-
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
-- Edit the value for corresponding 'section' under `facetSectionStyling`
-  
-  For example: 
-  
-    ```javascript
-    'Filter By Cases': {
-       color: '#10A075',
-       height: '5px',
-    },
-    ```
-  
-**Enabling Sort**
+To enable sort:
 - Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
 - Edit the values in `sortLabels` to enable or disable
   For example:
@@ -139,10 +122,41 @@ The style of each facet section of the side bar can be easily configured.
   sortAlphabetically: 'Sort alphabetically',
   //sortByCount: 'Sort by counts',
   showMore: '...expand to see all selections',
-};
+  };
+  ``` 
+
+To set the maximum number of active selections displayed when a facet is collapsed:
+- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" GitHub repo)
+- Edit the value of `showCheckboxCount` 
+For example:
+ ```javascript
+ export const showCheckboxCount = 6;
+```
+
+
+### Faceted Search Styling
+
+The style of each facet section of the side bar can be easily configured.
+
+- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
+- Edit the value for corresponding 'section' under `facetSectionVariables` object
+  
+  For example:
+  
+    ```javascript
+  export const facetSectionVariables = {
+    Cases: {
+      color: '#10A075',
+      backgroundColor: '#C0E9D7',
+      checkBoxColorsOne: '#E8F7DC',
+      checkBoxColorsTwo: '#F5FDEE',
+      height: '5px',
+      isExpanded: true,
+  },
     ```
 
-## Configuring Tabs & Tables
+
+## Configuring Dashboard Tables & Tabs
 
 The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://dev.bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
 
