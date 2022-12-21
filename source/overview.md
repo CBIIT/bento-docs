@@ -14,7 +14,7 @@ Bento is built on three organizing principles:
 
 3. **Bento is cloud enabled.** We have built Bento to be deployed on your on-premise servers as well as on the Amazon Web Services and Google Cloud platforms. 
 
-[This](http://dev.bento-tools.org/) data sharing platform was built as a reference implementation of Bento. You can explore it to better understand the capabilities of the framework. 
+[This](https://bento-tools.org/#/) data sharing platform was built as a reference implementation of Bento. This reference implemenation is intended to serve as an example for exploring the capabilities of the framework, inspecting components and configurations, and navigating the Bento Core data model. 
 
 
 ## Bento Architecture
