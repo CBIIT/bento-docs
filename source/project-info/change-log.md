@@ -1,5 +1,20 @@
 # Change Log
 
+## release-3.9.0
+
+**Features**
+* File service returns 401 error for authentication errors
+* Authorization service supports conversion of a non-member role directly to an Admin role
+* Removing an Admin role reinstates previous user access
+* Admin Portal supports conversion of non-member roles to member roles
+* Admin Portal supports enabling and disabling admin roles
+* User Profile page displays pending Data Access Requests for inactive member roles
+* User Profile page disables DAR changes if no additional requests can be submitted
+* System supports session warning timeout for authenticated users
+* UI color palette update for Explore Dashboard
+* Updated footer to meet NCI digtial style criteria
+* Queries migrated to Elasticsearch
+
 
 ## release-3.8.0
 
