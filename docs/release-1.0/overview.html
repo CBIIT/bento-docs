@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Overview &mdash; Bento  documentation</title>
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     
@@ -208,11 +206,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="overview">
+  <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h1>
 <p>Bento is a software framework being built to support NCI’s <a class="reference external" href="https://datascience.cancer.gov/data-commons">Cancer Research Data Commons</a> projects, including Integrated Canine Data Commons (ICDC), and Clinical Trial Data Commons (CTDC).
 <br>This site provides you with the background and instructions you need to set up your own data sharing platform using Bento.</p>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Bento is an open-source software framework for data sharing platforms that allow users to store, manage, share and analyze large-scale data according to the <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR</a> principles.</p>
 <p>Bento is built on three organizing principles:</p>
@@ -222,8 +220,8 @@
 <li><p><strong>Bento is cloud enabled.</strong> We have built Bento to be deployed on your on-premise servers as well as on the Amazon Web Services and Google Cloud platforms.</p></li>
 </ol>
 <p><a class="reference external" href="http://dev.bento-tools.org/">This</a> data sharing platform was built as a reference implementation of Bento. You can explore it to better understand the capabilities of the framework.</p>
-</div>
-<div class="section" id="bento-architecture">
+</section>
+<section id="bento-architecture">
 <h2>Bento Architecture<a class="headerlink" href="#bento-architecture" title="Permalink to this heading">¶</a></h2>
 <p><strong>System Architecture</strong></p>
 <p>The System Architecture is described in terms of 2 different ecosystem components. These 2 eco systems are</p>
@@ -253,8 +251,8 @@
 <p><img alt="Security Approach" src="_images/security-approach.jpg" /></p>
 <p>Strategy for Bento security can be thought of in two ways i.e. Static and Dynamic. The Static Security Component focuses on the Code and the Container respectively. The Codacy Monitoring Platform is being utilized for monitoring Code Quality and Code Security. The platform continuously monitors the Github Code Repository and provides real-time feedback on vulnerable code sections or coding practices to along with real time trend metrics. This information is then utilized to address the vulnerabilities identified during the Sprint Cycle. The Twistlock Vulnerability Management tool monitors the Nessus Container Image repository and provides periodic reports which are then utilized to remedy the vulnerabilities identified.</p>
 <p>The Dynamic Security components focuses on the deployed infrastructure and the application. IBM AppScan is utilized to periodically run vulnerability scans on the Bento Web Application. The vulnerabilities identified are then remedied in the current Sprint or added to the Sprint Backlog for future action depending upon the severity. The security of the network and instances utilize AWS recommended best practices. The access to the Web instances is allowed only via the ALB and on specific ports only using AWS Security Groups which act as an instance Firewall. Placing the ALB on a Public Subnet and instances on Private Subnets with a NAT (Network Address Translator) using Route Tables provides network level isolation for the instances keeping the virtual machines secure from malicious traffic while allowing them to get software updates as necessary.</p>
-</div>
-<div class="section" id="bento-frontend-documentation">
+</section>
+<section id="bento-frontend-documentation">
 <h2>Bento – Frontend Documentation<a class="headerlink" href="#bento-frontend-documentation" title="Permalink to this heading">¶</a></h2>
 <p><strong>1-Technical Stack</strong></p>
 <ol class="simple">
@@ -351,8 +349,8 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="bento-backend-api-architecture-documentation">
+</section>
+<section id="bento-backend-api-architecture-documentation">
 <h2>Bento – Backend &amp; API Architecture Documentation<a class="headerlink" href="#bento-backend-api-architecture-documentation" title="Permalink to this heading">¶</a></h2>
 <p><strong>Backend &amp; API Documentation General Overview</strong></p>
 <p><img alt="Backend and API Documentation General Overview" src="_images/backend-and-api-general.jpg" /></p>
@@ -391,16 +389,16 @@
 <li><p>The connection to the database neo4j goes through Neo4j Graphql Endpoint. Neo4j has graphql plugin which will expose endpoint to consume the graphql request.</p></li>
 </ul>
 <p>RESTFUL API will send the graphql request to the neo4j. GraphQL API will validate the payload, if is valid request then send the graphql request to the neo4j.</p>
-</div>
-<div class="section" id="bento-data-model">
+</section>
+<section id="bento-data-model">
 <h2>Bento Data Model<a class="headerlink" href="#bento-data-model" title="Permalink to this heading">¶</a></h2>
 <p>The Bento Core Data Model is a graphical data model that has been designed to address the data storage needs of clinical trials and research programs; it can be adapted to most data generation workflows. Graphical data models organize data in the form of a graph. The Bento Core Data Model models key components of a data generation workflow as nodes, and the relationships among them as edges. Both nodes and edges can store data in the form of properties.
 It is based on the Aggregated Data Model developed by the <a class="reference external" href="https://datascience.cancer.gov/data-commons/center-cancer-data-harmonization-ccdh">Center for Cancer Data Harmonization</a>. The Aggregated Data Model synthesizes core concepts from three data sharing platforms- the <a class="reference external" href="https://gdc.cancer.gov/">Genomic Data Commons</a>; the <a class="reference external" href="https://proteomic.datacommons.cancer.gov/pdc/">Proteomic Data Commons</a> and the <a class="reference external" href="https://caninecommons-dev.cancer.gov/">Integrated Canine Data Commmons</a>.
 This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sharing platform, where users can navigate from a selected clinical trial or program to a set of files of their choice.</p>
 <p>Being schema-less, graphical data models can be easily extended, to include additional node and relationship types, without breaking the existing model. This feature allows you to expand the Bento Core Data Model to suit the evolving needs of your data sharing platform.</p>
 <p>You can access the Bento Core Data Model <a class="reference external" href="https://github.com/CBIIT/bento-model.git">here</a>. We have extended the core data model to build the reference implementation; the extended BENTO_TAILORx data model can be found <a class="reference external" href="https://github.com/CBIIT/BENTO-TAILORx-model">here</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -425,7 +423,7 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:04:39 PM.
+        Last updated on Apr 5, 2023, 4:47:16 PM.
       </span>
 
     </p>
@@ -456,11 +454,6 @@ This model allows you to set up a <i>minimal</i> but <i>functioning</i> data sha
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  

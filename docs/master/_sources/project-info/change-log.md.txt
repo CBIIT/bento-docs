@@ -1,5 +1,16 @@
 # Change Log
 
+## release-3.10.0
+
+**February 24, 2023**
+* Disabled users cannot submit additional Data Access Requests
+* Admins can query, view, and share Audit Trails
+* Member & Admin accounts are disabled after 60 days of inactivity
+* Environment variables created for Access Control
+* Jenkins deployments updated to support event logging submodules
+* Event logging added to the Bento-Files service
+
+
 ## release-3.9.0
 
 **Features**

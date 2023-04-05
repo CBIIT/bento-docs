@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Authorization &mdash; Bento release-3.9.0 documentation</title>
+  <title>2. Authorization &mdash; Bento release-3.10.0 documentation</title>
   
 
   
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -65,7 +63,7 @@
             
             
               <div class="version">
-                release-3.9.0
+                release-3.10.0
               </div>
             
           
@@ -225,37 +223,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="authorization">
+  <section id="authorization">
 <h1><span class="section-number">2. </span>Authorization<a class="headerlink" href="#authorization" title="Permalink to this heading">¶</a></h1>
 <p><em>Service only available for cloud installations of the Bento Framework</em></p>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Bento Framework supports role-based access control (RBAC) as a method of enforcing authorization and restricting access to protected or controlled data to authorized users based upon an ascribed role. This enables systematic and reproducible assignment of permissions to facilitate auditing and reduce the potential for error. When a Bento Data Commons is stood up, system owners will need to determine at what level the data will be controlled. This configurability is only available at the time of intializing the system and requires setting fields on both the front-end and the back-end of the Bento web application.</p>
-<p>&nbsp;</p></div>
-<div class="section" id="terminology">
+<p>&nbsp;</p></section>
+<section id="terminology">
 <h2><span class="section-number">2.2. </span>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="identity-provider-idp">
+<section id="identity-provider-idp">
 <h3><span class="section-number">2.2.1. </span>Identity Provider (IdP)<a class="headerlink" href="#identity-provider-idp" title="Permalink to this heading">¶</a></h3>
 <p>A service that enables a user to login using credentials to establish a user’s identity and pass this information to downstream applications.</p>
-</div>
-<div class="section" id="authentication">
+</section>
+<section id="authentication">
 <h3><span class="section-number">2.2.2. </span>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">¶</a></h3>
 <p>Establishes “who you are” using information obtained by logging in through an Identity Provider (IdP).</p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h3><span class="section-number">2.2.3. </span>Authorization<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>Establishes “which data you have access to” with a given application</p>
-</div>
-</div>
-<div class="section" id="prerequisites">
+</section>
+</section>
+<section id="prerequisites">
 <h2><span class="section-number">2.3. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration parameters for RBAC elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code>.</p></li>
 <li><p>Configuration for UI elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
 </ol>
-<p>&nbsp;</p></div>
-<div class="section" id="public-access">
+<p>&nbsp;</p></section>
+<section id="public-access">
 <h2><span class="section-number">2.4. </span>Public Access<a class="headerlink" href="#public-access" title="Permalink to this heading">¶</a></h2>
 <p>Currently, public accessibility to data contained within a Bento-based system can be configured at the time of standing up the system. The configuration applies to both unauthenticated users that have not logged in and unauthorized users that have logged in, but have not yet submitted any data access requests and therefore have either no data access or limited data access.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="n">Metadata</span> <span class="n">Only</span> <span class="ow">or</span> <span class="kc">None</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Metadata</span> <span class="n">Only</span><span class="o">.</span> <span class="n">Values</span> <span class="n">are</span> <span class="n">case</span> <span class="n">sensitive</span><span class="o">.</span> 
@@ -284,7 +282,7 @@
 <td style="text-align: left;">v.3.8.0</td>
 </tr>
 </tbody>
-</table><div class="section" id="configuring-public-access-as-metadata-only">
+</table><section id="configuring-public-access-as-metadata-only">
 <h3><span class="section-number">2.4.1. </span>Configuring Public Access as “Metadata Only”<a class="headerlink" href="#configuring-public-access-as-metadata-only" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">If</span> <span class="n">Public</span> <span class="n">Access</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;Metadata Only&quot;</span><span class="p">,</span> <span class="n">public</span> <span class="n">users</span> <span class="ow">or</span> <span class="n">unauthorized</span> <span class="n">users</span> <span class="n">can</span> <span class="n">see</span> <span class="nb">all</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="p">,</span> <span class="n">but</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="ow">or</span> <span class="n">download</span> <span class="nb">any</span> <span class="n">files</span><span class="o">.</span>
 </pre></div>
@@ -293,18 +291,18 @@
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code></p></li>
 <li><p>Update field: auth.enabled</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">false</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">false</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
 <li><p>Update field: PUBLIC_ACCESS</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;Metadata Only&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;Metadata Only&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configuring-public-access-as-none">
+</section>
+<section id="configuring-public-access-as-none">
 <h3><span class="section-number">2.4.2. </span>Configuring Public Access as “None”<a class="headerlink" href="#configuring-public-access-as-none" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">If</span> <span class="n">public</span> <span class="n">access</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">public</span> <span class="n">users</span> <span class="n">cannot</span> <span class="n">see</span> <span class="nb">any</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">any</span> <span class="n">attempts</span> <span class="n">to</span> <span class="n">access</span> <span class="n">restricted</span> <span class="n">pages</span> <span class="n">will</span> <span class="n">redirect</span> <span class="n">unauthenticated</span> <span class="n">users</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Login</span> <span class="n">page</span> <span class="ow">and</span> <span class="n">unauthorized</span> <span class="n">users</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Data</span> <span class="n">Access</span> <span class="n">Request</span> <span class="p">(</span><span class="n">DAR</span><span class="p">)</span> <span class="n">page</span><span class="o">.</span>
 </pre></div>
@@ -313,19 +311,19 @@
 <li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code></p></li>
 <li><p>Update field: auth.enabled</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">true</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">true</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
 <li><p>Update field: PUBLIC_ACCESS</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;None&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;None&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -350,7 +348,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:04:30 PM.
+        Last updated on Apr 5, 2023, 4:47:01 PM.
       </span>
 
     </p>
@@ -381,11 +379,6 @@
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  

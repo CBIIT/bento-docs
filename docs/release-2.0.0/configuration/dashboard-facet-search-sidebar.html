@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>8. Dashboard: Facet Search Sidebar &mdash; Bento release-2.0.0 documentation</title>
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -212,10 +210,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dashboard-facet-search-sidebar">
+  <section id="dashboard-facet-search-sidebar">
 <h1><span class="section-number">8. </span>Dashboard: Facet Search Sidebar<a class="headerlink" href="#dashboard-facet-search-sidebar" title="Permalink to this heading">¶</a></h1>
 <p>The dashboard facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification, of stored data entities.</p>
-<div class="section" id="facet-search-filters">
+<section id="facet-search-filters">
 <h2><span class="section-number">8.1. </span>Facet Search Filters<a class="headerlink" href="#facet-search-filters" title="Permalink to this heading">¶</a></h2>
 <p>The facet search on the dashboard’s side bar can be organized into into sections (or categories), with a maximum count of 15 facets.</p>
 <p>To configure the facets:</p>
@@ -232,14 +230,14 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">show</span></code>: controls if the facet is displayed or hidden (must be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
 </ul>
 <p>For Example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
 <span class="w">  	 </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Program&#39;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">  	 </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;group&#39;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">  	 </span><span class="nx">api</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subjectCountByProgram&#39;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  	 </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;programs&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  	 </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Filter By Cases&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">   	 </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  	 </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;programs&#39;</span><span class="p">,</span>
+<span class="w">  	 </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Filter By Cases&#39;</span><span class="p">,</span>
+<span class="w">   	 </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
 </pre></div>
 </div>
 </li>
@@ -248,8 +246,8 @@
 <div><p>:warning:   <strong>WARNING</strong>:  For every new facet section, the corresponding styling section should be updated with the same name (see #2 instructions to add styling for facet sections)</p>
 <p>:point_right:   <strong>NOTE</strong>:  Update the GraphQL API Query in  <code class="docutils literal notranslate"><span class="pre">GET_DASHBOARD_DATA_QUERY</span></code> as needed; it should contain all queries and fields that are associated with your filters</p>
 </div></blockquote>
-</div>
-<div class="section" id="sidebar-sections-styling">
+</section>
+<section id="sidebar-sections-styling">
 <h2><span class="section-number">8.2. </span>Sidebar Sections Styling<a class="headerlink" href="#sidebar-sections-styling" title="Permalink to this heading">¶</a></h2>
 <p>The style of each section of the side bar can be easily configured.</p>
 <p><strong>Color</strong></p>
@@ -257,10 +255,10 @@
 <li><p>Open the configuration file located at <code class="docutils literal notranslate"><span class="pre">bento-frontend/src/bento/dashboardData.js</span></code> (in the “CBIIT/bento-frontend” git repo)</p></li>
 <li><p>Edit the value for corresponding ‘section’ under <code class="docutils literal notranslate"><span class="pre">facetSectionStyling</span></code> object</p>
 <p>For example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Filter By Cases&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	 </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#10A075&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	 </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;5px&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">},</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Filter By Cases&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	 </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#10A075&#39;</span><span class="p">,</span>
+<span class="w">	 </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;5px&#39;</span><span class="p">,</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 </li>
@@ -270,16 +268,16 @@
 <li><p>Open the configuration file located at <code class="docutils literal notranslate"><span class="pre">bento-frontend/src/bento/dashboardData.js</span></code> (in the “CBIIT/bento-frontend” git repo)</p></li>
 <li><p>Edit the value for corresponding ‘section’ under <code class="docutils literal notranslate"><span class="pre">facetSectionStyling</span></code></p>
 <p>For example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Filter By Cases&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#10A075&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;5px&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">},</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Filter By Cases&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#10A075&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;5px&#39;</span><span class="p">,</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -304,7 +302,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:04:48 PM.
+        Last updated on Apr 5, 2023, 4:47:30 PM.
       </span>
 
     </p>
@@ -335,11 +333,6 @@
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  

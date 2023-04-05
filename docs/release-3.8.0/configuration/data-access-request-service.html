@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>3. Data Access Request (DAR) Service &mdash; Bento release-3.8.0 documentation</title>
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -221,24 +219,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-access-request-dar-service">
+  <section id="data-access-request-dar-service">
 <h1><span class="section-number">3. </span>Data Access Request (DAR) Service<a class="headerlink" href="#data-access-request-dar-service" title="Permalink to this heading">¶</a></h1>
 <p><em>Service only available for cloud installations of the Bento Framework</em></p>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Bento Framework supports a user-driven data access request workflow that enables authenticated users to request access to a specific dataset or resource (ie. arm, study, project, program, etc.) and allows system administrators to review, approve, and reject data access requests submitted by users. System triggered emails are generated at each definitive point in the workflow. Admins can navigate the data access request workflow using the Bento Admin Portal.</p>
 <p><img alt="Data Access Request (DAR) Workflow" src="../_images/dar-workflow.png" /></p>
 <p><img alt="Data Access Request (DAR) Example page" src="../_images/dar-example-page.png" /></p>
-<p>&nbsp;</p></div>
-<div class="section" id="prerequisites">
+<p>&nbsp;</p></section>
+<section id="prerequisites">
 <h2><span class="section-number">3.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters for the DAR service are stored in the GitHub repository <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code>.</p></li>
 <li><p>Configuration parameters for DAR elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
 </ol>
-<p>&nbsp;</p>     </div>
-<div class="section" id="configuring-node-level-access">
+<p>&nbsp;</p>     </section>
+<section id="configuring-node-level-access">
 <h2><span class="section-number">3.3. </span>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
 <p>Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.</p>
 <ol class="simple">
@@ -246,28 +244,28 @@
 <li><p>Update fields: node_level_access and node_label</p></li>
 <li><p>Example:</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node level access</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LEVEL_ACCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LABEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node level access</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LEVEL_ACCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LABEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="section" id="node-level-access">
+<section id="node-level-access">
 <h3><span class="section-number">3.3.1. </span>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">node</span> <span class="n">Node</span> <span class="n">Name</span> <span class="ow">and</span> <span class="n">Node</span> <span class="n">Displayed</span> <span class="n">Label</span> <span class="n">parameters</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">data</span> <span class="n">access</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">users</span> <span class="n">will</span> <span class="n">either</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">or</span> <span class="n">none</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">authorization</span><span class="o">.</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="node-label">
+</section>
+<section id="node-label">
 <h3><span class="section-number">3.3.2. </span>Node_Label<a class="headerlink" href="#node-label" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">label</span> <span class="n">displayed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">user</span> <span class="n">interface</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">the</span> <span class="n">node</span> <span class="n">that</span> <span class="n">governs</span> <span class="n">data</span> <span class="n">access</span> <span class="n">granularity</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">string</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">max</span> <span class="n">length</span> <span class="n">of</span> <span class="mi">30</span> <span class="n">characters</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Study</span> <span class="n">Arm</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -292,7 +290,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:05:16 PM.
+        Last updated on Apr 5, 2023, 4:48:12 PM.
       </span>
 
     </p>
@@ -323,11 +321,6 @@
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  

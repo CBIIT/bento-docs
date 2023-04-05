@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>2. Model Converter &mdash; Bento  documentation</title>
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -221,22 +219,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="model-converter">
+  <section id="model-converter">
 <h1><span class="section-number">2. </span>Model Converter<a class="headerlink" href="#model-converter" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation for the Model Converter module contained in the ICDC-Dataloader utility.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The Model Converter uses a combination of YAML format schema files, a YAML formatted properties files, and a GraphQL formatted queries file to generate a GraphQL formatted schema. After the GraphQL schema is generated, the Model Converter also generates a simplified, more easily readable version of the GraphQL schema for documentation purposes.</p>
 <p>The Model Converter can be found in this Github Repository: <a class="reference external" href="https://github.com/CBIIT/icdc-dataloader">ICDC-Dataloader</a></p>
-</div>
-<div class="section" id="pre-requisites">
+</section>
+<section id="pre-requisites">
 <h2><span class="section-number">2.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Python 3.6 or newer</p></li>
 </ul>
-</div>
-<div class="section" id="dependencies">
+</section>
+<section id="dependencies">
 <h2><span class="section-number">2.3. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> to install dependencies. Or run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> if you are using virtualenv. The dependencies included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> are listed below:</p>
 <ul class="simple">
@@ -245,8 +243,8 @@
 <li><p>boto3</p></li>
 <li><p>requests</p></li>
 </ul>
-</div>
-<div class="section" id="inputs">
+</section>
+<section id="inputs">
 <h2><span class="section-number">2.4. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>YAML formatted schema file(s)</p></li>
@@ -254,15 +252,15 @@
 <li><p>A GraphQL formatted queries file</p></li>
 <li><p>The filepath to be used for the generated output files</p></li>
 </ul>
-</div>
-<div class="section" id="outputs">
+</section>
+<section id="outputs">
 <h2><span class="section-number">2.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>A GraphQL formatted schema</p></li>
 <li><p>A simplified, more easily readable version of the GraphQL schema for documentation purposes</p></li>
 </ul>
-</div>
-<div class="section" id="command-line-arguments">
+</section>
+<section id="command-line-arguments">
 <h2><span class="section-number">2.6. </span>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Schema File(s)</p>
@@ -299,14 +297,14 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="usage-example">
+</section>
+<section id="usage-example">
 <h2><span class="section-number">2.7. </span>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this heading">¶</a></h2>
 <p>Below is an example command to run the model converter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">-</span><span class="n">converter</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">schema</span> <span class="n">schema</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mf">1.</span><span class="n">yml</span> <span class="o">--</span><span class="n">schema</span> <span class="n">schema</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mf">2.</span><span class="n">yml</span> <span class="o">--</span><span class="n">prop</span><span class="o">-</span><span class="n">file</span> <span class="n">schema</span><span class="o">-</span><span class="n">properties</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">file</span> <span class="n">queries</span><span class="o">.</span><span class="n">graphql</span> <span class="o">--</span><span class="n">output</span> <span class="n">output_folder</span>\<span class="n">data</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">schema</span><span class="o">.</span><span class="n">graphql</span>
 </pre></div>
 </div>
-<div class="section" id="example-inputs">
+<section id="example-inputs">
 <h3><span class="section-number">2.7.1. </span>Example Inputs<a class="headerlink" href="#example-inputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Schema Files</strong></p>
@@ -331,8 +329,8 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="example-outputs">
+</section>
+<section id="example-outputs">
 <h3><span class="section-number">2.7.2. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>GraphQL Schema</strong></p>
@@ -346,9 +344,9 @@
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -373,7 +371,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:04:57 PM.
+        Last updated on Apr 5, 2023, 4:47:42 PM.
       </span>
 
     </p>
@@ -404,11 +402,6 @@
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  

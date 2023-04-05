@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>3. Deploying Bento on AWS &mdash; Bento release-2.0.0 documentation</title>
@@ -29,9 +30,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -243,21 +241,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deploying-bento-on-aws">
+  <section id="deploying-bento-on-aws">
 <h1><span class="section-number">3. </span>Deploying Bento on AWS<a class="headerlink" href="#deploying-bento-on-aws" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation on provisioning bento on AWS.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
-<div class="section" id="a-introduction">
+<section id="a-introduction">
 <h2><span class="section-number">3.1. </span>A. Introduction<a class="headerlink" href="#a-introduction" title="Permalink to this heading">¶</a></h2>
 <p>The purpose of this guide is to provide instructions on how to provision and deploy Bento Framework on AWS cloud platform. This guide assumes that the Custodian has an operating account with Amazon Web Services
 <a class="reference external" href="https://aws.amazon.com">Amazon Web Services</a> and all the necessary administrator’s IAM role and permissions in order to create cloud resources.</p>
-<div class="section" id="b-disclaimer">
+<section id="b-disclaimer">
 <h3><span class="section-number">3.1.1. </span>B. Disclaimer<a class="headerlink" href="#b-disclaimer" title="Permalink to this heading">¶</a></h3>
 <p>AWS is a Pay As You Go provider, as result the use of this instruction may result in  usage charges. We’re in no way responsible for any charges incurred from resources created using this documentation.</p>
 <p>All scripts related to this documentation can be found here: <a class="reference external" href="https://github.com/CBIIT/bento-custodian">Bento Custodian</a></p>
-</div>
-</div>
-<div class="section" id="c-architecture">
+</section>
+</section>
+<section id="c-architecture">
 <h2><span class="section-number">3.2. </span>C. Architecture<a class="headerlink" href="#c-architecture" title="Permalink to this heading">¶</a></h2>
 <p>The code in this demo will create the following resources via Terraform:</p>
 <ul class="simple">
@@ -268,42 +266,42 @@
 <li><p>Neo4j Database in private subnet</p></li>
 </ul>
 <p><img alt="Architecture" src="../_images/bentoawsarchitecture.png" /></p>
-</div>
-<div class="section" id="d-pre-requisites">
+</section>
+<section id="d-pre-requisites">
 <h2><span class="section-number">3.3. </span>D. Pre-requisites<a class="headerlink" href="#d-pre-requisites" title="Permalink to this heading">¶</a></h2>
 <p>Ensure you have the following tools installed and configured before proceeding. All instructions provided here assumes you have unix-like environment</p>
-<div class="section" id="a-aws-cli">
+<section id="a-aws-cli">
 <h3><span class="section-number">3.3.1. </span>a) AWS CLI<a class="headerlink" href="#a-aws-cli" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Follow the instructions on official Amazon Web site to <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">install</a> AWS CLI on your local machine using platform instruction applicable to you.</p></li>
 </ul>
-</div>
-<div class="section" id="b-configure-aws-credentials">
+</section>
+<section id="b-configure-aws-credentials">
 <h3><span class="section-number">3.3.2. </span>b) Configure AWS Credentials<a class="headerlink" href="#b-configure-aws-credentials" title="Permalink to this heading">¶</a></h3>
 <p>Please ensure you have aws credential configured for your environment <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">aws credentials</a>. This document does not make provision for access and secret keys due to unintended security reasons.</p>
-</div>
-<div class="section" id="c-terraform">
+</section>
+<section id="c-terraform">
 <h3><span class="section-number">3.3.3. </span>c) Terraform<a class="headerlink" href="#c-terraform" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Follow the instructions on the official <a class="reference external" href="https://learn.hashicorp.com/terraform/getting-started/install.html">Terraform</a> site to install terraform on your local workstation using platform instruction applicable to you.</p></li>
 </ul>
-</div>
-<div class="section" id="d-git">
+</section>
+<section id="d-git">
 <h3><span class="section-number">3.3.4. </span>d) Git<a class="headerlink" href="#d-git" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Follow the instructions on the official <a class="reference external" href="https://github.com/git-guides/install-git">Git</a> site to install git on your local workstation.</p></li>
 </ul>
-</div>
-<div class="section" id="e-ansible">
+</section>
+<section id="e-ansible">
 <h3><span class="section-number">3.3.5. </span>e) Ansible<a class="headerlink" href="#e-ansible" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Use the instructions provided <a class="reference external" href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">here</a> to install <strong>ansible</strong> on your workstation</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="e-installations">
+</section>
+</section>
+<section id="e-installations">
 <h2><span class="section-number">3.4. </span>E. Installations<a class="headerlink" href="#e-installations" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="a-clone-bento-framework">
+<section id="a-clone-bento-framework">
 <h3><span class="section-number">3.4.1. </span>a) Clone Bento Framework<a class="headerlink" href="#a-clone-bento-framework" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Clone  <a class="reference external" href="https://github.com/CBIIT/bento-custodian">Bento Framework</a> to a working directory. In this guide, I will be using  <strong>/tmp</strong> as my working directory</p></li>
@@ -317,8 +315,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bento</span><span class="nd">@custodian</span><span class="p">:</span> <span class="n">cd</span> <span class="n">bento</span><span class="o">-</span><span class="n">custodian</span><span class="o">/</span><span class="n">terraform</span><span class="o">/</span><span class="n">aws</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="b-populate-vars-tfvars-file">
+</section>
+<section id="b-populate-vars-tfvars-file">
 <h3><span class="section-number">3.4.2. </span>b) Populate vars.tfvars file<a class="headerlink" href="#b-populate-vars-tfvars-file" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars</strong> file. This is a variable file that will be used as input to the terraform.</p></li>
@@ -359,8 +357,8 @@ custodian_api_endpoint = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com/
 custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 </pre></div>
 </div>
-</div>
-<div class="section" id="c-monitor-deployment-progress">
+</section>
+<section id="c-monitor-deployment-progress">
 <h3><span class="section-number">3.4.3. </span>c) Monitor Deployment Progress<a class="headerlink" href="#c-monitor-deployment-progress" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Open <a class="reference external" href="https://us-west-1.console.aws.amazon.com/systems-manager/home">SSM</a></p></li>
@@ -369,8 +367,8 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 </ul>
 <p><img alt="Pending" src="../_images/bentopending.png" />
 <img alt="Pending" src="../_images/bentosuccess.png" /></p>
-</div>
-<div class="section" id="d-verify-deployment">
+</section>
+<section id="d-verify-deployment">
 <h3><span class="section-number">3.4.4. </span>d Verify Deployment<a class="headerlink" href="#d-verify-deployment" title="Permalink to this heading">¶</a></h3>
 <p>When the deployment is completed, navigate to the *<em>custodian_url*</em> to verify that the application is loaded successfully.</p>
 <ul class="simple">
@@ -381,8 +379,8 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <li><p>Program Page
 <img alt="Cases" src="../_images/bentoprogrampage.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="e-teardown">
+</section>
+<section id="e-teardown">
 <h3><span class="section-number">3.4.5. </span>e) Teardown<a class="headerlink" href="#e-teardown" title="Permalink to this heading">¶</a></h3>
 <p>To destroy resouces created in this demo;</p>
 <ul class="simple">
@@ -391,20 +389,20 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform destroy -var-file=vars.tfvars -auto-approve
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="f-application-updates">
+</section>
+</section>
+<section id="f-application-updates">
 <h2><span class="section-number">3.5. </span>F. Application Updates<a class="headerlink" href="#f-application-updates" title="Permalink to this heading">¶</a></h2>
 <p>Many times, there are needs to customize Bento Framework based on your unique needs or some requirements, to make updates to the existing resources, it is recommended to fork both frontend and backend repositories used in this demo - that is <a class="reference external" href="https://github.com/CBIIT/bento-demo-backend">backend</a> and <a class="reference external" href="https://github.com/CBIIT/bento-demo-frontend">frontend</a>. Follow below steps to apply any changes made to either backend or frontend codes.</p>
-<div class="section" id="a-edit-vars-tfvars-file">
+<section id="a-edit-vars-tfvars-file">
 <h3><span class="section-number">3.5.1. </span>a) Edit  vars.tfvars file<a class="headerlink" href="#a-edit-vars-tfvars-file" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars</strong> file.</p></li>
 <li><p>Replace the values of backend_repo and frontend_repo with the new url of your forked repositories as shown below;
 <img alt="git repositories" src="../_images/gitrepositories.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="b-apply-changes-to-terraform-state">
+</section>
+<section id="b-apply-changes-to-terraform-state">
 <h3><span class="section-number">3.5.2. </span>b) Apply changes to terraform state<a class="headerlink" href="#b-apply-changes-to-terraform-state" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Run <strong>terraform apply</strong></p></li>
@@ -412,8 +410,8 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
 </pre></div>
 </div>
-</div>
-<div class="section" id="c-apply-changes-using-ansible">
+</section>
+<section id="c-apply-changes-using-ansible">
 <h3><span class="section-number">3.5.3. </span>c) Apply Changes using Ansible<a class="headerlink" href="#c-apply-changes-using-ansible" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>From the current working location change directory to <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible</strong></p></li>
@@ -433,18 +431,18 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ ansible-playbook update-custodian.yml
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="g-data-model-updates">
+</section>
+</section>
+<section id="g-data-model-updates">
 <h2><span class="section-number">3.6. </span>G. Data Model Updates<a class="headerlink" href="#g-data-model-updates" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="id1">
+<section id="id1">
 <h3><span class="section-number">3.6.1. </span>a) Edit  vars.tfvars file<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/aws/vars.tfvars</strong> file.</p></li>
 <li><p>Replace the values of data_repo with the new url of your forked data-model repository.</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3><span class="section-number">3.6.2. </span>b) Apply changes to terraform state<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Run <strong>terraform apply</strong></p></li>
@@ -452,8 +450,8 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3><span class="section-number">3.6.3. </span>c) Apply Changes using Ansible<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>From the current working location change directory to <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/aws/ansible</strong></p></li>
@@ -473,9 +471,9 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ ansible-playbook update-db.yml
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -500,7 +498,7 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Dec 22, 2022, 8:04:48 PM.
+        Last updated on Apr 5, 2023, 4:47:30 PM.
       </span>
 
     </p>
@@ -531,11 +529,6 @@ custodian_url = http://evay-alb-2073444928.us-east-1.elb.amazonaws.com
   </span>
   <div class="rst-other-versions">
 
-      
-      <h3>Latest</h3>
-      <ul>
-        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
-      <br>
       
 
 	  
