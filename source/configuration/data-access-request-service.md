@@ -43,11 +43,11 @@ The Bento Framework supports a user-driven data access request workflow that ena
 
 Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.
 
-### Node_Level_Access
+### Node-Level_Access
 
-	* Acceptable values for Node Level Access are True or False. The default value is True.
+	* Acceptable values are True or False. The default value is True.
 
-	* If value is True, data access is controlled at the node-level and Node Displayed Label parameter must be specified.
+	* If value is True, data access is controlled at the node-level and the Node_Label parameter must be specified.
 
 	* If value is False, there is no ability to control data access at the node-level and instead users will either have access to all of the data or none of the data based upon authentication and authorization.
 
@@ -113,7 +113,7 @@ This is an array of objects that define the fields in the Data Access Request fo
 If **aclAPIOptionsField** is not present, the program will read the ACL options from the **options** property of the **armIDs** field in the **formFields** array.
 
 ### Customization
-To customize the Data Access Request page, you can make changes to the **formFields** object. You can add, remove, or modify fields as needed. For example, you could add a new field for the user's email address by adding the following object to the **formFields** array:
+To customize the Data Access Request page, changes can be made to the **formFields** object. Fields can be added, removed, or modified as needed. For example, a new field for the user's email address could be displayed by adding the following object to the **formFields** array:
 
 ```javascript
 {
@@ -126,7 +126,7 @@ To customize the Data Access Request page, you can make changes to the **formFie
 }
 ```
 
-You can also modify the **options** for the ACL dropdown field by changing the objects in the options array. For example, you could modify the name of option A to **'A: RS 0-10, assigned endocrine therapy alone (default)'** by changing the following object:
+The **options** for the ACL dropdown field can be modified by changing the objects in the options array. For example, modifying the name of option A to **'A: RS 0-10, assigned endocrine therapy alone (default)'** by changing the following object:
 
 ```javascript
 {
