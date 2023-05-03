@@ -11,7 +11,9 @@ The Arm Detail Page provides a summary of a Study/Project/Arm of that belongs to
 
 1. The files that specify the configuration parameters of the Arm Detail Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for all Arm Detail Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/armDetailData.js`.
+2. Configuration Parameters for all Arm Detail Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
+
+
 
 3. All images and icons that you use in your Bento instance should be accessible via a public url. 
 
@@ -27,7 +29,7 @@ The Arm Detail Page also allows you to add an optional table to list Arm level e
 
 
 
-1. Open the file `$(src)/bento-frontend/src/bento/armDetailData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. Under `header`:
     * Set the field `label` to the display label for your Arm Detail Page.
     * Set the field `dataField` to the GraphQL API query that returns the value, such as the Arm Name or Arm ID that you want to display.
@@ -40,16 +42,16 @@ The Arm Detail Page also allows you to add an optional table to list Arm level e
             * To add a link to your *label* specify an internal or external link by adding a `labelLink` attribute to your object.
     * Add the GraphQL API query field to `GET_ARM_DETAIL_DATA_QUERY`. 
 
-> :warning: **WARNING**: If more than 6 subsections are configured, **only the first 6 subsections will be displayed in the UI, other subsections will be ignored**. 
+> ⚠️ **WARNING**: If more than 6 subsections are configured, **only the first 6 subsections will be displayed in the UI, other subsections will be ignored**. 
 >
-> :warning: **WARNING**: If more than 10 properties are configured, **only first 10 properties will be displayed in the UI, other properties will be ignored**. 
+> ⚠️ **WARNING**: If more than 10 properties are configured, **only first 10 properties will be displayed in the UI, other properties will be ignored**. 
 
 
 
 ## Configuring the Arm Detail Page Table
 
 You can add a table to the Arm Detail Page. *This is optional.*
-1. Open `$(src)/bento-frontend/src/bento/armDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. In `table`:
   * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Arm Detail Page*.
   * Set the field `title` to the the title of your table.
@@ -82,7 +84,7 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 
 You can add up to 10 columns in the Arm Detail Page Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
-1. Open `$(src)/bento-frontend/src/bento/armDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.
@@ -135,7 +137,7 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 
 This table lists files that are associated with the Arm.  It can be configured as follows:
 
-1. Open `$(src)/bento-frontend/src/bento/armDetailData.js` 
+1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js` 
 2. Edit the  `table` object :
 * **`display`**:  Show  or Hide column (must be `true`  or `false`)
 
