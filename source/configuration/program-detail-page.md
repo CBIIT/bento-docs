@@ -1,5 +1,5 @@
 # Program Detail Page
-The Program Detail Page displays detailed, program-level information for each of the programs that has submitted data to your data sharing platform. A Bento Program Detail Page has several configurable components. See below for details. 
+The Program Detail Page displays detailed, program-level information for each of the programs that has submitted data to your data sharing platform. A Bento Program Detail Page has several configurable components. See below for details.
 
 ![Program Detail Page Elements](../assets/program-detail-page.png)
 
@@ -9,9 +9,9 @@ The Program Detail Page displays detailed, program-level information for each of
 
 1. The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for all Program Detail Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/programDetailData.js`.
+2. Configuration Parameters for all Program Detail Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 
-3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+3. All images and icons that you use in your Bento instance should be accessible via a public url.
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
@@ -20,12 +20,12 @@ The Page Title section has three components: (a) Page Title (b) Page Subtitle an
 
 ### Configuring the Page Title, Page Subtitle and Breadcrumb
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `pageTitle`:
 	* Set the field `label` to the Page Title of your choice.
-	* Set the field `datafield` to the GraphQl API query that returns the Page Title. 
+	* Set the field `dataField` to the GraphQl API query that returns the Page Title.
 3. Under pageSubTitle:
-	* Set the field `datafield` to the GraphQL API query that will return the Page Subtitle.
+	* Set the field `dataField` to the GraphQL API query that will return the Page Subtitle.
 4. Under `breadCrumb`:
 	* Set the field `label` to the Breadcrumb text of your choice.
 	* Set the field `link` to the internal link to be embedded in your Breadcrumb.
@@ -36,11 +36,11 @@ The Page Title section has three components: (a) Page Title (b) Page Subtitle an
 ...
 const pageTitle = {
   label: '<Your Page Title>',
-  datafield: '<GraphQL API query that returns the Page Title>',
+  dataField: '<GraphQL API query that returns the Page Title>',
 };
 
 const pageSubTitle = {
-  datafield: '<GraphQL API query that returns the Page Subtitle>',
+  dataField: '<GraphQL API query that returns the Page Subtitle>',
 };
 
 const breadCrumb = {
@@ -49,11 +49,11 @@ const breadCrumb = {
 };
 ...
 ```
- 
+
 ## Configuring the Aggregate Count
 The Program Level Aggregate Count field allows you to display a Program level count for an key data entity in your data sharing platform.
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `aggregateCount`:
 	* Set the field `labelText` to the display text for the aggregate count of your choice.
 	* Set the field `dataField` to the GraphQL API query that returns your aggregate count.
@@ -71,18 +71,18 @@ const aggregateCount = {
   display: '<true|false>',
 };
 ...
-  const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
-    ...
-    '<Your GraphQL API query>'
-    ...
-  }
+const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
+  ...
+  '<Your GraphQL API query>'
+  ...
+}
 ```
- 
+
 
 ## Configuring icons in the Program Detail Page
 The Progam Detail Page supports a Program Detail Page Icon, displayed next to the Program Title, and an External Link Icon, that is displayed next to an external link in the page.
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `programDetailIcon`:
 	* Set the field 'src' to the URL for the Program Detail Page Icon of your choice.
 	* Set the field 'alt' to the ALT tag for the Program Detail Page Icon.
@@ -110,22 +110,22 @@ The Program Detail Page is divided into a Left Hand Panel and a Right Hand Panel
 
 ### Configuring the Left Hand Panel
 The left panel can display a maximum of **6** attributes as label:value pairs. If you add more than 6 attributes, **Bento will display only the first 6 attributes without a warning or error message**.
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `leftPanel`:
-   * Add an object ({dataField: ; label: })to the `attribute` list.
+   * Add an object ({dataField: ; label: })to the `attributes` list.
     * Set the field `dataField` to the GraphQL API query that returns the data field of your choice. This will be displayed as the value of in a label:value pair.
     * Set the field `label` to a display label of your choice.
 3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
-4. You can add an embedded link to your label or your value, or both. Links can be internal or external. 
-   * To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object. 
-   * To add a link to your *label* specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to your object. 
+4. You can add an embedded link to your label or your value, or both. Links can be internal or external.
+   * To add a link to your *value* specify an internal or external link by adding a `link` attribute to your object.
+   * To add a link to your *label* specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to your object.
 Examples of four types of embedded links are given below. See below for additional notes on adding internal and external links.
 4. Example:
 
 ```javascript
 ...
 const leftPanel = {
-  attribute: [
+  attributes: [
     {
       //Label:Value pair with an internal link embedded in the Value.
       dataField: '<GraphQL API query that returns the data for this label/value pair>',
@@ -168,7 +168,7 @@ const leftPanel = {
 
 ##### External Links to Labels and Values
 1. External links shall start with 'http://' or'https://'
-2. External links shall show-up with 'externalLinkIcon' 
+2. External links shall show-up with 'externalLinkIcon'
 3. External link shall be opened in a new tab.
 4. Dynamic links can be generated by passing a valid table filed to '{}'. For example, 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}' shall link to 'https://pubmed.ncbi.nlm.nih.gov/29860917/'
 
@@ -176,7 +176,7 @@ const leftPanel = {
 In the current version of Bento, you can (a) add a donut widget that displays the counts by value of a key data entity in your data sharing platform and (b) add a count of files stored for the given program.
 
 #### Configuring the Donut widget
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `rightPanel`:
   * Under `widget`:
     * Set the field `dataField` to the GraphQL API query that returns the counts by value for your data entity.
@@ -209,7 +209,7 @@ const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
 #### Configuring the File Count widget
 The File count graphic displays the number of Program Level files.
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `files`:
    * Set the field `dataField` to the GraphQL API query that returns the number of program-level files.
    * Set the field `label` to the display label text for the File Count widget.
@@ -241,12 +241,12 @@ const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
 }
 ...
 ```
- 
+
 ## The Program Detail Page Table
 The Program Detail Page table can be used to display program-level information such as the studies or projects that belong to the program.
 
 ### Configuring the Program Detail Page Table.
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. In `table`:
   * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Program Detail Page*.
   * Set the field `title` to the the title of your table.
@@ -268,7 +268,7 @@ const table = {
 const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
     '<Data fields returned by your GraphQL API query>'
-  ... 
+  ...
  }
 }
 ```
@@ -276,7 +276,7 @@ const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
 ### Adding columns to the Program Detail Page Table.
 You can add up to 10 columns in the Program Detail Page Table. If you add more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
-1. Open `$(src)/bento-frontend/src/bento/programDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.
@@ -304,7 +304,7 @@ const table = {
 const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
     '<Data fields returned by your GraphQL API query>'
-  ... 
+  ...
  }
 }
 ```
@@ -318,7 +318,7 @@ const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
 1. External links shall start with 'http://' or'https://'.
 2. External links shall show-up with 'externalLinkIcon'.
 3. External link shall be opened in a new tab.
-4. Dynamic links can be generated by passing a valid table filed to '{}'. 
+4. Dynamic links can be generated by passing a valid table filed to '{}'.
    For example, 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}' shall link to 'https://pubmed.ncbi.nlm.nih.gov/29860917/'.
 
 ## Suggested Best Practice
