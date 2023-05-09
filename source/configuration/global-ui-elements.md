@@ -11,7 +11,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 1. The files that specify the configuration parameters of the Bento UI are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. All images and icons that you use in your Bento instance should be accessible via a public URL. 
+2. All images and icons that you use in your Bento instance should be accessible via a public URL.
 
 3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
@@ -19,11 +19,11 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 |Global UI Element    | Configuration File |
 |---------------------|------------------------------------------------------|
-|Web Browser Tab      |`$(src)/bento-frontend/public/index.html`|
-|Global Header        |`$(src)/bento-frontend/src/bento/globalHeaderData.js`|
-|Global Footer        |`$(src)/bento-frontend/src/bento/globalFooterData.js`|
-|Global Navigation Bar|`$(src)/bento-frontend/src/bento/navigationBarData.js`|
-|Stats Bar            |`$(src)/bento-frontend/src/bento/globalStatsData.js`|
+|Web Browser Tab      |`$(src)/packages/bento-frontend/public/index.html`|
+|Global Header        |`$(src)/packages/bento-frontend/src/bento/globalHeaderData.js`|
+|Global Footer        |`$(src)/packages/bento-frontend/src/bento/globalFooterData.js`|
+|Global Navigation Bar|`$(src)/packages/bento-frontend/src/bento/navigationBarData.js`|
+|Stats Bar            |`$(src)/packages/bento-frontend/src/bento/globalStatsData.js`|
 
 
 ## Web Browser Tab
@@ -34,24 +34,24 @@ The favorite icon (or favicon) that appears in the web browser tab can be config
 
  Option A: Using a web-based location:
 
- 1. Open `$(src)/bento-frontend/public/index.html`.
+ 1. Open `$(src)/packages/bento-frontend/public/index.html`.
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{URL of the file}"/>`
 
  Option B: Using a local file in your repo:
- 1. The location is specified in the git repo and is in the file:  `$(src)/bento-frontend/public/`
+ 1. The location is specified in the git repo and is in the file:  `$(src)/packages/bento-frontend/public/`
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="/{file_name}"/>`
 
 ### Configuring the Tab Title
 The HTML Title element `<title>` defines the document's title that is shown in a browser's title bar or a page's tab.
 The Title, or tab text, can be specified as follows:
-1. Open `$(src)/bento-frontend/public/index.html`.
+1. Open `$(src)/packages/bento-frontend/public/index.html`.
 2. Replace line  `<title>Bento</title>` with `<title>{ title you want}</title>`
 
 ## Global Header
 The Global header appears at the top of all Bento-based applications. It displays a platform-specific logo and image.
 
 ### Configuring the Global Header Logo
-1. Open `$(src)/bento-frontend/src/bento/globalHeaderData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/globalHeaderData.js`.
 2. Set field `globalHeaderLogo` with stored image URL.
 3. An optional embedded link can be specified in the field `globalHeaderLogoLink`.
 3. Set field `globalHeaderLogoAltText` to the ALT tags for the Global Header Logo.
@@ -66,7 +66,7 @@ export default {
 ```
 
 ### Configuring the Global Header Image
-1. Open `$(src)/bento-frontend/src/bento/globalHeaderData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/globalHeaderData.js`.
 2. Set field `globalHeaderImage` with a stored image URL.
 3. Example:
 ```javascript
@@ -81,10 +81,10 @@ The Global Footer appears at the bottom of every page in a Bento-based applicati
 
 ![Global Footer Elements](../assets/global_footer.png)
 
-**The Global Footer.** Displayed are the elements of the Global Footer. 
+**The Global Footer.** Displayed are the elements of the Global Footer.
 
-### Configuring the Organization Logo 
-1. Open `$(src)/bento-frontend/src/bento/globalFooterData.js`. 
+### Configuring the Organization Logo
+1. Open `$(src)/packages/bento-frontend/src/bento/globalFooterData.js`.
 2. Set field `footerLogoImage` with stored image URL.
 3. Example:
 ```javascript
@@ -95,7 +95,7 @@ export default {
 ```
 
 ### Configuring Static Footer Text
-1. Open `$(src)/bento-frontend/src/bento/footer.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Set the field `footerStaticText` to the text of your choice.
 3. Example:
 ```javascript
@@ -110,7 +110,7 @@ export default {
 A Footer subsection may be defined as a column of anchor links along with a column header. These are optional components; if no footer subsections are specified, none will be displayed. Bento allows a maximum of *3* footer subsections to be displayed. If you specify more than 3 footer subsections, **Bento will display the first three without any error or warning messages**.
 <br> Each Footer Subsection has several components: Header, Links, Link Text, Link Types, Link Icons. Given below are instructions on how to configure each of these components.
 
-1. Open `$(src)/bento-frontend/src/bento/footer.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Each Footer Subsection is configured by one element in the `links_sections` list.
 3. Set the field `title` to the Footer Subsection Title.
 4. Footer subsection links provide an entry point to both internal and external pages. Bento allows a maximum of **4** links per Footer Subsection. Footer subsection links can be specified with the `items` dictionary of a `link_sections` list element.
@@ -152,12 +152,12 @@ export default {
 
 ### Configuring the number of Footer Anchor Links
 Footer Anchor Links allows you to optionally embed additional organizational URLs.
-Bento allows you embed 4 footer anchor links. If you specify more than 4 links, **Bento will display the first four any warning or error message**. 
-1. Open `$(src)/bento-frontend/src/bento/footer.js`.
+Bento allows you embed 4 footer anchor links. If you specify more than 4 links, **Bento will display the first four any warning or error message**.
+1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Add your anchor links to `global_footer_links`.
   * Set the `text` field to the text to be displayed.
   * Set the `link` field to the desired URL.
-3. Example: 
+3. Example:
 ```javascript
 export default {
 ...
@@ -176,10 +176,10 @@ The Global Navigation bar (Nav bar) serves as an entry point to other sites with
 
 ### Configuring the Global Navigation Bar
 
-1. Open `$(src)/bento-frontend/src/bento/navigationBarData.js`. The top-down order of menu items will display left to right in the UI.
+1. Open `$(src)/packages/bento-frontend/src/bento/navigationBarData.js`. The top-down order of menu items will display left to right in the UI.
 2. Specify a menu item as a object.
   * Set the field `labelText` to the text to be displayed.
-  * Set the field `type` to 'link' (see below for configuring drop-down menu items). 
+  * Set the field `type` to 'link' (see below for configuring drop-down menu items).
   * Set the field `link` to the desired external or internal link.
 3. Example of adding a Menu Item of type 'Link':
 ```javascript
@@ -226,7 +226,7 @@ export default [
 The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. **If you add more than 6 statistics, only the top 6 will be displayed without any warning or error message**.
 
 ### Configure the Stats Bar
-1. Open `$(src)/bento-frontend/src/bento/stats.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/stats.js`.
 2. For each object in `globalStatsData`:
   * Set the field `statTitle` to the display label for the statistic.
   * Set the field `datatable_field` to have the respective in the dashboard query.
