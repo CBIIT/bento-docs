@@ -9,52 +9,49 @@ The Dashboard provides the end user with several capabilities (a) filter data en
 
 1. The files that specify the configuration parameters of the Dashboard are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/bento-frontend/src/bento/dashboardData.js`.
+2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
 
-3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+3. All images and icons that you use in your Bento instance should be accessible via a public url.
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return your data of interest.
 
 ## Configuring the Dashboard Widgets
 Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, you can add 3, 4 or 6 widgets. If you add more than **6** widgets, Bento will display the first 6 widgets without any error or warning message.
 
-1. Open `$(src)/bento-frontend/src/bento/dashboardData.js`.
-2. Under `widgetsData` add an object {type,label, dataName, datatable_field, show} to represent your widget.
+1. Open `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
+2. Under `widgetConfig` add an object `{ type, label, dataName, ... }` to represent your widget.
 	* Set the field `type` to the type of widget you want to display. Valid values are *'donut'* and *'sunburst'*.
-	* Set the field `label` to the display label for your widget.
+	* Set the field `title` to the display title for your widget.
 	* Set the field `dataName` to the name of the GraphQL API query that returns data for your widget.
-	* *If your widget is of type 'donut'*, set the field `datatable_field` to the specific field in the GraphQL API query that returns data for your widget.
-	* Sunburst widgets display two types of data within a single plot. *If your widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for your sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst. 
-	* Set the field `show` to 'true' to display the widget or to 'false', otherwise.
+	* Sunburst widgets display two types of data within a single plot. *If your widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for your sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst.
+	* Sunburst widgets allow the custodian to override the default color schemes. Set the fields `datatable_level1_colors` and `datatable_level2_colors` to override the default colors for the inner and outer rings of the widget, respectively. These fields should contain arrays of colors in hex format with no minimum or maximum number of entries. Colors will be repeated if there are more data points than colors in the array.
 	* Enter all GraphQL API queries that drive the widgets in `GET_DASHBOARD_DATA_QUERY`.
 3. Example:
 
 ```javascript
-...
-export const widgetsData = [
+export const widgetConfig = [
   {
     type: 'sunburst',
-    label: '<Widget Label>',
+    title: '<Widget Label>',
     dataName: '<GraphQL API query that returns data for widget>',
-    datatable_level1_field: '<GraphQl API query field that returns data for inner ring of sunburst>',
-    datatable_level2_field: '<GraphQl API query field that returns data for outer ring of sunburst>',
-    show: '<true|false>',
+    datatable_level1_field: '<GraphQL field for inner ring>',
+    datatable_level1_colors: ['#eee', '#ddd', '#ccc']
+    datatable_level2_field: '<GraphQL field for outer ring>',
+    datatable_level2_colors: ['#fff', '#000', '#ccc'],
   },
   {
     type: 'donut',
-    label: 'Diagnosis',
+    title: '<Widget Label>',
     dataName: '<GraphQL API query that returns data for widget>',
-    datatable_field: '<GraphQl API query field that returns data for donut>',
-    show: '<true|false>',
   },
-  ...
-  ]
-...
+];
+
+// ...
 export const GET_DASHBOARD_DATA_QUERY = gql`{
  GraphQL API query{
  	API query field
  }
-}  
+};
 ```
 
 ## Configuring Faceted Filtering
@@ -65,112 +62,121 @@ The faceted filtering on the dashboard's side bar can be organized into into fac
 
 ![Bento Faceted Filtering](../assets/faceted-filtering.jpg)
 
-To configure the facets:
+### Configuring Facet Sections
 
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
+- Open the configuration file located at `bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
 
-- To represent your facet, edit or create a facet object under the `facetSearchData` object
-  
+The variable `facetSectionVariables` controls the sections available in the facet filtering sidebar. Each section is defined as follows:
+
+- `isExpanded`: controls if the section is expanded or collapsed by default (must be `true` or `false`)
+
+- `hasSearch`: controls if the section displays the Local Find search bar (must be `true` or `false`)
+
+For Example:
+
+```javascript
+export const facetSectionVariables = {
+  Cases: {
+    isExpanded: true,
+    hasSearch: true,
+  },
+  Samples: {
+    isExpanded: true,
+  },
+  // ... other facet sections
+};
+```
+
+### Configuring Facet Filters
+
+- Open the configuration file located at `bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
+
+- To represent your facet, edit or create a facet object under the `facetsConfig` object
+
 - Each facet is defined as follows:
-  
-  - `label`:	the display label for your facet that appears in the sidebar
 
-  - `field`:  the specific field in the GraphQL API query, as the  `api`
-  
+  - `section`: the facet section that the facet should appear in the sidebar. Default options include: `CASES`, `SAMPLES`, `FILES`.
+
+  - `label`: the display label for your facet that appears in the sidebar
+
+  - `field`: the specific field in the GraphQL API query, as the  `api`
+
   - `api`:  the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your facet.  (It is in the same file: `dashboardData.js`)
 
  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
-  
-  - `section`:  the facet section that the facet should appear in the sidebar  
-  
+
   - `show`: controls if the facet is displayed or hidden (must be `true` or `false`)
 
-  - **Note** that the order of the facet sections and individual facets nested in each facet section is controlled by the order of the entries of the facets in the `facetSearchData` object
-  
-  For Example: 
-  
-  ```javascript
-    export const facetSearchData = [
+  - **Note** that the order of the facet sections and individual facets nested in each facet section is controlled by the order of the entries of the facets in the `facetsConfig` object
+
+For Example:
+
+```javascript
+export const facetsConfig = [
   {
-    label: 'Program', 
-    field: 'group', 
-    api: 'subjectCountByProgram', 
-    apiForFiltering: 'filterSubjectCountByProgram', 
-    datafield: 'programs', 
-    section: 'Cases', 
+    section: CASES,
+    label: 'Program',
+    apiPath: 'subjectCountByProgram',
+    apiForFiltering: 'filterSubjectCountByProgram',
+    datafield: 'programs',
+    field: GROUP,
+    type: InputTypes.CHECKBOX,
+    sort_type: sortType.ALPHABET,
     show: true,
   },
   {
-    label: 'Tissue Composition', 
-    field: 'group', 
-    api: 'subjectCountByTissueComposition', 
-    apiForFiltering: 'filterSubjectCountByTissueComposition', 
-    datafield: 'composition', 
-    section: 'Samples', 
+    section: CASES,
+    label: 'Arm',
+    apiPath: 'subjectCountByStudy',
+    apiForFiltering: 'filterSubjectCountByStudy',
+    datafield: 'studies',
+    field: GROUP,
+    type: InputTypes.CHECKBOX,
+    sort_type: sortType.ALPHABET,
     show: true,
   },
-  ```
-  
-**NOTE**:  Update the GraphQL API Query in `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your facets
-
-To enable sort:
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
-- Edit the values in `sortLabels` to enable or disable
-  For example:
-    ```javascript
-  export const sortLabels = {
-  sortAlphabetically: 'Sort alphabetically',
-  //sortByCount: 'Sort by counts',
-  showMore: '...expand to see all selections',
-  };
-  ``` 
-
-To set the maximum number of active selections displayed when a facet is collapsed:
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" GitHub repo)
-- Edit the value of `showCheckboxCount` 
-For example:
- ```javascript
- export const showCheckboxCount = 6;
+  {
+    section: SAMPLES,
+    label: 'Tissue Composition',
+    apiPath: 'subjectCountByTissueComposition',
+    apiForFiltering: 'filterSubjectCountByTissueComposition',
+    datafield: 'composition',
+    field: GROUP,
+    type: InputTypes.CHECKBOX,
+    sort_type: sortType.ALPHABET,
+    show: true,
+  },
+  {
+    section: FILES,
+    label: 'File Association',
+    apiPath: 'subjectCountByFileAssociation',
+    apiForFiltering: 'filterSubjectCountByFileAssociation',
+    datafield: 'association',
+    field: GROUP,
+    type: InputTypes.CHECKBOX,
+    sort_type: sortType.ALPHABET,
+    show: true,
+  },
+];
 ```
 
-
-### Faceted Search Styling
-
-The style of each facet section of the side bar can be easily configured.
-
-- Open the configuration file located at `bento-frontend/src/bento/dashboardData.js` (in the "CBIIT/bento-frontend" git repo)
-- Edit the value for corresponding 'section' under `facetSectionVariables` object
-  
-  For example:
-  
-    ```javascript
-  export const facetSectionVariables = {
-    Cases: {
-      color: '#10A075',
-      backgroundColor: '#C0E9D7',
-      checkBoxColorsOne: '#E8F7DC',
-      checkBoxColorsTwo: '#F5FDEE',
-      height: '5px',
-      isExpanded: true,
-  },
-    ```
-
+**NOTE**:  Update the GraphQL API Query in `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your facets
 
 ## Configuring Dashboard Tables & Tabs
 
-The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://dev.bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
+The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
 
 
 The tabs can be configured as follows:
 
-1. Open `$(src)/bento-frontend/src/bento/dashboardTabData.js` 
-2. To change Properties of tab go to `tabs` object:
+1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js`
+2. To change Properties of tab go to `tabContainers` object:
 - **`name`** : Text to show on tab
 - **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query
 
 **NOTE**: the order of the entries in `tabs` should match the order in the `tabsIndex` object. This is the order that the tabs will be displayed left to right on the UI.
 
-To change the style of the tabs go to `tabIndex` object: 
+To change the style of the tabs go to `tabIndex` object:
 
 -  **`title`** : Text to shown on tab
 -  **`primaryColor`** : background color when tab is selected
@@ -180,10 +186,10 @@ To change the style of the tabs go to `tabIndex` object:
 
 The tables displayed in each tab can be configured as follows:
 
-1. Open `$(src)/bento-frontend/src/bento/dashboardTabData.js` 
+1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js`
 2. The `tabContainers` object is an array of tables, with each table object having the following fields:
 
-- **`dataField`** : field name in "Data" object to get values for table. 
+- **`dataField`** : field name in "Data" object to get values for table.
 
  **NOTE**: This field should be in the GraphQL API query specified in the `api` field.
 
@@ -219,7 +225,7 @@ The tables displayed in each tab can be configured as follows:
 
     * must be `true`  or `false`
 
-  * `display`: Show  or Hide column 
+  * `display`: Show  or Hide column
 
     * must be `true`  or `false`
 
@@ -230,9 +236,9 @@ The tables displayed in each tab can be configured as follows:
   * `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
 
     ```javascript
-    // Internal Link 
+    // Internal Link
     link: '/arm/{dataField}',
-    
+
     // External Link
     link: 'https://example.com/{dataField}',
     ```
@@ -303,5 +309,3 @@ export const DASHBOARD_QUERY = gql`{
 
 - Dimension of the External Link Icon = 16 X 16 pixels.
 - All images should have a resolution >= 72 ppi and should be in the PNG format.
-
-
