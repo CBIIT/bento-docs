@@ -53,7 +53,7 @@ You can add a table to the Arm Detail Page. *This is optional.*
 2. In `table`:
   * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Arm Detail Page*.
   * Set the field `title` to the the title of your table.
-  * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Arm Detail Page. *Note: This query should match the GraphQL API query in `GET_ARM_DETAIL_DATA_QUERY`*.
+  * Set the field `dataKey` to track selected rows (via checkbox input) of the table. Selected column for dataKay should have unique values.
   * Set the field `defaultSortField` to the name of the query field that will be used to sort the Arm Detail Page Table. Note: this query field should be displayed as one of the columns in the Arm Detail Page Table.
   * Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
   * Add your GraphQL API query to `GET_ARM_DETAIL_DATA_QUERY`.
@@ -63,10 +63,14 @@ You can add a table to the Arm Detail Page. *This is optional.*
 ...
 const table = {
   display: true,
+  dataKey: '<dataField>',
   title: '<Table Title>',
   dataField: '<GraphQL API query returning data for this page.>',
   defaultSortField: '<GraphQL API query field used to sort the table.>',
   defaultSortDirection: '<sort order, asc|desc>',
+  tableMsg: {
+    noMatch: 'Sorry, no matching records found',
+  },
  ...
 const GET_ARM_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
@@ -95,13 +99,33 @@ const table = {
   ...
   columns: [
     {
-      dataField: '<GraphQL API query field returning data for this column>',
-      header: '<Column Header>',
-      link: '<link to be embedded in column value>',
+      cellType: cellTypes.CHECKBOX,
+      role: cellTypes.CHECKBOX,
+      display: true,
     },
     {
-      dataField: '<GraphQL API query field returning data for this column>',
-      header: 'PubMed ID',
+      dataField: 'file_name',
+      header: 'File Name',
+      display: true,
+      role: cellTypes.DISPLAY,
+    },
+    {
+      dataField: 'file_type',
+      header: 'File Type',
+      display: true,
+      role: cellTypes.DISPLAY,
+    },
+    {
+      dataField: 'file_description',
+      header: 'Description',
+      display: true,
+      role: cellTypes.DISPLAY,
+    },
+    {
+      dataField: 'file_format',
+      header: 'Format',
+      display: true,
+      role: cellTypes.DISPLAY,
     },
     ...
   ],
