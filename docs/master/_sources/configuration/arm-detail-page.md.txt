@@ -99,6 +99,15 @@ const table = {
   ...
   columns: [
     {
+      dataField: '<GraphQL API query field returning data for this column>',
+      header: '<Column Header>',
+      cellType: <type of cell, by default column is label as display>
+      role: <role of column display or interactive>
+    }
+    ...
+  ]
+  columns: [
+    {
       cellType: cellTypes.CHECKBOX,
       role: cellTypes.CHECKBOX,
       display: true,
