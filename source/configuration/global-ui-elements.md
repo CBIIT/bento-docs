@@ -11,7 +11,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 1. The files that specify the configuration parameters of the Bento UI are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. All images and icons that you use in your Bento instance should be accessible via a public URL.
+2. All images and icons that you use in your Bento instance should be accessible via a public URL. 
 
 3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
@@ -157,7 +157,7 @@ Bento allows you embed 4 footer anchor links. If you specify more than 4 links, 
 2. Add your anchor links to `global_footer_links`.
   * Set the `text` field to the text to be displayed.
   * Set the `link` field to the desired URL.
-3. Example:
+3. Example: 
 ```javascript
 export default {
 ...
@@ -179,7 +179,7 @@ The Global Navigation bar (Nav bar) serves as an entry point to other sites with
 1. Open `$(src)/packages/bento-frontend/src/bento/navigationBarData.js`. The top-down order of menu items will display left to right in the UI.
 2. Specify a menu item as a object.
   * Set the field `labelText` to the text to be displayed.
-  * Set the field `type` to 'link' (see below for configuring drop-down menu items).
+  * Set the field `type` to 'link' (see below for configuring drop-down menu items). 
   * Set the field `link` to the desired external or internal link.
 3. Example of adding a Menu Item of type 'Link':
 ```javascript
@@ -239,10 +239,12 @@ export const globalStatsData = [
   // A maximum of 6 stats are allowed
   {
     statTitle: '<Stat Label>',
+    type: '<field|array|object>',
     datatable_field: '<Your Datatable field name',
     datatable_sub_field:: '<Your Datatable subfield name, if applicable>',
-    type: '<field|array|object>',
     statAPI: '<Your GraphQL API query>',
+    statIconSrc: '<optional: URL for displayed icon>',
+    statIconAlt: '<optional: Alt text for displayed icon>',
   },
   ...
   ]
