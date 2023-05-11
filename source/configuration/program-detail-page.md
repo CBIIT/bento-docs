@@ -112,15 +112,15 @@ The Program Details Page is divided into a Left Hand Panel and a Right Hand Pane
 The left panel can display a maximum of **6** attributes as label:value pairs. If adding more than 6 attributes, **Bento will display only the first 6 attributes without a warning or error message**.
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `leftPanel`:
-   * Add an object ({dataField: ; label: })to the `attributes` list.
-    * Set the field `dataField` to the GraphQL API query that returns the data field of your choice. This will be displayed as the value of a label:value pair.
-    * Set the field `label` to a display label of your choice.
+   * Add an object (`{ dataField: , label: }`) to the `attributes` list.
+    * Set the field `dataField` to the GraphQL API query that returns the desired data field. This will be displayed as the value of a label:value pair.
+    * Set the field `label` to the display label.
 3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
 4. Embedded links can be added to a labels or values, or both. Links can be internal or external.
    * To add a link to a *value* specify an internal or external link by adding a `link` attribute to the object.
    * To add a link to a *label* specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to the object.
 Examples of four types of embedded links are given below. See below for additional notes on adding internal and external links.
-4. Example:
+1. Example:
 
 ```javascript
 ...
