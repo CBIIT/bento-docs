@@ -11,7 +11,7 @@ The Dashboard provides the end user with several capabilities (a) filter data en
 
 2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
 
-3. All images and icons that you use in your Bento instance should be accessible via a public url.
+3. All images and icons that you use in your Bento instance should be accessible via a public url. 
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return your data of interest.
 
@@ -169,14 +169,14 @@ The dashboard is structured to organize the data tables using tabs beneath the w
 
 The tabs can be configured as follows:
 
-1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js`
+1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js` 
 2. To change Properties of tab go to `tabContainers` object:
 - **`name`** : Text to show on tab
 - **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query
 
 **NOTE**: the order of the entries in `tabs` should match the order in the `tabsIndex` object. This is the order that the tabs will be displayed left to right on the UI.
 
-To change the style of the tabs go to `tabIndex` object:
+To change the style of the tabs go to `tabIndex` object: 
 
 -  **`title`** : Text to shown on tab
 -  **`primaryColor`** : background color when tab is selected
@@ -186,10 +186,10 @@ To change the style of the tabs go to `tabIndex` object:
 
 The tables displayed in each tab can be configured as follows:
 
-1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js`
+1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js` 
 2. The `tabContainers` object is an array of tables, with each table object having the following fields:
 
-- **`dataField`** : field name in "Data" object to get values for table.
+- **`dataField`** : field name in "Data" object to get values for table. 
 
  **NOTE**: This field should be in the GraphQL API query specified in the `api` field.
 
@@ -225,7 +225,7 @@ The tables displayed in each tab can be configured as follows:
 
     * must be `true`  or `false`
 
-  * `display`: Show  or Hide column
+  * `display`: Show  or Hide column 
 
     * must be `true`  or `false`
 
@@ -236,9 +236,9 @@ The tables displayed in each tab can be configured as follows:
   * `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
 
     ```javascript
-    // Internal Link
+    // Internal Link 
     link: '/arm/{dataField}',
-
+    
     // External Link
     link: 'https://example.com/{dataField}',
     ```
