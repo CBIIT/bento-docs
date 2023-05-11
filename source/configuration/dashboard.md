@@ -11,19 +11,19 @@ The Dashboard provides the end user with several capabilities (a) filter data en
 
 2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
 
-3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+3. All images and icons used in a Bento instance should be accessible via a public url. 
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return your data of interest.
 
 ## Configuring the Dashboard Widgets
-Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, you can add 3, 4 or 6 widgets. If you add more than **6** widgets, Bento will display the first 6 widgets without any error or warning message.
+Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than **6** widgets are added, Bento will display the first 6 widgets without any error or warning message.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
-2. Under `widgetConfig` add an object `{ type, label, dataName, ... }` to represent your widget.
+2. Under `widgetConfig` add an object `{ type, label, dataName, ... }` to represent a widget.
 	* Set the field `type` to the type of widget you want to display. Valid values are *'donut'* and *'sunburst'*.
-	* Set the field `title` to the display title for your widget.
+	* Set the field `title` to the display title for the widget.
 	* Set the field `dataName` to the name of the GraphQL API query that returns data for your widget.
-	* Sunburst widgets display two types of data within a single plot. *If your widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for your sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst.
+	* Sunburst widgets display two types of data within a single plot. *If the widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for your sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst.
 	* Sunburst widgets allow the custodian to override the default color schemes. Set the fields `datatable_level1_colors` and `datatable_level2_colors` to override the default colors for the inner and outer rings of the widget, respectively. These fields should contain arrays of colors in hex format with no minimum or maximum number of entries. Colors will be repeated if there are more data points than colors in the array.
 	* Enter all GraphQL API queries that drive the widgets in `GET_DASHBOARD_DATA_QUERY`.
 3. Example:
@@ -91,13 +91,13 @@ export const facetSectionVariables = {
 
 - Open the configuration file located at `bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
 
-- To represent your facet, edit or create a facet object under the `facetsConfig` object
+- To represent a facet, edit or create a facet object under the `facetsConfig` object
 
 - Each facet is defined as follows:
 
   - `section`: the facet section that the facet should appear in the sidebar. Default options include: `CASES`, `SAMPLES`, `FILES`.
 
-  - `label`: the display label for your facet that appears in the sidebar
+  - `label`: the display label for the facet that appears in the sidebar
 
   - `field`: the specific field in the GraphQL API query, as the  `api`
 
