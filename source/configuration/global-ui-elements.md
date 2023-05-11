@@ -11,7 +11,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 1. The files that specify the configuration parameters of the Bento UI are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. All images and icons that you use in your Bento instance should be accessible via a public URL. 
+2. All images and icons used in a Bento instance should be accessible via a public url. 
 
 3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
@@ -107,18 +107,18 @@ export default {
 ```
 
 ### Configuring the Footer Subsections
-A Footer subsection may be defined as a column of anchor links along with a column header. These are optional components; if no footer subsections are specified, none will be displayed. Bento allows a maximum of *3* footer subsections to be displayed. If you specify more than 3 footer subsections, **Bento will display the first three without any error or warning messages**.
+A Footer subsection may be defined as a column of anchor links along with a column header. These are optional components; if no footer subsections are specified, none will be displayed. Bento allows a maximum of *3* footer subsections to be displayed. If more than 3 footer subsections are provided, **Bento will display the first three without any error or warning messages**.
 <br> Each Footer Subsection has several components: Header, Links, Link Text, Link Types, Link Icons. Given below are instructions on how to configure each of these components.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Each Footer Subsection is configured by one element in the `links_sections` list.
 3. Set the field `title` to the Footer Subsection Title.
 4. Footer subsection links provide an entry point to both internal and external pages. Bento allows a maximum of **4** links per Footer Subsection. Footer subsection links can be specified with the `items` dictionary of a `link_sections` list element.
-If you specify more than 4 links, **Bento will display only the first 4 links without any warning or error message.**
-  * Set the field `text` to the display text for your link.
-  * Set the field `link` to the link of your choice. Valid links (a) an internal link to a Bento page (b) an external link (c) a valid email address.
+If more than 4 links are specified, **Bento will display only the first 4 links without any warning or error message.**
+  * Set the field `text` to the display text for the link.
+  * Set the field `link` to the desired link address. Valid links (a) an internal link to a Bento page (b) an external link (c) a valid email address.
   * A Footer Subsection Link can also be displayed as an icon. For example, you can embed the icon and link of a social media platform in your Footer Subsection.
-5. Here is an example of a Footer Subsection with four types Footer Subsection links:
+1. Here is an example of a Footer Subsection with four types Footer Subsection links:
 ```javascript
 export default {
   ...
@@ -152,7 +152,7 @@ export default {
 
 ### Configuring the number of Footer Anchor Links
 Footer Anchor Links allows you to optionally embed additional organizational URLs.
-Bento allows you embed 4 footer anchor links. If you specify more than 4 links, **Bento will display the first four any warning or error message**.
+Bento allows up to 4 footer anchor links. If more than 4 links are specified, **Bento will display the first four any warning or error message**.
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Add your anchor links to `global_footer_links`.
   * Set the `text` field to the text to be displayed.
