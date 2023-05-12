@@ -42,6 +42,7 @@ const tabContainers = [
         header: 'Diagnosis',
         display: true,
         tooltipText: 'sort',
+        role: cellTypes.DISPLAY
       },
       ....
     ],
@@ -121,6 +122,14 @@ The tables on each tab can be configured as follows:
   * Set the field `tableMsg` to display empty table.
 
   * Set the field `dataKey` to track selected rows in the table (Note: select row feature required unique field to track selected rows).
+
+  * `extendedViewConfig` provides option to add pagination, download button and manage column view component above header column.
+
+      * set pagination to `true` for pagination
+
+      * set manageViewColumns to `true` for manageViewColumns (set column `role` to cellTypes.DISPLAY)
+
+      * set download to `true` to display download button
 
 WrapperConfig:
 
