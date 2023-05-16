@@ -15,10 +15,10 @@ There are a number of static pages that are available for the Bento framework. T
 
 ![About on Navigation Bar](../assets/static-pages-bento.png)
 
-### Make and Test the local environment changes changes 
+### Make and test the local environment changes  
 Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, and the system will show the changes.
 
-### To Create A New Static Page with new Route
+### To create a New Static Page with a new route
 1. Edit `$(src)/packages/bento-frontend/src/bento/aboutPagesRoutes.js` add a new path
 
 2. Add a new copy of yaml property to with page name matching above path
@@ -36,7 +36,7 @@ Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, an
 4. To set the primary or "hero" image to be tiled onto each page: 
    * edit file: `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml` 
    * set variable `primaryContentImage` with the desired image 
-   * NOTE: You cannot use the local file for this you should point to an external image url (e.g. publicly-available, on the internet)
+   * NOTE: Do not use local files. This should point to an external image url (e.g. publicly-available, on the internet)
 
 5. To set a secondary image (including, a zoom and scan-around function):
    * Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`  
