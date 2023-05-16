@@ -112,9 +112,11 @@ The Case Detail Page has tables can be used to display case-level information su
 2. The configuration for "Associated Files" is in  `table1` and "Associated Samples" is in `table2`.
   * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Case Detail Page*.
   * Set the field `title` to the the title of your table.
-  * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Case Detail Page. *Note: This query should match the GraphQL API query in `GET_CASE_DETAIL_DATA_QUERY`*.
-  * Set the field `defaultSortField` to the name of the query field that will be used to sort the Case Detail Page Table. Note: this query field should be displayed as one of the columns in the Case Detail Page Table.
+  * Set the field `dataKey` to track selected rows (via checkbox input) of the table. Selected column for dataKay should have unique values.* Set the field `defaultSortField` to the name of the query field that will be used to sort the Case Detail Page Table. Note: this query field should be displayed as one of the columns in the Case Detail Page Table.
   * Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
+  * Set the field `addFilesRequestVariableKey` to access the respose key of GET_ALL_FILEIDS_FROM_FILESTAB_FOR_ADD_ALL_CART response.
+  * Set the field `addFilesResponseKeys` to provided respose key for GET_ALL_FILEIDS_FROM_FILESTAB_FOR_ADD_ALL_CART query for adding selected files.
+  * Set the field `addAllFilesResponseKeys` to provided respose key for GET_ALL_FILEIDS_FROM_FILESTAB_FOR_ADD_ALL_CART for adding all files.
   * Add your GraphQL API query to `GET_CASE_DETAIL_DATA_QUERY`.
 3. Example:
 
@@ -122,10 +124,14 @@ The Case Detail Page has tables can be used to display case-level information su
 ...
 const table1 = {
   display: true,
+  dataKey: '<dataField>',
   title: '<Table Title>',
   dataField: '<GraphQL API query returning data for this page.>',
   defaultSortField: '<GraphQL API query field used to sort the table.>',
   defaultSortDirection: '<sort order, asc|desc>',
+  tableMsg: {
+    noMatch: 'Sorry, no matching records found',
+  },
  ...
 const GET_CASE_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
@@ -157,11 +163,22 @@ const table1 = {
     {
       dataField: '<GraphQL API query field returning data for this column>',
       header: '<Column Header>',
-      link: '<link to be embedded in column value>',
+      cellType: <type of cell, by default column is label as display>,
+      tooltipText: <tooltip text>
     },
     {
       dataField: '<GraphQL API query field returning data for this column>',
       header: 'PubMed ID',
+    },
+    {
+      cellType: cellTypes.CHECKBOX, // checkbox column
+      display: true,
+    },
+    {
+      dataField: 'sample_id', // view column
+      header: 'Sample ID',
+      display: true,
+      tooltipText: 'sort',
     },
     ...
   ],
