@@ -1,5 +1,5 @@
-# Landing Page
-The Landing Page provides a visual and textual introduction to the overall mission of your data sharing platform, a concise summary of the volume and diversity of stored data and a bird's eye view of what an end user can accomplish at your data sharing platform. A Bento Landing Page has several configurable components. See below for details.
+# Landing page
+The Landing Page provides a visual and textual introduction to the overall mission of a Bento-based data sharing platform. This concise summary of the volume and diversity of stored entices a user to learn more. A Bento Landing Page has several configurable components. See below for details.
 
 ![Landing Page Elements](../assets/landing-page-elements.png)
 
@@ -7,21 +7,21 @@ The Landing Page provides a visual and textual introduction to the overall missi
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Bento Landing Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Bento Landing Page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for all Landing Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingData.js` 
+2. Configuration parameters for all Landing Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingData.js` 
 
-3. All images and icons that you use in your Bento instance should be accessible via a public url. 
+3. All images and icons used in a Bento instance should be accessible via a public url. 
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
 ## Landing Page Hero Image
-The Landing Page Hero Image is a visual representation of the mission of your data sharing platform.
+The Landing Page Hero Image is a visual representation of the mission of the data sharing platform.
 
 ### Configuring the Landing Page Hero Image
  1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
  2. Under `landingPageData`
- 	* Set the field `landingPageHero.img` with the URL to the Landing Page Hero image of your choice.
+ 	* Set the field `landingPageHero.img` with the URL to the Landing Page Hero image to be displayed.
  	* Set the field `landingPageHero.alt` with the alt text to be associated with the Landing Page Hero image.
  3. Example:
  
@@ -36,10 +36,10 @@ export const landingPageData = {
   }
 ```
 
-## Call To Action 
-The Call To Action feature provides a concise summary of the all that an end user can accomplish at your data sharing platform.
+## Call to Action 
+The Call to Action feature provides a concise summary of what an end user can accomplish within the data sharing platform.
 
-## Configuring the Call To Action Feature
+## Configuring the Call to Action Feature
 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
 2. In `landingPageData`:
 	* Set the field `callToActionTitle` to the Call To Action Title.
@@ -58,7 +58,7 @@ export const landingPageData = {
 ```
 
 ## Landing Page Tiles
-The four Landing Page Tiles provide additional visual and textual description of the mission and capabilities of your data sharing platform (see figure above for tile numbering). Note that in this version of Bento, the number, position and dimensions of these tiles cannot be configured. 
+The four Landing Page Tiles provide additional visual and textual description of the mission and capabilities of a data sharing platform (see figure above for tile numbering). Note that in this version of Bento, the number, position and dimensions of these tiles cannot be configured. 
 
 ### Configuring the Landing Page Tiles
 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
@@ -90,9 +90,9 @@ The Landing Page Stats Bar provides the end user with a high level view of the v
 
 ### Configuring the Landing Page Stats Bar
 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
-2. Under `landingPageData` you can add your statistic to landingPageStatsBar.
-	* Set the field `statTitle` to the label to be displayed for your statistic.
-	* Set the field `statAPI` to the GraphQL API query that returns your statistics of interest.
+2. Under `landingPageData` statistics can be added to the landingPageStatsBar.
+	* Set the field `statTitle` to the label to be displayed for each statistic.
+	* Set the field `statAPI` to the GraphQL API query that returns each statistic of interest.
 	* Add the GraphQL query to `GET_LANDING_PAGE_DATA_QUERY`.
 3. Example:
 

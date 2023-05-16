@@ -1,5 +1,5 @@
 # Dashboard
-The Dashboard provides the end user with several capabilities (a) filter data entities of interest via faceted filtering (b) view graphical summaries of data entities and (c) select data entities for further exploration.
+The Dashboard provides the end user with several capabilities. These capabilities include; (a) filtering data entities of interest via faceted filtering (b) viewking graphical summaries of data entities and (c) selecting data entities for further exploration.
 
 ![Dashboard Elements](../assets/dashboard.png)
 
@@ -16,14 +16,14 @@ The Dashboard provides the end user with several capabilities (a) filter data en
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return your data of interest.
 
 ## Configuring the Dashboard Widgets
-Dashboard Widgets provide a graphical summary of the key data entities in your data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than **6** widgets are added, Bento will display the first 6 widgets without any error or warning message.
+Dashboard Widgets provide a graphical summary of the key data entities in a Bento-based data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than **6** widgets are added, Bento will display the first 6 widgets without any error or warning message.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
 2. Under `widgetConfig` add an object `{ type, label, dataName, ... }` to represent a widget.
-	* Set the field `type` to the type of widget you want to display. Valid values are *'donut'* and *'sunburst'*.
+	* Set the field `type` to the type of widget to be displayed. Valid values are *'donut'* and *'sunburst'*.
 	* Set the field `title` to the display title for the widget.
-	* Set the field `dataName` to the name of the GraphQL API query that returns data for your widget.
-	* Sunburst widgets display two types of data within a single plot. *If the widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for your sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst.
+	* Set the field `dataName` to the name of the GraphQL API query that returns data for the widget.
+	* Sunburst widgets display two types of data within a single plot. *If the widget is of type 'sunburst'*, set the fields `datatable_level1_field` and `datatable_level2_field` to the specific fields in the GraphQL API query that returns data for the sunburst. The field `datatable_level1_field` drives the inner ring of of the sunburst. The field `datatable_level2_field` drives the outer ring of of the sunburst.
 	* Sunburst widgets allow the custodian to override the default color schemes. Set the fields `datatable_level1_colors` and `datatable_level2_colors` to override the default colors for the inner and outer rings of the widget, respectively. These fields should contain arrays of colors in hex format with no minimum or maximum number of entries. Colors will be repeated if there are more data points than colors in the array.
 	* Enter all GraphQL API queries that drive the widgets in `GET_DASHBOARD_DATA_QUERY`.
 3. Example:
@@ -101,7 +101,7 @@ export const facetSectionVariables = {
 
   - `field`: the specific field in the GraphQL API query, as the  `api`
 
-  - `api`:  the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for your facet.  (It is in the same file: `dashboardData.js`)
+  - `api`:  the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for the facet.  (It is in the same file: `dashboardData.js`)
 
  - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
 
@@ -160,11 +160,11 @@ export const facetsConfig = [
 ];
 ```
 
-**NOTE**:  Update the GraphQL API Query in `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with your facets
+**NOTE**:  Update the GraphQL API Query in `GET_DASHBOARD_DATA_QUERY` as needed; it should contain all queries and fields that are associated with facets being displayed.
 
 ## Configuring Dashboard Tables & Tabs
 
-The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
+The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in ab Bento-based data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
 
 
 The tabs can be configured as follows:
@@ -182,7 +182,7 @@ To change the style of the tabs go to `tabIndex` object:
 -  **`primaryColor`** : background color when tab is selected
 -  **`selectedColor`** : font color when tab is selected
 
-**NOTE**: the order of the entries in `tabIndex` should match the order in the `tabs` object. This is the order that the tabs will be displayed left to right on the UI.
+**NOTE**: The order of the entries in `tabIndex` should match the order in the `tabs` object. This is the order that the tabs will be displayed left to right on the UI.
 
 The tables displayed in each tab can be configured as follows:
 
@@ -257,7 +257,7 @@ The tables displayed in each tab can be configured as follows:
     4. Dynamic links can be generated by passing a valid table filed to `{}`.
        For example, `https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}` will link to `https://pubmed.ncbi.nlm.nih.gov/29860917/`
 
-  >  :warning: **WARNING**: You can add a maximum of **10** columns to the dashboard tab table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message
+  >  :warning: **WARNING**: A maximum of **10** columns can be added to the dashboard tab table. If adding more than 10 columns, Bento will display only the first ten columns, without any warning or error message
 
 
 
