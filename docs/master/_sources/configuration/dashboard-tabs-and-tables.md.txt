@@ -4,30 +4,75 @@ The dashboard is structured to organize the data tables using tabs beneath the w
 
 These tables can be configured to list key data entities in your data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://dev.bento-tools.org/#/cases) the Dashboard Table list the cases (or study subjects) in the program.
 
+Dashboard Tab Configuration
+Dashboard Tab configuration includes configuration for tabs (Cases, Samples and Files) and respective tables.
+```
+const tabContainers = [
+  {
+    name: 'Cases',
+    count: 'numberOfSubjects',
+    api: GET_CASES_OVERVIEW_QUERY,
+    paginationAPIField: 'subjectOverview',
+    dataKey: 'subject_id',
+    defaultSortField: 'subject_id',
+    defaultSortDirection: 'asc',
+    buttonText: 'Add Selected Files',
+    tableID: 'case_tab_table',
+    extendedViewConfig: {
+      pagination: true,
+    },
+    columns: [
+      {
+        cellType: cellTypes.CHECKBOX,
+        display: true,
+      },
+      {
+        dataField: 'subject_id',
+        header: 'Case ID',
+        cellType: cellTypes.LINK,
+        linkAttr : {
+          rootPath: '/case',
+          pathParams: ['subject_id'],
+        },
+        display: true,
+        tooltipText: 'sort',
+      },
+      {
+        dataField: 'diagnosis',
+        header: 'Diagnosis',
+        display: true,
+        tooltipText: 'sort',
+        role: cellTypes.DISPLAY
+      },
+      ....
+    ],
+    id: 'case_tab',
+    tableID: 'case_tab_table',
+    tableMsg: {
+      noMatch: 'No Matching Records Found',
+    },
+    addFilesRequestVariableKey: 'subject_ids',
+    addFilesResponseKeys: ['fileIDsFromList'],
+    addAllFilesResponseKeys: ['subjectOverview', 'files'],
+    addAllFileQuery: GET_ALL_FILEIDS_FROM_CASESTAB_FOR_ADD_ALL_CART,
+    addSelectedFilesQuery: GET_ALL_FILEIDS_CASESTAB_FOR_SELECT_ALL,
+    ...
+  },
+  {
+    name: 'Samples',
+    ...
+  },
+  {
+    name: 'Files',
+    ...
+  }
+]
+```
 
-
-## Tabs
-
-The tabs can be configured as follows:
-
-1. Open `$(src)/bento-frontend/src/bento/dashboardTabData.js` 
-2. To change Properties of tab go to `tabs` object:
+Tab Configuration:
 - **`name`** : Text to show on tab
-- **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query
-
->  :point_right:  **NOTE**: the order of the entries in `tabs`should match the order in the `tabsIndex` object. This is the order that the tabs will be displayed left to right on the UI.
-
-
-
-To change style of tab go to `tabIndex` object : 
-
--  **`title`** : Text to shown on tab
--  **`primaryColor`** : background color when tab is selected
--  **`selectedColor`** : font color when tab is selected
-
-> :point_right:   **NOTE**: the order of the entries in `tabIndex` should match the order in the `tabs` object. This is the order that the tabs will be displayed left to right on the UI.
-
-
+- **`count`**: count specific to the case, samples and files after filter action
+  for bento frontend case tab, count = 'numberOfSubjects'. 'numberOfSubjects' is provided by DASHBOARD_QUERY_NEW query response
 
 ## Tables
 
@@ -44,77 +89,61 @@ The tables on each tab can be configured as follows:
 
 - **`defaultSortDirection`**: Sort default column in Ascending or Descending order (value must be `asc` or `desc`)
 
-- **`buttonText`**: Text to appear on Add to cart button
-
-- **`saveButtonDefaultStyle`**: Style of on Add to cart button, with fields such as
-
-  -       color: '#fff',
-          backgroundColor: '#09A175',
-          opacity: '1',
-          border: '0px',
-          cursor: 'pointer',
-
-- **`ActiveSaveButtonDefaultStyle`**: Style of on Add to cart button when it is active mode
-
-- **`DeactiveSaveButtonDefaultStyle`**: Style of on Add to cart button when it is disabled mode
-
 - **`columns`**: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each column object  is described by the following fields:
 
   * `dataField`: specifies what data appears in the column, field must be from the GraphQL API query
 
   * `header`: Heading Text for column
 
-  * `sort`: sort order for column
-
-    * must be `asc` or `desc`
-
-  * `primary`: applies to primary field of table like "sample_ID" or "File_ID" based on which files will be added in to cart.
-
-    * must be `true`  or `false`
-
   * `display`: Show  or Hide column 
 
     * must be `true`  or `false`
 
-  * `dataFromRoot`: Get data from parent element.
+  * `cellType`: define column type based on role (Checkbox, links)
 
-    * must be `true`  or `false`
+    * cellTypes.CHECKBOX (selecting rows), cellTypes.LINK (e.g. Case ID column), default value text
 
-  * `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
+
+  * `linkAttr`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{linkAttr}`, for example:
 
     ```javascript
     // Internal Link 
-    link: '/arm/{dataField}',
+    linkAttr: {
+      rootPath: '/case', //provide rootPath,
+      pathParams: ['subject_id'], //provide array of pathparm (bento-core will dynamically create path based on the pathParams)
+    }
     
-    // External Link
-    link: 'https://example.com/{dataField}',
+    // External Link can be configured with custom element (cellTypes.CUSTOM_ELEM)
     ```
+  * `id`: id for the table (required for test automation)
 
-     ##### Internal Links in the Dashboard Table.
+  * `tableID`: id for the table (required for test automation)
 
-    1. links starting with `/` are considered as internal links.
-    2. Internal links will be opened in the same tab.
-    3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` will link to `program/NCT00310180`.
+  * Set the field `tableMsg` to display empty table.
 
-    ##### External Links in the Dashboard Table.
+  * Set the field `dataKey` to track selected rows in the table (Note: select row feature required unique field to track selected rows).
 
-    1. External links should start with `http://` or `https://`.
-    2. External links should show-up with `externalLinkIcon`.
-    3. External link will be opened in a new tab.
-    4. Dynamic links can be generated by passing a valid table filed to `{}`.
-       For example, `https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}` will link to `https://pubmed.ncbi.nlm.nih.gov/29860917/`
+  * `extendedViewConfig` provides option to add pagination, download button and manage column view component above header column.
+
+      * set pagination to `true` for pagination
+
+      * set manageViewColumns to `true` for manageViewColumns (set column `role` to cellTypes.DISPLAY)
+
+      * set download to `true` to display download button
+
+WrapperConfig:
+
+  * Set the field `addFilesRequestVariableKey` field to add files to cart.
+
+  * Set the field `addAllFileQuery` query to add all files to the cart.
+
+  * Set the field `addAllFilesResponseKeys` to access the response data provided by addAllFileQuery.
+
+  * Set the field `addSelectedFilesQuery` query to add selected files to the cart.
+
+  * Set the field `addFilesResponseKeys` to access the response data provided by addSelectedFilesQuery.
 
   >  :warning: **WARNING**: You can add a maximum of **10** columns to the dashboard tab table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message
-
-
-
-### Tool Tip
-
-To change Properties of tool tip for each tab, table go to `tooltipContent` object:
-
-- **`icon`**: The help tip icon that appears next to the 'add button'
-- **`alt`**: alt for the tooltip image
-- **`0,1,2`**: tooltip content for first tab, second tab and third tab.
 
 
 
@@ -151,9 +180,6 @@ export const DASHBOARD_QUERY = gql`{
     }
   }`;
 ```
-
-
-
 
 
 #### Suggested Best Practices
