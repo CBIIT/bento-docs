@@ -16,17 +16,12 @@ There are a number of static pages that are available for the Bento framework. T
 ![About on Navigation Bar](../assets/static-pages-bento.png)
 
 ### Make and Test the local environment changes changes 
-
-1. Edit file: `$(src)/bento-frontend/.env`
-
-2. Change the `REACT_APP_ABOUT_CONTENT_URL` variable to gibberish. One example `REACT_APP_ABOUT_CONTENT_URL= https://raw.githubusercondsdsdstent.com/CBIIT/bento-frontend/master/src/content/prod/aboutPagesContent.yaml`
-
-3. Now edit `$(src)/bento-frontend/src/content/prod/aboutPagesContent.yaml`, and the system will show the changes
+Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, and the system will show the changes.
 
 ### To Create A New Static Page with new Route
-1. Edit `$(src)/bento/aboutPagesRoutes.js` add a new path
+1. Edit `$(src)/packages/bento-frontend/src/bento/aboutPagesRoutes.js` add a new path
 
-2. Add a new copy of yaml property to  with page name matching above path
+2. Add a new copy of yaml property to with page name matching above path
 
 
 ### Edit configuration file
@@ -35,16 +30,16 @@ There are a number of static pages that are available for the Bento framework. T
 2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](global-ui-elements.html#global-navigation-bar)
 
 3. To edit the title for each page in the 'About' menu: 
-   * edit file: `$(src)/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml` 
    * set the variable `title` to have the title of the page.
 
 4. To set the primary or "hero" image to be tiled onto each page: 
-   * edit file: `$(src)/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml` 
    * set variable `primaryContentImage` with the desired image 
    * NOTE: You cannot use the local file for this you should point to an external image url (e.g. publicly-available, on the internet)
 
 5. To set a secondary image (including, a zoom and scan-around function):
-   * Edit `$(src)/aboutPagesContent.yaml`  
+   * Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`  
    * Add the Field secondaryZoomImage to show up the secondary Image
 
 6. To add content for each page: (including basic formatting of it, i.e. line/paragraph breaks, bold type, hyperlinked text), follow the following syntax guide 
