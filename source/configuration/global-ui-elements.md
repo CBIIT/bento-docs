@@ -13,7 +13,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 2. All images and icons used in a Bento instance should be accessible via a public url. 
 
-3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
+3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that returns the data of interest.
 
 4. Here is a mapping of each Global UI element to it's configuration file:
 
@@ -27,7 +27,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 
 ## Web Browser Tab
-Web browser tabs allow you to have multiple web pages open at the same time. An application-specific icon and text allows an end user to keep track of the tab running a Bento application.
+Web browser tabs enable multiple web pages to be open at the same time. An application-specific icon and text allows an end user to keep track of the tab running a Bento application.
 
 ### Configuring the Favicon
 The favorite icon (or favicon) that appears in the web browser tab can be configured in two ways:
@@ -37,15 +37,15 @@ The favorite icon (or favicon) that appears in the web browser tab can be config
  1. Open `$(src)/packages/bento-frontend/public/index.html`.
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="{URL of the file}"/>`
 
- Option B: Using a local file in your repo:
+ Option B: Using a local file from a GitHub repository:
  1. The location is specified in the git repo and is in the file:  `$(src)/packages/bento-frontend/public/`
  2. Replace line  `<linkrel="shortcut icon" href="https://raw.githubusercontent.com/CBIIT/bento-frontend/master/public/favicon.ico"/>` with `<linkrel="shortcut icon"href="/{file_name}"/>`
 
 ### Configuring the Tab Title
 The HTML Title element `<title>` defines the document's title that is shown in a browser's title bar or a page's tab.
-The Title, or tab text, can be specified as follows:
+The title or tab text can be specified as follows:
 1. Open `$(src)/packages/bento-frontend/public/index.html`.
-2. Replace line  `<title>Bento</title>` with `<title>{ title you want}</title>`
+2. Replace line  `<title>Bento</title>` with `<title>{ desired title}</title>`
 
 ## Global Header
 The Global header appears at the top of all Bento-based applications. It displays a platform-specific logo and image.
@@ -77,7 +77,7 @@ export default {
 ```
 
 ## Global Footer
-The Global Footer appears at the bottom of every page in a Bento-based application. The Global Footer may be used to display an organization logo and additional links, that may be helpful for the end user, such as documentation, support email and social media platforms.
+The Global Footer appears at the bottom of every page in a Bento-based application. The Global Footer may be used to display an organization logo and additional links that may be helpful for the end user, such as documentation, support email and social media platforms.
 
 ![Global Footer Elements](../assets/global_footer.png)
 
@@ -96,7 +96,7 @@ export default {
 
 ### Configuring Static Footer Text
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
-2. Set the field `footerStaticText` to the text of your choice.
+2. Set the field `footerStaticText` to desired text.
 3. Example:
 ```javascript
 export default {
@@ -117,7 +117,7 @@ A Footer subsection may be defined as a column of anchor links along with a colu
 If more than 4 links are specified, **Bento will display only the first 4 links without any warning or error message.**
   * Set the field `text` to the display text for the link.
   * Set the field `link` to the desired link address. Valid links (a) an internal link to a Bento page (b) an external link (c) a valid email address.
-  * A Footer Subsection Link can also be displayed as an icon. For example, you can embed the icon and link of a social media platform in your Footer Subsection.
+  * A Footer Subsection Link can also be displayed as an icon. For example, you can embed the icon and link of a social media platform in the Footer Subsection.
 1. Here is an example of a Footer Subsection with four types Footer Subsection links:
 ```javascript
 export default {
@@ -151,10 +151,10 @@ export default {
 ```
 
 ### Configuring the number of Footer Anchor Links
-Footer Anchor Links allows you to optionally embed additional organizational URLs.
+Footer Anchor Links enable an option to embed additional organizational URLs.
 Bento allows up to 4 footer anchor links. If more than 4 links are specified, **Bento will display the first four any warning or error message**.
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
-2. Add your anchor links to `global_footer_links`.
+2. Add anchor links to `global_footer_links`.
   * Set the `text` field to the text to be displayed.
   * Set the `link` field to the desired URL.
 3. Example: 
@@ -172,7 +172,7 @@ export default {
 ```
 
 ## Global Navigation Bar
-The Global Navigation bar (Nav bar) serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If you add more than 4 menu items, only the top 4 will be displayed without any warning or error message.
+The Global Navigation bar (Nav bar) serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If more than 4 menu items are added, only the top 4 will be displayed without any warning or error message.
 
 ### Configuring the Global Navigation Bar
 
@@ -223,7 +223,7 @@ export default [
 ```
 
 ## "Stats" Bar
-The Stats bar displays a set of summary statistics, for a Bento-based application, that gives the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. **If you add more than 6 statistics, only the top 6 will be displayed without any warning or error message**.
+The Stats Bar displays a set of summary statistics for a Bento-based application providing the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. **If more than 6 statistics are added, only the top 6 will be displayed without any warning or error message**.
 
 ### Configure the Stats Bar
 1. Open `$(src)/packages/bento-frontend/src/bento/stats.js`.
