@@ -1,5 +1,5 @@
 # Program Details Page
-The Program Details Page displays detailed, program-level information for each of the programs that has submitted data to your data sharing platform. A Bento Program Details Page has several configurable components. See below for details.
+The Program Details Page displays detailed, program-level information for each of the programs that has submitted data to the data sharing platform. A Bento Program Details Page has several configurable components. See below for details.
 
 ![Program Details Page Elements](../assets/program-detail-page.png)
 
@@ -13,7 +13,7 @@ The Program Details Page displays detailed, program-level information for each o
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return the data of interest.
 
 ## Page Title Configuration
 The Page Title section has three components: (a) Page Title (b) Page Subtitle and (c) Breadcrumb.
@@ -22,14 +22,14 @@ The Page Title section has three components: (a) Page Title (b) Page Subtitle an
 
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `pageTitle`:
-	* Set the field `label` to the Page Title of your choice.
-	* Set the field `dataField` to the GraphQl API query that returns the Page Title.
+	* Set the field `label` to the Page Title that is desired.
+	* Set the field `dataField` to the GraphQl API query that returns the respective Page Title.
 3. Under pageSubTitle:
 	* Set the field `dataField` to the GraphQL API query that will return the Page Subtitle.
 4. Under `breadCrumb`:
-	* Set the field `label` to the Breadcrumb text of your choice.
-	* Set the field `link` to the internal link to be embedded in your Breadcrumb.
-5. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
+	* Set the field `label` to the Breadcrumb text that is desired.
+	* Set the field `link` to the internal link to be embedded in the Breadcrumb.
+5. Add GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
 6. Example:
 
 ```javascript
@@ -51,15 +51,15 @@ const breadCrumb = {
 ```
  
 ## Configuring the Aggregate Count
-The Program Level Aggregate Count field allows you to display a Program level count for a key data entity in your data sharing platform.
+The Program Level Aggregate Count field enables the display of a Program-level count for a key data entity in the data sharing platform.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `aggregateCount`:
-	* Set the field `labelText` to the display text for the aggregate count of your choice.
-	* Set the field `dataField` to the GraphQL API query that returns your aggregate count.
+	* Set the field `labelText` to the display text for the aggregate count that is desired.
+	* Set the field `dataField` to the GraphQL API query that returns the respective aggregate count.
 	* Set the field 'link'  to the embedded link for the aggregate count. This is usually a link to an internal page that displays additional detail on the aggregate count.
- 	* Set the field `display` to 'true' if you want to display an aggregate  count, 'false' otherwise.
-3. Add your GraphQL API queries to `GET_PROGRAM_DETAIL_DATA_QUERY`.
+ 	* Set the field `display` to 'true' to display an aggregate  count, 'false' otherwise.
+3. Add GraphQL API queries to `GET_PROGRAM_DETAIL_DATA_QUERY`.
 4. Example:
 
 ```javascript
@@ -84,10 +84,10 @@ The Progam Detail Page supports a Program Details Page Icon, displayed next to t
 
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `programDetailIcon`:
-	* Set the field 'src' to the URL for the Program Details Page Icon of your choice.
+	* Set the field 'src' to the URL for the Program Details Page Icon that is desired.
 	* Set the field 'alt' to the ALT tag for the Program Details Page Icon.
 3. Under `externalLinkIcon`:
-	* Set the field 'src' to the URL for the External Link Icon of your choice.
+	* Set the field 'src' to the URL for the External Link Icon that is desired.
 	* Set the field 'alt' to the ALT tag for the External Link Icon.
 4. Example:
 
@@ -106,7 +106,7 @@ const externalLinkIcon = {
 ```
 
 ## Configuring the Program Details Page Panels
-The Program Details Page is divided into a Left Hand Panel and a Right Hand Panel. The Left Panel displays a set of Program specific details in the form of label-value pairs. The Right Panel displays Program level information as a set of graphics.
+The Program Details Page is divided into a Left-Hand Panel and a Right-Hand Panel. The Left Panel displays a set of Program specific details in the form of label-value pairs. The Right Panel displays Program level information as a set of graphics.
 
 ### Configuring the Left Hand Panel
 The left panel can display a maximum of **6** attributes as label:value pairs. If adding more than 6 attributes, **Bento will display only the first 6 attributes without a warning or error message**.
@@ -115,8 +115,8 @@ The left panel can display a maximum of **6** attributes as label:value pairs. I
    * Add an object (`{ dataField: , label: }`) to the `attributes` list.
     * Set the field `dataField` to the GraphQL API query that returns the desired data field. This will be displayed as the value of a label:value pair.
     * Set the field `label` to the display label.
-3. Add your GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
-4. Embedded links can be added to a labels or values, or both. Links can be internal or external. 
+3. Add GraphQL API queries to `PROGRAM_DETAIL_QUERY`.
+4. Embedded links can be added to labels or values, or both. Links can be internal or external. 
    * To add a link to a *value* specify an internal or external link by adding a `link` attribute to the object. 
    * To add a link to a *label* specify an internal or external link by adding a `internalLinkToLabel` or `externalLinkToLabel` attribute, respectively, to the object. 
 Examples of four types of embedded links are given below. See below for additional notes on adding internal and external links.
@@ -213,9 +213,9 @@ The File count graphic displays the number of Program Level files.
 2. Under `files`:
    * Set the field `dataField` to the GraphQL API query that returns the number of program-level files.
    * Set the field `label` to the display label text for the File Count widget.
-   * Set the field `fileIconSrc` to the URL for the File Icon of your choice.
+   * Set the field `fileIconSrc` to the URL for the File Icon that is desired.
    * Set the field `fileIconAlt` to the ALT tag for the File Icon.
-   * Set the field `display` to 'true' if you want to display the File Count widget and to  'false', otherwise.
+   * Set the field `display` to 'true' to display the File Count widget and to  'false', otherwise.
    * Update `GET_PROGRAM_DETAIL_DATA_QUERY` with the API query that returns file counts.
 3. Example:
 
@@ -248,12 +248,12 @@ The Program Details Page table can be used to display program-level information 
 ### Configuring the Program Details Page Table.
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. In `table`:
-  * The `display` field is set to true, by default. *Set this field to false if you do not wish to display a table in the Program Details Page*.
+  * The `display` field is set to true, by default. *Set this field to false to disable the table in the Program Details Page*.
   * Set the field `title` to the the title of the table.
   * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Program Details Page. *Note: This query should match the GraphQL API query in `GET_PROGRAM_DETAIL_DATA_QUERY`*.
   * Set the field `defaultSortField` to the name of the query field that will be used to sort the Program Details Page Table. Note: this query field should be displayed as one of the columns in the Program Details Page Table.
-  * Set the field `defaultSortDirection` to the sort order of your choice. Valid values are 'asc' (ascending) and 'desc' (descending).
-  * Add your GraphQL API query to `GET_PROGRAM_DETAIL_DATA_QUERY`.
+  * Set the field `defaultSortDirection` to the sort order that is desired. Valid values are 'asc' (ascending) and 'desc' (descending).
+  * Add the GraphQL API query to `GET_PROGRAM_DETAIL_DATA_QUERY`.
 3. Example:
 
 ```javascript
@@ -274,14 +274,14 @@ const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
 ```
 
 ### Adding columns to the Program Details Page Table.
-Up to 10 columns in the Program Details Page Table. If more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
+Up to 10 columns can be added in the Program Details Page Table. If adding more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/programDetailData.js`.
 2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.
   * Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
-  * Add your GraphQL API query data field to `GET_PROGRAM_DETAIL_QUERY`.
+  * Add the GraphQL API query data field to `GET_PROGRAM_DETAIL_QUERY`.
 3. Example:
 
 ```javascript
