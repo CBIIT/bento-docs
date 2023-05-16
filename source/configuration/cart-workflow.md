@@ -1,14 +1,14 @@
-# File-Centric Cart page
+# File-Centric Cart Page
 
 
 
 ## Introduction
 
-The File-Centric Cart page serves as a location where files related to cases of interest are aggregated through the cohort discovery and building process. Within this page, users can generate a file manifest containing identifiable file metadata that can be used to stream files on demand from cloud storage through partnering cloud resources to perform analyis pipelines and workflows on case-level genomic files.
+The File-Centric Cart Page serves as a location where files related to cases of interest are aggregated through the cohort discovery and building process. Within this page, users can generate a file manifest containing identifiable file metadata that can be used to stream files on demand from cloud storage through partnering cloud resources to perform analyis pipelines and workflows on case-level genomic files.
 
 ![File-centric Cart](../assets/fileCentric-Cart.png)
 
-**Cart Workflow**. Displayed are the configurable components of the File-Centric Cart page.
+**Cart Workflow**. Displayed are the configurable components of the File-Centric Cart Page.
 
 <p>&nbsp;</p>
 
@@ -18,13 +18,13 @@ The File-Centric Cart page serves as a location where files related to cases of 
 
 <p>&nbsp;</p>
 
-## Customizing the File-Centric Cart page
+## Customizing the File-Centric Cart Page
 
-The configuration for the File-Centric Cart page is found in the javascript file: `bento-frontend/src/bento/fileCentricCartWorkflowData.js`
+The configuration for the File-Centric Cart Page is found in the javascript file: `bento-frontend/src/bento/fileCentricCartWorkflowData.js`
 
 
 
-### Page properties
+### Page Properties
 
 The page-level properties are configured using the following fields the `myFilesPageData` object: (e.g. `export const myFilesPageData = {` )
 
@@ -57,7 +57,7 @@ The generated file manifest will have a description field to help users remember
 
 ### File table properties
 
-The file table on the File-Centric Cart page is configured using the following fields in the `table` object:  (e.g. `export const table = {` )
+The file table on the File-Centric Cart Page is configured using the following fields in the `table` object:  (e.g. `export const table = {` )
 
 
 
@@ -81,7 +81,7 @@ For example, to configure the table's default sort to be the 'file_name' column 
 
 Columns and Ordering:
 
-The columns that appear in the File-Centric Cart page table are configured in list `columns`. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each entry is described by the following fields:
+The columns that appear in the File-Centric Cart Page table are configured in list `columns`. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each entry is described by the following fields:
 
 * `dataField`: specifies what data appears in the column, field must be from the GraphQL API query
 
@@ -118,9 +118,9 @@ The columns that appear in the File-Centric Cart page table are configured in li
 
 
 
-### File-Centric Cart page table data (GraphQL)
+### File-Centric Cart Page table data (GraphQL)
 
-The data is retrieved using a GraphQL Query used in the Dashboard page: 
+The data is retrieved using a GraphQL Query used in the Dashboard Page: 
 
 ```javascript
 // code placeholder
@@ -145,7 +145,7 @@ query filesInList($file_ids: [String]) {
 
 
 
-### Configuring the Navigation Bar for the File-Centric Cart page
+### Configuring the Navigation Bar for the File-Centric Cart Page
 
 
 ### Navigation Bar link text

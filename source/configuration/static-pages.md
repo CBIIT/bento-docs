@@ -15,16 +15,16 @@ There are a number of static pages that are available for the Bento framework. T
 
 ![About on Navigation Bar](../assets/static-pages-bento.png)
 
-### Make and test the local environment changes  
+### Test the Local Environment Changes  
 Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, and the system will show the changes.
 
-### To create a New Static Page with a new route
+### Create a New Static Page with a New Route
 1. Edit `$(src)/packages/bento-frontend/src/bento/aboutPagesRoutes.js` add a new path
 
 2. Add a new copy of yaml property to with page name matching above path
 
 
-### Edit configuration file
+### Edit Configuration File
 1. There is a maximum of 6 pages that can appear under "About". If no informational pages are configured to be displayed, the "About" menu option will be hidden.
 
 2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](global-ui-elements.html#global-navigation-bar)

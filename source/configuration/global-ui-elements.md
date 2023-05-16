@@ -150,7 +150,7 @@ export default {
 };
 ```
 
-### Configuring the number of Footer Anchor Links
+### Configuring the Number of Footer Anchor Links
 Footer Anchor Links enable an option to embed additional organizational URLs.
 Bento allows up to 4 footer anchor links. If more than 4 links are specified, **Bento will display the first four any warning or error message**.
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.

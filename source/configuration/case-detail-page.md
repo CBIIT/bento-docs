@@ -1,17 +1,17 @@
-# Case Details page
-The Case Details page lists the key attributes of a case, subject or individual participating in a clinical or research-based study in a Bento-based data sharing platform.
+# Case Details Page
+The Case Details Page lists the key attributes of a case, subject or individual participating in a clinical or research-based study in a Bento-based data sharing platform.
 
-![Case Details page](../assets/case-detail-page.png)
+![Case Details Page](../assets/case-detail-page.png)
 
-**Case Details page.** Displayed are the configurable components of a Case Details page.
+**Case Details Page.** Displayed are the configurable components of a Case Details Page.
 
 
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Case Details page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Case Details Page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for all Case Details page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
+2. Configuration parameters for all Case Details Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
@@ -19,19 +19,19 @@ The Case Details page lists the key attributes of a case, subject or individual 
 
 
 
-## Configuring the Case Details page
+## Configuring the Case Details Page
 
-Key case attributes can be added to the Case Details page as label:value pairs within a set of subsections. A maximum of **6** sections can be added to the Case Details page; **3** in the left-hand Panel and **3** in the right-hand Panel. Within each subsection a maximum of **10** attributes can be displayed as label:value pairs. 
+Key case attributes can be added to the Case Details Page as label:value pairs within a set of subsections. A maximum of **6** sections can be added to the Case Details Page; **3** in the left-hand Panel and **3** in the right-hand Panel. Within each subsection a maximum of **10** attributes can be displayed as label:value pairs. 
 
 * If more than 3 subsections are configured in a panel, **only the first 3 subsections will be displayed in the UI, other subsections will be ignored**. 
 * If more than 10 properties are configured, **only first 10 properties will be displayed in the UI, other properties will be ignored**.
-* An optional table can be added to the Case Details page to list case-level data.
+* An optional table can be added to the Case Details Page to list case-level data.
 
 
 
-### Configuring the Case Details page header
+### Configuring the Case Details Page header
 
-The Case Details page header displays a Case ID. 
+The Case Details Page header displays a Case ID. 
 
 1. Open the file `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
 2. Under `caseHeader`:
@@ -41,7 +41,7 @@ The Case Details page header displays a Case ID.
 
 
 
-### Configuring the left and right-hand panels of the Case Details page
+### Configuring the left and right-hand panels of the Case Details Page
 
 The left and right-hand panels allow for the display of case attributes as label:value pairs with a set of subsections; related data attributes can be grouped together in a section.
 
@@ -100,9 +100,9 @@ const leftPanel = [
 
 
 
-## The Case Details page tables: "Associated Files" and "Associated Samples" 
+## The Case Details Page tables: "Associated Files" and "Associated Samples" 
 
-The Case Details page has tables can be used to display case-level information such as the files and samples that belong to a case.
+The Case Details Page has tables can be used to display case-level information such as the files and samples that belong to a case.
 
 
 
@@ -110,10 +110,10 @@ The Case Details page has tables can be used to display case-level information s
 
 1. Open `$(src)/bento-frontend/src/bento/caseDetailData.js`.
 2. The configuration for "Associated Files" is in `table1` and "Associated Samples" is in `table2`.
-  * The `display` field is set to true, by default. *Set this field to false to disable the table in the Case Details page*.
+  * The `display` field is set to true, by default. *Set this field to false to disable the table in the Case Details Page*.
   * Set the field `title` to the the title of the table.
-  * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Case Details page. *Note: This query should match the GraphQL API query in `GET_CASE_DETAIL_DATA_QUERY`*.
-  * Set the field `defaultSortField` to the name of the query field that will be used to sort the Case Details page table. Note: this query field should be displayed as one of the columns in the Case Details page table.
+  * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Case Details Page. *Note: This query should match the GraphQL API query in `GET_CASE_DETAIL_DATA_QUERY`*.
+  * Set the field `defaultSortField` to the name of the query field that will be used to sort the Case Details Page table. Note: this query field should be displayed as one of the columns in the Case Details Page table.
   * Set the field `defaultSortDirection` to the sort order to be displayed. Valid values are 'asc' (ascending) and 'desc' (descending).
   * Add the GraphQL API query to `GET_CASE_DETAIL_DATA_QUERY`.
 3. Example:
@@ -180,7 +180,7 @@ const GET_CASE_DETAIL_DATA_QUERY = gql`{
 2. Internal links shall be opened in the same tab.
 3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` shall link to `program/NCT00310180`.
 
-#### External links in the Case Details page table.
+#### External links in the Case Details Page table
 1. External links shall start with `http://` or `https://`.
 2. External links shall show-up with `externalLinkIcon`.
 3. External link shall be opened in a new tab.
