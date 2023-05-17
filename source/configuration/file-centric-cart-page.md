@@ -4,11 +4,11 @@
 
 ## Introduction
 
-The File-Centric Cart Page serves as a location where files related to cases of interest are aggregated through the cohort discovery and building process. Within this page, users can generate a file manifest containing identifiable file metadata that can be used to stream files on demand from cloud storage through partnering cloud resources to perform analyis pipelines and workflows on case-level genomic files.
+The File-Centric Cart Page serves as a location where files related to cases or subjects of interest are aggregated through the cohort discovery and building process. Within this page, users can generate a file manifest containing identifiable file metadata that can be used to stream files on demand from cloud storage through partnering cloud resources to execute analyis pipelines and workflows on case-level genomic or transcriptomic files.
 
-![File-centric Cart](../assets/fileCentric-Cart.png)
+![File-Centric Cart](../assets/fileCentric-Cart.png)
 
-**Cart Workflow**. Displayed are the configurable components of the File-Centric Cart Page.
+**File-Centric Cart Page**. Displayed are the configurable components of the File-Centric Cart Page.
 
 <p>&nbsp;</p>
 
@@ -30,7 +30,7 @@ The page-level properties are configured using the following fields the `myFiles
 
 
 
-Page Header Items:
+### Page Header Items
 
 * **`mainTitle`**: Table title on the page (e.g. "Cart >")
 * **`subTitle`**: Table sub title on the page (e.g. "Selected Files")
@@ -39,7 +39,7 @@ Page Header Items:
 
 
 
-Download Button Items:
+### Download Button Items
 
 * **`downButtonText`**: Text to appear on the download button (e.g. "DOWNLOAD MANIFEST")
 * **`manifestFileName`**: the filename used for the generated manifest file (e.g. 'File Manifest'). 
@@ -55,13 +55,13 @@ The generated file manifest will have a description field to help users remember
 
 
 
-### File table properties
+### Configuring the File-Centric Cart Page Table
 
-The file table on the File-Centric Cart Page is configured using the following fields in the `table` object:  (e.g. `export const table = {` )
+The table on the File-Centric Cart Page is configured using the following fields in the `table` object:  (e.g. `export const table = {` )
 
 
 
-Sorting:
+#### Sorting the Table
 
 The default sorting behavior for the table can configured:
 
@@ -79,7 +79,7 @@ For example, to configure the table's default sort to be the 'file_name' column 
 
 
 
-Columns and Ordering:
+#### Columns and Ordering
 
 The columns that appear in the File-Centric Cart Page table are configured in list `columns`. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each entry is described by the following fields:
 
@@ -103,7 +103,7 @@ The columns that appear in the File-Centric Cart Page table are configured in li
 
   * must be `true`  or `false`
 
-* `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
+* `link`: Hyperlink to internal or external page. The value can be injected in the link dynamically using `{datafield}`, for example:
 
   ```javascript
   // Internal Link 
@@ -118,7 +118,7 @@ The columns that appear in the File-Centric Cart Page table are configured in li
 
 
 
-### File-Centric Cart Page table data (GraphQL)
+### Powering the File-Centric Cart Page Table with GraphQL
 
 The data is retrieved using a GraphQL Query used in the Dashboard Page: 
 
@@ -148,7 +148,7 @@ query filesInList($file_ids: [String]) {
 ### Configuring the Navigation Bar for the File-Centric Cart Page
 
 
-### Navigation Bar link text
+#### Navigation Bar link text
 To configure the link text that appears on the nav bar:
 
 1. Under `navBarCartData`, 
@@ -162,7 +162,7 @@ export const navBarCartData = {
 ```
 
 
-### Navigation Bar icon
+#### Navigation Bar icon
 To configure the icon that appears on the menu bar:
 
 1. Under `navarBarCartData`, 

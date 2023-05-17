@@ -1,19 +1,20 @@
-# Dashboard
-The Dashboard provides the end user with several capabilities. These capabilities include; (a) filtering data entities of interest via faceted filtering (b) viewking graphical summaries of data entities and (c) selecting data entities for further exploration.
+# The Explore Dashboard
 
-![Dashboard Elements](../assets/dashboard.png)
+The Explore Dashboard enables cohort discovery and cohort building. Users can filter data entities of interest via a comprehensive faceted filtering sidebar alongside a dynamic query bar and graphical summaries of the data. Cohorts can be added to the Cart to produce an exportable File Manifest.
 
-**Dashboard**. Displayed are the configurable elements of a Bento Dashboard: widgets, faceted filtering, table, and tabs.
+![Explore Dashboard Elements](../assets/dashboard.png)
+
+**Explore Dashboard**. Displayed are the configurable elements of a Bento Explore Dashboard: widgets, faceted filtering, table, and tabs.
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Dashboard are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Explore Dashboard are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for Dashboard elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
+2. Configuration parameters for the Explore Dashboard elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/dashTemplate.js`.
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return your data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return data of interest.
 
 ## Configuring the Dashboard Widgets
 Dashboard Widgets provide a graphical summary of the key data entities in a Bento-based data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than **6** widgets are added, Bento will display the first 6 widgets without any error or warning message.
@@ -56,9 +57,9 @@ export const GET_DASHBOARD_DATA_QUERY = gql`{
 
 ## Configuring Faceted Filtering
 
-The dashboard's facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification of stored data entities.
+Facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification of stored data entities.
 
-The faceted filtering on the dashboard's side bar can be organized into into facet sections, each with a maximum count of 15 facets that are associated with facet values that can be used for filtering data upon selecting the respective checkboxes.
+The faceted filtering on the Side Bar can be organized into into facet sections, each with a maximum count of 15 facets that are associated with facet values that can be used for filtering data upon selecting the respective checkboxes.
 
 ![Bento Faceted Filtering](../assets/faceted-filtering.jpg)
 
@@ -164,10 +165,10 @@ export const facetsConfig = [
 
 ## Configuring Dashboard Tables & Tabs
 
-The dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in ab Bento-based data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
+The Explore Dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in ab Bento-based data sharing platform along with a list of key data entity attributes. In the [Bento reference implementation](https://bento-tools.org/#/cases) the Dashboard Table lists the cases (or study subjects) in the program.
 
 
-The tabs can be configured as follows:
+### Tab Configuration
 
 1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js` 
 2. To change Properties of tab go to `tabContainers` object:
@@ -184,7 +185,7 @@ To change the style of the tabs go to `tabIndex` object:
 
 **NOTE**: The order of the entries in `tabIndex` should match the order in the `tabs` object. This is the order that the tabs will be displayed left to right on the UI.
 
-The tables displayed in each tab can be configured as follows:
+### Table Configuration
 
 1. Open `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js` 
 2. The `tabContainers` object is an array of tables, with each table object having the following fields:
@@ -229,27 +230,63 @@ The tables displayed in each tab can be configured as follows:
 
     * must be `true`  or `false`
 
+  * `cellType`: define column type based on role (Checkbox, links)
+
+    * cellTypes.CHECKBOX (selecting rows), cellTypes.LINK (e.g. Case ID column), default value text
+
   * `dataFromRoot`: Get data from parent element.
 
     * must be `true`  or `false`
 
-  * `link`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{datafield}`, for example:
+  * `linkAttr`: Hyperlink to internal or external page. The value can be injected in link dynamically using `{linkAttr}`, for example:
 
     ```javascript
     // Internal Link 
-    link: '/arm/{dataField}',
-    
-    // External Link
-    link: 'https://example.com/{dataField}',
-    ```
+    linkAttr: {
+      rootPath: '/case', //provide rootPath,
+      pathParams: ['subject_id'], //provide array of pathparm (bento-core will dynamically create path based on the pathParams)
+    }
 
-     ### Internal Links in the Dashboard Table
+     ### Internal Links in the Explore Dashboard Table
 
     1. links starting with `/` are considered as internal links.
     2. Internal links will be opened in the same tab.
     3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` will link to `program/NCT00310180`.
 
-    ### External Links in the Dashboard Table
+    // External Link can be configured with a custom element (cellTypes.CUSTOM_ELEM)
+    ```
+  * `id`: id for the table (required for test automation)
+
+  * `tableID`: id for the table (required for test automation)
+
+  * Set the field `tableMsg` to display empty table.
+
+  * Set the field `dataKey` to track selected rows in the table (Note: select row feature required unique field to track selected rows).
+
+  * `extendedViewConfig` provides option to add pagination, download button and manage column view component above header column.
+
+      * set pagination to `true` for pagination
+
+      * set manageViewColumns to `true` for manageViewColumns (set column `role` to cellTypes.DISPLAY)
+
+      * set download to `true` to display download button
+
+WrapperConfig:
+
+  * Set the field `addFilesRequestVariableKey` field to add files to cart.
+
+  * Set the field `addAllFileQuery` query to add all files to the cart.
+
+  * Set the field `addAllFilesResponseKeys` to access the response data provided by addAllFileQuery.
+
+  * Set the field `addSelectedFilesQuery` query to add selected files to the cart.
+
+  * Set the field `addFilesResponseKeys` to access the response data provided by addSelectedFilesQuery.
+
+  >  :warning: **WARNING**: You can add a maximum of **10** columns to the dashboard tab table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message
+
+
+    ### External Links in the Explore Dashboard Table
 
     1. External links should start with `http://` or `https://`.
     2. External links should show-up with `externalLinkIcon`.
@@ -271,9 +308,9 @@ To change Properties of tool tip for each tab, table go to `tooltipContent` obje
 
 
 
-### GraphQL Queries
+### GraphQL to Power the Explore Dashboard
 
-The GraphQL Query used in the Dashboard page is defined in `DASHBOARD_QUERY`. For example:
+The GraphQL Query used in the Explore Dashboard page is defined in `DASHBOARD_QUERY`. For example:
 
 ```javascript
 // GraphQL query to retrieve detailed info for a case
