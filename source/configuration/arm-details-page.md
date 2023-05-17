@@ -1,41 +1,41 @@
-# Arm Details Page
-The Arm Details Page provides a summary of a Study/Project/Arm of that belongs to a Program that participates in your data sharing platform.
+# The Study Arm Details Page
+This page provides a summary of the Study Arm that belongs to a Program that participates in a Bento-based data sharing platform.
 
-![Arm Details Page](../assets/arm-detail-page.png)
+![Study Arm Details Page](../assets/arm-detail-page.png)
 
-**Arm Details Page**. Displayed are the configurable components of the Arm Details Page.
+**Study Arm Details Page**. Displayed are the configurable components of the Study Arm Details Page.
 
 
 
 ## Prerequisites
 
-1. The files that specify the configuration parameters of the Arm Details Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Study Arm Details Page are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration Parameters for all Arm Details Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
+2. Configuration Parameters for all Study Arm Details Page Elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 
 
 
-3. All images and icons used in a  Bento instance should be accessible via a public url. 
+3. All images and icons used in a Bento instance should be accessible via a public url. 
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return data of interest.
 
 
 
-## Configuring the Arm Details page
+## Configuring the Study Arm Details Page
 
-Key study arm attributes can be added to the Arm Details page as label:value pairs within a set of subsections(See Step 3. below). A maximum of **6** sections can be added to the Arm Details page. Within each subsection a maximum of **10** attributes can be displayed as label:value pairs. 
+Key study arm attributes can be added to the Study Arm Details Page as label:value pairs within a set of subsections (See Step 3. below). A maximum of **6** sections can be added to the Study Arm Details page. Within each subsection a maximum of **10** attributes can be displayed as label:value pairs. 
 
-An optional table can be added to the Arm Details page to list arm-level entities.
+An optional table can be added to the Study Arm Details Page to list arm-level metadata.
 
 1. Open the file `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. Under `header`:
-    * Set the field `label` to the display label for the Arm Details page.
+    * Set the field `label` to the display label for the Study Arm Details page.
     * Set the field `dataField` to the GraphQL API query that returns the value, such as the Arm Name or Arm ID to be displayed.
 3. Under `subsections`:
     * For each label:value pair to be displayed, create an object {label: ,datafield: ,} in `properties`:
         * Set the field `label` to the display label for the attribute.
         * Set the field `dataField` to the GraphQL API query that returns the data to be displayed as a value for the given label:value pair.
-        * You can embed an optional link in the label or value, or both. Links can be internal or external. 
+        * Optional links can be embedded in the label or value, or both. Links can be internal or external. 
             * To add a link to the *value* specify an internal or external link by adding a `link` attribute to the object. 
             * To add a link to the *label* specify an internal or external link by adding a `labelLink` attribute to the object.
     * Add the GraphQL API query field to `GET_ARM_DETAIL_DATA_QUERY`. 
@@ -46,9 +46,9 @@ An optional table can be added to the Arm Details page to list arm-level entitie
 
 
 
-## Configuring the Arm Details page table
+## Configuring the Study Arm Details Page Table
 
-A table can be added to the Arm Details page. *This is optional.*
+A table can be added to the Study Arm Details Page. *This is optional.*
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. In `table`:
   * The `display` field is set to true, by default. *Set this field to false to disable the table in the Arm Details page*.
@@ -78,9 +78,9 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 
 
 
-### Adding columns to the Arm Details page table
+### Adding Columns to the Study Arm Details Page Table
 
-Up to 10 columns can be added to the Arm Details page Table. If adding more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
+Up to 10 columns can be added to the Study Arm Details Page Table. If adding more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
 2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
@@ -115,12 +115,12 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 }
 ```
 
-##### Internal Links in the Arm Details page table
+##### Internal Links in the Study Arm Details Page Table
 1. links starting with `/` are considered as internal links.
 2. Internal links will be opened in the same tab.
 3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` will; link to `program/NCT00310180`.
 
-##### External Links in the Arm Details page table
+##### External Links in the Study Arm Details Page Table
 1. External links should start with `http://` or `https://`.
 2. External links should show-up with `externalLinkIcon`. Note: In this version of Bento the External Link Icon of the Arm Details page is not configurable.
 3. External link will be opened in a new tab.
@@ -131,9 +131,9 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 
 
 
-## Configurating The "Associated Files" Table
+## Configurating the Associated Files Table
 
-This table lists files that are associated with the Arm.  It can be configured as follows:
+This table lists files that are associated with a Study Arm.  It can be configured as follows:
 
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js` 
 2. Edit the  `table` object :
@@ -151,7 +151,7 @@ This table lists files that are associated with the Arm.  It can be configured a
 
 * **`tooltipMessage`** **:** Help Icon Message.
 
-* **`columns`**: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each column object  is described by the following fields:
+* **`columns`**: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI. Each column object is described by the following fields:
 
   * **`dataField`**: specifies what data appears in the column, field must be from the GraphQL API query
 
@@ -175,13 +175,13 @@ This table lists files that are associated with the Arm.  It can be configured a
     link: 'https://example.com/{dataField}',
     ```
 
-     ##### Internal Links in the Dashboard Table.
+     ##### Internal Links in the Explore Dashboard Table
 
     1. links starting with `/` are considered as internal links.
     2. Internal links will be opened in the same tab.
     3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` will link to `program/NCT00310180`.
 
-    ##### External Links in the Dashboard Table.
+    ##### External Links in the Explore Dashboard Table
 
     1. External links should start with `http://` or `https://`.
     2. External links should show-up with `externalLinkIcon`.
@@ -193,9 +193,9 @@ This table lists files that are associated with the Arm.  It can be configured a
 
 
 
-### GraphQL Query
+### GraphQL Queries to Power Tables
 
-The GraphQL Query used for the Associated Files table is defined in `GET_ARM_DETAIL_DATA_QUERY`. For example:
+The GraphQL Query used for the Associated Files Table is defined in `GET_ARM_DETAIL_DATA_QUERY`. For example:
 
 ```javascript
 // GraphQL query to retrieve detailed info for a case

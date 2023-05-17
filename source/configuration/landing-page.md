@@ -1,5 +1,5 @@
-# Landing page
-The Landing Page provides a visual and textual introduction to the overall mission of a Bento-based data sharing platform. This concise summary of the volume and diversity of stored entices a user to learn more. A Bento Landing Page has several configurable components. See below for details.
+# The Bento Landing Page
+The Landing Page provides a visual and textual introduction to the overall mission of a Bento-based data sharing platform. This concise summary of the volume and diversity of available data entices users to learn more. A Bento Landing Page has several configurable components. See below for details.
 
 ![Landing Page Elements](../assets/landing-page-elements.png)
 
@@ -9,13 +9,13 @@ The Landing Page provides a visual and textual introduction to the overall missi
 
 1. The files that specify the configuration parameters of the Bento Landing Page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for all Landing Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingData.js` 
+2. Configuration parameters for all Landing Page Elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingData.js` 
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
 4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
-## Landing Page Hero Image
+## The Landing Page Hero Image
 The Landing Page Hero Image is a visual representation of the mission of the data sharing platform.
 
 ### Configuring the Landing Page Hero Image
@@ -86,7 +86,7 @@ export const landingPageData = {
 ```
 
 ## Landing Page Stats Bar
-The Landing Page Stats Bar provides the end user with a high level view of the volume and diversity of your stored data, by providing the counts of up to five major data entity types. Bento allows a maximum of **5** statistics. If you add more than 5 statistics, **only the top 5 will be displayed without any warning or error message**.
+The Landing Page Stats Bar provides the end user with a high-level overview of the volume and diversity of the available data. Summary counts are displayed for up to five major data entity types. Bento allows a maximum of **5** summary statistics. If more than 5 are added, **only the top 5 will be displayed without any warning or error message**.
 
 ### Configuring the Landing Page Stats Bar
 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
@@ -115,7 +115,7 @@ export const GET_LANDING_PAGE_DATA_QUERY = gql`{
 ```
 
 
-## Suggested Best Practice
+## Suggested Best Practices
 - Dimensions of Landing Page Hero image: 1200x500 pixels
 - Dimensions of  Tile 1, Tile 2 and Tile 3 images: 293x349 pixels
 - Dimensions of Tile 4 image: 600x 436 pixels

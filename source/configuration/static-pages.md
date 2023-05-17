@@ -1,7 +1,7 @@
-# Static Pages
+# Bento Static Pages
 
 ## Introduction
-There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the "About" link on the Navigation Bar. In the example below, the static pages are "Bento", "Resources", and "GraphQL".
+There are a number of static pages that are available for the Bento Framework. These are findable by navigating to the "About" link on the Navigation Bar. In the example below, the static pages are "Bento", "Resources", and "GraphQL".
 
 <p>&nbsp;</p>
 

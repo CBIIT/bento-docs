@@ -1,6 +1,6 @@
 # Global UI Elements
 
-Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Program Listing, Program Detail, Dashboard and Case Detail pages. See below for details.
+Global UI elements are displayed on every page of a Bento application. These are the (a) Web Browser tab, (b) Global Footer, (c) Navigation Bar and (d) Global Footer. The "Stats" bar, that displays the high-level statistics is a semi-global element as it is displayed only in the Programs, Program Details, Explore Dashboard and Case Details pages. See below for details.
 
 ![Global UI Elements](../assets/global_elements.png)
 
@@ -9,7 +9,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 ### Prerequisites
 
-1. The files that specify the configuration parameters of the Bento UI are stored in the GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters of the Bento UI are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. All images and icons used in a Bento instance should be accessible via a public url. 
 
@@ -94,7 +94,7 @@ export default {
 };
 ```
 
-### Configuring Static Footer Text
+### Configuring the Static Footer Text
 1. Open `$(src)/packages/bento-frontend/src/bento/footer.js`.
 2. Set the field `footerStaticText` to desired text.
 3. Example:
@@ -171,7 +171,7 @@ export default {
 };
 ```
 
-## Global Navigation Bar
+## The Global Navigation Bar
 The Global Navigation bar (Nav bar) serves as an entry point to other sites within the application. Bento allows a maximum of **4** menu items. If more than 4 menu items are added, only the top 4 will be displayed without any warning or error message.
 
 ### Configuring the Global Navigation Bar
@@ -222,10 +222,10 @@ export default [
   ]
 ```
 
-## "Stats" Bar
+## The Stats Bar
 The Stats Bar displays a set of summary statistics for a Bento-based application providing the end user a high-level view of the volume and diversity of the curated data. A maximum of **6** statistics are allowed to be displayed. **If more than 6 statistics are added, only the top 6 will be displayed without any warning or error message**.
 
-### Configure the Stats Bar
+### Configuring the Stats Bar
 1. Open `$(src)/packages/bento-frontend/src/bento/stats.js`.
 2. For each object in `globalStatsData`:
   * Set the field `statTitle` to the display label for the statistic.
@@ -255,7 +255,7 @@ export const GET_GLOBAL_STATS_DATA_QUERY = gql`{
   `;
 ```
 
-## Suggested Best Practice
+## Suggested Best Practices
 - Dimensions of the favicon: 32 X 32 pixels
 - The Web Browser Tab title should have a maximum of 33 characters
 - Dimensions of the Global Header Logo: 468x80 pixels
