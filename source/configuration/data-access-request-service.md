@@ -83,8 +83,8 @@ This is a configuration file for the Data Access Request page. Custodians can us
 ### Usage
 To use this configuration, follow these steps:
 
-1. Import the pageTitle and formFields variables from this file into your code.
-2. Implement the DataAccessRequest component in your code using the formFields configuration object.
+1. Import the pageTitle and formFields variables from this file into the code.
+2. Implement the DataAccessRequest component into the code using the formFields configuration object.
 3. Customize the page's look and feel by making changes to the formFields object.
 
 ### Configuration
