@@ -20,7 +20,7 @@ The File-Centric Cart Page serves as a location where files related to cases or 
 
 ## Customizing the File-Centric Cart Page
 
-The configuration for the File-Centric Cart Page is found in the javascript file: `bento-frontend/src/bento/fileCentricCartWorkflowData.js`
+The configuration for the File-Centric Cart Page is found in the javascript file: `$(src)/packages/bento-frontend/src/bento/fileCentricCartWorkflowData.js`
 
 
 

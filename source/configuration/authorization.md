@@ -24,7 +24,7 @@ Establishes "which data you have access to" with a given application
 
 3. Configuration for UI elements can be specified in the file(s): 
 * `$(src)/packages/bento-frontend/public/injectEnv.js`
-* `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+* `$(src)/packages/bento-frontend/src/bento/siteWideConfig.js`
 
 <p>&nbsp;</p>
 

@@ -65,7 +65,7 @@ The faceted filtering on the Side Bar can be organized into into facet sections,
 
 ### Configuring Facet Sections
 
-- Open the configuration file located at `bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
+- Open the configuration file located at `$(src)/packages/bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
 
 The variable `facetSectionVariables` controls the sections available in the facet filtering sidebar. Each section is defined as follows:
 
@@ -90,7 +90,7 @@ export const facetSectionVariables = {
 
 ### Configuring Facet Filters
 
-- Open the configuration file located at `bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
+- Open the configuration file located at `$(src)/packages/bento-frontend/src/bento/dashTemplate.js` (in the "CBIIT/bento-frontend" git repo)
 
 - To represent a facet, edit or create a facet object under the `facetsConfig` object
 
@@ -104,7 +104,7 @@ export const facetSectionVariables = {
 
   - `api`:  the GraphQL api query:  `GET_DASHBOARD_DATA_QUERY`  returns data for the facet.  (It is in the same file: `dashboardData.js`)
 
- - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
+ - `datafield`: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: `$(src)/packages/bento-frontend/src/bento/dashboardTabData.js` (described in [Dashboard: Tabs and Tables](dashboard-tabs-and-tables.md))
 
   - `show`: controls if the facet is displayed or hidden (must be `true` or `false`)
 
