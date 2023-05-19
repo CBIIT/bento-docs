@@ -11,7 +11,7 @@ The Case Details Page lists the key attributes of a case, subject or individual 
 
 1. The files that specify the configuration parameters of the Case Details Page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for all Case Details Page elements can be specified in the file: `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
+2. Configuration parameters for all Case Details Page elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
@@ -33,7 +33,7 @@ Key case attributes can be added to the Case Details Page as label:value pairs w
 
 The Case Details Page Header displays a Case ID. 
 
-1. Open the file `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
 2. Under `caseHeader`:
     * Set the field `label` to the label text to be displayed.
     * Set the field `dataField` to the GraphQL API query field that returns the Case ID.
@@ -45,7 +45,7 @@ The Case Details Page Header displays a Case ID.
 
 The left and right-hand panels allow for the display of case attributes as label:value pairs with a set of subsections; related data attributes can be grouped together in a section.
 
-1. Open the file `$(src)/bento-frontend/blob/master/src/bento/caseDetailData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
 2. Under the appropriate section `leftPanel` or `rightPanel`:
     * Add a object {sectionHeader: , secitionDesc: properties: } to add a subsection.
     * Set the field `sectionHeader` to the display name for the subsection.
@@ -108,7 +108,7 @@ The Case Details Page has tables can be used to display case-level information s
 
 ### Configuring the "Associated Files" and/or "Associated Samples" tables
 
-1. Open `$(src)/bento-frontend/src/bento/caseDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
 2. The configuration for "Associated Files" is in `table1` and "Associated Samples" is in `table2`.
   * The `display` field is set to true, by default. *Set this field to false to disable the table in the Case Details Page*.
   * Set the field `title` to the the title of the table.
@@ -141,7 +141,7 @@ const GET_CASE_DETAIL_DATA_QUERY = gql`{
 
 Up to 10 columns can be added to the "Associated Files" Table. If more than 10 columns are added, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
-1. Open `$(src)/bento-frontend/src/bento/caseDetailData.js`.
+1. Open `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
 2. The configuration for "Associated Files" is in  `table1` and "Associated Samples" is in `table2`.
 3. Under `table1` or `table2` add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.

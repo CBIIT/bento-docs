@@ -31,7 +31,7 @@ The Bento Framework supports a user-driven data access request workflow that ena
 
   
 
-3. Configuration parameters for DAR form elements can be specified in the file: `$(src)/bento-frontend/src/bento/requestAccessData.js`.
+3. Configuration parameters for DAR form elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/requestAccessData.js`.
 
   
 
@@ -76,7 +76,7 @@ window.injectedEnv = {
 
 
 ## UI Configuration(s)
-**File Location:** `$(src)/bento-frontend/src/bento/requestAccessData.js`
+**File Location:** `$(src)/packages/bento-frontend/src/bento/requestAccessData.js`
 
 This is a configuration file for the Data Access Request page. Custodians can use this file to make changes to the page's look and feel.
 

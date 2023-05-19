@@ -19,7 +19,7 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 3. Configuration parameters for authentication UI elements can be specified in the file(s): 
   * `$(src)/packages/bento-frontend/public/injectEnv.js`
   * `$(src)/packages/bento-frontend/src/bento/siteWideConfig.js`
-  * `$(src)/bento-frontend/src/bento/loginData.js`.
+  * `$(src)/packages/bento-frontend/src/bento/loginData.js`.
 <p>&nbsp;</p>
 
 ### Configuring Authentication
@@ -70,7 +70,7 @@ The displayed icons and button text for IdPs are configurable
 
 #### Example
 
-1. Edit file `$(src)/bento-frontend/src/bento/loginData.js`
+1. Edit file `$(src)/packages/bento-frontend/src/bento/loginData.js`
 
 2. Set the path for the icon field.
 
