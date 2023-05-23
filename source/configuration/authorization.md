@@ -18,7 +18,7 @@ Establishes "who you are" using information obtained by logging in through an Id
 Establishes "which data you have access to" with a given application
 
 ## Prerequisites
-1. The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories `https://github.com/CBIIT/bento-backend` and `https://github.com/CBIIT/bento-frontend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories `https://github.com/CBIIT/bento-RI-backend` and `https://github.com/CBIIT/bento-frontend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Configuration parameters for RBAC elements can be specified in the file: `$(src)/bento-backend/src/main/resources/application.properties`.
 

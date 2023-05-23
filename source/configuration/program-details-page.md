@@ -13,7 +13,7 @@ The Program Details Page displays detailed, program-level information for each o
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return the data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return the data of interest.
 
 ## Page Title Configuration
 The Page Title section has three components: (a) Page Title (b) Page Subtitle and (c) Breadcrumb.

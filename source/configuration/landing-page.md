@@ -13,7 +13,7 @@ The Landing Page provides a visual and textual introduction to the overall missi
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return your data of interest.
 
 ## The Landing Page Hero Image
 The Landing Page Hero Image is a visual representation of the mission of the data sharing platform.

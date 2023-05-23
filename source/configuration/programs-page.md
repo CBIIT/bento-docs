@@ -13,7 +13,7 @@ The Programs Page lists the programs that store data in a Bento-based data shari
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return the data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return the data of interest.
 
 ## Icons in the Programs Page.
 There are two configurable icons in the Programs Page: (a) the Table Icon, that is a visual represenation of the Programs Table and (b) the External Link Icon that is a visual representation of an external link.

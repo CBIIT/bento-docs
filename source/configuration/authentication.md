@@ -12,7 +12,7 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 
 ## Prerequisites
 
-1. The files that specify the configuration parameters for authentication are stored in the GitHub repositories `https://github.com/CBIIT/bento-frontend` and `https://github.com/CBIIT/bento-backend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters for authentication are stored in the GitHub repositories `https://github.com/CBIIT/bento-frontend` and `https://github.com/CBIIT/bento-RI-backend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Configuration parameters for RBAC elements can be specified in the file: `$(src)/bento-backend/src/main/resources/application.properties`
 
