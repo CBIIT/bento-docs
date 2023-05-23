@@ -15,7 +15,7 @@ The Case Details Page lists the key attributes of a case, subject or individual 
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return the data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return the data of interest.
 
 
 

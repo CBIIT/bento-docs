@@ -13,7 +13,7 @@ Global UI elements are displayed on every page of a Bento application. These are
 
 2. All images and icons used in a Bento instance should be accessible via a public url. 
 
-3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that returns the data of interest.
+3. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that returns the data of interest.
 
 4. Here is a mapping of each Global UI element to it's configuration file:
 

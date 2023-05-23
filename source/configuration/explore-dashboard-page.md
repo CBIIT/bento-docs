@@ -14,7 +14,7 @@ The Explore Dashboard enables cohort discovery and cohort building. Users can fi
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query types that return data of interest.
 
 ## Configuring the Dashboard Widgets
 Dashboard Widgets provide a graphical summary of the key data entities in a Bento-based data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than **6** widgets are added, Bento will display the first 6 widgets without any error or warning message.

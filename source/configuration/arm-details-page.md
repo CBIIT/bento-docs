@@ -17,7 +17,7 @@ This page provides a summary of the Study Arm that belongs to a Program that par
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
-4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return data of interest.
+4. Please review the list of [GraphQL queries](https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql) to select query type(s) that return data of interest.
 
 
 
