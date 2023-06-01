@@ -50,7 +50,7 @@ An optional table can be added to the Study Arm Details Page to list arm-level m
 
 A table can be added to the Study Arm Details Page. *This is optional.*
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
-2. In `table`:
+2. In `filesTable`:
   * The `display` field is set to true, by default. *Set this field to false to disable the table in the Arm Details page*.
   * Set the field `title` to the desired title.
   * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Arm Details page. *Note: This query should match the GraphQL API query in `GET_ARM_DETAIL_DATA_QUERY`*.
@@ -60,14 +60,13 @@ A table can be added to the Study Arm Details Page. *This is optional.*
 3. Example:
 
 ```javascript
-...
-const table = {
+const filesTable = {
   display: true,
   title: '<Table Title>',
-  dataField: '<GraphQL API query returning data for this page.>',
+  dataField: '<GraphQL API query returning data for this page>',
   defaultSortField: '<GraphQL API query field used to sort the table.>',
   defaultSortDirection: '<sort order, asc|desc>',
- ...
+...
 const GET_ARM_DETAIL_DATA_QUERY = gql`{
   '<Your GraphQL query>'' {
     '<Data fields returned by your GraphQL API query>'
@@ -83,7 +82,7 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 Up to 10 columns can be added to the Study Arm Details Page Table. If adding more than 10 columns, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js`.
-2. Under `table`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
+2. Under `filesTable`, add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.
   * Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
@@ -91,7 +90,7 @@ Up to 10 columns can be added to the Study Arm Details Page Table. If adding mor
 3. Example:
 
 ```javascript
-const table = {
+const filesTable = {
   ...
   columns: [
     {
@@ -136,7 +135,7 @@ const GET_ARM_DETAIL_DATA_QUERY = gql`{
 This table lists files that are associated with a Study Arm.  It can be configured as follows:
 
 1. Open `$(src)/packages/bento-frontend/src/bento/armDetailData.js` 
-2. Edit the  `table` object :
+2. Edit the  `filesTable` object :
 * **`display`**:  Show  or Hide column (must be `true`  or `false`)
 
 * **`tableTitle`** : Text to show on table title
