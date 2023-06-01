@@ -109,7 +109,7 @@ The Case Details Page has tables can be used to display case-level information s
 ### Configuring the "Associated Files" and/or "Associated Samples" tables
 
 1. Open `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
-2. The configuration for "Associated Files" is in `table1` and "Associated Samples" is in `table2`.
+2. The configuration for "Associated Files" is in `filesTable` and "Associated Samples" is in `sampleTable`.
   * The `display` field is set to true, by default. *Set this field to false to disable the table in the Case Details Page*.
   * Set the field `title` to the the title of the table.
   * Set the field `dataField` to the name of the GraphQL API query being used to return data for the Case Details Page. *Note: This query should match the GraphQL API query in `GET_CASE_DETAIL_DATA_QUERY`*.
@@ -120,7 +120,7 @@ The Case Details Page has tables can be used to display case-level information s
 
 ```javascript
 ...
-const table1 = {
+const filesTable = {
   display: true,
   title: '<Table Title>',
   dataField: '<GraphQL API query returning data for this page.>',
@@ -142,8 +142,8 @@ const GET_CASE_DETAIL_DATA_QUERY = gql`{
 Up to 10 columns can be added to the "Associated Files" Table. If more than 10 columns are added, **Bento will display the first 10 columns without an error or warning message**. The top-down order of columns will be displayed left to right on the UI.
 
 1. Open `$(src)/packages/bento-frontend/src/bento/caseDetailData.js`.
-2. The configuration for "Associated Files" is in  `table1` and "Associated Samples" is in `table2`.
-3. Under `table1` or `table2` add an object `{dataField: , header: , link: ,}` to the `columns` list:
+2. The configuration for "Associated Files" is in  `filesTable` and "Associated Samples" is in `sampleTable`.
+3. Under `filesTable` or `sampleTable` add an object `{dataField: , header: , link: ,}` to the `columns` list:
   * Set the field `dataField` to the GraphQL API query data field that returns the data for the column.
   * Set the field `header` to the column header name.
   * Set the field `link` to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. *Links are optional*.
@@ -151,7 +151,7 @@ Up to 10 columns can be added to the "Associated Files" Table. If more than 10 c
 3. Example:
 
 ```javascript
-const table1 = {
+const filesTable = {
   ...
   columns: [
     {

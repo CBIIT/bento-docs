@@ -16,7 +16,7 @@ There are a number of static pages that are available for the Bento Framework. T
 ![About on Navigation Bar](../assets/static-pages-bento.png)
 
 ### Test the Local Environment Changes  
-Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, and the system will show the changes.
+Edit `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml`, and the system will show the changes.
 
 ### Create a New Static Page with a New Route
 1. Edit `$(src)/packages/bento-frontend/src/bento/aboutPagesRoutes.js` add a new path
@@ -30,16 +30,16 @@ Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`, an
 2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](global-ui-elements.html#global-navigation-bar)
 
 3. To edit the title for each page in the 'About' menu: 
-   * edit file: `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml` 
    * set the variable `title` to have the title of the page.
 
 4. To set the primary or "hero" image to be tiled onto each page: 
-   * edit file: `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml` 
    * set variable `primaryContentImage` with the desired image 
    * NOTE: Do not use local files. This should point to an external image url (e.g. publicly-available, on the internet)
 
 5. To set a secondary image (including, a zoom and scan-around function):
-   * Edit `$(src)/packages/bento-frontend/src/content/dev/aboutPagesContent.yaml`  
+   * Edit `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml`  
    * Add the Field secondaryZoomImage to show up the secondary Image
 
 6. To add content for each page: (including basic formatting of it, i.e. line/paragraph breaks, bold type, hyperlinked text), follow the following syntax guide 
