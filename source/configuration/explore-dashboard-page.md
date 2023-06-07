@@ -218,14 +218,6 @@ To change the style of the tabs go to `tabIndex` object:
 
   * `header`: Heading Text for column
 
-  * `sort`: sort order for column
-
-    * must be `asc` or `desc`
-
-  * `primary`: applies to primary field of table like "sample_ID" or "File_ID" based on which files will be added in to cart.
-
-    * must be `true`  or `false`
-
   * `display`: Show  or Hide column 
 
     * must be `true`  or `false`
