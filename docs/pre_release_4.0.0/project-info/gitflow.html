@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Developer GitHub Workflow &mdash; Bento release-3.10.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Meet the Team" href="meet-the-team.html" />
+    <link rel="prev" title="1. Bento Glossary" href="Bento-Glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-3.10.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Developer GitHub Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-it-works">2.1. How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#develop-and-main-branches">2.2. Develop and Main Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-branches">2.3. Feature Branches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-feature-branch">2.3.1. Creating a feature branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finishing-a-feature-branch">2.3.2. Finishing a feature branch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#release-branches">2.4. Release Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hotfix-branches">2.5. Hotfix Branches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">2.5.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">2.6. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-workflow">2.7. Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Developer GitHub Workflow</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/project-info/gitflow.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="meet-the-team.html" class="btn btn-neutral float-right" title="3. Meet the Team" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Bento-Glossary.html" class="btn btn-neutral float-left" title="1. Bento Glossary" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="developer-github-workflow">
+<h1><span class="section-number">2. </span>Developer GitHub Workflow<a class="headerlink" href="#developer-github-workflow" title="Permalink to this heading">¶</a></h1>
+<section id="how-it-works">
+<h2><span class="section-number">2.1. </span>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this heading">¶</a></h2>
+<p><img alt="Git flow workflow - Historical Branches" src="../_images/git.png" /></p>
+</section>
+<section id="develop-and-main-branches">
+<h2><span class="section-number">2.2. </span>Develop and Main Branches<a class="headerlink" href="#develop-and-main-branches" title="Permalink to this heading">¶</a></h2>
+<p>Instead of a single <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, this workflow uses two branches to
+record the history of the project. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch stores the official
+release history, and the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch serves as an integration
+branch for features. It’s also convenient to tag all commits in the
+<code class="docutils literal notranslate"><span class="pre">main</span></code> branch with a version number.</p>
+<p>The first step is to complement the default <code class="docutils literal notranslate"><span class="pre">main</span></code> with a <code class="docutils literal notranslate"><span class="pre">develop</span></code>
+branch. A simple way to do this is for one developer to create an empty
+<code class="docutils literal notranslate"><span class="pre">develop</span></code> branch locally and push it to the server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span>
+</pre></div>
+</div>
+<p>This branch will contain the complete history of the project, whereas
+<code class="docutils literal notranslate"><span class="pre">main</span></code> will contain an abridged version. Other developers should now
+clone the central repository and create a tracking branch for <code class="docutils literal notranslate"><span class="pre">develop.</span></code></p>
+<p>When using the git-flow extension library, executing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">flow</span> <span class="pre">init</span></code> on
+an existing repo will create the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch:</p>
+</section>
+<section id="feature-branches">
+<h2><span class="section-number">2.3. </span>Feature Branches<a class="headerlink" href="#feature-branches" title="Permalink to this heading">¶</a></h2>
+<p>Each new feature should reside in its own branch, which can be
+<a class="reference external" href="https://www.atlassian.com/git/tutorials/syncing/git-push">pushed to the central repository</a> for backup/collaboration.
+But, instead of branching off of <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches use <code class="docutils literal notranslate"><span class="pre">develop</span></code>
+as their parent branch. When a feature is complete, it gets merged back into
+develop. Features should never interact directly with <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches combined with the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is, for
+all intents and purposes, the Feature Branch Workflow. But, the Gitflow
+Workflow doesn’t stop there.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Feature</span></code> branches are generally created off the latest <code class="docutils literal notranslate"><span class="pre">develop</span></code>
+branch.</p>
+<section id="creating-a-feature-branch">
+<h3><span class="section-number">2.3.1. </span>Creating a feature branch<a class="headerlink" href="#creating-a-feature-branch" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span> 
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">feature_branch</span>
+</pre></div>
+</div>
+<p>Continue your work and use Git like you normally would.</p>
+</section>
+<section id="finishing-a-feature-branch">
+<h3><span class="section-number">2.3.2. </span>Finishing a feature branch<a class="headerlink" href="#finishing-a-feature-branch" title="Permalink to this heading">¶</a></h3>
+<p>When you’re done with the development work on the feature, the next step
+is to merge the <code class="docutils literal notranslate"><span class="pre">feature_branch</span></code> into <code class="docutils literal notranslate"><span class="pre">develop</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">pull</span> <span class="n">request</span> <span class="n">to</span> <span class="n">merge</span> <span class="n">to</span> <span class="n">develop</span> 
+</pre></div>
+</div>
+</section>
+</section>
+<section id="release-branches">
+<h2><span class="section-number">2.4. </span>Release Branches<a class="headerlink" href="#release-branches" title="Permalink to this heading">¶</a></h2>
+<p>Once <code class="docutils literal notranslate"><span class="pre">develop</span></code> has acquired enough features for a release for week 1 (or a
+predetermined release date is approaching), you fork a <code class="docutils literal notranslate"><span class="pre">releaseversion-alpha</span></code>
+branch off of <code class="docutils literal notranslate"><span class="pre">develop</span></code> for QA to test the features we develop during week 1.</p>
+<p>After week 2, we will create a fork for the <code class="docutils literal notranslate"><span class="pre">releaseversion</span></code> branch off of <code class="docutils literal notranslate"><span class="pre">develop</span></code>. Creating this branch starts the next release cycle, so
+no new features can be added after this point; only bug fixes,
+documentation generation, and other release-oriented tasks should go in
+this branch. Once it’s ready to ship, the <code class="docutils literal notranslate"><span class="pre">releaseversion</span></code> branch gets merged
+into <code class="docutils literal notranslate"><span class="pre">main</span></code> and tagged with a version number. In addition, it should be
+merged back into <code class="docutils literal notranslate"><span class="pre">develop</span></code>, which may have progressed since the release
+was initiated.</p>
+<p>Using a dedicated branch to prepare releases makes it possible for one
+team to polish the current release, while another team continues working
+on features for the next release if time permits. It also creates well-defined phases of
+development.</p>
+<p>Making <code class="docutils literal notranslate"><span class="pre">release</span></code> branches is another straightforward branching
+operation. Like <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches, <code class="docutils literal notranslate"><span class="pre">release</span></code> branches are based on the
+<code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. A new <code class="docutils literal notranslate"><span class="pre">release</span></code> branch can be created using the
+following methods.</p>
+<p>After week 1:
+git checkout develop
+git checkout 1.1.0-alpha</p>
+<p>After week 2:
+git checkout develop
+git checkout 1.1.0</p>
+<p>Once the release is ready to ship, it will get merged into <code class="docutils literal notranslate"><span class="pre">main</span></code> and
+<code class="docutils literal notranslate"><span class="pre">develop</span></code>, then the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch will be deleted. It’s important to
+merge back into <code class="docutils literal notranslate"><span class="pre">develop</span></code> because critical updates may have been added
+to the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch and they need to be accessible to new features.
+This would be an ideal place for a pull request.</p>
+<p>If new bug fixes need to go to the release branch after the QA team started
+testing, here is the way to release bug fixes to the release branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">releaseversion</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span> <span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">hotfix_branch</span>
+</pre></div>
+</div>
+</section>
+<section id="hotfix-branches">
+<h2><span class="section-number">2.5. </span>Hotfix Branches<a class="headerlink" href="#hotfix-branches" title="Permalink to this heading">¶</a></h2>
+<p>Maintenance or <code class="docutils literal notranslate"><span class="pre">“hotfix”</span></code> branches are used to quickly patch production
+releases. <code class="docutils literal notranslate"><span class="pre">Hotfix</span></code> branches are a lot like <code class="docutils literal notranslate"><span class="pre">release</span></code> branches and
+<code class="docutils literal notranslate"><span class="pre">feature</span></code> branches except they’re based on <code class="docutils literal notranslate"><span class="pre">main</span></code> instead of <code class="docutils literal notranslate"><span class="pre">develop</span></code>.
+This is the only branch that should fork directly off of <code class="docutils literal notranslate"><span class="pre">main</span></code>. As soon
+as the fix is complete, it should be merged into both <code class="docutils literal notranslate"><span class="pre">main</span></code> and
+<code class="docutils literal notranslate"><span class="pre">develop</span></code> (or the current <code class="docutils literal notranslate"><span class="pre">release</span></code> branch), and <code class="docutils literal notranslate"><span class="pre">main</span></code> should be tagged
+with an updated version number.</p>
+<p>Having a dedicated line of development for bug fixes lets your team
+address issues without interrupting the rest of the workflow or waiting
+for the next release cycle. You can think of maintenance branches as ad
+hoc <code class="docutils literal notranslate"><span class="pre">release</span></code> branches that work directly with <code class="docutils literal notranslate"><span class="pre">main</span></code>. A <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> branch
+can be created using the following methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">hotfix_branch</span>
+</pre></div>
+</div>
+<p>Similar to finishing a <code class="docutils literal notranslate"><span class="pre">release</span></code> branch, a <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> branch gets merged
+into both <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">develop.</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span> <span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">hotfix_branch</span>
+</pre></div>
+</div>
+<section id="example">
+<h3><span class="section-number">2.5.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<p>A complete example demonstrating a Feature Branch Flow is as follows.
+Assuming we have a repo setup with a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">feature_branch</span> <span class="c1"># work is done and commits are added to the feature_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">feature_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span> <span class="n">git</span> <span class="n">merge</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">feature_branch</span>
+</pre></div>
+</div>
+<p>In addition to the <code class="docutils literal notranslate"><span class="pre">feature</span></code> and <code class="docutils literal notranslate"><span class="pre">release</span></code> flow, a <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> example is
+as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">hotfix_branch</span> <span class="c1"># work is done and commits are added to the hotfix_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">hotfix_branch</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="summary">
+<h2><span class="section-number">2.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
+<p>Some key takeaways to know about Gitflow are:</p>
+<ul class="simple">
+<li><p>The workflow is great for a release-based software workflow.</p></li>
+<li><p>Gitflow offers a dedicated channel for hotfixes to production.\</p></li>
+</ul>
+<p>The overall flow of Gitflow is:</p>
+<ol class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is created from <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">release</span></code> branch is created from <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Feature</span></code> branches are created from <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></li>
+<li><p>When a <code class="docutils literal notranslate"><span class="pre">feature</span></code> is complete it is merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch is done it is merged into <code class="docutils literal notranslate"><span class="pre">develop</span></code> and
+<code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+<li><p>If an issue in <code class="docutils literal notranslate"><span class="pre">main</span></code> is detected a <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> branch is created from
+<code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+<li><p>Once the <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> is complete it is merged to both <code class="docutils literal notranslate"><span class="pre">develop</span></code> and
+<code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+</ol>
+</section>
+<section id="release-workflow">
+<h2><span class="section-number">2.7. </span>Release Workflow<a class="headerlink" href="#release-workflow" title="Permalink to this heading">¶</a></h2>
+<p>After week 1, the lead developer will create a releaseversion-alpha branch and trigger a new “Build and Deploy” job in jenkins and release versions to QA. QA will then trigger “Deploy” job in jenkins to QA.</p>
+<p>It will give QA versions to deploy similar to those shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FE</span> <span class="n">Version</span><span class="p">:</span> <span class="p">{</span><span class="n">version</span><span class="o">-</span><span class="n">alpha</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">buildnumber</span><span class="p">}</span>
+<span class="n">BE</span> <span class="n">Version</span><span class="p">:</span> <span class="p">{</span><span class="n">version</span><span class="o">-</span><span class="n">alpha</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">buildnumber</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>After week 2, the lead developer will provide new build versions to deploy to QA.</p>
+<p>Once the release is ready to ship, it will get merged into <code class="docutils literal notranslate"><span class="pre">main</span></code> and
+<code class="docutils literal notranslate"><span class="pre">develop</span></code>, then the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch will be deleted. It’s important to
+merge back into <code class="docutils literal notranslate"><span class="pre">develop</span></code> because critical updates may have been added
+to the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch and they need to be accessible to new features.</p>
+<p>Once the release is merged to the main branch, the new release tag is created from the main
+branch and release notes are added. The release notes should include the changes made and the docker build image number that was tested on QA.</p>
+<p><strong>Sample release notes</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Features</span>
+
+<span class="o">-</span> <span class="mi">1165</span> <span class="o">-</span> <span class="n">Sorting</span> <span class="ow">and</span> <span class="n">Ordering</span> <span class="n">of</span> <span class="n">Facet</span> <span class="n">Option</span><span class="o">/</span><span class="n">Values</span> <span class="o">-</span> <span class="n">Tumor</span> <span class="n">Size</span>
+<span class="o">-</span> <span class="mi">1195</span> <span class="o">-</span> <span class="n">Sorting</span> <span class="ow">and</span> <span class="n">Ordering</span> <span class="n">of</span> <span class="n">Facet</span> <span class="n">Option</span><span class="o">/</span><span class="n">Values</span> <span class="o">-</span> <span class="n">Recurrent</span> <span class="n">Score</span>
+<span class="o">-</span> <span class="mi">1208</span> <span class="o">-</span> <span class="n">Custodian</span> <span class="o">-</span> <span class="n">Configure</span> <span class="n">option</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">custom</span> <span class="n">Regex</span> <span class="n">on</span> <span class="n">Facet</span> <span class="n">Filter</span>
+<span class="o">-</span> <span class="mi">1188</span> <span class="o">-</span> <span class="n">PORT</span> <span class="n">Tool</span><span class="o">-</span><span class="n">tips</span>
+<span class="o">-</span> <span class="mi">1139</span> <span class="o">-</span> <span class="n">Custodian</span><span class="p">:</span> <span class="n">Make</span> <span class="n">widget</span> <span class="n">texts</span> <span class="n">configurable</span>
+<span class="o">-</span> <span class="mi">706</span> <span class="o">-</span> <span class="n">Text</span> <span class="n">cutoff</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">for</span> <span class="n">widgets</span> <span class="n">on</span> <span class="n">the</span> <span class="n">dashboard</span>
+<span class="o">-</span> <span class="mi">919</span> <span class="o">-</span> <span class="n">Default</span> <span class="n">styling</span> <span class="k">for</span> <span class="n">new</span> <span class="n">facet</span> <span class="n">sections</span>
+
+<span class="n">Security</span> <span class="n">Updates</span>
+<span class="n">Updated</span> <span class="n">react</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">utils</span> <span class="kn">from</span> <span class="mf">7.0.5</span> <span class="n">to</span> <span class="mf">11.0.4</span>  
+
+<span class="n">Bug</span> <span class="n">Fixes</span>
+
+<span class="o">-</span> <span class="mi">1103</span> <span class="o">-</span> <span class="n">On</span> <span class="n">server</span> <span class="n">paginated</span> <span class="n">tables</span> <span class="o">-</span> <span class="n">Add</span><span class="o">/</span><span class="n">Remove</span> <span class="n">columns</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">persist</span> <span class="p">,</span> <span class="n">after</span> <span class="n">we</span>  <span class="n">sort</span>
+<span class="o">-</span> <span class="mi">1034</span> <span class="o">-</span> <span class="n">On</span> <span class="n">server</span> <span class="n">paginated</span> <span class="n">tables</span> <span class="o">-</span> <span class="n">Rows</span> <span class="n">per</span> <span class="n">page</span> <span class="n">info</span> <span class="ow">is</span> <span class="n">incorrect</span>
+
+<span class="n">QA</span> <span class="n">verified</span> <span class="n">tags</span>
+
+<span class="n">FE</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">3.2.0</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="mi">599</span>
+<span class="n">BE</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">4.0.0</span><span class="o">-</span><span class="mi">599</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="meet-the-team.html" class="btn btn-neutral float-right" title="3. Meet the Team" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Bento-Glossary.html" class="btn btn-neutral float-left" title="1. Bento Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jun 7, 2023, 8:06:44 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: pre_release_4.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="gitflow.html">pre_release_4.0.0</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="gitflow.html">pre_release_4.0.0</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

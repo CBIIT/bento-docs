@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Data Access Request (DAR) Service &mdash; Bento release-3.10.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Global UI Elements" href="global-ui-elements.html" />
+    <link rel="prev" title="2. Authorization" href="authorization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-3.10.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Data Access Request (DAR) Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">3.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-node-level-access">3.3. Configuring Node-Level Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-level-access">3.3.1. Node-Level_Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-label">3.3.2. Node_Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">3.3.3. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ui-configuration-s">3.4. UI Configuration(s)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage">3.4.1. Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">3.4.2. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customization">3.4.3. Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Data Access Request (DAR) Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/data-access-request-service.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="data-access-request-dar-service">
+<h1><span class="section-number">3. </span>Data Access Request (DAR) Service<a class="headerlink" href="#data-access-request-dar-service" title="Permalink to this heading">¶</a></h1>
+<p><em>Service only available for cloud installations of the Bento Framework</em></p>
+<section id="introduction">
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The Bento Framework supports a user-driven data access request workflow that enables authenticated users to request access to a specific dataset or resource (ie. arm, study, project, program, etc.) and allows system administrators to review, approve, and reject data access requests submitted by users. System triggered emails are generated at each definitive point in the workflow. Admins can navigate the data access request workflow using the Bento Admin Portal.</p>
+<p><img alt="Data Access Request (DAR) Workflow" src="../_images/dar-workflow.png" /></p>
+<p><img alt="Data Access Request (DAR) Example page" src="../_images/dar-example-page.png" /></p>
+<p>&nbsp;</p></section>
+<section id="prerequisites">
+<h2><span class="section-number">3.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters for the DAR service are stored in the GitHub repository <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code>.</p></li>
+<li><p>Configuration parameters for DAR form elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
+</ol>
+<p>&nbsp;</p></section>
+<section id="configuring-node-level-access">
+<h2><span class="section-number">3.3. </span>Configuring Node-Level Access<a class="headerlink" href="#configuring-node-level-access" title="Permalink to this heading">¶</a></h2>
+<p>Access to data can be controlled as a single entity or at the node level. Controlling data at the node level requires a node from the data model to be identified and specified upon initial set up of the respective data commons.</p>
+<section id="node-level-access">
+<h3><span class="section-number">3.3.1. </span>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">.</span>
+
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Node_Label</span> <span class="n">parameter</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
+
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">data</span> <span class="n">access</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">users</span> <span class="n">will</span> <span class="n">either</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">or</span> <span class="n">none</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">authorization</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="node-label">
+<h3><span class="section-number">3.3.2. </span>Node_Label<a class="headerlink" href="#node-label" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">label</span> <span class="n">displayed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">user</span> <span class="n">interface</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">the</span> <span class="n">node</span> <span class="n">that</span> <span class="n">governs</span> <span class="n">data</span> <span class="n">access</span> <span class="n">granularity</span><span class="o">.</span>
+
+<span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">string</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">max</span> <span class="n">length</span> <span class="n">of</span> <span class="mi">30</span> <span class="n">characters</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Study</span> <span class="n">Arm</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="example">
+<h3><span class="section-number">3.3.3. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p>
+<ol class="simple">
+<li><p>Update fields: NODE_LEVEL_ACCESS and NODE_LABEL</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">NODE_LEVEL_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	</span><span class="nx">NODE_LABEL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: NODE_LABEL is just a label property and does not restrict users on any specific node. The configuration for that needs to be done in the backend at the time of project initialization.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="ui-configuration-s">
+<h2><span class="section-number">3.4. </span>UI Configuration(s)<a class="headerlink" href="#ui-configuration-s" title="Permalink to this heading">¶</a></h2>
+<p><strong>File Location:</strong> <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/requestAccessData.js</span></code></p>
+<p>This is a configuration file for the Data Access Request page. Custodians can use this file to make changes to the page’s look and feel.</p>
+<section id="usage">
+<h3><span class="section-number">3.4.1. </span>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h3>
+<p>To use this configuration, follow these steps:</p>
+<ol class="simple">
+<li><p>Import the pageTitle and formFields variables from this file into the code.</p></li>
+<li><p>Implement the DataAccessRequest component into the code using the formFields configuration object.</p></li>
+<li><p>Customize the page’s look and feel by making changes to the formFields object.</p></li>
+</ol>
+</section>
+<section id="configuration">
+<h3><span class="section-number">3.4.2. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h3>
+<p>The configuration for the Data Access Request page includes the following variables:</p>
+<section id="pagetitle">
+<h4><span class="section-number">3.4.2.1. </span><code class="docutils literal notranslate"><span class="pre">pageTitle</span></code><a class="headerlink" href="#pagetitle" title="Permalink to this heading">¶</a></h4>
+<p>This sets the title of the page. By default, it is set to ‘Data Access Request’.</p>
+</section>
+<section id="aclapioptionsfield-optional">
+<h4><span class="section-number">3.4.2.2. </span><code class="docutils literal notranslate"><span class="pre">aclAPIOptionsField</span> <span class="pre">(optional)</span></code><a class="headerlink" href="#aclapioptionsfield-optional" title="Permalink to this heading">¶</a></h4>
+<p>This is a string that specifies the name of the API field from which the Access Levels Controls (ACL) should be read. If this field is present, the program will read the ACL from the API instead of from the options property of the armIDs field in the formFields array. By default, this is set to ‘listArms’.</p>
+</section>
+<section id="formfields">
+<h4><span class="section-number">3.4.2.3. </span><code class="docutils literal notranslate"><span class="pre">formFields</span></code><a class="headerlink" href="#formfields" title="Permalink to this heading">¶</a></h4>
+<p>This is an array of objects that define the fields in the Data Access Request form. Each object has the following properties:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: a unique identifier for the field.</p></li>
+<li><p><strong>type</strong>: the type of the input field. Currently supported types are <strong>‘textBox’</strong> and <strong>‘aclDropdown’</strong>.</p></li>
+<li><p><strong>required</strong>: a boolean indicating whether the field is required.</p></li>
+<li><p><strong>label</strong>: the label for the field.</p></li>
+<li><p><strong>placeHolder</strong>: the placeholder text for the field.</p></li>
+<li><p><strong>display</strong>: a boolean indicating whether the field should be displayed on the form.</p></li>
+<li><p><strong>optionsAPIField</strong>: (optional) a string indicating the name of the API field that contains the options for an ACL dropdown field. If this field is not present, the options will be read from the options property.</p></li>
+<li><p><strong>options</strong>: an array of objects that define the options for an ACL dropdown field. Each object has the following properties:</p>
+<ul>
+<li><p><strong>id</strong>: a unique identifier for the option.</p></li>
+<li><p><strong>name</strong>: the name of the option.</p></li>
+</ul>
+</li>
+</ul>
+<p>If <strong>aclAPIOptionsField</strong> is not present, the program will read the ACL options from the <strong>options</strong> property of the <strong>armIDs</strong> field in the <strong>formFields</strong> array.</p>
+</section>
+</section>
+<section id="customization">
+<h3><span class="section-number">3.4.3. </span>Customization<a class="headerlink" href="#customization" title="Permalink to this heading">¶</a></h3>
+<p>To customize the Data Access Request page, changes can be made to the <strong>formFields</strong> object. Fields can be added, removed, or modified as needed. For example, a new field for the user’s email address could be displayed by adding the following object to the <strong>formFields</strong> array:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;email&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;textBox&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Email Address&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">placeHolder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Email Address&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <strong>options</strong> for the ACL dropdown field can be modified by changing the objects in the options array. For example, modifying the name of option A to <strong>‘A: RS 0-10, assigned endocrine therapy alone (default)’</strong> by changing the following object:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A: RS 0-10, assigned endocrine therapy alone (default)&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: If the <strong>aclAPIOptionsField</strong> field is not defined in the configuration file, the program will read the list of Access Levels Controls (ACL) from the <strong>options</strong> field under the <strong>armIDs</strong> object in the <strong>formFields</strong> array. If the <strong>aclAPIOptionsField</strong> field is defined, the program will ignore the <strong>options</strong> field and read the list of ACLs from the specified field in the API response.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="global-ui-elements.html" class="btn btn-neutral float-right" title="4. Global UI Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authorization.html" class="btn btn-neutral float-left" title="2. Authorization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jun 7, 2023, 8:06:44 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: pre_release_4.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="data-access-request-service.html">pre_release_4.0.0</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="data-access-request-service.html">pre_release_4.0.0</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

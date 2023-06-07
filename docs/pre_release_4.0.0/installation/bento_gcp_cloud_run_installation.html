@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Deploying Bento on GCP Cloud Run &mdash; Bento release-3.10.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Deploying Bento on GCP" href="bento_gcp_gke_installation.html" />
+    <link rel="prev" title="3. Deploying Bento on AWS" href="bento_aws_installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-3.10.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Deploying Bento on GCP Cloud Run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-introduction">4.1. A. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#b-disclaimer">4.1.1. B. Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#c-architecture">4.2. C. Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-pre-requisites">4.3. D. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e-installations">4.4. E. Installations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-clone-bento-framework">4.4.1. a) Clone Bento Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-setup-gcp-environment">4.4.2. b) Setup GCP Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-populate-vars-tfvars-file">4.4.3. c) Populate vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-deploy-application">4.4.4. d) Deploy Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e-verify-deployment">4.4.5. e) Verify Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f-teardown">4.4.6. f) Teardown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#f-application-updates">4.5. F. Application Updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-edit-vars-tfvars-file">4.5.1. a) Edit  vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-apply-changes-to-terraform-state">4.5.2. b) Apply changes to terraform state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-apply-changes-using-ansible">4.5.3. c) Apply Changes using Ansible</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#g-data-model-updates">4.6. G. Data Model Updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.6.1. a) Edit  vars.tfvars file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.6.2. b) Apply changes to terraform state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.6.3. c) Apply Changes using Ansible</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>Deploying Bento on GCP Cloud Run</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/installation/bento_gcp_cloud_run_installation.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="bento_gcp_gke_installation.html" class="btn btn-neutral float-right" title="5. Deploying Bento on GCP" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bento_aws_installation.html" class="btn btn-neutral float-left" title="3. Deploying Bento on AWS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="deploying-bento-on-gcp-cloud-run">
+<h1><span class="section-number">4. </span>Deploying Bento on GCP Cloud Run<a class="headerlink" href="#deploying-bento-on-gcp-cloud-run" title="Permalink to this heading">¶</a></h1>
+<p>This is the user documentation on provisioning bento on AWS.</p>
+<p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
+<section id="a-introduction">
+<h2><span class="section-number">4.1. </span>A. Introduction<a class="headerlink" href="#a-introduction" title="Permalink to this heading">¶</a></h2>
+<p>The purpose of this guide is to provide instructions on how to provision and deploy Bento Framework on GCP using Serverless Service. This guide assumes that the Custodian has an operating account with Google Cloud Platform.</p>
+<section id="b-disclaimer">
+<h3><span class="section-number">4.1.1. </span>B. Disclaimer<a class="headerlink" href="#b-disclaimer" title="Permalink to this heading">¶</a></h3>
+<p>GCP is a Pay As You Go provider, as result the use of this instruction may result in  usage charges. We’re in no way responsible for any charges incurred from resources created using this documentation.</p>
+<p>All scripts related to this documentation can be found here: <a class="reference external" href="https://github.com/CBIIT/bento-cloudrun">Bento Custodian</a></p>
+</section>
+</section>
+<section id="c-architecture">
+<h2><span class="section-number">4.2. </span>C. Architecture<a class="headerlink" href="#c-architecture" title="Permalink to this heading">¶</a></h2>
+<p>The code in this demo will create the following resources via Terraform:</p>
+<ul class="simple">
+<li><p>A new VPC and new VPC subnets</p></li>
+<li><p>A Cloud NAT router for egress access from the VPC subnets</p></li>
+<li><p>A GCE Instance serving as a Bastion Host</p></li>
+<li><p>A Private GKE Cluster with two nodes running two services - frontend and backend</p></li>
+<li><p>Neo4j Database in private subnets</p></li>
+</ul>
+</section>
+<section id="d-pre-requisites">
+<h2><span class="section-number">4.3. </span>D. Pre-requisites<a class="headerlink" href="#d-pre-requisites" title="Permalink to this heading">¶</a></h2>
+<p>Ensure that you have the following tools installed before continuing.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.hashicorp.com/terraform/getting-started/install.html#install-terraform">Terraform</a></p></li>
+<li><p><a class="reference external" href="https://cloud.google.com/sdk/install">gcloud</a></p></li>
+<li><p><a class="reference external" href="https://cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project">GCP Project</a></p></li>
+<li><p><a class="reference external" href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Ansible</a></p></li>
+</ul>
+</section>
+<section id="e-installations">
+<h2><span class="section-number">4.4. </span>E. Installations<a class="headerlink" href="#e-installations" title="Permalink to this heading">¶</a></h2>
+<section id="a-clone-bento-framework">
+<h3><span class="section-number">4.4.1. </span>a) Clone Bento Framework<a class="headerlink" href="#a-clone-bento-framework" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Clone  <a class="reference external" href="https://github.com/CBIIT/bento-custodian">Bento Framework</a> to a working directory. In this guide, I will be using  <strong>/tmp</strong> as my working directory</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bento</span><span class="nd">@custodian</span><span class="p">:</span> <span class="n">cd</span> <span class="o">/</span><span class="n">tmp</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">CBIIT</span><span class="o">/</span><span class="n">bento</span><span class="o">-</span><span class="n">custodian</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Change directory to cloudrun workspace</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ cd bento-custodian/terraform/cloudrun
+</pre></div>
+</div>
+</section>
+<section id="b-setup-gcp-environment">
+<h3><span class="section-number">4.4.2. </span>b) Setup GCP Environment<a class="headerlink" href="#b-setup-gcp-environment" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Login to your GCP account</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud auth login
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create google project. The name of the project can be anything you want or you may run <strong>gcloud config set project PROJECT_NAME</strong> to use existing project where <strong>PROJECT_NAME</strong> is the name of your project.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud projects create PROJECT_NAME
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Configure gcloud to use the newly created project or you use existing one.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud config set project PROJECT_NAME
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create service account. Note you can name it anything you want, in this example I am calling it bento-sa</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud iam service-accounts create SERVICE_ACCOUNT
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>List and copy the email address of the service account <strong>SERVICE_ACCOUNT_EMAIL</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud iam service-accounts list
+NAME  EMAIL                                               DISABLED
+      bento-sa@bento-cloudrun.iam.gserviceaccount.com  False
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create a credential key for the service account. Note the name of the file can be anything but ensure it ends with <strong>.json</strong>. Google allows other file formats but in this example I will be using json format.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud iam service-accounts keys create gcloud_api_key.json --iam-account=SERVICE_ACCOUNT_EMAIL
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Get your Billing <strong>ACCOUNT_ID</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud beta billing accounts list
+ACCOUNT_ID            NAME                OPEN  MASTER_ACCOUNT_ID
+01T111-K20X0C-Y00000  My Billing Account  True
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Link your project to Billing account</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ gcloud beta billing projects link PROJECT_NAME --billing-account ACCOUNT_ID
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Enable google cloud services apis</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:$ gcloud services enable cloudresourcemanager.googleapis.com
+bento@custodian:$ gcloud services enable iam.googleapis.com
+bento@custodian:$ gcloud services enable cloudbilling.googleapis.com
+bento@custodian:$ gcloud services enable compute.googleapis.com
+bento@custodian:$ gcloud services enable run.googleapis.com
+bento@custodian:$ gcloud services enable vpcaccess.googleapis.com
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Grant IAM roles to the service account</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:$ gcloud projects add-iam-policy-binding  PROJECT_NAME --member serviceAccount:SERVICE_ACCOUNT_EMAIL --role roles/owner
+</pre></div>
+</div>
+</section>
+<section id="c-populate-vars-tfvars-file">
+<h3><span class="section-number">4.4.3. </span>c) Populate vars.tfvars file<a class="headerlink" href="#c-populate-vars-tfvars-file" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/vars.tfvars</strong> file. This is a variable file that will be used as input to the terraform.</p></li>
+<li><p>Please refer to <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/variables.tf</strong> file for full descriptions of each the variables listed in the vars.tfvars file.  At minimum you will need to provide value to the following.</p>
+<ul>
+<li><p>gcp_auth_file = name of the service account key generated earlier</p></li>
+<li><p>gcp_region = gcp region to use for this deployment</p></li>
+<li><p>gcp_project = name of the gcp project created earlier</p></li>
+<li><p>stack_name = can be anything</p></li>
+<li><p>service_account_id = name of the service account created earlier</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="d-deploy-application">
+<h3><span class="section-number">4.4.4. </span>d) Deploy Application<a class="headerlink" href="#d-deploy-application" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Run <strong>terraform init</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform init
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run <strong>terraform plan</strong>. This command gives you insight into all the resources that will be created. Review the output and if satisfy continue to the next step</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform plan -var-file=vars.tfvars
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Review the output of the above command. It will show all the resources to be created.</p></li>
+<li><p>Run <strong>terraform apply</strong> to provision your Bento environment</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>At this point, if there are no errors your infrastructure will be provisioned. Note it will take about 10 minutes for the application to completely deployed.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Outputs</span><span class="p">:</span>
+
+<span class="n">backend_url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bento</span><span class="o">-</span><span class="n">cloudrun</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">rxpxr4ih3q</span><span class="o">-</span><span class="n">uk</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">app</span>
+<span class="n">bastion_host_private_ip</span> <span class="o">=</span> <span class="mf">172.16.1.2</span>
+<span class="n">bastion_host_public_ip</span> <span class="o">=</span> <span class="mf">34.86.56.119</span>
+<span class="n">db_private_ip</span> <span class="o">=</span> <span class="mf">192.168.5.2</span>
+<span class="n">frontend_url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bento</span><span class="o">-</span><span class="n">cloudrun</span><span class="o">-</span><span class="n">frontend</span><span class="o">-</span><span class="n">rxpxr4ih3q</span><span class="o">-</span><span class="n">uk</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">app</span>
+<span class="n">service_id</span> <span class="o">=</span> <span class="n">bento</span><span class="o">-</span><span class="n">sa</span><span class="nd">@bento</span><span class="o">-</span><span class="n">cloudrun</span><span class="o">.</span><span class="n">iam</span><span class="o">.</span><span class="n">gserviceaccount</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</section>
+<section id="e-verify-deployment">
+<h3><span class="section-number">4.4.5. </span>e) Verify Deployment<a class="headerlink" href="#e-verify-deployment" title="Permalink to this heading">¶</a></h3>
+<p>When the deployment is completed, navigate to the *<em>frontend_url*</em> to verify that the application is loaded successfully.</p>
+<ul class="simple">
+<li><p>Home page
+<img alt="Home" src="../_images/bentoindexpage.png" /></p></li>
+<li><p>Cases Page
+<img alt="Cases" src="../_images/bentocasespage.png" /></p></li>
+<li><p>Program Page
+<img alt="Cases" src="../_images/bentoprogrampage.png" /></p></li>
+</ul>
+</section>
+<section id="f-teardown">
+<h3><span class="section-number">4.4.6. </span>f) Teardown<a class="headerlink" href="#f-teardown" title="Permalink to this heading">¶</a></h3>
+<p>To destroy resouces created in this demo;</p>
+<ul class="simple">
+<li><p>Run <strong>terraform destroy</strong> to destroy the resources provisioned.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform destroy -var-file=vars.tfvars -auto-approve
+</pre></div>
+</div>
+</section>
+</section>
+<section id="f-application-updates">
+<h2><span class="section-number">4.5. </span>F. Application Updates<a class="headerlink" href="#f-application-updates" title="Permalink to this heading">¶</a></h2>
+<p>Many times, there are needs to customize Bento Framework based on your unique needs or some requirements, to make updates to the existing resources, it is recommended to fork both frontend and backend repositories used in this demo - that is <a class="reference external" href="https://github.com/CBIIT/bento-demo-backend">backend</a> and <a class="reference external" href="https://github.com/CBIIT/bento-demo-frontend">frontend</a>. Follow below steps to apply any changes made to either backend or frontend codes.</p>
+<section id="a-edit-vars-tfvars-file">
+<h3><span class="section-number">4.5.1. </span>a) Edit  vars.tfvars file<a class="headerlink" href="#a-edit-vars-tfvars-file" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/vars.tfvars</strong> file.</p></li>
+<li><p>Replace the values of backend_repo and frontend_repo with the new url of your forked repositories as shown below;
+<img alt="git repositories" src="../_images/gitrepositories.png" /></p></li>
+</ul>
+</section>
+<section id="b-apply-changes-to-terraform-state">
+<h3><span class="section-number">4.5.2. </span>b) Apply changes to terraform state<a class="headerlink" href="#b-apply-changes-to-terraform-state" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Run <strong>terraform apply</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
+</pre></div>
+</div>
+</section>
+<section id="c-apply-changes-using-ansible">
+<h3><span class="section-number">4.5.3. </span>c) Apply Changes using Ansible<a class="headerlink" href="#c-apply-changes-using-ansible" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>From the current working location change directory to <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/ansible</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ cd ansible
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run <strong>ansible-playbook update-custodian.yml</strong> to deploy changes committed to git repository. Note, if you wish to apply updates using git tags, edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/ansible/vars.yaml</strong> file by supplying appopriate tag values to:</p>
+<ul>
+<li><p>frontend_tag - git tag for forked frontend repository</p></li>
+<li><p>backend_tag - git tag for forked backend repository</p></li>
+</ul>
+</li>
+<li><p>It is also recommended to change docker tag (<strong>image_tag</strong>) in between changes.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ ansible-playbook update-custodian.yml
+</pre></div>
+</div>
+</section>
+</section>
+<section id="g-data-model-updates">
+<h2><span class="section-number">4.6. </span>G. Data Model Updates<a class="headerlink" href="#g-data-model-updates" title="Permalink to this heading">¶</a></h2>
+<section id="id1">
+<h3><span class="section-number">4.6.1. </span>a) Edit  vars.tfvars file<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Using your favorite text editor open and edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/vars.tfvars</strong> file.</p></li>
+<li><p>Replace the values of data_repo with the new url of your forked data-model repository.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.6.2. </span>b) Apply changes to terraform state<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Run <strong>terraform apply</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ terraform apply -var-file=vars.tfvars -auto-approve
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">4.6.3. </span>c) Apply Changes using Ansible<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>From the current working location change directory to <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/ansible</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ cd ansible
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run <strong>ansible-playbook update-db.yml</strong> to load data to neo4j database from changes committed to data model repository. Note, if you wish to apply updates using git tags, edit <strong>${WORKING-DIRECTORY}/bento-custodian/terraform/cloudrun/ansible/vars.yaml</strong> file by supplying appopriate tag value to:</p>
+<ul>
+<li><p>data_tag - git tag for forked data model repository</p></li>
+</ul>
+</li>
+<li><p>You may optionally change the values of <strong>model_file_name</strong>, <strong>dataset</strong> and <strong>properties_file_name</strong> if those files have modified and the files renamed from default.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bento@custodian:~$ ansible-playbook update-db.yml	
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bento_gcp_gke_installation.html" class="btn btn-neutral float-right" title="5. Deploying Bento on GCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bento_aws_installation.html" class="btn btn-neutral float-left" title="3. Deploying Bento on AWS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jun 7, 2023, 8:06:44 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: pre_release_4.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="bento_gcp_cloud_run_installation.html">pre_release_4.0.0</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="bento_gcp_cloud_run_installation.html">pre_release_4.0.0</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
