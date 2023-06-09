@@ -1,7 +1,7 @@
-# Static Pages
+# Bento Static Pages
 
 ## Introduction
-There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the "About" link on the Navigation Bar. In the example below, the static pages are "Bento", "Resources", and "GraphQL".
+There are a number of static pages that are available for the Bento Framework. These are findable by navigating to the "About" link on the Navigation Bar. In the example below, the static pages are "Bento", "Resources", and "GraphQL".
 
 <p>&nbsp;</p>
 
@@ -15,36 +15,31 @@ There are a number of static pages that are available for the Bento framework. T
 
 ![About on Navigation Bar](../assets/static-pages-bento.png)
 
-### Make and Test the local environment changes changes 
+### Test the Local Environment Changes  
+Edit `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml`, and the system will show the changes.
 
-1. Edit file: `$(src)/bento-frontend/.env`
+### Create a New Static Page with a New Route
+1. Edit `$(src)/packages/bento-frontend/src/bento/aboutPagesRoutes.js` add a new path
 
-2. Change the `REACT_APP_ABOUT_CONTENT_URL` variable to gibberish. One example `REACT_APP_ABOUT_CONTENT_URL= https://raw.githubusercondsdsdstent.com/CBIIT/bento-frontend/master/src/content/prod/aboutPagesContent.yaml`
-
-3. Now edit `$(src)/bento-frontend/src/content/prod/aboutPagesContent.yaml`, and the system will show the changes
-
-### To Create A New Static Page with new Route
-1. Edit `$(src)/bento/aboutPagesRoutes.js` add a new path
-
-2. Add a new copy of yaml property to  with page name matching above path
+2. Add a new copy of yaml property to with page name matching above path
 
 
-### Edit configuration file
+### Edit Configuration File
 1. There is a maximum of 6 pages that can appear under "About". If no informational pages are configured to be displayed, the "About" menu option will be hidden.
 
 2. To add contents to the 'About' menu, see ["Global Navigation Bar" instructions](global-ui-elements.html#global-navigation-bar)
 
 3. To edit the title for each page in the 'About' menu: 
-   * edit file: `$(src)/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml` 
    * set the variable `title` to have the title of the page.
 
 4. To set the primary or "hero" image to be tiled onto each page: 
-   * edit file: `$(src)/aboutPagesContent.yaml` 
+   * edit file: `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml` 
    * set variable `primaryContentImage` with the desired image 
-   * NOTE: You cannot use the local file for this you should point to an external image url (e.g. publicly-available, on the internet)
+   * NOTE: Do not use local files. This should point to an external image url (e.g. publicly-available, on the internet)
 
 5. To set a secondary image (including, a zoom and scan-around function):
-   * Edit `$(src)/aboutPagesContent.yaml`  
+   * Edit `$(src)/packages/bento-frontend/src/content/prod/aboutPagesContent.yaml`  
    * Add the Field secondaryZoomImage to show up the secondary Image
 
 6. To add content for each page: (including basic formatting of it, i.e. line/paragraph breaks, bold type, hyperlinked text), follow the following syntax guide 

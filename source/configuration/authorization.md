@@ -18,12 +18,13 @@ Establishes "who you are" using information obtained by logging in through an Id
 Establishes "which data you have access to" with a given application
 
 ## Prerequisites
-1. The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories `https://github.com/CBIIT/bento-backend` and `https://github.com/CBIIT/bento-frontend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories `https://github.com/CBIIT/bento-RI-backend` and `https://github.com/CBIIT/bento-frontend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Configuration parameters for RBAC elements can be specified in the file: `$(src)/bento-backend/src/main/resources/application.properties`.
 
-3. Configuration for UI elements can be specified in the file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
-
+3. Configuration for UI elements can be specified in the file(s): 
+* `$(src)/packages/bento-frontend/public/injectEnv.js`
+* `$(src)/packages/bento-frontend/src/bento/siteWideConfig.js`
 
 <p>&nbsp;</p>
 
@@ -48,12 +49,15 @@ Establishes "which data you have access to" with a given application
 auth.enabled=false
 
 ```
- 3. Edit file `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+ 3. Edit file `$(src)/packages/bento-frontend/public/injectEnv.js`
  4. Update field: PUBLIC_ACCESS
 ```javascript
+// File: $(src)/packages/bento-frontend/public/injectEnv.js
 
-export  const  PUBLIC_ACCESS  =  'Metadata Only';
-
+// Set the field `PUBLIC_ACCESS` to Metadata Only or None.
+window.injectedEnv = {
+	PUBLIC_ACCESS: 'Metadata Only',
+}
 ```
 
 ### Configuring Public Access as "None"
@@ -66,11 +70,15 @@ export  const  PUBLIC_ACCESS  =  'Metadata Only';
 auth.enabled=true
 
 ```
- 3. Edit file `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+ 3. Edit file `$(src)/packages/bento-frontend/public/injectEnv.js`
  4. Update field: PUBLIC_ACCESS
-  
 ```javascript
+// File: $(src)/packages/bento-frontend/public/injectEnv.js
 
-export  const  PUBLIC_ACCESS  =  'None';
-
+// Set the field `PUBLIC_ACCESS` to Metadata Only or None.
+window.injectedEnv = {
+	PUBLIC_ACCESS: 'None',
+}
 ```
+
+> NOTE: PUBLIC_ACCESS is a case-sensitive property.

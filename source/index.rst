@@ -49,12 +49,12 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/data-access-request-service
     configuration/global-ui-elements
     configuration/landing-page
-    configuration/program-listing-page
-    configuration/program-detail-page
-    configuration/arm-detail-page
-    configuration/case-detail-page
-    configuration/dashboard
-    configuration/cart-workflow
+    configuration/programs-page
+    configuration/program-details-page
+    configuration/arm-details-page
+    configuration/case-details-page
+    configuration/explore-dashboard-page
+    configuration/file-centric-cart-page
     configuration/static-pages
 
 .. toctree::
