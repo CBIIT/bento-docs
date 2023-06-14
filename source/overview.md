@@ -1,6 +1,6 @@
 # Overview
 
-Bento is a software framework being built to support NCI’s [Cancer Research Data Commons](https://datascience.cancer.gov/data-commons) projects, including Integrated Canine Data Commons (ICDC), and Clinical Trial Data Commons (CTDC).
+Bento is a software framework being built to support NCI’s [Cancer Research Data Commons](https://datascience.cancer.gov/data-commons) projects, including the Integrated Canine Data Commons (ICDC), and the Clinical Trial Data Commons (CTDC).
 <br>This site provides you with the background and instructions you need to set up your own data sharing platform using Bento. 
 
 ## Introduction
