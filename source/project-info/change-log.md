@@ -1,4 +1,21 @@
 # Change Log
+## release-4.0.0
+
+**June 14, 2023**
+The release of Bento 4.0 marks a new era for the Bento Framework. The codebase has been entirely refactored so that all frontend elements have been organized into components making it easier than ever for other projects to use and customize any number of components that may fit their needs and even push new features for components back to the Bento codebase to help the broader community.
+
+* Frontend Refactoring
+* Event logging added to authentication service
+* Support for token-based authentication
+* Upgraded dependencies with known vulnerabilities
+* Stats bar to display important metrics
+* Government warning banner upon entry to application
+* Support for version 3.10.0 for Bento Local on Linux
+* Support for version 4.0.0 for Bento Local on Linux
+* Upgraded to Java version 17
+* Replaced deprecated express-graphql library
+* Replaced the YAML parsing library
+* Updated Bento Documentation 
 
 ## release-3.10.0
 
