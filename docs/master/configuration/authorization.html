@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Authorization &mdash; Bento release-3.10.0 documentation</title>
+  <title>2. Authorization &mdash; Bento release-4.0.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                release-3.10.0
+                release-4.0.0
               </div>
             
           
@@ -123,14 +123,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">10. Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">11. Cart Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Static Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -250,10 +250,14 @@
 <section id="prerequisites">
 <h2><span class="section-number">2.3. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
-<li><p>The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-RI-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
 <li><p>Configuration parameters for RBAC elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code>.</p></li>
-<li><p>Configuration for UI elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
+<li><p>Configuration for UI elements can be specified in the file(s):</p></li>
 </ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
+</ul>
 <p>&nbsp;</p></section>
 <section id="public-access">
 <h2><span class="section-number">2.4. </span>Public Access<a class="headerlink" href="#public-access" title="Permalink to this heading">¶</a></h2>
@@ -297,10 +301,15 @@
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
+<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
 <li><p>Update field: PUBLIC_ACCESS</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;Metadata Only&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: $(src)/packages/bento-frontend/public/injectEnv.js</span>
+
+<span class="c1">// Set the field `PUBLIC_ACCESS` to Metadata Only or None.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">PUBLIC_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Metadata Only&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -317,12 +326,20 @@
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
+<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
 <li><p>Update field: PUBLIC_ACCESS</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w">  </span><span class="kd">const</span><span class="w">  </span><span class="nx">PUBLIC_ACCESS</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="s1">&#39;None&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: $(src)/packages/bento-frontend/public/injectEnv.js</span>
+
+<span class="c1">// Set the field `PUBLIC_ACCESS` to Metadata Only or None.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">PUBLIC_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<blockquote>
+<div><p>NOTE: PUBLIC_ACCESS is a case-sensitive property.</p>
+</div></blockquote>
 </section>
 </section>
 </section>
@@ -350,7 +367,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jun 8, 2023, 8:12:55 PM.
+        Last updated on Jun 15, 2023, 6:03:48 PM.
       </span>
 
     </p>
@@ -384,13 +401,14 @@
       
       <h3>Latest</h3>
       <ul>
-        <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
       <br>
       
 
 	  
 	  <h3>Releases</h3>
       <ul>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
         <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
         <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
@@ -412,6 +430,7 @@
       <dd><a href="../../release-3.10.0/index.html">release-3.10.0</a></dd>
       <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+      <dd><a href="../../release-4.0.0/index.html">release-4.0.0</a></dd>
     </dl>
    -->
 

@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Data Access Request (DAR) Service &mdash; Bento release-3.10.0 documentation</title>
+  <title>3. Data Access Request (DAR) Service &mdash; Bento release-4.0.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                release-3.10.0
+                release-4.0.0
               </div>
             
           
@@ -115,17 +115,23 @@
 <li class="toctree-l3"><a class="reference internal" href="#example">3.3.3. Example</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ui-configuration-s">3.4. UI Configuration(s)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage">3.4.1. Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">3.4.2. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customization">3.4.3. Customization</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. Landing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-listing-page.html">6. Program Listing Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program-detail-page.html">7. Program Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arm-detail-page.html">8. Arm  Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="case-detail-page.html">9. Case Detail Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">10. Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart-workflow.html">11. Cart Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Static Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
 <ul>
@@ -233,8 +239,8 @@
 <h2><span class="section-number">3.2. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="simple">
 <li><p>The files that specify the configuration parameters for the DAR service are stored in the GitHub repository <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
-<li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code>.</p></li>
-<li><p>Configuration parameters for DAR form elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
+<li><p>Configuration parameters for node-level access can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code>.</p></li>
+<li><p>Configuration parameters for DAR form elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/requestAccessData.js</span></code>.</p></li>
 </ol>
 <p>&nbsp;</p></section>
 <section id="configuring-node-level-access">
@@ -244,7 +250,7 @@
 <h3><span class="section-number">3.3.1. </span>Node-Level_Access<a class="headerlink" href="#node-level-access" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">.</span>
 
-<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">node</span> <span class="n">Node</span> <span class="n">Name</span> <span class="ow">and</span> <span class="n">Node</span> <span class="n">Displayed</span> <span class="n">Label</span> <span class="n">parameters</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span> <span class="n">access</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Node_Label</span> <span class="n">parameter</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
 
 <span class="o">*</span> <span class="n">If</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">data</span> <span class="n">access</span> <span class="n">at</span> <span class="n">the</span> <span class="n">node</span><span class="o">-</span><span class="n">level</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">users</span> <span class="n">will</span> <span class="n">either</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">or</span> <span class="n">none</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">authorization</span><span class="o">.</span>
 </pre></div>
@@ -260,15 +266,89 @@
 </section>
 <section id="example">
 <h3><span class="section-number">3.3.3. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
-<p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/bento/siteWideConfig.js</span></code></p>
+<p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p>
 <ol class="simple">
-<li><p>Update fields: node_level_access and node_label</p></li>
+<li><p>Update fields: NODE_LEVEL_ACCESS and NODE_LABEL</p></li>
 </ol>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node level access</span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LEVEL_ACCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NODE_LABEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">NODE_LEVEL_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	</span><span class="nx">NODE_LABEL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Study Arm(s)&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<blockquote>
+<div><p>Note: NODE_LABEL is just a label property and does not restrict users on any specific node. The configuration for that needs to be done in the backend at the time of project initialization.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="ui-configuration-s">
+<h2><span class="section-number">3.4. </span>UI Configuration(s)<a class="headerlink" href="#ui-configuration-s" title="Permalink to this heading">¶</a></h2>
+<p><strong>File Location:</strong> <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/requestAccessData.js</span></code></p>
+<p>This is a configuration file for the Data Access Request page. Custodians can use this file to make changes to the page’s look and feel.</p>
+<section id="usage">
+<h3><span class="section-number">3.4.1. </span>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h3>
+<p>To use this configuration, follow these steps:</p>
+<ol class="simple">
+<li><p>Import the pageTitle and formFields variables from this file into the code.</p></li>
+<li><p>Implement the DataAccessRequest component into the code using the formFields configuration object.</p></li>
+<li><p>Customize the page’s look and feel by making changes to the formFields object.</p></li>
+</ol>
+</section>
+<section id="configuration">
+<h3><span class="section-number">3.4.2. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h3>
+<p>The configuration for the Data Access Request page includes the following variables:</p>
+<section id="pagetitle">
+<h4><span class="section-number">3.4.2.1. </span><code class="docutils literal notranslate"><span class="pre">pageTitle</span></code><a class="headerlink" href="#pagetitle" title="Permalink to this heading">¶</a></h4>
+<p>This sets the title of the page. By default, it is set to ‘Data Access Request’.</p>
+</section>
+<section id="aclapioptionsfield-optional">
+<h4><span class="section-number">3.4.2.2. </span><code class="docutils literal notranslate"><span class="pre">aclAPIOptionsField</span> <span class="pre">(optional)</span></code><a class="headerlink" href="#aclapioptionsfield-optional" title="Permalink to this heading">¶</a></h4>
+<p>This is a string that specifies the name of the API field from which the Access Levels Controls (ACL) should be read. If this field is present, the program will read the ACL from the API instead of from the options property of the armIDs field in the formFields array. By default, this is set to ‘listArms’.</p>
+</section>
+<section id="formfields">
+<h4><span class="section-number">3.4.2.3. </span><code class="docutils literal notranslate"><span class="pre">formFields</span></code><a class="headerlink" href="#formfields" title="Permalink to this heading">¶</a></h4>
+<p>This is an array of objects that define the fields in the Data Access Request form. Each object has the following properties:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: a unique identifier for the field.</p></li>
+<li><p><strong>type</strong>: the type of the input field. Currently supported types are <strong>‘textBox’</strong> and <strong>‘aclDropdown’</strong>.</p></li>
+<li><p><strong>required</strong>: a boolean indicating whether the field is required.</p></li>
+<li><p><strong>label</strong>: the label for the field.</p></li>
+<li><p><strong>placeHolder</strong>: the placeholder text for the field.</p></li>
+<li><p><strong>display</strong>: a boolean indicating whether the field should be displayed on the form.</p></li>
+<li><p><strong>optionsAPIField</strong>: (optional) a string indicating the name of the API field that contains the options for an ACL dropdown field. If this field is not present, the options will be read from the options property.</p></li>
+<li><p><strong>options</strong>: an array of objects that define the options for an ACL dropdown field. Each object has the following properties:</p>
+<ul>
+<li><p><strong>id</strong>: a unique identifier for the option.</p></li>
+<li><p><strong>name</strong>: the name of the option.</p></li>
+</ul>
+</li>
+</ul>
+<p>If <strong>aclAPIOptionsField</strong> is not present, the program will read the ACL options from the <strong>options</strong> property of the <strong>armIDs</strong> field in the <strong>formFields</strong> array.</p>
+</section>
+</section>
+<section id="customization">
+<h3><span class="section-number">3.4.3. </span>Customization<a class="headerlink" href="#customization" title="Permalink to this heading">¶</a></h3>
+<p>To customize the Data Access Request page, changes can be made to the <strong>formFields</strong> object. Fields can be added, removed, or modified as needed. For example, a new field for the user’s email address could be displayed by adding the following object to the <strong>formFields</strong> array:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;email&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;textBox&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Email Address&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">placeHolder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Email Address&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <strong>options</strong> for the ACL dropdown field can be modified by changing the objects in the options array. For example, modifying the name of option A to <strong>‘A: RS 0-10, assigned endocrine therapy alone (default)’</strong> by changing the following object:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A: RS 0-10, assigned endocrine therapy alone (default)&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: If the <strong>aclAPIOptionsField</strong> field is not defined in the configuration file, the program will read the list of Access Levels Controls (ACL) from the <strong>options</strong> field under the <strong>armIDs</strong> object in the <strong>formFields</strong> array. If the <strong>aclAPIOptionsField</strong> field is defined, the program will ignore the <strong>options</strong> field and read the list of ACLs from the specified field in the API response.</p>
+</div></blockquote>
 </section>
 </section>
 </section>
@@ -296,7 +376,7 @@
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jun 8, 2023, 8:12:55 PM.
+        Last updated on Jun 15, 2023, 6:03:48 PM.
       </span>
 
     </p>
@@ -330,13 +410,14 @@
       
       <h3>Latest</h3>
       <ul>
-        <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
       <br>
       
 
 	  
 	  <h3>Releases</h3>
       <ul>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
         <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
         <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
         <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
@@ -358,6 +439,7 @@
       <dd><a href="../../release-3.10.0/index.html">release-3.10.0</a></dd>
       <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
       <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+      <dd><a href="../../release-4.0.0/index.html">release-4.0.0</a></dd>
     </dl>
    -->
 
