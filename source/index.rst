@@ -3,11 +3,11 @@
 
 |
 
-===========================
-Bento Project Documentation
-===========================
+=================================
+The Bento Framework Documentation
+=================================
 
-Welcome! This is the documentation site for the Bento Project. It describes the Bento project's background and explains how to set up a data sharing platform using the Bento framework.
+Welcome! This is the documentation site for the Bento Framework.
 
 Bento is a software framework being built to support NCI’s `Cancer Research Data Commons <https://datascience.cancer.gov/data-commons>`_ projects, including `Integrated Canine Data Commons <https://datacommons.cancer.gov/repository/integrated-canine-data-commons>`_ (`ICDC <https://caninecommons.cancer.gov/#/>`_), and `Clinical Trial Data Commons <https://datacommons.cancer.gov/repository/clinical-trial-data-commons>`_ (CTDC).
 
@@ -16,7 +16,7 @@ This site provides you with the background and instructions you need to set up y
 .. image:: assets/bento_tools_demo_site_thumb.png
    :target: https://bento-tools\.org/#/
 
-Checkout our example site using Bento framework! `Bento-tools <https://bento-tools.org/#/>`_
+Checkout our example site referred to as our Reference Implementation built using the Bento Framework! `Bento-tools <https://bento-tools.org/#/>`_
 
 Bento Documentation (this site): `https://cbiit.github.io/bento-docs/ <https://cbiit.github.io/bento-docs/>`_
 
@@ -49,12 +49,12 @@ GitHub: `https://github.com/CBIIT/bento-docs/ <https://github.com/CBIIT/bento-do
     configuration/data-access-request-service
     configuration/global-ui-elements
     configuration/landing-page
-    configuration/program-listing-page
-    configuration/program-detail-page
-    configuration/arm-detail-page
-    configuration/case-detail-page
-    configuration/dashboard
-    configuration/cart-workflow
+    configuration/programs-page
+    configuration/program-details-page
+    configuration/arm-details-page
+    configuration/case-details-page
+    configuration/explore-dashboard-page
+    configuration/file-centric-cart-page
     configuration/static-pages
 
 .. toctree::

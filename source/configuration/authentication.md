@@ -12,12 +12,14 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 
 ## Prerequisites
 
-1. The files that specify the configuration parameters for authentication are stored in the GitHub repositories `https://github.com/CBIIT/bento-frontend` and `https://github.com/CBIIT/bento-backend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
+1. The files that specify the configuration parameters for authentication are stored in the GitHub repositories `https://github.com/CBIIT/bento-frontend` and `https://github.com/CBIIT/bento-RI-backend`. Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
 2. Configuration parameters for RBAC elements can be specified in the file: `$(src)/bento-backend/src/main/resources/application.properties`
 
-3. Configuration parameters for authentication UI elements can be specified in the file: `$(src)/bento-frontend/src/bento/siteWideConfig.js` and `$(src)/bento-frontend/src/bento/userLoginData.js`.
- 
+3. Configuration parameters for authentication UI elements can be specified in the file(s): 
+  * `$(src)/packages/bento-frontend/public/injectEnv.js`
+  * `$(src)/packages/bento-frontend/src/bento/siteWideConfig.js`
+  * `$(src)/packages/bento-frontend/src/bento/loginData.js`.
 <p>&nbsp;</p>
 
 ### Configuring Authentication
@@ -37,23 +39,29 @@ The Bento Framework provides an OIDC-compliant authentication (AuthN) service so
 ```javascript
 auth.enabled=false
 ```
-3. Edit file: `$(src)/bento-frontend/src/bento/siteWideConfig.js`
+3. Edit file: `$(src)/packages/bento-frontend/public/injectEnv.js`
 
-4. Set the field `enableAuthentication` to True or False
-
-5. Set the field `authProviders` to google, nih, or loginGov
+4. Set the field `AUTH` to True or False
 
 ```javascript
+// File: $(src)/packages/bento-frontend/public/injectEnv.js
 
-export  default {
-// Suggested for replaceEmptyValueWith: 'N/A' or '-' or ''
-replaceEmptyValueWith:  '',
-// Enable authentication
-enableAuthentication:  true,
-// List for options for authentication empty array defaults to google
-authProviders: ['google', 'nih', 'loginGov'], // authEndPoint: []
-};
+// Set the field `AUTH` to True or False
+window.injectedEnv = {
+	AUTH: false,
+}
+```
 
+5. Edit file: `$(src)/packages/bento-frontend/src/bento/siteWideConfig.js`
+
+6. Set the field `enabledAuthProviders` to google, nih, or loginGov
+
+```javascript
+// File: $(src)/packages/bento-frontend/src/bento/siteWideConfig.js
+
+// List of enabled identity providers. This is an array of enabled identity providers, where each element corresponds to a key from loginProvidersData from loginData.js.
+
+export const enabledAuthProviders = ['google', 'nih', 'loginGov'];
 ```
 
 ### Configuring the Display of Identity Providers
@@ -62,29 +70,28 @@ The displayed icons and button text for IdPs are configurable
 
 #### Example
 
-1. Edit file `$(src)/bento-frontend/src/bento/userLoginData.js`
+1. Edit file `$(src)/packages/bento-frontend/src/bento/loginData.js`
 
 2. Set the path for the icon field.
 
 3. Enter the text for the loginButtonText field.
 
 ```javascript
-
-export  const  loginProvidersData  = {
-google: {
-key:  'google',
-icon:  'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/google.png',
-loginButtonText:  'Sign in with Google',
-},
-loginGov: {
-key:  'loginGov',
-icon:  'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/login.gov.png',
-loginButtonText:  'Sign in Login.gov',
-},
-nih: {
-key:  'nih',
-icon:  'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/nih_itrust.png',
-loginButtonText:  'Sign in NIH iTrust',
-},
+export const loginProvidersData = {
+  google: {
+    key: 'google',
+    icon: 'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/google.png',
+    loginButtonText: 'Google',
+  },
+  loginGov: {
+    key: 'loginGov',
+    icon: 'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/login.gov.png',
+    loginButtonText: 'Login.gov',
+  },
+  nih: {
+    key: 'nih',
+    icon: 'https://raw.githubusercontent.com/CBIIT/datacommons-assets/main/bento/images/icons/png/nih_itrust.png',
+    loginButtonText: 'NIH iTrust',
+  },
 };
 ```

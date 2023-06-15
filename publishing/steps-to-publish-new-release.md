@@ -65,6 +65,8 @@
         2. `git pull`
 
             <b><u>Note</u></b>: When rebuilding the documentation, each github branch is treated as a release. Only the master branch and release branches (prefixed with "release-") will be built to create html output under the docs folder.
+            
+    *** For the Bento Reference Implementation the steps listed below are completed by an Jenkins job that is triggered by merging a PR to the master branch.
 
     2. In the master branch, in the root directory, activate a virtual environment, e.g.  `venv`
         1. If there are any problems, simple remove and rebuild the virtual environment, i.e.:
