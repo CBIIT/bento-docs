@@ -9,7 +9,7 @@ The Landing Page provides a visual and textual introduction to the overall missi
 
 1. The files that specify the configuration parameters of the Bento Landing Page are stored in GitHub `https://github.com/CBIIT/bento-frontend` (representing your GitHub username as `YOUR-USERNAME`). Create a local clone of your fork into a local directory, represented in these instructions as `$(src)`.
 
-2. Configuration parameters for all Landing Page Elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingData.js` 
+2. Configuration parameters for all Landing Page Elements can be specified in the file: `$(src)/packages/bento-frontend/src/bento/landingPageData.js` 
 
 3. All images and icons used in a Bento instance should be accessible via a public url. 
 
@@ -19,7 +19,7 @@ The Landing Page provides a visual and textual introduction to the overall missi
 The Landing Page Hero Image is a visual representation of the mission of the data sharing platform.
 
 ### Configuring the Landing Page Hero Image
- 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
+ 1. Open the file `$(src)/packages/bento-frontend/src/bento/landingPageData.js`.
  2. Under `landingPageData`
  	* Set the field `landingPageHero.img` with the URL to the Landing Page Hero image to be displayed.
  	* Set the field `landingPageHero.alt` with the alt text to be associated with the Landing Page Hero image.
@@ -40,7 +40,7 @@ export const landingPageData = {
 The Call to Action feature provides a concise summary of what an end user can accomplish within the data sharing platform.
 
 ## Configuring the Call to Action Feature
-1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/landingPageData.js`.
 2. In `landingPageData`:
 	* Set the field `callToActionTitle` to the Call To Action Title.
 	* Set the field `callToActionDescription` to the Call to Action Descriptive Text.
@@ -61,7 +61,7 @@ export const landingPageData = {
 The four Landing Page Tiles provide additional visual and textual description of the mission and capabilities of a data sharing platform (see figure above for tile numbering). Note that in this version of Bento, the number, position and dimensions of these tiles cannot be configured. 
 
 ### Configuring the Landing Page Tiles
-1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/landingPageData.js`.
 2. Under `landingPageData`, for a tile, `tile<i>`:
   * Set the field `tile_i.titleText` to the Tile Title.
   * Set the field `tile_i.descriptionText` to the Tile Description.
@@ -89,7 +89,7 @@ export const landingPageData = {
 The Landing Page Stats Bar provides the end user with a high-level overview of the volume and diversity of the available data. Summary counts are displayed for up to five major data entity types. Bento allows a maximum of **5** summary statistics. If more than 5 are added, **only the top 5 will be displayed without any warning or error message**.
 
 ### Configuring the Landing Page Stats Bar
-1. Open the file `$(src)/packages/bento-frontend/src/bento/landingData.js`.
+1. Open the file `$(src)/packages/bento-frontend/src/bento/landingPageData.js`.
 2. Under `landingPageData` statistics can be added to the landingPageStatsBar.
 	* Set the field `statTitle` to the label to be displayed for each statistic.
 	* Set the field `statAPI` to the GraphQL API query that returns each statistic of interest.
@@ -124,4 +124,5 @@ export const GET_LANDING_PAGE_DATA_QUERY = gql`{
 - The “Call to Action” description should be limited to a maximum of 150 characters.
 - The Tile title should be limited to a maximum of 60 characters.
 - The Title description should be limited to a maximum of 150 characters.
+- The Title's button title should be limited to maximum of 12 characters.
 - Alt tags should be short (maximum limit =125 characters). You may add multiple, comma-separated key words in the Alt tag.

@@ -367,7 +367,7 @@ The title or tab text can be specified as follows:</p>
 <section id="configuring-the-static-footer-text">
 <h3><span class="section-number">4.4.2. </span>Configuring the Static Footer Text<a class="headerlink" href="#configuring-the-static-footer-text" title="Permalink to this heading">¶</a></h3>
 <ol class="simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/footer.js</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/globalFooterData.js</span></code>.</p></li>
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">footerStaticText</span></code> to desired text.</p></li>
 <li><p>Example:</p></li>
 </ol>
@@ -384,7 +384,7 @@ The title or tab text can be specified as follows:</p>
 <p>A Footer subsection may be defined as a column of anchor links along with a column header. These are optional components; if no footer subsections are specified, none will be displayed. Bento allows a maximum of <em>3</em> footer subsections to be displayed. If more than 3 footer subsections are provided, <strong>Bento will display the first three without any error or warning messages</strong>.
 <br> Each Footer Subsection has several components: Header, Links, Link Text, Link Types, Link Icons. Given below are instructions on how to configure each of these components.</p>
 <ol class="simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/footer.js</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/globalFooterData.js</span></code>.</p></li>
 <li><p>Each Footer Subsection is configured by one element in the <code class="docutils literal notranslate"><span class="pre">links_sections</span></code> list.</p></li>
 <li><p>Set the field <code class="docutils literal notranslate"><span class="pre">title</span></code> to the Footer Subsection Title.</p></li>
 <li><p>Footer subsection links provide an entry point to both internal and external pages. Bento allows a maximum of <strong>4</strong> links per Footer Subsection. Footer subsection links can be specified with the <code class="docutils literal notranslate"><span class="pre">items</span></code> dictionary of a <code class="docutils literal notranslate"><span class="pre">link_sections</span></code> list element.
@@ -434,7 +434,7 @@ If more than 4 links are specified, <strong>Bento will display only the first 4 
 <p>Footer Anchor Links enable an option to embed additional organizational URLs.
 Bento allows up to 4 footer anchor links. If more than 4 links are specified, <strong>Bento will display the first four any warning or error message</strong>.</p>
 <ol class="simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/footer.js</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/globalFooterData.js</span></code>.</p></li>
 <li><p>Add anchor links to <code class="docutils literal notranslate"><span class="pre">global_footer_links</span></code>.</p></li>
 </ol>
 <ul class="simple">
@@ -601,7 +601,7 @@ Bento allows up to 4 footer anchor links. If more than 4 links are specified, <s
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jun 15, 2023, 6:05:15 PM.
+        Last updated on Jun 20, 2023, 5:07:31 PM.
       </span>
 
     </p>
