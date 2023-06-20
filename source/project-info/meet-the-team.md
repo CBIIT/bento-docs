@@ -9,5 +9,5 @@ Product Owner: Gina Kuffel \
 Technical Project Manager: Karan Sheth \
 Technical Lead: Kailing Chen \
 Software Engineers: Ming Ying, Ambar Rana, Joon Lee, Alec Mattu, Austin Mueller, Vincent Donkor, Seni Ankerso, Michael Fleming \
-Software Developers in Test: Sofia David, Sohil Zalmay, Ashwini Tatekar
+Software Developers in Test: Sofia David, Sohil Zalmay, Ashwini Tatekar \
 UI/UX: Hannah Stogsdill
