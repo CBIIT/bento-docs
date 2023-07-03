@@ -1,0 +1,562 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. The Study Arm Details Page &mdash; Bento release-4.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. The Case Details Page" href="case-details-page.html" />
+    <link rel="prev" title="7. The Program Details Page" href="program-details-page.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-4.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">5. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. The Study Arm Details Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">8.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-study-arm-details-page">8.2. Configuring the Study Arm Details Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-study-arm-details-page-table">8.3. Configuring the Study Arm Details Page Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-columns-to-the-study-arm-details-page-table">8.3.1. Adding Columns to the Study Arm Details Page Table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurating-the-associated-files-table">8.4. Configurating the Associated Files Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-links-in-the-explore-dashboard-table">8.4.1. Internal Links in the Explore Dashboard Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-links-in-the-explore-dashboard-table">8.4.2. External Links in the Explore Dashboard Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphql-queries-to-power-tables">8.4.3. GraphQL Queries to Power Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">8. </span>The Study Arm Details Page</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/arm-details-page.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="case-details-page.html" class="btn btn-neutral float-right" title="9. The Case Details Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="program-details-page.html" class="btn btn-neutral float-left" title="7. The Program Details Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="the-study-arm-details-page">
+<h1><span class="section-number">8. </span>The Study Arm Details Page<a class="headerlink" href="#the-study-arm-details-page" title="Permalink to this heading">¶</a></h1>
+<p>This page provides a summary of the Study Arm that belongs to a Program that participates in a Bento-based data sharing platform.</p>
+<p><img alt="Study Arm Details Page" src="../_images/arm-detail-page.png" /></p>
+<p><strong>Study Arm Details Page</strong>. Displayed are the configurable components of the Study Arm Details Page.</p>
+<section id="prerequisites">
+<h2><span class="section-number">8.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters of the Study Arm Details Page are stored in the GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration Parameters for all Study Arm Details Page Elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
+<li><p>All images and icons used in a Bento instance should be accessible via a public url.</p></li>
+<li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query type(s) that return data of interest.</p></li>
+</ol>
+</section>
+<section id="configuring-the-study-arm-details-page">
+<h2><span class="section-number">8.2. </span>Configuring the Study Arm Details Page<a class="headerlink" href="#configuring-the-study-arm-details-page" title="Permalink to this heading">¶</a></h2>
+<p>Key study arm attributes can be added to the Study Arm Details Page as label:value pairs within a set of subsections (See Step 3. below). A maximum of <strong>6</strong> sections can be added to the Study Arm Details page. Within each subsection a maximum of <strong>10</strong> attributes can be displayed as label:value pairs.</p>
+<p>An optional table can be added to the Study Arm Details Page to list arm-level metadata.</p>
+<ol class="simple">
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">header</span></code>:</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">label</span></code> to the display label for the Study Arm Details page.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the GraphQL API query that returns the value, such as the Arm Name or Arm ID to be displayed.</p></li>
+</ul>
+</li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">subsections</span></code>:</p>
+<ul class="simple">
+<li><p>For each label:value pair to be displayed, create an object {label: ,datafield: ,} in <code class="docutils literal notranslate"><span class="pre">properties</span></code>:</p>
+<ul>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">label</span></code> to the display label for the attribute.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the GraphQL API query that returns the data to be displayed as a value for the given label:value pair.</p></li>
+<li><p>Optional links can be embedded in the label or value, or both. Links can be internal or external.</p>
+<ul>
+<li><p>To add a link to the <em>value</em> specify an internal or external link by adding a <code class="docutils literal notranslate"><span class="pre">link</span></code> attribute to the object.</p></li>
+<li><p>To add a link to the <em>label</em> specify an internal or external link by adding a <code class="docutils literal notranslate"><span class="pre">labelLink</span></code> attribute to the object.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Add the GraphQL API query field to <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>⚠️ <strong>WARNING</strong>: If more than 6 subsections are configured, <strong>only the first 6 subsections will be displayed in the UI, other subsections will be ignored</strong>.</p>
+<p>⚠️ <strong>WARNING</strong>: If more than 10 properties are configured, <strong>only first 10 properties will be displayed in the UI, other properties will be ignored</strong>.</p>
+</div></blockquote>
+</section>
+<section id="configuring-the-study-arm-details-page-table">
+<h2><span class="section-number">8.3. </span>Configuring the Study Arm Details Page Table<a class="headerlink" href="#configuring-the-study-arm-details-page-table" title="Permalink to this heading">¶</a></h2>
+<p>A table can be added to the Study Arm Details Page. <em>This is optional.</em></p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">filesTable</span></code>:</p></li>
+</ol>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">display</span></code> field is set to true, by default. <em>Set this field to false to disable the table in the Arm Details page</em>.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">title</span></code> to the desired title.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the name of the GraphQL API query being used to return data for the Arm Details page. <em>Note: This query should match the GraphQL API query in <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code></em>.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code> to the name of the query field that will be used to sort the Arm Details page table. Note: this query field should be displayed as one of the columns in the Arm Details page table.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">defaultSortDirection</span></code> to the sort order to be displayed. Valid values are ‘asc’ (ascending) and ‘desc’ (descending).</p></li>
+<li><p>Add the GraphQL API query to <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">filesTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Table Title&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query returning data for this page&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">defaultSortField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field used to sort the table.&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">defaultSortDirection</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;sort order, asc|desc&gt;&#39;</span><span class="p">,</span>
+<span class="p">...</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_ARM_DETAIL_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
+<span class="sb">    &#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
+<span class="sb">  ... </span>
+<span class="sb"> }</span>
+<span class="sb">}</span>
+</pre></div>
+</div>
+<section id="adding-columns-to-the-study-arm-details-page-table">
+<h3><span class="section-number">8.3.1. </span>Adding Columns to the Study Arm Details Page Table<a class="headerlink" href="#adding-columns-to-the-study-arm-details-page-table" title="Permalink to this heading">¶</a></h3>
+<p>Up to 10 columns can be added to the Study Arm Details Page Table. If adding more than 10 columns, <strong>Bento will display the first 10 columns without an error or warning message</strong>. The top-down order of columns will be displayed left to right on the UI.</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/armDetailData.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">filesTable</span></code>, add an object <code class="docutils literal notranslate"><span class="pre">{dataField:</span> <span class="pre">,</span> <span class="pre">header:</span> <span class="pre">,</span> <span class="pre">link:</span> <span class="pre">,}</span></code> to the <code class="docutils literal notranslate"><span class="pre">columns</span></code> list:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataField</span></code> to the GraphQL API query data field that returns the data for the column.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">header</span></code> to the column header name.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">link</span></code> to an internal or external link that is to be embedded into the the column value. See below for additional instructions on adding internal and external links. <em>Links are optional</em>.</p></li>
+<li><p>Add the GraphQL API query data field to <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">filesTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Column Header&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;link to be embedded in column value&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">dataField</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query field returning data for this column&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;PubMed ID&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_ARM_DETAIL_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  &#39;&lt;Your GraphQL query&gt;&#39;&#39; {</span>
+<span class="sb">    &#39;&lt;Data fields returned by your GraphQL API query&gt;&#39;</span>
+<span class="sb">  ... </span>
+<span class="sb"> }</span>
+<span class="sb">}</span>
+</pre></div>
+</div>
+<section id="internal-links-in-the-study-arm-details-page-table">
+<h4><span class="section-number">8.3.1.1. </span>Internal Links in the Study Arm Details Page Table<a class="headerlink" href="#internal-links-in-the-study-arm-details-page-table" title="Permalink to this heading">¶</a></h4>
+<ol class="simple">
+<li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
+<li><p>Internal links will be opened in the same tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> will; link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
+</ol>
+</section>
+<section id="external-links-in-the-study-arm-details-page-table">
+<h4><span class="section-number">8.3.1.2. </span>External Links in the Study Arm Details Page Table<a class="headerlink" href="#external-links-in-the-study-arm-details-page-table" title="Permalink to this heading">¶</a></h4>
+<ol class="simple">
+<li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>. Note: In this version of Bento the External Link Icon of the Arm Details page is not configurable.</p></li>
+<li><p>External link will be opened in a new tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>⚠️ <strong>WARNING</strong>: A maximum of <strong>10</strong> columns can be added to the table. If adding more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="configurating-the-associated-files-table">
+<h2><span class="section-number">8.4. </span>Configurating the Associated Files Table<a class="headerlink" href="#configurating-the-associated-files-table" title="Permalink to this heading">¶</a></h2>
+<p>This table lists files that are associated with a Study Arm.  It can be configured as follows:</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/armDetailData.js</span></code></p></li>
+<li><p>Edit the  <code class="docutils literal notranslate"><span class="pre">filesTable</span></code> object :</p></li>
+</ol>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">display</span></code></strong>:  Show  or Hide column (must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tableTitle</span></code></strong> : Text to show on table title</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">subjectDetailField</span></code></strong> : field name in “Data” object to get values for table. Field name for files / Samples data, need to be updated only when using a different GraphQL query</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code></strong>: Value must be one of the ‘dataField’ in columns.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortDirection</span></code></strong>: Sort default column in Ascending or Descending order (value must be <code class="docutils literal notranslate"><span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">desc</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">buttonText</span></code></strong>: Text to appear on Add to cart button</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tooltipMessage</span></code></strong> <strong>:</strong> Help Icon Message.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">columns</span></code></strong>: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI. Each column object is described by the following fields:</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataField</span></code></strong>: specifies what data appears in the column, field must be from the GraphQL API query</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">header</span></code></strong>: Heading Text for column</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sort</span></code></strong>: sort order for column; must be <code class="docutils literal notranslate"><span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">desc</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">primary</span></code></strong>: applies to primary field of table like “sample_ID” or “File_ID” based on which files will be added in to cart; must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">display</span></code></strong>: Show  or Hide column; must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataFromRoot</span></code></strong>: Get data from parent element; must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">link</span></code></strong>: Hyperlink to internal or external page. The value can be injected in link dynamically using <code class="docutils literal notranslate"><span class="pre">{datafield}</span></code>, for example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Internal Link </span>
+<span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/arm/{dataField}&#39;</span><span class="p">,</span>
+
+<span class="c1">// External Link</span>
+<span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://example.com/{dataField}&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<section id="internal-links-in-the-explore-dashboard-table">
+<h3><span class="section-number">8.4.1. </span>Internal Links in the Explore Dashboard Table<a class="headerlink" href="#internal-links-in-the-explore-dashboard-table" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>links starting with <code class="docutils literal notranslate"><span class="pre">/</span></code> are considered as internal links.</p></li>
+<li><p>Internal links will be opened in the same tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table field to <code class="docutils literal notranslate"><span class="pre">{}</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">/program/{program_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">program/NCT00310180</span></code>.</p></li>
+</ol>
+</section>
+<section id="external-links-in-the-explore-dashboard-table">
+<h3><span class="section-number">8.4.2. </span>External Links in the Explore Dashboard Table<a class="headerlink" href="#external-links-in-the-explore-dashboard-table" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>External links should start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>External links should show-up with <code class="docutils literal notranslate"><span class="pre">externalLinkIcon</span></code>.</p></li>
+<li><p>External link should be opened in a new tab.</p></li>
+<li><p>Dynamic links can be generated by passing a valid table filed to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}</span></code> will link to <code class="docutils literal notranslate"><span class="pre">https://pubmed.ncbi.nlm.nih.gov/29860917/</span></code></p></li>
+</ol>
+</section>
+<section id="graphql-queries-to-power-tables">
+<h3><span class="section-number">8.4.3. </span>GraphQL Queries to Power Tables<a class="headerlink" href="#graphql-queries-to-power-tables" title="Permalink to this heading">¶</a></h3>
+<p>The GraphQL Query used for the Associated Files Table is defined in <code class="docutils literal notranslate"><span class="pre">GET_ARM_DETAIL_DATA_QUERY</span></code>. For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GET_ARM_DETAIL_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`</span>
+<span class="sb">  query armDetail($study_acronym: String) {</span>
+<span class="sb">    armDetail(study_acronym: $study_acronym) {</span>
+<span class="sb">      study_acronym</span>
+<span class="sb">      study_name</span>
+<span class="sb">      study_type</span>
+<span class="sb">      study_full_description</span>
+<span class="sb">      study_info</span>
+<span class="sb">      num_subjects</span>
+<span class="sb">      num_files</span>
+<span class="sb">      num_samples</span>
+<span class="sb">      num_lab_procedures</span>
+<span class="sb">      diagnoses {</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb"> `</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<blockquote>
+<div><p>⚠️ <strong>WARNING</strong>: A maximum of <strong>10</strong> columns can be added to the table. If adding more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="case-details-page.html" class="btn btn-neutral float-right" title="9. The Case Details Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="program-details-page.html" class="btn btn-neutral float-left" title="7. The Program Details Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jul 3, 2023, 5:35:45 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: post_release_update
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Latest</h3>
+      <ul>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
+      <br>
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="arm-details-page.html">post_release_update</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="arm-details-page.html">post_release_update</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.10.0/index.html">release-3.10.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+      <dd><a href="../../release-4.0.0/index.html">release-4.0.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

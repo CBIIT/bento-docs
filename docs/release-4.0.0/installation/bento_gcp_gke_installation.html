@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Deploying Bento on GCP &mdash; Bento release-4.0.0 documentation</title>
+  <title>7. Deploying Bento on GCP &mdash; Bento release-4.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Authentication" href="../configuration/authentication.html" />
-    <link rel="prev" title="4. Deploying Bento on GCP Cloud Run" href="bento_gcp_cloud_run_installation.html" /> 
+    <link rel="prev" title="6. Deploying Bento on GCP Cloud Run" href="bento_gcp_cloud_run_installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,17 +97,19 @@
 <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bento-quick-start.html">1. Quick Start Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html">2. Installing Bento on Your Local Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bento_aws_installation.html">3. Deploying Bento on AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bento_gcp_cloud_run_installation.html">4. Deploying Bento on GCP Cloud Run</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Deploying Bento on GCP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">5.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#disclaimer">5.1.1. Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html">2. BENTO LOCAL :bento:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html#getting-started">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing-bento-on-your-local-machine.html#additional-steps">4. Additional Steps:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento_aws_installation.html">5. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bento_gcp_cloud_run_installation.html">6. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Deploying Bento on GCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">7.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#disclaimer">7.1.1. Disclaimer</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">5.2. Pre-requisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#architecture">5.3. Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installations">5.4. Installations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">7.2. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">7.3. Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installations">7.4. Installations</a></li>
 </ul>
 </li>
 </ul>
@@ -189,7 +191,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Deploying Bento on GCP</li>
+      <li><span class="section-number">7. </span>Deploying Bento on GCP</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,7 +212,7 @@
         <a href="../configuration/authentication.html" class="btn btn-neutral float-right" title="1. Authentication" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bento_gcp_cloud_run_installation.html" class="btn btn-neutral float-left" title="4. Deploying Bento on GCP Cloud Run" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bento_gcp_cloud_run_installation.html" class="btn btn-neutral float-left" title="6. Deploying Bento on GCP Cloud Run" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -220,20 +222,20 @@
            <div itemprop="articleBody">
             
   <section id="deploying-bento-on-gcp">
-<h1><span class="section-number">5. </span>Deploying Bento on GCP<a class="headerlink" href="#deploying-bento-on-gcp" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">7. </span>Deploying Bento on GCP<a class="headerlink" href="#deploying-bento-on-gcp" title="Permalink to this heading">¶</a></h1>
 <p>This is the user documentation on provisioning bento on AWS.</p>
 <p><a class="reference external" href="https://www.codacy.com/gh/CBIIT/icdc-dataloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CBIIT/icdc-dataloader&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/f4d5afb8403642dbab917cb4aa4ef47d" /></a></p>
 <section id="introduction">
-<h2><span class="section-number">5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>The purpose of this guide is to provide instructions on how to provision and deploy Bento Framework on GCP using google kubernetes engine. This guide assumes that the Custodian has an operating account with Google Cloud Platform.</p>
 <section id="disclaimer">
-<h3><span class="section-number">5.1.1. </span>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">7.1.1. </span>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading">¶</a></h3>
 <p>GCP is a Pay As You Go provider, as result the use of this instruction may result in  usage charges. We’re in no way responsible for any charges incurred from resources created using this documentation.</p>
 <p>All scripts related to this documentation can be found here: <a class="reference external" href="https://github.com/CBIIT/bento-cloudrun">Bento Custodian</a></p>
 </section>
 </section>
 <section id="pre-requisites">
-<h2><span class="section-number">5.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <p>This instructions assumed you have a google account and a project with billing enabled. In addition, you will need terraform and git installed.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://cloud.google.com">Google account</a></p></li>
@@ -243,7 +245,7 @@
 </ul>
 </section>
 <section id="architecture">
-<h2><span class="section-number">5.3. </span>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
 <p>The code in this demo will create the following resources via Terraform:</p>
 <ul class="simple">
 <li><p>A new VPC and new VPC subnets</p></li>
@@ -254,7 +256,7 @@
 </ul>
 </section>
 <section id="installations">
-<h2><span class="section-number">5.4. </span>Installations<a class="headerlink" href="#installations" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Installations<a class="headerlink" href="#installations" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Clone <a class="reference external" href="https://github.com/CBIIT/bento-custodian">Bento Custodian</a> repository</p></li>
 </ul>
@@ -419,7 +421,7 @@ will have two files, one is your private key and the other is the public key wit
         <a href="../configuration/authentication.html" class="btn btn-neutral float-right" title="1. Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bento_gcp_cloud_run_installation.html" class="btn btn-neutral float-left" title="4. Deploying Bento on GCP Cloud Run" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bento_gcp_cloud_run_installation.html" class="btn btn-neutral float-left" title="6. Deploying Bento on GCP Cloud Run" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -431,7 +433,7 @@ will have two files, one is your private key and the other is the public key wit
         
         &copy; Copyright 2021, CBIIT
       <span class="lastupdated">
-        Last updated on Jun 20, 2023, 5:07:31 PM.
+        Last updated on Jul 3, 2023, 5:37:34 PM.
       </span>
 
     </p>
@@ -480,6 +482,7 @@ will have two files, one is your private key and the other is the public key wit
         <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
         <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
         <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="../../post_release_update/index.html">post_release_update</a></li>
       </ul>
       
 
@@ -487,6 +490,7 @@ will have two files, one is your private key and the other is the public key wit
     <dl>
       <dt>Branches</dt>
       <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../post_release_update/index.html">post_release_update</a></dd>
       <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
       <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
       <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
