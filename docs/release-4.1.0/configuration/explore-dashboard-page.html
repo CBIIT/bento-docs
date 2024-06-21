@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10. The Explore Dashboard &mdash; Bento release-4.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. File-Centric Cart Page" href="file-centric-cart-page.html" />
+    <link rel="prev" title="9. The Case Details Page" href="case-details-page.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-4.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. BENTO LOCAL :bento:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html#getting-started">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html#additional-steps">4. Additional Steps:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">5. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">6. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">7. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">2. Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. The Explore Dashboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">10.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-dashboard-widgets">10.2. Configuring the Dashboard Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-faceted-filtering">10.3. Configuring Faceted Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-facet-sections">10.3.1. Configuring Facet Sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-facet-filters">10.3.2. Configuring Facet Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-dashboard-tables-tabs">10.4. Configuring Dashboard Tables &amp; Tabs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tab-configuration">10.4.1. Tab Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-configuration">10.4.2. Table Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tool-tips">10.4.3. Tool Tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphql-to-power-the-explore-dashboard">10.4.4. GraphQL to Power the Explore Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suggested-best-practices">10.4.5. Suggested Best Practices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">10. </span>The Explore Dashboard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/explore-dashboard-page.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="file-centric-cart-page.html" class="btn btn-neutral float-right" title="11. File-Centric Cart Page" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="case-details-page.html" class="btn btn-neutral float-left" title="9. The Case Details Page" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="the-explore-dashboard">
+<h1><span class="section-number">10. </span>The Explore Dashboard<a class="headerlink" href="#the-explore-dashboard" title="Permalink to this heading">¶</a></h1>
+<p>The Explore Dashboard enables cohort discovery and cohort building. Users can filter data entities of interest via a comprehensive faceted filtering sidebar alongside a dynamic query bar and graphical summaries of the data. Cohorts can be added to the Cart to produce an exportable File Manifest.</p>
+<p><img alt="Explore Dashboard Elements" src="../_images/dashboard.png" /></p>
+<p><strong>Explore Dashboard</strong>. Displayed are the configurable elements of a Bento Explore Dashboard: widgets, faceted filtering, table, and tabs.</p>
+<section id="prerequisites">
+<h2><span class="section-number">10.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters of the Explore Dashboard are stored in GitHub <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>). Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration parameters for the Explore Dashboard elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashTemplate.js</span></code>.</p></li>
+<li><p>All images and icons used in a Bento instance should be accessible via a public url.</p></li>
+<li><p>Please review the list of <a class="reference external" href="https://github.com/CBIIT/bento-RI-backend/blob/master/src/main/resources/graphql/bento-extended-doc.graphql">GraphQL queries</a> to select query types that return data of interest.</p></li>
+</ol>
+</section>
+<section id="configuring-the-dashboard-widgets">
+<h2><span class="section-number">10.2. </span>Configuring the Dashboard Widgets<a class="headerlink" href="#configuring-the-dashboard-widgets" title="Permalink to this heading">¶</a></h2>
+<p>Dashboard Widgets provide a graphical summary of the key data entities in a Bento-based data sharing platform. In this version of Bento, 3, 4, or 6 widgets can be added. If more than <strong>6</strong> widgets are added, Bento will display the first 6 widgets without any error or warning message.</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashTemplate.js</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">widgetConfig</span></code> add an object <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">type,</span> <span class="pre">label,</span> <span class="pre">dataName,</span> <span class="pre">...</span> <span class="pre">}</span></code> to represent a widget.</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">type</span></code> to the type of widget to be displayed. Valid values are <em>‘donut’</em> and <em>‘sunburst’</em>.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">title</span></code> to the display title for the widget.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataName</span></code> to the name of the GraphQL API query that returns data for the widget.</p></li>
+<li><p>Sunburst widgets display two types of data within a single plot. <em>If the widget is of type ‘sunburst’</em>, set the fields <code class="docutils literal notranslate"><span class="pre">datatable_level1_field</span></code> and <code class="docutils literal notranslate"><span class="pre">datatable_level2_field</span></code> to the specific fields in the GraphQL API query that returns data for the sunburst. The field <code class="docutils literal notranslate"><span class="pre">datatable_level1_field</span></code> drives the inner ring of of the sunburst. The field <code class="docutils literal notranslate"><span class="pre">datatable_level2_field</span></code> drives the outer ring of of the sunburst.</p></li>
+<li><p>Sunburst widgets allow the custodian to override the default color schemes. Set the fields <code class="docutils literal notranslate"><span class="pre">datatable_level1_colors</span></code> and <code class="docutils literal notranslate"><span class="pre">datatable_level2_colors</span></code> to override the default colors for the inner and outer rings of the widget, respectively. These fields should contain arrays of colors in hex format with no minimum or maximum number of entries. Colors will be repeated if there are more data points than colors in the array.</p></li>
+<li><p>Enter all GraphQL API queries that drive the widgets in <code class="docutils literal notranslate"><span class="pre">GET_DASHBOARD_DATA_QUERY</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Example:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">widgetConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;sunburst&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Widget Label&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">dataName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datatable_level1_field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL field for inner ring&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datatable_level1_colors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;#eee&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;#ddd&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;#ccc&#39;</span><span class="p">]</span>
+<span class="w">    </span><span class="nx">datatable_level2_field</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL field for outer ring&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datatable_level2_colors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;#000&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;#ccc&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;donut&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;Widget Label&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">dataName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;GraphQL API query that returns data for widget&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="c1">// ...</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">GET_DASHBOARD_DATA_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb"> GraphQL API query{</span>
+<span class="sb"> 	API query field</span>
+<span class="sb"> }</span>
+<span class="sb">};</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-faceted-filtering">
+<h2><span class="section-number">10.3. </span>Configuring Faceted Filtering<a class="headerlink" href="#configuring-faceted-filtering" title="Permalink to this heading">¶</a></h2>
+<p>Facet filters allow an end user to search for data of interest by applying multiple filters, based on faceted classification of stored data entities.</p>
+<p>The faceted filtering on the Side Bar can be organized into into facet sections, each with a maximum count of 15 facets that are associated with facet values that can be used for filtering data upon selecting the respective checkboxes.</p>
+<p><img alt="Bento Faceted Filtering" src="../_images/faceted-filtering.jpg" /></p>
+<section id="configuring-facet-sections">
+<h3><span class="section-number">10.3.1. </span>Configuring Facet Sections<a class="headerlink" href="#configuring-facet-sections" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Open the configuration file located at <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashTemplate.js</span></code> (in the “CBIIT/bento-frontend” git repo)</p></li>
+</ul>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">facetSectionVariables</span></code> controls the sections available in the facet filtering sidebar. Each section is defined as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isExpanded</span></code>: controls if the section is expanded or collapsed by default (must be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hasSearch</span></code>: controls if the section displays the Local Find search bar (must be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+</ul>
+<p>For Example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">facetSectionVariables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">Cases</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">isExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hasSearch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">Samples</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">isExpanded</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="c1">// ... other facet sections</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-facet-filters">
+<h3><span class="section-number">10.3.2. </span>Configuring Facet Filters<a class="headerlink" href="#configuring-facet-filters" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Open the configuration file located at <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashTemplate.js</span></code> (in the “CBIIT/bento-frontend” git repo)</p></li>
+<li><p>To represent a facet, edit or create a facet object under the <code class="docutils literal notranslate"><span class="pre">facetsConfig</span></code> object</p></li>
+<li><p>Each facet is defined as follows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">section</span></code>: the facet section that the facet should appear in the sidebar. Default options include: <code class="docutils literal notranslate"><span class="pre">CASES</span></code>, <code class="docutils literal notranslate"><span class="pre">SAMPLES</span></code>, <code class="docutils literal notranslate"><span class="pre">FILES</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>: the display label for the facet that appears in the sidebar</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">field</span></code>: the specific field in the GraphQL API query, as the  <code class="docutils literal notranslate"><span class="pre">api</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">api</span></code>:  the GraphQL api query:  <code class="docutils literal notranslate"><span class="pre">GET_DASHBOARD_DATA_QUERY</span></code>  returns data for the facet.  (It is in the same file: <code class="docutils literal notranslate"><span class="pre">dashboardData.js</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datafield</span></code>: the variable used to cross-reference/pass data to widgets and dashboard data tables,  see: <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashboardTabData.js</span></code> (described in <a class="reference external" href="dashboard-tabs-and-tables">Dashboard: Tabs and Tables</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show</span></code>: controls if the facet is displayed or hidden (must be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+<li><p><strong>Note</strong> that the order of the facet sections and individual facets nested in each facet section is controlled by the order of the entries of the facets in the <code class="docutils literal notranslate"><span class="pre">facetsConfig</span></code> object</p></li>
+</ul>
+<p>For Example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">facetsConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="nx">CASES</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Program&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subjectCountByProgram&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiForFiltering</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;filterSubjectCountByProgram&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;programs&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="nx">GROUP</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">InputTypes</span><span class="p">.</span><span class="nx">CHECKBOX</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sort_type</span><span class="o">:</span><span class="w"> </span><span class="nx">sortType</span><span class="p">.</span><span class="nx">ALPHABET</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="nx">CASES</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arm&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subjectCountByStudy&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiForFiltering</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;filterSubjectCountByStudy&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;studies&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="nx">GROUP</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">InputTypes</span><span class="p">.</span><span class="nx">CHECKBOX</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sort_type</span><span class="o">:</span><span class="w"> </span><span class="nx">sortType</span><span class="p">.</span><span class="nx">ALPHABET</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="nx">SAMPLES</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tissue Composition&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subjectCountByTissueComposition&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiForFiltering</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;filterSubjectCountByTissueComposition&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;composition&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="nx">GROUP</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">InputTypes</span><span class="p">.</span><span class="nx">CHECKBOX</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sort_type</span><span class="o">:</span><span class="w"> </span><span class="nx">sortType</span><span class="p">.</span><span class="nx">ALPHABET</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="nx">FILES</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;File Association&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subjectCountByFileAssociation&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiForFiltering</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;filterSubjectCountByFileAssociation&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">datafield</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;association&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="nx">GROUP</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">InputTypes</span><span class="p">.</span><span class="nx">CHECKBOX</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sort_type</span><span class="o">:</span><span class="w"> </span><span class="nx">sortType</span><span class="p">.</span><span class="nx">ALPHABET</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">show</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p><strong>NOTE</strong>:  Update the GraphQL API Query in <code class="docutils literal notranslate"><span class="pre">GET_DASHBOARD_DATA_QUERY</span></code> as needed; it should contain all queries and fields that are associated with facets being displayed.</p>
+</section>
+</section>
+<section id="configuring-dashboard-tables-tabs">
+<h2><span class="section-number">10.4. </span>Configuring Dashboard Tables &amp; Tabs<a class="headerlink" href="#configuring-dashboard-tables-tabs" title="Permalink to this heading">¶</a></h2>
+<p>The Explore Dashboard is structured to organize the data tables using tabs beneath the widgets. The Dashboard Table can be configured to list key data entities in ab Bento-based data sharing platform along with a list of key data entity attributes. In the <a class="reference external" href="https://bento-tools.org/#/cases">Bento reference implementation</a> the Dashboard Table lists the cases (or study subjects) in the program.</p>
+<section id="tab-configuration">
+<h3><span class="section-number">10.4.1. </span>Tab Configuration<a class="headerlink" href="#tab-configuration" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashboardTabData.js</span></code></p></li>
+<li><p>To change Properties of tab go to <code class="docutils literal notranslate"><span class="pre">tabContainers</span></code> object:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> : Text to show on tab</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataField</span></code></strong>: specifies what data appears in the column, field must be from the GraphQL API query</p></li>
+</ul>
+<p><strong>NOTE</strong>: the order of the entries in <code class="docutils literal notranslate"><span class="pre">tabs</span></code> should match the order in the <code class="docutils literal notranslate"><span class="pre">tabsIndex</span></code> object. This is the order that the tabs will be displayed left to right on the UI.</p>
+<p>To change the style of the tabs go to <code class="docutils literal notranslate"><span class="pre">tabIndex</span></code> object:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">title</span></code></strong> : Text to shown on tab</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">primaryColor</span></code></strong> : background color when tab is selected</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">selectedColor</span></code></strong> : font color when tab is selected</p></li>
+</ul>
+<p><strong>NOTE</strong>: The order of the entries in <code class="docutils literal notranslate"><span class="pre">tabIndex</span></code> should match the order in the <code class="docutils literal notranslate"><span class="pre">tabs</span></code> object. This is the order that the tabs will be displayed left to right on the UI.</p>
+</section>
+<section id="table-configuration">
+<h3><span class="section-number">10.4.2. </span>Table Configuration<a class="headerlink" href="#table-configuration" title="Permalink to this heading">¶</a></h3>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/dashboardTabData.js</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">tabContainers</span></code> object is an array of tables, with each table object having the following fields:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dataField</span></code></strong> : field name in “Data” object to get values for table.</p></li>
+</ul>
+<p><strong>NOTE</strong>: This field should be in the GraphQL API query specified in the <code class="docutils literal notranslate"><span class="pre">api</span></code> field.</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortField</span></code></strong>: Value must be one of the ‘dataField’ in columns.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">defaultSortDirection</span></code></strong>: Sort default column in Ascending or Descending order (value must be <code class="docutils literal notranslate"><span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">desc</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">buttonText</span></code></strong>: Text to appear on Add to cart button</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">saveButtonDefaultStyle</span></code></strong>: Style of on Add to cart button, with fields such as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">color</span><span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="n">backgroundColor</span><span class="p">:</span> <span class="s1">&#39;#09A175&#39;</span><span class="p">,</span>
+    <span class="n">opacity</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="n">border</span><span class="p">:</span> <span class="s1">&#39;0px&#39;</span><span class="p">,</span>
+    <span class="n">cursor</span><span class="p">:</span> <span class="s1">&#39;pointer&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ActiveSaveButtonDefaultStyle</span></code></strong>: Style of on Add to cart button when it is active mode</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DeactiveSaveButtonDefaultStyle</span></code></strong>: Style of on Add to cart button when it is disabled mode</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">columns</span></code></strong>: a list of column objects. There is a maximum limit of 10 columns. If more than 10 columns are added, Bento will display the first 10 columns without an error or warning message. The top-down order of columns will be displayed left to right on the UI.  Each column object  is described by the following fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataField</span></code>: specifies what data appears in the column, field must be from the GraphQL API query</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: Heading Text for column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display</span></code>: Show  or Hide column</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellType</span></code>: define column type based on role (Checkbox, links)</p>
+<ul class="simple">
+<li><p>cellTypes.CHECKBOX (selecting rows), cellTypes.LINK (e.g. Case ID column), default value text</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataFromRoot</span></code>: Get data from parent element.</p>
+<ul class="simple">
+<li><p>must be <code class="docutils literal notranslate"><span class="pre">true</span></code>  or <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linkAttr</span></code>: Hyperlink to internal or external page. The value can be injected in link dynamically using <code class="docutils literal notranslate"><span class="pre">{linkAttr}</span></code>, for example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>// Internal Link 
+linkAttr: {
+  rootPath: &#39;/case&#39;, //provide rootPath,
+  pathParams: [&#39;subject_id&#39;], //provide array of pathparm (bento-core will dynamically create path based on the pathParams)
+}
+
+ ### Internal Links in the Explore Dashboard Table
+
+1. links starting with `/` are considered as internal links.
+2. Internal links will be opened in the same tab.
+3. Dynamic links can be generated by passing a valid table field to `{}`. For example, `/program/{program_id}` will link to `program/NCT00310180`.
+
+// External Link can be configured with a custom element (cellTypes.CUSTOM_ELEM)
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: id for the table (required for test automation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tableID</span></code>: id for the table (required for test automation)</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">tableMsg</span></code> to display empty table.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">dataKey</span></code> to track selected rows in the table (Note: select row feature required unique field to track selected rows).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extendedViewConfig</span></code> provides option to add pagination, download button and manage column view component above header column.</p>
+<ul class="simple">
+<li><p>set pagination to <code class="docutils literal notranslate"><span class="pre">true</span></code> for pagination</p></li>
+<li><p>set manageViewColumns to <code class="docutils literal notranslate"><span class="pre">true</span></code> for manageViewColumns (set column <code class="docutils literal notranslate"><span class="pre">role</span></code> to cellTypes.DISPLAY)</p></li>
+<li><p>set download to <code class="docutils literal notranslate"><span class="pre">true</span></code> to display download button</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>WrapperConfig:</p>
+<ul class="simple">
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">addFilesRequestVariableKey</span></code> field to add files to cart.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">addAllFileQuery</span></code> query to add all files to the cart.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">addAllFilesResponseKeys</span></code> to access the response data provided by addAllFileQuery.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">addSelectedFilesQuery</span></code> query to add selected files to the cart.</p></li>
+<li><p>Set the field <code class="docutils literal notranslate"><span class="pre">addFilesResponseKeys</span></code> to access the response data provided by addSelectedFilesQuery.</p></li>
+</ul>
+<blockquote>
+<div><p>:warning: <strong>WARNING</strong>: You can add a maximum of <strong>10</strong> columns to the dashboard tab table. If you add more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>### External Links in the Explore Dashboard Table
+
+1. External links should start with `http://` or `https://`.
+2. External links should show-up with `externalLinkIcon`.
+3. External link will be opened in a new tab.
+4. Dynamic links can be generated by passing a valid table filed to `{}`.
+   For example, `https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}` will link to `https://pubmed.ncbi.nlm.nih.gov/29860917/`
+</pre></div>
+</div>
+<blockquote>
+<div><p>:warning: <strong>WARNING</strong>: A maximum of <strong>10</strong> columns can be added to the dashboard tab table. If adding more than 10 columns, Bento will display only the first ten columns, without any warning or error message</p>
+</div></blockquote>
+</section>
+<section id="tool-tips">
+<h3><span class="section-number">10.4.3. </span>Tool Tips<a class="headerlink" href="#tool-tips" title="Permalink to this heading">¶</a></h3>
+<p>To change Properties of tool tip for each tab, table go to <code class="docutils literal notranslate"><span class="pre">tooltipContent</span></code> object:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">icon</span></code></strong>: The help tip icon that appears next to the ‘add button’</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">alt</span></code></strong>: alt for the tooltip image</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">0,1,2</span></code></strong>: tooltip content for first tab, second tab and third tab.</p></li>
+</ul>
+</section>
+<section id="graphql-to-power-the-explore-dashboard">
+<h3><span class="section-number">10.4.4. </span>GraphQL to Power the Explore Dashboard<a class="headerlink" href="#graphql-to-power-the-explore-dashboard" title="Permalink to this heading">¶</a></h3>
+<p>The GraphQL Query used in the Explore Dashboard page is defined in <code class="docutils literal notranslate"><span class="pre">DASHBOARD_QUERY</span></code>. For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// GraphQL query to retrieve detailed info for a case</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">DASHBOARD_QUERY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gql</span><span class="sb">`{</span>
+<span class="sb">  numberOfPrograms</span>
+<span class="sb">  numberOfStudies</span>
+<span class="sb">  numberOfSubjects</span>
+<span class="sb">  numberOfSamples</span>
+<span class="sb">  numberOfLabProcedures</span>
+<span class="sb">  numberOfFiles</span>
+<span class="sb">  subjectCountByProgram{</span>
+<span class="sb">        group</span>
+<span class="sb">        subjects</span>
+<span class="sb">      }</span>
+<span class="sb">...</span>
+<span class="sb">    fileOverview {</span>
+<span class="sb">        file_id</span>
+<span class="sb">        file_name</span>
+<span class="sb">        association</span>
+<span class="sb">        file_description</span>
+<span class="sb">        file_format</span>
+<span class="sb">        file_size</span>
+<span class="sb">        program</span>
+<span class="sb">        arm</span>
+<span class="sb">        subject_id</span>
+<span class="sb">        sample_id</span>
+<span class="sb">        diagnosis</span>
+<span class="sb">    }</span>
+<span class="sb">  }`</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="suggested-best-practices">
+<h3><span class="section-number">10.4.5. </span>Suggested Best Practices<a class="headerlink" href="#suggested-best-practices" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Dimension of the External Link Icon = 16 X 16 pixels.</p></li>
+<li><p>All images should have a resolution &gt;= 72 ppi and should be in the PNG format.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="file-centric-cart-page.html" class="btn btn-neutral float-right" title="11. File-Centric Cart Page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="case-details-page.html" class="btn btn-neutral float-left" title="9. The Case Details Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jun 21, 2024, 4:08:58 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: release-4.1.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Latest</h3>
+      <ul>
+        <li><a href="explore-dashboard-page.html">release-4.1.0</a></li>
+      <br>
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="explore-dashboard-page.html">release-4.1.0</a></li>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="../../post_release_update/index.html">post_release_update</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../post_release_update/index.html">post_release_update</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.10.0/index.html">release-3.10.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+      <dd><a href="../../release-4.0.0/index.html">release-4.0.0</a></dd>
+      <dd><a href="explore-dashboard-page.html">release-4.1.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

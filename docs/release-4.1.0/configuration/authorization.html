@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Authorization &mdash; Bento release-4.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Data Access Request (DAR) Service" href="data-access-request-service.html" />
+    <link rel="prev" title="1. Authentication" href="authentication.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bento
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                release-4.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento-quick-start.html">1. Quick Start Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html">2. BENTO LOCAL :bento:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html#getting-started">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installing-bento-on-your-local-machine.html#additional-steps">4. Additional Steps:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_aws_installation.html">5. Deploying Bento on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_cloud_run_installation.html">6. Deploying Bento on GCP Cloud Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/bento_gcp_gke_installation.html">7. Deploying Bento on GCP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">2.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terminology">2.2. Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#identity-provider-idp">2.2.1. Identity Provider (IdP)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication">2.2.2. Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.2.3. Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">2.3. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#public-access">2.4. Public Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-public-access-as-metadata-only">2.4.1. Configuring Public Access as “Metadata Only”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-public-access-as-none">2.4.2. Configuring Public Access as “None”</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-access-request-service.html">3. Data Access Request (DAR) Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-ui-elements.html">4. Global UI Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landing-page.html">5. The Bento Landing Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs-page.html">6. The Programs Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program-details-page.html">7. The Program Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm-details-page.html">8. The Study Arm Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-details-page.html">9. The Case Details Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-dashboard-page.html">10. The Explore Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-centric-cart-page.html">11. File-Centric Cart Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static-pages.html">12. Bento Static Pages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/data-loader.html">1. Data Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/model-converter.html">2. Model Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/file-copier.html">3. File Copier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-backend.html">4. Bento Backend Framework Configuration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/Bento_TailoRx_Data_Dictionary.html">5. Bento TailoRx Data Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-tailorx-data-dicionary-relationships.html">6. Relationships among Bento TailoRx node types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-and-modeling/bento-data-model-attributes.html">7. Bento TailoRx Model Attributes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/Bento-Glossary.html">1. Bento Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/gitflow.html">2. Developer GitHub Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/meet-the-team.html">3. Meet the Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/license.html">4. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-info/change-log.html">5. Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Authorization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/CBIIT/bento-docs/blob//source/configuration/authorization.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="data-access-request-service.html" class="btn btn-neutral float-right" title="3. Data Access Request (DAR) Service" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authentication.html" class="btn btn-neutral float-left" title="1. Authentication" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="authorization">
+<h1><span class="section-number">2. </span>Authorization<a class="headerlink" href="#authorization" title="Permalink to this heading">¶</a></h1>
+<p><em>Service only available for cloud installations of the Bento Framework</em></p>
+<section id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The Bento Framework supports role-based access control (RBAC) as a method of enforcing authorization and restricting access to protected or controlled data to authorized users based upon an ascribed role. This enables systematic and reproducible assignment of permissions to facilitate auditing and reduce the potential for error. When a Bento Data Commons is stood up, system owners will need to determine at what level the data will be controlled. This configurability is only available at the time of intializing the system and requires setting fields on both the front-end and the back-end of the Bento web application.</p>
+<p>&nbsp;</p></section>
+<section id="terminology">
+<h2><span class="section-number">2.2. </span>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">¶</a></h2>
+<section id="identity-provider-idp">
+<h3><span class="section-number">2.2.1. </span>Identity Provider (IdP)<a class="headerlink" href="#identity-provider-idp" title="Permalink to this heading">¶</a></h3>
+<p>A service that enables a user to login using credentials to establish a user’s identity and pass this information to downstream applications.</p>
+</section>
+<section id="authentication">
+<h3><span class="section-number">2.2.2. </span>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">¶</a></h3>
+<p>Establishes “who you are” using information obtained by logging in through an Identity Provider (IdP).</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">2.2.3. </span>Authorization<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Establishes “which data you have access to” with a given application</p>
+</section>
+</section>
+<section id="prerequisites">
+<h2><span class="section-number">2.3. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>The files that specify the configuration parameters for the Authorization service are stored in the GitHub repositories <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-RI-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code>. Create a local clone of your fork into a local directory, represented in these instructions as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+<li><p>Configuration parameters for RBAC elements can be specified in the file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code>.</p></li>
+<li><p>Configuration for UI elements can be specified in the file(s):</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/src/bento/siteWideConfig.js</span></code></p></li>
+</ul>
+<p>&nbsp;</p></section>
+<section id="public-access">
+<h2><span class="section-number">2.4. </span>Public Access<a class="headerlink" href="#public-access" title="Permalink to this heading">¶</a></h2>
+<p>Currently, public accessibility to data contained within a Bento-based system can be configured at the time of standing up the system. The configuration applies to both unauthenticated users that have not logged in and unauthorized users that have logged in, but have not yet submitted any data access requests and therefore have either no data access or limited data access.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Acceptable</span> <span class="n">values</span> <span class="n">are</span> <span class="n">Metadata</span> <span class="n">Only</span> <span class="ow">or</span> <span class="kc">None</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">Metadata</span> <span class="n">Only</span><span class="o">.</span> <span class="n">Values</span> <span class="n">are</span> <span class="n">case</span> <span class="n">sensitive</span><span class="o">.</span> 
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: left;">Public Access</th>
+<th style="text-align: left;">Metadata</th>
+<th style="text-align: left;">File Download</th>
+<th style="text-align: left;">Release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Metadata Only</td>
+<td style="text-align: left;">full access</td>
+<td style="text-align: left;">no access</td>
+<td style="text-align: left;">v.3.8.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">no access</td>
+<td style="text-align: left;">no access</td>
+<td style="text-align: left;">v.3.8.0</td>
+</tr>
+</tbody>
+</table><section id="configuring-public-access-as-metadata-only">
+<h3><span class="section-number">2.4.1. </span>Configuring Public Access as “Metadata Only”<a class="headerlink" href="#configuring-public-access-as-metadata-only" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">If</span> <span class="n">Public</span> <span class="n">Access</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;Metadata Only&quot;</span><span class="p">,</span> <span class="n">public</span> <span class="n">users</span> <span class="ow">or</span> <span class="n">unauthorized</span> <span class="n">users</span> <span class="n">can</span> <span class="n">see</span> <span class="nb">all</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="p">,</span> <span class="n">but</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="ow">or</span> <span class="n">download</span> <span class="nb">any</span> <span class="n">files</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code></p></li>
+<li><p>Update field: auth.enabled</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">false</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
+<li><p>Update field: PUBLIC_ACCESS</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: $(src)/packages/bento-frontend/public/injectEnv.js</span>
+
+<span class="c1">// Set the field `PUBLIC_ACCESS` to Metadata Only or None.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">PUBLIC_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Metadata Only&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-public-access-as-none">
+<h3><span class="section-number">2.4.2. </span>Configuring Public Access as “None”<a class="headerlink" href="#configuring-public-access-as-none" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">If</span> <span class="n">public</span> <span class="n">access</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">public</span> <span class="n">users</span> <span class="n">cannot</span> <span class="n">see</span> <span class="nb">any</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">any</span> <span class="n">attempts</span> <span class="n">to</span> <span class="n">access</span> <span class="n">restricted</span> <span class="n">pages</span> <span class="n">will</span> <span class="n">redirect</span> <span class="n">unauthenticated</span> <span class="n">users</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Login</span> <span class="n">page</span> <span class="ow">and</span> <span class="n">unauthorized</span> <span class="n">users</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Data</span> <span class="n">Access</span> <span class="n">Request</span> <span class="p">(</span><span class="n">DAR</span><span class="p">)</span> <span class="n">page</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-backend/src/main/resources/application.properties</span></code></p></li>
+<li><p>Update field: auth.enabled</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">auth</span><span class="p">.</span><span class="nx">enabled</span><span class="o">=</span><span class="kc">true</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Edit file <code class="docutils literal notranslate"><span class="pre">$(src)/packages/bento-frontend/public/injectEnv.js</span></code></p></li>
+<li><p>Update field: PUBLIC_ACCESS</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: $(src)/packages/bento-frontend/public/injectEnv.js</span>
+
+<span class="c1">// Set the field `PUBLIC_ACCESS` to Metadata Only or None.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">injectedEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">PUBLIC_ACCESS</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>NOTE: PUBLIC_ACCESS is a case-sensitive property.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data-access-request-service.html" class="btn btn-neutral float-right" title="3. Data Access Request (DAR) Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authentication.html" class="btn btn-neutral float-left" title="1. Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CBIIT
+      <span class="lastupdated">
+        Last updated on Jun 21, 2024, 4:08:58 PM.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: release-4.1.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+
+      
+      <h3>Latest</h3>
+      <ul>
+        <li><a href="authorization.html">release-4.1.0</a></li>
+      <br>
+      
+
+	  
+	  <h3>Releases</h3>
+      <ul>
+        <li><a href="authorization.html">release-4.1.0</a></li>
+        <li><a href="../../release-4.0.0/index.html">release-4.0.0</a></li>
+        <li><a href="../../release-3.9.0/index.html">release-3.9.0</a></li>
+        <li><a href="../../release-3.8.0/index.html">release-3.8.0</a></li>
+        <li><a href="../../release-3.10.0/index.html">release-3.10.0</a></li>
+        <li><a href="../../release-3.0.0/index.html">release-3.0.0</a></li>
+        <li><a href="../../release-2.0.1/index.html">release-2.0.1</a></li>
+        <li><a href="../../release-2.0.0/index.html">release-2.0.0</a></li>
+        <li><a href="../../release-1.0/index.html">release-1.0</a></li>
+        <li><a href="../../post_release_update/index.html">post_release_update</a></li>
+      </ul>
+      
+
+    <!-- comment out branches
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../post_release_update/index.html">post_release_update</a></dd>
+      <dd><a href="../../release-1.0/index.html">release-1.0</a></dd>
+      <dd><a href="../../release-2.0.0/index.html">release-2.0.0</a></dd>
+      <dd><a href="../../release-2.0.1/index.html">release-2.0.1</a></dd>
+      <dd><a href="../../release-3.0.0/index.html">release-3.0.0</a></dd>
+      <dd><a href="../../release-3.10.0/index.html">release-3.10.0</a></dd>
+      <dd><a href="../../release-3.8.0/index.html">release-3.8.0</a></dd>
+      <dd><a href="../../release-3.9.0/index.html">release-3.9.0</a></dd>
+      <dd><a href="../../release-4.0.0/index.html">release-4.0.0</a></dd>
+      <dd><a href="authorization.html">release-4.1.0</a></dd>
+    </dl>
+   -->
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
