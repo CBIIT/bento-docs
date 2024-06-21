@@ -1,4 +1,13 @@
 # Change Log
+## release-4.1.0
+
+**June 21, 2024**
+The release of Bento 4.1.0 is the first of many releases that include a feature contributed to the codebase by another project team. The codebase has been entirely refactored so that all frontend elements have been organized into components making it easier than ever for other projects to use and customize any number of components that may fit their needs and even push new features for components back to the Bento codebase to help the broader community.
+
+* The Dynamic Query Bar (DQB) within the Explore Dashboard page abstracts values when2 or more facets or case IDs have been entered into any facet section with a clickable ellipse. Clicking on the ellipse reveals all abstracted values.
+
+
+
 ## release-4.0.0
 
 **June 14, 2023**
